@@ -93,7 +93,7 @@ function populateView() {
 
     children.forEach(function(child) {
         var visitedToday;
-        if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate) {
+        if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate | child.DATASEGUI4 == todayAdate) {
             visitedToday = true;
         }
 
@@ -109,12 +109,17 @@ function populateView() {
             child['FU'] = 3;
         } else if (child.FOLLOWUP == 3 & ((child.VITALCRI == null | child.HOSPI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
             child['FU'] = 3;
+        } else if (child.FOLLOWUP == 3 & ((child.VITALCRI != null & child.HOSPI != null) | (child.CHAMADA13 != null | child.CHAMADA23 != null | child.CHAMADA33 != null))) {
+            child['FU'] = 4;
+        } else if (child.FOLLOWUP == 4 & ((child.VITALCRI == null | child.HOSPI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
+            child['FU'] = 4;
         }
     });
     console.log("CHILDREN - FU sortet:", children);
     var ul1 = $('#fu1');
     var ul2 = $('#fu2');
     var ul3 = $('#fu3');
+    var ul9 = $('#fu9');
 
     // First follow-up
     $.each(children, function() {
@@ -123,7 +128,7 @@ function populateView() {
         
         // Check if visited today
         var visited = '';
-        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate) {
+        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate| this.DATSEGUI4 == todayAdate) {
             visited = "visited";
         };
         
@@ -137,6 +142,8 @@ function populateView() {
         } else if (this.FU == 2) {
             FuDate = new Date(incY, incM-1 + 6, incD);
         } else if (this.FU == 3) {
+            FuDate = new Date(incY, incM-1 + 9, incD);
+        } else if (this.FU == 4) {
             FuDate = new Date(incY, incM-1 + 12, incD);
         }
         
@@ -159,6 +166,11 @@ function populateView() {
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
+        if (this.FU == 4 & FuDate <= today) {
+            ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
         console.log("today", today);
 
         // Buttons
@@ -172,6 +184,10 @@ function populateView() {
         })                
         var btn3 = ul3.find('#' + this.rowId);
         btn3.on("click", function() {
+            openForm(that);
+        })
+        var btn4 = ul4.find('#' + this.rowId);
+        btn4.on("click", function() {
             openForm(that);
         })
     });
