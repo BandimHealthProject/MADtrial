@@ -42,8 +42,7 @@ function getTabzList(data) {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST, i._id, i.DATINC, i.ID, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, i.OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, MADTRIAL_FU_SHORT._id AS FUrowId "
-    
+    var varNames = "i.NUMEST, i._id, i.DATINC, i.ID, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, MADTRIAL_FU_SHORT._id AS FUrowId "
     var sql = "SELECT " + varNames + ", i.DOB, i.IDADEANO, i.IDADEMES " +
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_SHORT ON i._id = MADTRIAL_FU_SHORT.IDINC " +
@@ -72,6 +71,9 @@ function loadChildren() {
             var TELEMOVEL1 = result.getData(row,"TELEMOVEL1");
             var TELEMOVEL2 = result.getData(row,"TELEMOVEL2");
             var TELEMOVEL3 = result.getData(row,"TELEMOVEL3");
+            var TELEINF1 = result.getData(row,"TELEINF1");
+            var TELEINF2 = result.getData(row,"TELEINF2");
+            var TELEINF3 = result.getData(row,"TELEINF3");
             var OUBAIRRO = result.getData(row,"OUBAIRRO");
             var DATASAI = result.getData(row,"DATASAI");
             var FOLLOWUP = Number(result.getData(row,"FOLLOWUP")); // variable for follow-up - made into integer
@@ -88,7 +90,7 @@ function loadChildren() {
             var DATSEGUI1 = result.getData(row,"DATSEGUI1");
             var DATSEGUI2 = result.getData(row,"DATSEGUI2");
             var DATSEGUI3 = result.getData(row,"DATSEGUI3");
-            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3 };
+            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, TELEINF1, TELEINF2, TELEINF3, OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3 };
             //console.log(p);
             children.push(p);
         }
