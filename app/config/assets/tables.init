@@ -1,4 +1,4 @@
-table_keys=MADTRIAL_FU_PHONE, MADTRIAL_FU_VIS, MADTRIAL_INC
+table_keys=MADTRIAL_FU_PHONE, MADTRIAL_FU_SHORT, MADTRIAL_INC
 MADTRIAL_FU_PHONE.filename=config/assets/csv/MADTRIAL_FU_PHONE.csv
-MADTRIAL_FU_VIS.filename=config/assets/csv/MADTRIAL_FU_VIS.csv
+MADTRIAL_FU_SHORT.filename=config/assets/csv/MADTRIAL_FU_SHORT.csv
 MADTRIAL_INC.filename=config/assets/csv/MADTRIAL_INC.csv

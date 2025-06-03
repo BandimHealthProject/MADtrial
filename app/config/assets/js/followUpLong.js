@@ -25,6 +25,7 @@ function loadChildren() {
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_PHONE ON i._id = MADTRIAL_FU_PHONE.IDINC " + // join on tablet generated IDs
         " WHERE i.INC = 1" +
+        " AND NOT EXISTS (SELECT 1 FROM MADTRIAL_FU_SHORT WHERE IDINC = i._id AND DATASAI IS NOT NULL)" + // Excludes dead children from first followup
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " + // This makes sure the most recent follup up is shown
         " ORDER BY i.NUMEST ASC";
     children = [];

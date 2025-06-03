@@ -1,10 +1,10 @@
 /**
- * Responsible for rendering children to phone follow-up
+ * Responsible for rendering children to visit follow-up
  */
 'use strict';
 /* global odkTables, util, odkCommon, odkData */
 
-var children, date;
+var tabzList, children, date;
 // note that persons are the MIFs
 function display() {
     console.log("Persons list loading");
@@ -14,19 +14,42 @@ function display() {
     // Set the background to be a picture.
     //var body = $('body').first();
     //body.css('background', 'url(img/form_logo.png) fixed');
+    
+}
+
+// Get masterlList from CSV
+$.ajax({
+    url: 'TABZ.csv',
+    dataType: ' ',
+}).done(getTabzList);
+
+function getTabzList(data) {
+    tabzList = [];
+    var allRows = data.split(/\r?\n|\r/);
+    for (var row = 1; row < allRows.length; row++) {  // start at row = 1 to skip header
+            allRows[row] = allRows[row].replace(/"/g,""); // remove quotes from strings
+            var rowValues = allRows[row].split(",");
+            var p = {bairroName: rowValues[0], bairro: rowValues[1], tabzName: rowValues[2], tabz: rowValues[3]};
+            if (p.bairro != undefined) { // only push rows with reg number
+                tabzList.push(p);
+            }
+    }
+    console.log("tabzList", tabzList);
     loadChildren();
 }
+
 
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST, i._id, i.DATINC, i.DOB, i.IDADEANO, i.IDADEMES, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, VITALCRI, MADTRIAL_FU_VIS._id AS FUrowId "
-    var sql = "SELECT " + varNames + 
+    var varNames = "i.NUMEST, i._id, i.DATINC, i.ID, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, i.OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, MADTRIAL_FU_SHORT._id AS FUrowId "
+    
+    var sql = "SELECT " + varNames + ", i.DOB, i.IDADEANO, i.IDADEMES " +
         " FROM MADTRIAL_INC AS i " +
-        " LEFT JOIN MADTRIAL_FU_VIS ON i._id = MADTRIAL_FU_VIS.IDINC " + // join on tablet generated IDs
-        " WHERE i.INC = 1" +
-        " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " + // This makes sure the most recent follup up is shown
-        " ORDER BY i.NUMEST ASC";
+        " LEFT JOIN MADTRIAL_FU_SHORT ON i._id = MADTRIAL_FU_SHORT.IDINC " +
+        " WHERE i.INC = 1 " +
+        " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " +
+        " ORDER BY i.NOMECRI ASC";
     children = [];
     console.log("Querying database for included children...");
     console.log(sql);
@@ -35,22 +58,24 @@ function loadChildren() {
         for (var row = 0; row < result.getCount(); row++) {
             var NUMEST = result.getData(row,"NUMEST");
             var rowId = result.getData(row,"_id").slice(5); // tablet ID from INC
-            var FUrowId = result.getData(row,"FUrowId"); // tablet ID from FU_VIS
+            var FUrowId = result.getData(row,"FUrowId"); // tablet ID from FU_Phone
             
             var DATINC = result.getData(row,"DATINC");
             var DOB = result.getData(row,"DOB");
+            var ID = result.getData(row,"ID");
             var IDADEANO = result.getData(row,"IDADEANO");
             var IDADEMES = result.getData(row,"IDADEMES");
             var INC = result.getData(row,"INC");
             var NOMECRI = titleCase(result.getData(row,"NOMECRI"));
             var NOMEMAE = titleCase(result.getData(row,"NOMEMAE"));
             var SEX = result.getData(row,"SEX");
-            var TELEINF1 = result.getData(row,"TELEINF1");
-            var TELEINF2 = result.getData(row,"TELEINF2");
-            var TELEINF3 = result.getData(row,"TELEINF3");
             var TELEMOVEL1 = result.getData(row,"TELEMOVEL1");
             var TELEMOVEL2 = result.getData(row,"TELEMOVEL2");
             var TELEMOVEL3 = result.getData(row,"TELEMOVEL3");
+            var OUBAIRRO = result.getData(row,"OUBAIRRO");
+            var DATASAI = result.getData(row,"DATASAI");
+            var FOLLOWUP = Number(result.getData(row,"FOLLOWUP")); // variable for follow-up - made into integer
+            var LASTFUSUC = result.getData(row,"LASTFUSUC");
             var CHAMADA11 = result.getData(row,"CHAMADA11");
             var CHAMADA12 = result.getData(row,"CHAMADA12");
             var CHAMADA13 = result.getData(row,"CHAMADA13");
@@ -62,12 +87,9 @@ function loadChildren() {
             var CHAMADA33 = result.getData(row,"CHAMADA33");
             var DATSEGUI1 = result.getData(row,"DATSEGUI1");
             var DATSEGUI2 = result.getData(row,"DATSEGUI2");
-            var DATSEGUI3 = result.getData(row,"DATSEGUI3"); 
-            var FOLLOWUP = Number(result.getData(row,"FOLLOWUP")); // variabel for followup
-            var VITALCRI = result.getData(row,"VITALCRI");
-
-            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEINF1, TELEINF2, TELEINF3, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, VITALCRI };
-            console.log(p);
+            var DATSEGUI3 = result.getData(row,"DATSEGUI3");
+            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3 };
+            //console.log(p);
             children.push(p);
         }
         console.log("loadChildren:", children)
@@ -84,35 +106,54 @@ function loadChildren() {
     odkData.arbitraryQuery('MADTRIAL_INC', sql, null, null, null, successFn, failureFn);
 }
 
+
 function populateView() {
     console.log("CHILDREN:", children);
     var today = new Date(date);
     var todayAdate = setTodayAdate();
-    console.log("adate",todayAdate);
+    console.log("adate",todayAdate); 
 
     children.forEach(function(child) {
         var visitedToday;
-        if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate | child.DATASEGUI4 == todayAdate) {
+        if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate) {
             visitedToday = true;
         }
 
-        if (child.FOLLOWUP == 0 ) {
+        // Visits
+        if (child.FOLLOWUP == 0) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 & ((child.VITALCRI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 1 & ((child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 & ((child.VITALCRI != null) | (child.CHAMADA13 != null | child.CHAMADA23 != null | child.CHAMADA33 != null))) {
+        } else if (child.FOLLOWUP == 1 & (child.CHAMADA13 != null | child.CHAMADA23 != null | child.CHAMADA33 != null)) {
             child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 & ((child.VITALCRI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 2 & ((child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
             child['FU'] = 2;
+        }
+        // Inclusion date and constrains on FU
+        var incD = Number(child.DATINC.slice(2, child.DATINC.search("M")-1));
+        var incM = child.DATINC.slice(child.DATINC.search("M")+2, child.DATINC.search("Y")-1);
+        var incY = child.DATINC.slice(child.DATINC.search("Y")+2);  
+        var dateInc = new Date(incY, incM-1, incD);
+        var diffInDays = (today.getTime() - dateInc.getTime())/(1000*3600*24);
+        console.log("diff", diffInDays);
+        // Move up to FU2 if 14 or more days
+        // This sets the upper bounds and other "exclusion criteria"
+        if (child.FU == 1 & diffInDays >= 14) {
+            child['FU'] = 2;
+        } if (child.FU == 2 & diffInDays > 21) {
+            child['FU'] = null;
+        } if (child.DATASAI != null) {
+            // Exclude dead children
+            child['FU'] = null
         }
     });
     console.log("CHILDREN - FU sortet:", children);
     var ul1 = $('#fu1');
     var ul2 = $('#fu2');
 
-    // First follow-up
+    // Follow-up list
     $.each(children, function() {
-        console.log(this);
+        //console.log(this);
         var that = this;      
         
         // Check if visited today
@@ -120,21 +161,27 @@ function populateView() {
         if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate) {
             visited = "visited";
         };
-        
+
         // Set date/time contraint
+        // Lower bounds - Inclusive
         var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
         var incY = this.DATINC.slice(this.DATINC.search("Y")+2);
         var FuDate; 
+        var incDate = new Date(incY, incM-1, incD);
         if (this.FU == 1) {
-            FuDate = new Date(incY, incM, incD - 1 + 7);
+            FuDate = new Date(incDate.getTime() + (7 * 24 * 60 * 60 * 1000));
         } else if (this.FU == 2) {
-            FuDate = new Date(incY, incM, incD - 1 + 14);
+            FuDate = new Date(incDate.getTime() + (14 * 24 * 60 * 60 * 1000));
         }
+
         // set text to display
         var displayText = setDisplayText(that);
-
-        // list
+        console.log(FuDate)
+        console.log(incD)
+        console.log(incM)
+        console.log(this.DATINC)
+        
         if (this.FU == 1 & FuDate <= today) {
             ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
@@ -145,7 +192,6 @@ function populateView() {
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        console.log("today", today);
 
         // Buttons
         var btn1 = ul1.find('#' + this.rowId);
@@ -189,11 +235,11 @@ function setDisplayText(child) {
 function openForm(child) {
     console.log("Preparing form for ", child);
     var rowId = child.FUrowId;
-    var tableId = 'MADTRIAL_FU_VIS';
-    var formId = 'MADTRIAL_FU_VIS';
+    var tableId = 'MADTRIAL_FU_SHORT';
+    var formId = 'MADTRIAL_FU_SHORT';
     var todayAdate = setTodayAdate();
 
-    if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate) {
+    if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate) {
         var defaults = {};
         defaults['editvisit'] = "true"
         console.log("Opening FU for edit", defaults);
@@ -204,10 +250,11 @@ function openForm(child) {
             formId,
             null,);
     } 
-    
+
     if (child.FU != child.FOLLOWUP) {
         // new FU
         var defaults = getDefaults(child);
+        defaults['LASTFUSUC'] = setLastSucces(child);
         defaults['FOLLOWUP'] = child.FU;
         console.log("Opening first try next FU:", defaults);
         odkTables.addRowWithSurvey(
@@ -227,6 +274,23 @@ function openForm(child) {
             null,);
     }
 }
+
+function setLastSucces(child) {
+    var lastDate;
+    if (child.FOLLOWUP > 0) {
+        if (child.DATSEGUI2 != null) {
+            lastDate = child.DATSEGUI2;
+        } else if (child.DATSEGUI1 != null) {
+            lastDate = child.DATSEGUI1;
+        } else {
+            lastDate = child.LASTFUSUC;
+        }
+    } else {
+        lastDate = child.DATINC;
+    }
+    return lastDate;
+}
+
 
 function getDefaults(child) {
     var defaults = {};

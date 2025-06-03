@@ -79,7 +79,7 @@
       },
       {
         "choice_list_name": "forms",
-        "data_value": "MADTRIAL_FU_VIS",
+        "data_value": "MADTRIAL_FU_SHORT",
         "display": {
           "title": {
             "text": {
@@ -160,11 +160,11 @@
         "_row_num": 10
       },
       {
-        "branch_label": "MADTRIAL_FU_VIS",
+        "branch_label": "MADTRIAL_FU_SHORT",
         "_row_num": 11
       },
       {
-        "url": "'?' + odkSurvey.getHashString('MADTRIAL_FU_VIS')",
+        "url": "'?' + odkSurvey.getHashString('MADTRIAL_FU_SHORT')",
         "type": "external_link",
         "display": {
           "prompt": {
@@ -784,7 +784,7 @@
         },
         {
           "choice_list_name": "forms",
-          "data_value": "MADTRIAL_FU_VIS",
+          "data_value": "MADTRIAL_FU_SHORT",
           "display": {
             "title": {
               "text": {
@@ -1460,7 +1460,7 @@
             "promptIdx": 2
           },
           {
-            "url": "'?' + odkSurvey.getHashString('MADTRIAL_FU_VIS')",
+            "url": "'?' + odkSurvey.getHashString('MADTRIAL_FU_SHORT')",
             "type": "external_link",
             "display": {
               "prompt": {
@@ -1613,7 +1613,7 @@
           "_endif6": 5,
           "MADTRIAL_INC": 6,
           "_screen9": 6,
-          "MADTRIAL_FU_VIS": 8,
+          "MADTRIAL_FU_SHORT": 8,
           "_screen12": 8,
           "MADTRIAL_FU_PHONE": 10,
           "_screen15": 10,
