@@ -614,15 +614,8 @@
               "english": "Age - year(s)",
               "default": "Idade - ano(s)"
             }
-          },
-          "constraint_message": {
-            "text": {
-              "english": "The child must be younger than 6 years old:",
-              "default": "A criança deve ter menos de 6 anos de idade:"
-            }
           }
         },
-        "constraint": "data('IDADEANO')<6 || data('DOB')!=\"D:NS,M:NS,Y:NS\"",
         "_row_num": 70
       },
       {
@@ -634,15 +627,8 @@
               "english": "Age - month(s)",
               "default": "Idade - mes(es)"
             }
-          },
-          "constraint_message": {
-            "text": {
-              "english": "Must be less than 13:",
-              "default": "Deve ser menor que 13:"
-            }
           }
         },
-        "constraint": "data('IDADEMES')<13 || data('DOB')!=\"D:NS,M:NS,Y:NS\"",
         "_row_num": 71
       },
       {
@@ -1561,7 +1547,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
+        "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || data('SARVAC') != '1' || data('SARVAC2') == '1'",
         "_row_num": 177
       },
       {
@@ -1693,7 +1679,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('VENAOVAS') == '2'",
+        "condition": "data('VENAOVAS2') == '2'",
         "_row_num": 196
       },
       {
@@ -1701,8 +1687,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Mother/guardian could not confirm that the child did not receive measles vaccine",
-              "default": "Mãe/tutor não pôde confirmar que a criança não recebeu a vacina do sarampo"
+              "english": "Mother/guardian could not confirm that the child did not receive the first measles vaccine",
+              "default": "Mãe/tutor não pôde confirmar que a criança não recebeu a primeira vacina do sarampo"
             }
           }
         },
@@ -1714,7 +1700,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('SARVAC') == '1'",
+        "condition": "data('VENAOVAS') == '2'",
         "_row_num": 199
       },
       {
@@ -1722,8 +1708,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "The child has previously received the measles vaccine",
-              "default": "A criança recebeu a vacina do sarampo"
+              "english": "Mother/guardian could not confirm that the child did not receive the second measles vaccine",
+              "default": "Mãe/tutor não pôde confirmar que a criança não recebeu a segunda vacina do sarampo"
             }
           }
         },
@@ -1734,16 +1720,58 @@
         "_row_num": 201
       },
       {
-        "clause": "end screen",
+        "clause": "if",
+        "condition": "data('SARVAC') != '1'",
         "_row_num": 202
       },
       {
-        "clause": "else",
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "The child has not previously received the first measles vaccine",
+              "default": "A criança não recebeu a primeira vacina do sarampo"
+            }
+          }
+        },
         "_row_num": 203
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 204
+      },
+      {
+        "clause": "if",
+        "condition": "data('SARVAC2') == '1'",
+        "_row_num": 205
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "The child has previously received the second measles vaccine",
+              "default": "A criança recebeu a segunda vacina do sarampo"
+            }
+          }
+        },
+        "_row_num": 206
+      },
+      {
+        "clause": "end if",
+        "_row_num": 207
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 208
+      },
+      {
+        "clause": "else",
+        "_row_num": 209
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 210
       },
       {
         "type": "integer",
@@ -1763,7 +1791,7 @@
           }
         },
         "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-        "_row_num": 205
+        "_row_num": 211
       },
       {
         "type": "integer",
@@ -1783,13 +1811,13 @@
           }
         },
         "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-        "_row_num": 206
+        "_row_num": 212
       },
       {
         "type": "assign",
         "name": "RANDOM",
         "calculation": "freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2'))",
-        "_row_num": 207
+        "_row_num": 213
       },
       {
         "type": "note",
@@ -1801,27 +1829,27 @@
             }
           }
         },
-        "_row_num": 208
+        "_row_num": 214
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 1,
-        "_row_num": 209
+        "_row_num": 215
       },
       {
         "clause": "end screen",
-        "_row_num": 210
+        "_row_num": 216
       },
       {
         "clause": "begin screen",
-        "_row_num": 211
+        "_row_num": 217
       },
       {
         "type": "assign",
         "name": "DATVACVAS",
         "calculation": "data('DATINC')",
-        "_row_num": 212
+        "_row_num": 218
       },
       {
         "type": "adate",
@@ -1837,7 +1865,7 @@
             "helperText": false
           }
         },
-        "_row_num": 213
+        "_row_num": 219
       },
       {
         "type": "time",
@@ -1857,13 +1885,13 @@
           }
         },
         "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-        "_row_num": 214
+        "_row_num": 220
       },
       {
         "type": "assign",
         "name": "HORVACVAS",
         "calculation": "adate.hoursMinutes(data('HORA'))",
-        "_row_num": 215
+        "_row_num": 221
       },
       {
         "type": "integer",
@@ -1883,13 +1911,13 @@
           }
         },
         "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-        "_row_num": 216
+        "_row_num": 222
       },
       {
         "type": "assign",
         "name": "NUMEST",
         "calculation": "freebase.studyNumber(\"MAD\",4,data('NUM'))",
-        "_row_num": 217
+        "_row_num": 223
       },
       {
         "type": "note",
@@ -1901,19 +1929,19 @@
             }
           }
         },
-        "_row_num": 218
+        "_row_num": 224
       },
       {
         "clause": "end screen",
-        "_row_num": 219
+        "_row_num": 225
       },
       {
         "clause": "end if",
-        "_row_num": 220
+        "_row_num": 226
       },
       {
         "clause": "begin screen",
-        "_row_num": 221
+        "_row_num": 227
       },
       {
         "type": "select_one_with_other",
@@ -1927,12 +1955,12 @@
             }
           }
         },
-        "_row_num": 222
+        "_row_num": 228
       },
       {
         "clause": "if",
         "condition": "data('INC') == '1'",
-        "_row_num": 223
+        "_row_num": 229
       },
       {
         "type": "select_one_with_other",
@@ -1946,23 +1974,23 @@
             }
           }
         },
-        "_row_num": 224
+        "_row_num": 230
       },
       {
         "clause": "end if",
-        "_row_num": 225
+        "_row_num": 231
       },
       {
         "clause": "end screen",
-        "_row_num": 226
+        "_row_num": 232
       },
       {
         "clause": "else",
-        "_row_num": 227
+        "_row_num": 233
       },
       {
         "clause": "begin screen",
-        "_row_num": 228
+        "_row_num": 234
       },
       {
         "type": "note",
@@ -1974,21 +2002,21 @@
             }
           }
         },
-        "_row_num": 229
+        "_row_num": 235
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 230
+        "_row_num": 236
       },
       {
         "clause": "end screen",
-        "_row_num": 231
+        "_row_num": 237
       },
       {
         "clause": "end if",
-        "_row_num": 232
+        "_row_num": 238
       }
     ],
     "choices": [
@@ -4069,7 +4097,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 224,
+            "_row_num": 230,
             "section_name": "inc"
           },
           {
@@ -4322,7 +4350,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 213,
+            "_row_num": 219,
             "section_name": "inc"
           },
           {
@@ -4410,7 +4438,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 222,
+            "_row_num": 228,
             "section_name": "inc"
           },
           {
@@ -4442,7 +4470,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 214,
+            "_row_num": 220,
             "section_name": "inc"
           },
           {
@@ -4656,7 +4684,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 216,
+            "_row_num": 222,
             "section_name": "inc"
           },
           {
@@ -4770,7 +4798,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 205,
+            "_row_num": 211,
             "section_name": "inc"
           },
           {
@@ -4785,7 +4813,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 206,
+            "_row_num": 212,
             "section_name": "inc"
           },
           {
@@ -5944,15 +5972,8 @@
                   "english": "Age - year(s)",
                   "default": "Idade - ano(s)"
                 }
-              },
-              "constraint_message": {
-                "text": {
-                  "english": "The child must be younger than 6 years old:",
-                  "default": "A criança deve ter menos de 6 anos de idade:"
-                }
               }
             },
-            "constraint": "data('IDADEANO')<6 || data('DOB')!=\"D:NS,M:NS,Y:NS\"",
             "_row_num": 70,
             "__rowNum__": 69,
             "_token_type": "prompt",
@@ -5969,15 +5990,8 @@
                   "english": "Age - month(s)",
                   "default": "Idade - mes(es)"
                 }
-              },
-              "constraint_message": {
-                "text": {
-                  "english": "Must be less than 13:",
-                  "default": "Deve ser menor que 13:"
-                }
               }
             },
-            "constraint": "data('IDADEMES')<13 || data('DOB')!=\"D:NS,M:NS,Y:NS\"",
             "_row_num": 71,
             "__rowNum__": 70,
             "_token_type": "prompt",
@@ -6911,8 +6925,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Mother/guardian could not confirm that the child did not receive measles vaccine",
-                  "default": "Mãe/tutor não pôde confirmar que a criança não recebeu a vacina do sarampo"
+                  "english": "Mother/guardian could not confirm that the child did not receive the first measles vaccine",
+                  "default": "Mãe/tutor não pôde confirmar que a criança não recebeu a primeira vacina do sarampo"
                 }
               }
             },
@@ -6928,8 +6942,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "The child has previously received the measles vaccine",
-                  "default": "A criança recebeu a vacina do sarampo"
+                  "english": "Mother/guardian could not confirm that the child did not receive the second measles vaccine",
+                  "default": "Mãe/tutor não pôde confirmar que a criança não recebeu a segunda vacina do sarampo"
                 }
               }
             },
@@ -6939,6 +6953,40 @@
             "_type": "note",
             "_branch_label_enclosing_screen": "inc/_screen178",
             "promptIdx": 72
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "The child has not previously received the first measles vaccine",
+                  "default": "A criança não recebeu a primeira vacina do sarampo"
+                }
+              }
+            },
+            "_row_num": 203,
+            "__rowNum__": 202,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "inc/_screen178",
+            "promptIdx": 73
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "The child has previously received the second measles vaccine",
+                  "default": "A criança recebeu a segunda vacina do sarampo"
+                }
+              }
+            },
+            "_row_num": 206,
+            "__rowNum__": 205,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "inc/_screen178",
+            "promptIdx": 74
           },
           {
             "type": "integer",
@@ -6958,12 +7006,12 @@
               }
             },
             "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-            "_row_num": 205,
-            "__rowNum__": 204,
+            "_row_num": 211,
+            "__rowNum__": 210,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen204",
-            "promptIdx": 73
+            "_branch_label_enclosing_screen": "inc/_screen210",
+            "promptIdx": 75
           },
           {
             "type": "integer",
@@ -6983,12 +7031,12 @@
               }
             },
             "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-            "_row_num": 206,
-            "__rowNum__": 205,
+            "_row_num": 212,
+            "__rowNum__": 211,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen204",
-            "promptIdx": 74
+            "_branch_label_enclosing_screen": "inc/_screen210",
+            "promptIdx": 76
           },
           {
             "type": "note",
@@ -7000,12 +7048,12 @@
                 }
               }
             },
-            "_row_num": 208,
-            "__rowNum__": 207,
+            "_row_num": 214,
+            "__rowNum__": 213,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen204",
-            "promptIdx": 75
+            "_branch_label_enclosing_screen": "inc/_screen210",
+            "promptIdx": 77
           },
           {
             "type": "adate",
@@ -7021,12 +7069,12 @@
                 "helperText": false
               }
             },
-            "_row_num": 213,
-            "__rowNum__": 212,
+            "_row_num": 219,
+            "__rowNum__": 218,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen211",
-            "promptIdx": 76
+            "_branch_label_enclosing_screen": "inc/_screen217",
+            "promptIdx": 78
           },
           {
             "type": "time",
@@ -7046,12 +7094,12 @@
               }
             },
             "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-            "_row_num": 214,
-            "__rowNum__": 213,
+            "_row_num": 220,
+            "__rowNum__": 219,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "inc/_screen211",
-            "promptIdx": 77
+            "_branch_label_enclosing_screen": "inc/_screen217",
+            "promptIdx": 79
           },
           {
             "type": "integer",
@@ -7071,12 +7119,12 @@
               }
             },
             "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-            "_row_num": 216,
-            "__rowNum__": 215,
+            "_row_num": 222,
+            "__rowNum__": 221,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen211",
-            "promptIdx": 78
+            "_branch_label_enclosing_screen": "inc/_screen217",
+            "promptIdx": 80
           },
           {
             "type": "note",
@@ -7088,12 +7136,12 @@
                 }
               }
             },
-            "_row_num": 218,
-            "__rowNum__": 217,
+            "_row_num": 224,
+            "__rowNum__": 223,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen211",
-            "promptIdx": 79
+            "_branch_label_enclosing_screen": "inc/_screen217",
+            "promptIdx": 81
           },
           {
             "type": "select_one_with_other",
@@ -7107,12 +7155,12 @@
                 }
               }
             },
-            "_row_num": 222,
-            "__rowNum__": 221,
+            "_row_num": 228,
+            "__rowNum__": 227,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen221",
-            "promptIdx": 80
+            "_branch_label_enclosing_screen": "inc/_screen227",
+            "promptIdx": 82
           },
           {
             "type": "select_one_with_other",
@@ -7126,12 +7174,12 @@
                 }
               }
             },
-            "_row_num": 224,
-            "__rowNum__": 223,
+            "_row_num": 230,
+            "__rowNum__": 229,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen221",
-            "promptIdx": 81
+            "_branch_label_enclosing_screen": "inc/_screen227",
+            "promptIdx": 83
           },
           {
             "type": "note",
@@ -7143,20 +7191,20 @@
                 }
               }
             },
-            "_row_num": 229,
-            "__rowNum__": 228,
+            "_row_num": 235,
+            "__rowNum__": 234,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen228",
-            "promptIdx": 82
+            "_branch_label_enclosing_screen": "inc/_screen234",
+            "promptIdx": 84
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 233,
-            "_branch_label_enclosing_screen": "inc/_screen233",
-            "promptIdx": 83
+            "_row_num": 239,
+            "_branch_label_enclosing_screen": "inc/_screen239",
+            "promptIdx": 85
           }
         ],
         "validation_tag_map": {
@@ -7170,8 +7218,6 @@
             18,
             20,
             22,
-            24,
-            25,
             26,
             28,
             29,
@@ -7188,10 +7234,10 @@
             60,
             62,
             64,
-            73,
-            74,
-            77,
-            78
+            75,
+            76,
+            79,
+            80
           ]
         },
         "operations": [
@@ -7305,8 +7351,8 @@
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else227",
-            "_row_num": 227,
+            "_branch_label": "_else233",
+            "_row_num": 233,
             "operationIdx": 8
           },
           {
@@ -7494,7 +7540,7 @@
           },
           {
             "clause": "if",
-            "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
+            "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || data('SARVAC') != '1' || data('SARVAC2') == '1'",
             "_row_num": 177,
             "__rowNum__": 176,
             "_token_type": "goto_label",
@@ -7504,8 +7550,8 @@
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else203",
-            "_row_num": 203,
+            "_branch_label": "_else209",
+            "_row_num": 209,
             "operationIdx": 25
           },
           {
@@ -7515,93 +7561,93 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 202,
-              "__rowNum__": 201,
+              "_row_num": 208,
+              "__rowNum__": 207,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(65);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(66);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(68);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(69);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(70);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(71);\n}\nif (data('SARVAC') == '1') {\nactivePromptIndicies.push(72);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(65);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(66);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(68);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(69);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(70);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('SARVAC') != '1') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(74);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 26
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif220",
-            "_row_num": 220,
+            "_branch_label": "_endif226",
+            "_row_num": 226,
             "operationIdx": 27
           },
           {
             "clause": "begin screen",
-            "_row_num": 204,
-            "__rowNum__": 203,
+            "_row_num": 210,
+            "__rowNum__": 209,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 210,
-              "__rowNum__": 209,
+              "_row_num": 216,
+              "__rowNum__": 215,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(73);\nactivePromptIndicies.push(74);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(75);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(75);\nactivePromptIndicies.push(76);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(77);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 28
           },
           {
             "clause": "begin screen",
-            "_row_num": 211,
-            "__rowNum__": 210,
+            "_row_num": 217,
+            "__rowNum__": 216,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 219,
-              "__rowNum__": 218,
+              "_row_num": 225,
+              "__rowNum__": 224,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(76);\nactivePromptIndicies.push(77);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(78);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(79);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(78);\nactivePromptIndicies.push(79);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(80);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(81);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 29
           },
           {
             "clause": "begin screen",
-            "_row_num": 221,
-            "__rowNum__": 220,
+            "_row_num": 227,
+            "__rowNum__": 226,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 226,
-              "__rowNum__": 225,
+              "_row_num": 232,
+              "__rowNum__": 231,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(80);\nif (data('INC') == '1') {\nactivePromptIndicies.push(81);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(82);\nif (data('INC') == '1') {\nactivePromptIndicies.push(83);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 30
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif232",
-            "_row_num": 232,
+            "_branch_label": "_endif238",
+            "_row_num": 238,
             "operationIdx": 31
           },
           {
             "clause": "begin screen",
-            "_row_num": 228,
-            "__rowNum__": 227,
+            "_row_num": 234,
+            "__rowNum__": 233,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 231,
-              "__rowNum__": 230,
+              "_row_num": 237,
+              "__rowNum__": 236,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(82);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(84);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 32
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 233,
+            "_row_num": 239,
             "operationIdx": 33
           },
           {
-            "_row_num": 233,
+            "_row_num": 239,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(83);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(85);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -7610,7 +7656,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 233,
+            "_row_num": 239,
             "operationIdx": 35
           }
         ],
@@ -7640,16 +7686,16 @@
           "_screen166": 23,
           "_then177": 26,
           "_screen178": 26,
-          "_else203": 28,
-          "_screen204": 28,
-          "_screen211": 29,
-          "_endif220": 30,
-          "_screen221": 30,
-          "_else227": 32,
-          "_screen228": 32,
-          "_endif232": 33,
+          "_else209": 28,
+          "_screen210": 28,
+          "_screen217": 29,
+          "_endif226": 30,
+          "_screen227": 30,
+          "_else233": 32,
+          "_screen234": 32,
+          "_endif238": 33,
           "_contents": 34,
-          "_screen233": 34
+          "_screen239": 34
         }
       },
       "initial": {
@@ -7840,7 +7886,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 224,
+            "_row_num": 230,
             "section_name": "inc"
           },
           {
@@ -8162,7 +8208,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 213,
+            "_row_num": 219,
             "section_name": "inc"
           },
           {
@@ -8273,7 +8319,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 222,
+            "_row_num": 228,
             "section_name": "inc"
           },
           {
@@ -8311,7 +8357,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 214,
+            "_row_num": 220,
             "section_name": "inc"
           },
           {
@@ -8575,7 +8621,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 216,
+            "_row_num": 222,
             "section_name": "inc"
           },
           {
@@ -8713,7 +8759,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 205,
+            "_row_num": 211,
             "section_name": "inc"
           },
           {
@@ -8731,7 +8777,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 206,
+            "_row_num": 212,
             "section_name": "inc"
           },
           {
