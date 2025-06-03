@@ -58,20 +58,20 @@ function initDrops() {
     var date = {};
     var queryParams = {};
 
-    var btnVis = $('#btnVis');
-    btnVis.on("click", function() {
+    var btnShort = $('#btnShort');
+    btnShort.on("click", function() {
         date = new Date(selYea.val(), selMon.val()-1, selDay.val());
         queryParams = util.setQuerystringParams(null, null, null, null, date);
-        odkTables.launchHTML(null, 'config/assets/followUpVisit.html' + queryParams);
+        odkTables.launchHTML(null, 'config/assets/followUpShort.html' + queryParams);
         console.log(queryParams);
         console.log(date);
     });
     
-    var btnTel = $('#btnTel');
-    btnTel.on("click", function() {
+    var btnLong = $('#btnLong');
+    btnLong.on("click", function() {
         date = new Date(selYea.val(), selMon.val()-1, selDay.val());
         queryParams = util.setQuerystringParams(null, null, null, null, date);
-        odkTables.launchHTML(null, 'config/assets/followUpPhone.html' + queryParams);
+        odkTables.launchHTML(null, 'config/assets/followUpLong.html' + queryParams);
         console.log(queryParams);
         console.log(date);
     });

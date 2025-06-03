@@ -13,60 +13,42 @@
         <script type="text/javascript" src="../../system/tables/js/odkTables.js"></script>
         
         <script type="text/javascript" src="js/util.js"></script>
-        <script type="text/javascript" src="js/followUpVisit.js"></script>
+        <script type="text/javascript" src="js/followUpLong.js"></script>
         <style>
         ul {
             list-style:none;
-            border-radius: none;
-        }
-        .form-group {
-            margin:30px 0;
-        }
+        }     
         button.child1 {
             background-color: powderblue;
             text-align:left;
+            background-image: url(./img/baby.png);
             background-repeat: no-repeat;
             background-position: 10px;
             background-size: 30px;
             padding-left: 55px;
-            padding-right: 89%;
-            font-size: large;
             margin:10px;
-            height:auto;
+            height:70px;
             width:100%;
             color: black; 
         }
         button.child2 {
             background-color: pink;
             text-align:left;
+            background-image: url(./img/baby.png);
             background-repeat: no-repeat;
             background-position: 10px;
             background-size: 30px;
             padding-left: 55px;
-            padding-right: 89%;
-            font-size: large;
             margin:10px;
-            height:auto;
+            height:70px;
             width:100%;
             color: black; 
         }
-        button.FU1 {
-            background-image: url(./img/FU1.png);
-        }
-        button.FU2 {
-            background-image: url(./img/FU2.png);
-        }
-        button.FU3 {
-            background-image: url(./img/FU3.png);
-        }
-        button.FU4 {
-            background-image: url(./img/FU4.png);
-        }
-        button.visited{
+        button.visited {
             opacity:.5;
-            background-image: url(./img/checkMarkBlack.png);
+            background-image: url(./img/baby.png), url(./img/checkMarkBlack.png);
             background-repeat: no-repeat;
-            background-position-x: 10px;
+            background-position-x: 10px, 99%;
         }
         </style>
     </head>
@@ -74,30 +56,25 @@
    
     <body>
         <div id="main" class="container" style="height: 100vh;">
-            <h1>Visita</h1>
+            <h1>Telemovel</h1>
             <div class="form-group">
-                <h3><u>Bandim</u></h3>
+                <h3><u>3 meses</u></h3>
                 <ul id="fu1" style="padding:20px;">            
                 </ul>
             </div>
             <div class="form-group">
-                <h3><u>Belem</u></h3>
+                <h3><u>6 meses</u></h3>
                 <ul id="fu2" style="padding:20px;">            
                 </ul>
             </div>
             <div class="form-group">
-                <h3><u>Mindera</u></h3>
+                <h3><u>9 meses</u></h3>
                 <ul id="fu3" style="padding:20px;">            
                 </ul>
             </div>
             <div class="form-group">
-                <h3><u>Cuntum</u></h3>
+                <h3><u>12 meses</u></h3>
                 <ul id="fu4" style="padding:20px;">            
-                </ul>
-            </div>
-            <div class="form-group">
-                <h3><u>Bairros fora da área do projeto</u></h3>
-                <ul id="fu5" style="padding:20px;">            
                 </ul>
             </div>
         </div>
