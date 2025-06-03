@@ -149,8 +149,11 @@ module.exports = function (grunt) {
         // Directory for instance folder
         instanceDir: 'data/tables',
         // The directory where the instance objects are output.
-        outputInstancesDir: 'output/media'
-
+        outputInstancesDir: 'output/media',
+        // The directory where backup databases are kept
+        backupDbDir: 'backupdata/db',
+        // The directory where the csv are located
+        csvDir: 'config/assets/csv'
 
     };
 
@@ -197,11 +200,11 @@ module.exports = function (grunt) {
                     return 'adb devices';
                 }
             },
-			macGenConvert: {
-				cmd: function(str, formDefFile) {
-					return 'node macGenConverter.js ' + str + ' > ' + formDefFile; 
-				}
-			}
+            macGenConvert: {
+                cmd: function(str, formDefFile) {
+                    return `node macGenConverter.js ${str} > ${formDefFile} || (echo "Command failed. Outputting contents of ${formDefFile}:" && cat ${formDefFile} && exit 1)`;
+                }
+            }
         },
         wait: {
             options: {
@@ -284,10 +287,10 @@ module.exports = function (grunt) {
                         grunt.log.writeln('detected Windows environment');
                         return 'chrome';
                     } else {
-                        // Mac (and maybe others--add as discovered), expects
-                        // Google Chrome
-                        grunt.log.writeln('detected non-Windows environment');
-                        return 'Google Chrome';
+                        // Mac/Linux (and maybe others--add as discovered), expects
+                        // google-chrome
+                        grunt.log.writeln('detected non-Windows environment opening in google-chrome');
+                        return 'google-chrome';
                     }
                 })()
             }
@@ -298,6 +301,17 @@ module.exports = function (grunt) {
 
     // We need grunt-exec to run adb commands from within grunt.
     grunt.loadNpmTasks('grunt-exec');
+
+    // Timeout to allow tablet to unzip files
+    grunt.registerTask(
+        'wait', 
+        'Wait for a specified amount of time.', 
+        function(time) {
+        var done = this.async();
+        setTimeout(function() {
+            done();
+        }, time * 1000);
+    });
 
     // Just an alias task--shorthand for doing all the pullings
     grunt.registerTask(
@@ -339,6 +353,66 @@ module.exports = function (grunt) {
             grunt.log.writeln('adb pull ' + src + ' ' + dest);
             grunt.task.run('exec:adbpull:' + src + ':' + dest);
         });
+    grunt.registerTask(
+        'eqm-backup',
+        'Pull the db from the device to backupfolder with specified filename',
+        // usage adbpull-db-backup:FILENAME
+        function(input) {
+            if (!input) {
+                grunt.log.error('No input provided. Usage: adbpull-db-backup:FILENAME');
+                return;
+            }
+            let today = new Date();
+            let dd = String(today.getDate()).padStart(2, '0');
+            let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            let yyyy = today.getFullYear();
+            today = yyyy + mm + dd; 
+            var dbPath = tablesConfig.deviceDbDirectoryPath + '/sqlite.db' ;
+            dbPath = dbPath.replace(tablesConfig.appStr, tablesConfig.appName);
+            var src = dbPath;
+            var dest = tablesConfig.backupDbDir + '/' + today;
+            grunt.log.writeln('adb pull ' + src + ' ' + dest);
+            grunt.task.run('exec:adbpull:' + src + ':' + dest);
+        });
+
+    grunt.registerTask(
+        'adbpush-db',
+        'Push the db to the device',
+        function(input) {
+            var dbPath = tablesConfig.deviceDbDirectoryPath;
+            dbPath = dbPath.replace(tablesConfig.appStr, tablesConfig.appName);
+            var src;
+            if (input){
+                src = tablesConfig.backupDbDir + '/' + input + '.db';
+            } else {
+                src = tablesConfig.appDir + '/' + tablesConfig.outputDbDir + '/*';
+            }
+            var dest = dbPath ;
+            grunt.log.writeln('adb push ' + src + ' ' + dest);
+            grunt.task.run('exec:adbpush:' + src + ':' + dest);
+        });
+        
+    grunt.registerTask(
+        'easysetup',
+        'setup the tablet with cloned database',
+        function(input) {
+            if(input){
+                grunt.task.run('adbpush');
+                // Allow time for unzip
+                grunt.log.writeln('Ensure that survey app completely opens by pressing the button in the middle of the screen');
+                grunt.log.writeln('If it is already unzipping files then just sit back and enjoy the tablet working :) for 15 more seconds');
+                grunt.task.run('wait:15');
+                grunt.task.run('adbpush-db'  + ':' + input)
+            } else {
+                grunt.task.run('adbpush');
+                grunt.log.writeln('Ensure that survey app completely opens by pressing the button in the middle of the screen');
+                grunt.log.writeln('If it is already unzipping files then just sit back and enjoy the tablet working :) for 15 more seconds');
+                grunt.task.run('wait:15');
+                grunt.task.run('adbpush-db')
+            }
+
+        }
+    )
 
     grunt.registerTask(
         'adbpull-csv',
@@ -350,6 +424,17 @@ module.exports = function (grunt) {
             grunt.log.writeln('adb pull ' + src + ' ' + dest);
             grunt.task.run('exec:adbpull:' + src + ':' + dest);
         });
+
+    grunt.registerTask(
+    'adbpush-csv',
+    'Push any exported csv files to the device',
+    function() {
+        var src = tablesConfig.appDir + '/' + tablesConfig.csvDir;
+        var dest = tablesConfig.deviceMount + '/' + tablesConfig.appName +
+            '/' + tablesConfig.csvDir;
+        grunt.log.writeln('adb push ' + src + ' ' + dest);
+        grunt.task.run('exec:adbpush:' + src + ':' + dest);
+    });
 
     grunt.registerTask(
         'adbpull-instances',
@@ -374,6 +459,66 @@ module.exports = function (grunt) {
         }
     );
     
+    // eqm-convert for a single file. If the project contains many big forms eqm-convert-all can be very slow
+    grunt.registerTask(
+        'eqm-convert',
+        'Copies customPromptTypes to forms, then converts xlsx via macgen for a single file',
+        function() {
+            // Argument passed by writing eqm-convert:FORMNAME
+            var form = this.args[0];
+            if (form){
+                var platform = require('os').platform();
+                var isWindows = (platform.search('win') >= 0 &&
+                                 platform.search('darwin') < 0);
+                                 
+                var fileName = grunt.file.expand(
+                    {filter: function(path) {
+                            if ( !path.endsWith(".xlsx") ) {
+                                return false;
+                            }
+                            var cell = path.split((isWindows ? "\\" : "/"));
+                            return (cell.length >= 6) &&
+                            ( cell[cell.length-1] === cell[cell.length-2] + ".xlsx" ); 
+                        },
+                    cwd: 'app' },
+                    '**/' + form + '.xlsx',
+                    '!**/~$*.xlsx'
+                    )[0]; // grunt.file.expand() returns an array
+    
+                
+                //var srcDir = 'app/config/assets/framework/forms/framework/';
+                var srcDir = 'app/config/assets/custom/';
+                var filesToDisseminate = ['customPromptTypes.js'] //, 'customScreenTypes.js'];
+                //if (fileName == 'config/assets/framework/forms/framework/framework.xlsx') return; //i.e. continue
+                filesToDisseminate.forEach(fname => {
+                    var dest = 'app/' + fileName.substr(0,fileName.lastIndexOf('/')) + '/' + fname;
+                    var src = srcDir + fname;
+                        //console.log(jsFile);
+                        grunt.log.writeln('file copy ' + src + ' ' + dest);
+                        grunt.file.copy(src, dest);
+                    });                              
+                // Now run this file through macGenConvert.js
+                // fileName uses forward slashes on all platforms
+                var xlsFile;
+                var formDefFile;
+                var cell;
+                xlsFile = 'app/' + fileName;
+                cell = xlsFile.split('/');
+                cell[cell.length-1] = 'formDef.json';
+                formDefFile = cell.join('/');
+                grunt.log.writeln('macGenConvert: ' + xlsFile + ' > ' + formDefFile);
+                grunt.task.run('exec:macGenConvert:' + xlsFile + ':' + formDefFile);
+
+            } else {
+                // if no argument was passed run as eqm-convert-all
+                grunt.task.run('eqm-copy-custom');
+                grunt.task.run('xlsx-convert-all')
+            }
+            
+
+        }
+    );
+
     grunt.registerTask(
         'eqm-copy-custom',
         'Copies custom*.js files from framework folder to each form',
@@ -1189,18 +1334,16 @@ module.exports = function (grunt) {
         });
 
     grunt.registerTask('eqm-init',
-    'Initializes a phressh Lenovo E7 tablet',
+    'Initializes a phressh Android tablet',
     function eqmInit() {
-        grunt.log.writeln("Initializing phresh Lenovo E7 tablet.")
+        grunt.log.writeln("Initializing phressh tablet.")
         //grunt.task.run("exec:adbshell:am force-stop org.opendatakit.".concat(apps[i]));
         grunt.task.run("exec:adbinstall:./Tablet_Install/services.apk");
         grunt.task.run("exec:adbinstall:./Tablet_Install/survey.apk");
         grunt.task.run("exec:adbinstall:./Tablet_Install/tables.apk");
         grunt.task.run("exec:adbinstall:./Tablet_Install/OIFilemanager.apk");
         //grunt.task.run('adbpush-collect');
-        grunt.task.run('adbpush-default-app');        
-        grunt.task.run('setup');
-        
+        grunt.task.run('adbpush');        
     });    
 
     grunt.registerTask(
