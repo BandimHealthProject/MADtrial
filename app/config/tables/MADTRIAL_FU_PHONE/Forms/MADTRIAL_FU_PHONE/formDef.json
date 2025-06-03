@@ -4117,516 +4117,324 @@
         "_row_num": 17
       },
       {
+        "name": "VITALCRI",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 19
+      },
+      {
+        "name": "INFORMADOR",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 20
+      },
+      {
         "name": "datsegui",
         "type": "adate",
         "isSessionVariable": true,
         "comment": "FU",
-        "_row_num": 19
+        "_row_num": 21
       },
       {
         "name": "DOD",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 20
+        "_row_num": 22
       },
       {
         "name": "DODANO",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 21
+        "_row_num": 23
       },
       {
         "name": "DODMES",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 22
+        "_row_num": 24
       },
       {
         "name": "dodns",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 23
-      },
-      {
-        "name": "HOSPALTA1",
-        "type": "select_multiple",
-        "isSessionVariable": false,
-        "_row_num": 24
-      },
-      {
-        "name": "HOSPALTA2",
-        "type": "select_multiple",
-        "isSessionVariable": false,
         "_row_num": 25
-      },
-      {
-        "name": "HOSPALTA3",
-        "type": "select_multiple",
-        "isSessionVariable": false,
-        "_row_num": 26
-      },
-      {
-        "name": "HOSPCAUSA1",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 27
-      },
-      {
-        "name": "HOSPCAUSA2",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 28
-      },
-      {
-        "name": "HOSPCAUSA3",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 29
-      },
-      {
-        "name": "HOSPCODE1",
-        "type": "select_one_dropdown",
-        "isSessionVariable": false,
-        "_row_num": 30
-      },
-      {
-        "name": "hospcode1ns",
-        "type": "select_multiple",
-        "isSessionVariable": true,
-        "_row_num": 31
-      },
-      {
-        "name": "HOSPCODE2",
-        "type": "select_one_dropdown",
-        "isSessionVariable": false,
-        "_row_num": 32
-      },
-      {
-        "name": "hospcode2ns",
-        "type": "select_multiple",
-        "isSessionVariable": true,
-        "_row_num": 33
-      },
-      {
-        "name": "HOSPCODE3",
-        "type": "select_one_dropdown",
-        "isSessionVariable": false,
-        "_row_num": 34
-      },
-      {
-        "name": "hospcode3ns",
-        "type": "select_multiple",
-        "isSessionVariable": true,
-        "_row_num": 35
-      },
-      {
-        "name": "HOSPDATA1",
-        "type": "adate",
-        "isSessionVariable": false,
-        "_row_num": 36
-      },
-      {
-        "name": "HOSPDATA2",
-        "type": "adate",
-        "isSessionVariable": false,
-        "_row_num": 37
-      },
-      {
-        "name": "HOSPDATA3",
-        "type": "adate",
-        "isSessionVariable": false,
-        "_row_num": 38
-      },
-      {
-        "name": "HOSPDIAS1",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 39
-      },
-      {
-        "name": "HOSPDIAS2",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 40
-      },
-      {
-        "name": "HOSPDIAS3",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 41
-      },
-      {
-        "name": "HOSPI",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 42
-      },
-      {
-        "name": "HOSPI2",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 43
-      },
-      {
-        "name": "HOSPI3",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 44
-      },
-      {
-        "name": "HOSPIVEZ",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 45
-      },
-      {
-        "name": "INFORMADOR",
-        "type": "select_one_with_other",
-        "isSessionVariable": false,
-        "_row_num": 46
-      },
-      {
-        "name": "MORNOME",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 47
-      },
-      {
-        "name": "PODEAUT",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 48
-      },
-      {
-        "name": "REG",
-        "type": "select_one_dropdown",
-        "isSessionVariable": false,
-        "_row_num": 49
-      },
-      {
-        "name": "reghosp1",
-        "type": "select_one_dropdown",
-        "isSessionVariable": true,
-        "_row_num": 50
-      },
-      {
-        "name": "reghosp2",
-        "type": "select_one_dropdown",
-        "isSessionVariable": true,
-        "_row_num": 51
-      },
-      {
-        "name": "reghosp3",
-        "type": "select_one_dropdown",
-        "isSessionVariable": true,
-        "_row_num": 52
-      },
-      {
-        "name": "TABNOME",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 53
-      },
-      {
-        "name": "VACHIS",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 54
-      },
-      {
-        "name": "VACOUTRO",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 55
-      },
-      {
-        "name": "VACTIPO",
-        "type": "select_multiple",
-        "isSessionVariable": false,
-        "_row_num": 56
-      },
-      {
-        "name": "VITALCRI",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 57
       },
       {
         "name": "chamada1",
         "type": "integer",
         "isSessionVariable": true,
         "comment": "tableApp",
-        "_row_num": 59
+        "_row_num": 27
       },
       {
         "name": "chamada2",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 60
+        "_row_num": 28
       },
       {
         "name": "chamada3",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 61
+        "_row_num": 29
       },
       {
         "name": "DATINC",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 62
+        "_row_num": 30
       },
       {
         "name": "DOB",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 63
+        "_row_num": 31
       },
       {
         "name": "FOLLOWUP",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 64
+        "_row_num": 32
       },
       {
         "name": "IDADEANO",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 65
+        "_row_num": 33
       },
       {
         "name": "IDADEMES",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 66
+        "_row_num": 34
       },
       {
         "name": "IDINC",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 67
+        "_row_num": 35
       },
       {
         "name": "NOMECRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 68
+        "_row_num": 36
       },
       {
         "name": "NOMEMAE",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 69
+        "_row_num": 37
       },
       {
         "name": "NUMEST",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 70
+        "_row_num": 38
       },
       {
         "name": "SEX",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 71
+        "_row_num": 39
       },
       {
         "name": "TELEINF1",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 72
+        "_row_num": 40
       },
       {
         "name": "TELEINF2",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 73
+        "_row_num": 41
       },
       {
         "name": "TELEINF3",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 74
+        "_row_num": 42
       },
       {
         "name": "TELEMOVEL1",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 75
+        "_row_num": 43
       },
       {
         "name": "TELEMOVEL2",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 76
+        "_row_num": 44
       },
       {
         "name": "TELEMOVEL3",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 77
+        "_row_num": 45
       },
       {
         "name": "DIARREIA",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 80
+        "_row_num": 48
       },
       {
         "name": "DIARREIDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 81
+        "_row_num": 49
       },
       {
         "name": "VOMITO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 82
+        "_row_num": 50
       },
       {
         "name": "VOMITODIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 83
+        "_row_num": 51
       },
       {
         "name": "TOSSE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 84
+        "_row_num": 52
       },
       {
         "name": "TOSSEDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 85
+        "_row_num": 53
       },
       {
         "name": "CONSTIP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 86
+        "_row_num": 54
       },
       {
         "name": "CONSTIPDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 87
+        "_row_num": 55
       },
       {
         "name": "PERAPPE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 88
+        "_row_num": 56
       },
       {
         "name": "PERAPPEDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 89
+        "_row_num": 57
       },
       {
         "name": "CHOROU",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 90
+        "_row_num": 58
       },
       {
         "name": "CHOROUDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 91
+        "_row_num": 59
       },
       {
         "name": "FEBRE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 92
+        "_row_num": 60
       },
       {
         "name": "FEBREDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 93
+        "_row_num": 61
       },
       {
         "name": "CONVULSAO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 94
+        "_row_num": 62
       },
       {
         "name": "CONVULSAODIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 95
+        "_row_num": 63
       },
       {
         "name": "OUTROSIMP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 96
+        "_row_num": 64
       },
       {
         "name": "SIMPQUAL",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 97
+        "_row_num": 65
       },
       {
         "name": "OUTROSIMPDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 98
+        "_row_num": 66
       },
       {
         "name": "CONSULTA",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 99
+        "_row_num": 67
       },
       {
         "name": "CONSULTADIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 100
+        "_row_num": 68
       },
       {
         "name": "CONSCAUSA",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 101
+        "_row_num": 69
       },
       {
         "name": "CONSDOC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 102
+        "_row_num": 70
       },
       {
         "name": "MEDICIN",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 103
+        "_row_num": 71
       },
       {
         "name": "MEDICINDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 104
+        "_row_num": 72
       },
       {
         "name": "MEDICIN_Q",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 105
+        "_row_num": 73
       },
       {
         "name": "MEDICINOU_Q",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 106
+        "_row_num": 74
       }
     ]
   },
@@ -6041,6 +5849,46 @@
         "isSessionVariable": false,
         "elementKey": "START"
       },
+      "VITALCRI": {
+        "type": "array",
+        "valuesList": "sim/nao/naosabe",
+        "items": {
+          "type": "string",
+          "elementKey": "VITALCRI_items"
+        },
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "FU"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VITALCRI"
+      },
+      "INFORMADOR": {
+        "type": "array",
+        "valuesList": "inf",
+        "items": {
+          "type": "string",
+          "elementKey": "INFORMADOR_items"
+        },
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "FU"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "INFORMADOR"
+      },
       "datsegui": {
         "prompt_type_name": "adate",
         "type": "string",
@@ -6050,7 +5898,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -6070,7 +5918,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -6085,7 +5933,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 21,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -6100,7 +5948,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 22,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -6120,445 +5968,18 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 23,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
         "isSessionVariable": true,
         "elementKey": "dodns"
       },
-      "HOSPALTA1": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "HOSPALTA1_items"
-        },
-        "_defn": [
-          {
-            "_row_num": 24,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPALTA1"
-      },
-      "HOSPALTA2": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "HOSPALTA2_items"
-        },
-        "_defn": [
-          {
-            "_row_num": 25,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPALTA2"
-      },
-      "HOSPALTA3": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "HOSPALTA3_items"
-        },
-        "_defn": [
-          {
-            "_row_num": 26,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPALTA3"
-      },
-      "HOSPCAUSA1": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 27,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCAUSA1"
-      },
-      "HOSPCAUSA2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 28,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCAUSA2"
-      },
-      "HOSPCAUSA3": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 29,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCAUSA3"
-      },
-      "HOSPCODE1": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 30,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCODE1"
-      },
-      "hospcode1ns": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "hospcode1ns_items"
-        },
-        "_defn": [
-          {
-            "_row_num": 31,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "hospcode1ns"
-      },
-      "HOSPCODE2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 32,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCODE2"
-      },
-      "hospcode2ns": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "hospcode2ns_items"
-        },
-        "_defn": [
-          {
-            "_row_num": 33,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "hospcode2ns"
-      },
-      "HOSPCODE3": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 34,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCODE3"
-      },
-      "hospcode3ns": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "hospcode3ns_items"
-        },
-        "_defn": [
-          {
-            "_row_num": 35,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "hospcode3ns"
-      },
-      "HOSPDATA1": {
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
-        "_defn": [
-          {
-            "_row_num": 36,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDATA1"
-      },
-      "HOSPDATA2": {
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
-        "_defn": [
-          {
-            "_row_num": 37,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDATA2"
-      },
-      "HOSPDATA3": {
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
-        "_defn": [
-          {
-            "_row_num": 38,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDATA3"
-      },
-      "HOSPDIAS1": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 39,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDIAS1"
-      },
-      "HOSPDIAS2": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 40,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDIAS2"
-      },
-      "HOSPDIAS3": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 41,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDIAS3"
-      },
-      "HOSPI": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 42,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPI"
-      },
-      "HOSPI2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 43,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPI2"
-      },
-      "HOSPI3": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 44,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPI3"
-      },
-      "HOSPIVEZ": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 45,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPIVEZ"
-      },
-      "INFORMADOR": {
-        "type": "string",
-        "valuesList": "inf",
-        "_defn": [
-          {
-            "_row_num": 3,
-            "section_name": "FU"
-          },
-          {
-            "_row_num": 46,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "INFORMADOR"
-      },
-      "MORNOME": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 47,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "MORNOME"
-      },
-      "PODEAUT": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 48,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "PODEAUT"
-      },
-      "REG": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 49,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "REG"
-      },
-      "reghosp1": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 50,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "reghosp1"
-      },
-      "reghosp2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 51,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "reghosp2"
-      },
-      "reghosp3": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 52,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "reghosp3"
-      },
-      "TABNOME": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 53,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TABNOME"
-      },
-      "VACHIS": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 54,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VACHIS"
-      },
-      "VACOUTRO": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 55,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VACOUTRO"
-      },
-      "VACTIPO": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "VACTIPO_items"
-        },
-        "_defn": [
-          {
-            "_row_num": 56,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VACTIPO"
-      },
-      "VITALCRI": {
-        "type": "string",
-        "valuesList": "sim/nao/naosabe",
-        "_defn": [
-          {
-            "_row_num": 6,
-            "section_name": "FU"
-          },
-          {
-            "_row_num": 57,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VITALCRI"
-      },
       "chamada1": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -6570,7 +5991,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -6581,7 +6002,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -6597,7 +6018,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -6613,7 +6034,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -6624,7 +6045,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -6635,7 +6056,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -6646,7 +6067,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -6657,7 +6078,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -6668,7 +6089,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -6679,7 +6100,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -6690,7 +6111,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -6701,7 +6122,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -6712,7 +6133,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -6723,7 +6144,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -6734,7 +6155,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -6745,7 +6166,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 75,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -6756,7 +6177,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 76,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -6767,7 +6188,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 77,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -6783,7 +6204,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 80,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -6803,7 +6224,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 81,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -6819,7 +6240,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 82,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -6839,7 +6260,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 83,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -6855,7 +6276,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 84,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -6875,7 +6296,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 85,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -6891,7 +6312,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 86,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -6911,7 +6332,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 87,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -6927,7 +6348,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 88,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -6947,7 +6368,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 89,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -6963,7 +6384,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 90,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -6983,7 +6404,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 91,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -6999,7 +6420,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 92,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -7019,7 +6440,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 93,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -7035,7 +6456,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 94,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -7055,7 +6476,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 95,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -7071,7 +6492,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 96,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -7086,7 +6507,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 97,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -7106,7 +6527,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 98,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -7122,7 +6543,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 99,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -7142,7 +6563,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 100,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -7157,7 +6578,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 101,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -7173,7 +6594,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 102,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -7189,7 +6610,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 103,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -7209,7 +6630,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 104,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -7229,7 +6650,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 105,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -7244,7 +6665,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 106,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
@@ -11252,6 +10673,66 @@
         "elementSet": "data",
         "elementPath": "START"
       },
+      "VITALCRI": {
+        "type": "array",
+        "valuesList": "sim/nao/naosabe",
+        "items": {
+          "type": "string",
+          "elementKey": "VITALCRI_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "VITALCRI.items",
+          "notUnitOfRetention": true
+        },
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "FU"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VITALCRI",
+        "elementName": "VITALCRI",
+        "elementSet": "data",
+        "elementPath": "VITALCRI",
+        "listChildElementKeys": [
+          "VITALCRI_items"
+        ]
+      },
+      "INFORMADOR": {
+        "type": "array",
+        "valuesList": "inf",
+        "items": {
+          "type": "string",
+          "elementKey": "INFORMADOR_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "INFORMADOR.items",
+          "notUnitOfRetention": true
+        },
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "FU"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "INFORMADOR",
+        "elementName": "INFORMADOR",
+        "elementSet": "data",
+        "elementPath": "INFORMADOR",
+        "listChildElementKeys": [
+          "INFORMADOR_items"
+        ]
+      },
       "datsegui": {
         "prompt_type_name": "adate",
         "type": "string",
@@ -11261,7 +10742,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -11284,7 +10765,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -11302,7 +10783,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 21,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -11320,7 +10801,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 22,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -11348,7 +10829,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 23,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -11361,592 +10842,11 @@
           "dodns_items"
         ]
       },
-      "HOSPALTA1": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "HOSPALTA1_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "HOSPALTA1.items",
-          "notUnitOfRetention": true
-        },
-        "_defn": [
-          {
-            "_row_num": 24,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPALTA1",
-        "elementName": "HOSPALTA1",
-        "elementSet": "data",
-        "elementPath": "HOSPALTA1",
-        "listChildElementKeys": [
-          "HOSPALTA1_items"
-        ]
-      },
-      "HOSPALTA2": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "HOSPALTA2_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "HOSPALTA2.items",
-          "notUnitOfRetention": true
-        },
-        "_defn": [
-          {
-            "_row_num": 25,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPALTA2",
-        "elementName": "HOSPALTA2",
-        "elementSet": "data",
-        "elementPath": "HOSPALTA2",
-        "listChildElementKeys": [
-          "HOSPALTA2_items"
-        ]
-      },
-      "HOSPALTA3": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "HOSPALTA3_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "HOSPALTA3.items",
-          "notUnitOfRetention": true
-        },
-        "_defn": [
-          {
-            "_row_num": 26,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPALTA3",
-        "elementName": "HOSPALTA3",
-        "elementSet": "data",
-        "elementPath": "HOSPALTA3",
-        "listChildElementKeys": [
-          "HOSPALTA3_items"
-        ]
-      },
-      "HOSPCAUSA1": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 27,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCAUSA1",
-        "elementName": "HOSPCAUSA1",
-        "elementSet": "data",
-        "elementPath": "HOSPCAUSA1"
-      },
-      "HOSPCAUSA2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 28,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCAUSA2",
-        "elementName": "HOSPCAUSA2",
-        "elementSet": "data",
-        "elementPath": "HOSPCAUSA2"
-      },
-      "HOSPCAUSA3": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 29,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCAUSA3",
-        "elementName": "HOSPCAUSA3",
-        "elementSet": "data",
-        "elementPath": "HOSPCAUSA3"
-      },
-      "HOSPCODE1": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 30,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCODE1",
-        "elementName": "HOSPCODE1",
-        "elementSet": "data",
-        "elementPath": "HOSPCODE1"
-      },
-      "hospcode1ns": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "hospcode1ns_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "hospcode1ns.items",
-          "isSessionVariable": true,
-          "notUnitOfRetention": true
-        },
-        "_defn": [
-          {
-            "_row_num": 31,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "hospcode1ns",
-        "elementName": "hospcode1ns",
-        "elementSet": "data",
-        "elementPath": "hospcode1ns",
-        "listChildElementKeys": [
-          "hospcode1ns_items"
-        ]
-      },
-      "HOSPCODE2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 32,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCODE2",
-        "elementName": "HOSPCODE2",
-        "elementSet": "data",
-        "elementPath": "HOSPCODE2"
-      },
-      "hospcode2ns": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "hospcode2ns_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "hospcode2ns.items",
-          "isSessionVariable": true,
-          "notUnitOfRetention": true
-        },
-        "_defn": [
-          {
-            "_row_num": 33,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "hospcode2ns",
-        "elementName": "hospcode2ns",
-        "elementSet": "data",
-        "elementPath": "hospcode2ns",
-        "listChildElementKeys": [
-          "hospcode2ns_items"
-        ]
-      },
-      "HOSPCODE3": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 34,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPCODE3",
-        "elementName": "HOSPCODE3",
-        "elementSet": "data",
-        "elementPath": "HOSPCODE3"
-      },
-      "hospcode3ns": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "hospcode3ns_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "hospcode3ns.items",
-          "isSessionVariable": true,
-          "notUnitOfRetention": true
-        },
-        "_defn": [
-          {
-            "_row_num": 35,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "hospcode3ns",
-        "elementName": "hospcode3ns",
-        "elementSet": "data",
-        "elementPath": "hospcode3ns",
-        "listChildElementKeys": [
-          "hospcode3ns_items"
-        ]
-      },
-      "HOSPDATA1": {
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
-        "_defn": [
-          {
-            "_row_num": 36,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDATA1",
-        "elementName": "HOSPDATA1",
-        "elementSet": "data",
-        "elementPath": "HOSPDATA1"
-      },
-      "HOSPDATA2": {
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
-        "_defn": [
-          {
-            "_row_num": 37,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDATA2",
-        "elementName": "HOSPDATA2",
-        "elementSet": "data",
-        "elementPath": "HOSPDATA2"
-      },
-      "HOSPDATA3": {
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
-        "_defn": [
-          {
-            "_row_num": 38,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDATA3",
-        "elementName": "HOSPDATA3",
-        "elementSet": "data",
-        "elementPath": "HOSPDATA3"
-      },
-      "HOSPDIAS1": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 39,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDIAS1",
-        "elementName": "HOSPDIAS1",
-        "elementSet": "data",
-        "elementPath": "HOSPDIAS1"
-      },
-      "HOSPDIAS2": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 40,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDIAS2",
-        "elementName": "HOSPDIAS2",
-        "elementSet": "data",
-        "elementPath": "HOSPDIAS2"
-      },
-      "HOSPDIAS3": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 41,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPDIAS3",
-        "elementName": "HOSPDIAS3",
-        "elementSet": "data",
-        "elementPath": "HOSPDIAS3"
-      },
-      "HOSPI": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 42,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPI",
-        "elementName": "HOSPI",
-        "elementSet": "data",
-        "elementPath": "HOSPI"
-      },
-      "HOSPI2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 43,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPI2",
-        "elementName": "HOSPI2",
-        "elementSet": "data",
-        "elementPath": "HOSPI2"
-      },
-      "HOSPI3": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 44,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPI3",
-        "elementName": "HOSPI3",
-        "elementSet": "data",
-        "elementPath": "HOSPI3"
-      },
-      "HOSPIVEZ": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 45,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "HOSPIVEZ",
-        "elementName": "HOSPIVEZ",
-        "elementSet": "data",
-        "elementPath": "HOSPIVEZ"
-      },
-      "INFORMADOR": {
-        "type": "string",
-        "valuesList": "inf",
-        "_defn": [
-          {
-            "_row_num": 3,
-            "section_name": "FU"
-          },
-          {
-            "_row_num": 46,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "INFORMADOR",
-        "elementName": "INFORMADOR",
-        "elementSet": "data",
-        "elementPath": "INFORMADOR"
-      },
-      "MORNOME": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 47,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "MORNOME",
-        "elementName": "MORNOME",
-        "elementSet": "data",
-        "elementPath": "MORNOME"
-      },
-      "PODEAUT": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 48,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "PODEAUT",
-        "elementName": "PODEAUT",
-        "elementSet": "data",
-        "elementPath": "PODEAUT"
-      },
-      "REG": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 49,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "REG",
-        "elementName": "REG",
-        "elementSet": "data",
-        "elementPath": "REG"
-      },
-      "reghosp1": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 50,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "reghosp1",
-        "elementName": "reghosp1",
-        "elementSet": "data",
-        "elementPath": "reghosp1"
-      },
-      "reghosp2": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 51,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "reghosp2",
-        "elementName": "reghosp2",
-        "elementSet": "data",
-        "elementPath": "reghosp2"
-      },
-      "reghosp3": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 52,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": true,
-        "elementKey": "reghosp3",
-        "elementName": "reghosp3",
-        "elementSet": "data",
-        "elementPath": "reghosp3"
-      },
-      "TABNOME": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 53,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TABNOME",
-        "elementName": "TABNOME",
-        "elementSet": "data",
-        "elementPath": "TABNOME"
-      },
-      "VACHIS": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 54,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VACHIS",
-        "elementName": "VACHIS",
-        "elementSet": "data",
-        "elementPath": "VACHIS"
-      },
-      "VACOUTRO": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 55,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VACOUTRO",
-        "elementName": "VACOUTRO",
-        "elementSet": "data",
-        "elementPath": "VACOUTRO"
-      },
-      "VACTIPO": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "VACTIPO_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "VACTIPO.items",
-          "notUnitOfRetention": true
-        },
-        "_defn": [
-          {
-            "_row_num": 56,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VACTIPO",
-        "elementName": "VACTIPO",
-        "elementSet": "data",
-        "elementPath": "VACTIPO",
-        "listChildElementKeys": [
-          "VACTIPO_items"
-        ]
-      },
-      "VITALCRI": {
-        "type": "string",
-        "valuesList": "sim/nao/naosabe",
-        "_defn": [
-          {
-            "_row_num": 6,
-            "section_name": "FU"
-          },
-          {
-            "_row_num": 57,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VITALCRI",
-        "elementName": "VITALCRI",
-        "elementSet": "data",
-        "elementPath": "VITALCRI"
-      },
       "chamada1": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -11961,7 +10861,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -11975,7 +10875,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -11994,7 +10894,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -12013,7 +10913,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -12027,7 +10927,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -12041,7 +10941,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -12055,7 +10955,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -12069,7 +10969,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -12083,7 +10983,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -12097,7 +10997,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -12111,7 +11011,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -12125,7 +11025,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -12139,7 +11039,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -12153,7 +11053,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -12167,7 +11067,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -12181,7 +11081,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 75,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -12195,7 +11095,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 76,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -12209,7 +11109,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 77,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -12228,7 +11128,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 80,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -12255,7 +11155,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 81,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -12277,7 +11177,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 82,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -12304,7 +11204,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 83,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -12326,7 +11226,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 84,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -12353,7 +11253,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 85,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -12375,7 +11275,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 86,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -12402,7 +11302,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 87,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -12424,7 +11324,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 88,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -12451,7 +11351,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 89,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -12473,7 +11373,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 90,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -12500,7 +11400,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 91,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -12522,7 +11422,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 92,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -12549,7 +11449,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 93,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -12571,7 +11471,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 94,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -12598,7 +11498,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 95,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -12620,7 +11520,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 96,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -12638,7 +11538,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 97,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -12665,7 +11565,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 98,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -12687,7 +11587,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 99,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -12714,7 +11614,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 100,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -12735,7 +11635,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 101,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -12754,7 +11654,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 102,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -12773,7 +11673,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 103,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -12800,7 +11700,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 104,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -12830,7 +11730,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 105,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -12851,7 +11751,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 106,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
@@ -12861,6 +11761,22 @@
         "elementSet": "data",
         "elementPath": "MEDICINOU_Q"
       },
+      "VITALCRI_items": {
+        "type": "string",
+        "elementKey": "VITALCRI_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "VITALCRI.items",
+        "notUnitOfRetention": true
+      },
+      "INFORMADOR_items": {
+        "type": "string",
+        "elementKey": "INFORMADOR_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "INFORMADOR.items",
+        "notUnitOfRetention": true
+      },
       "dodns_items": {
         "type": "string",
         "elementKey": "dodns_items",
@@ -12868,65 +11784,6 @@
         "elementSet": "data",
         "elementPath": "dodns.items",
         "isSessionVariable": true,
-        "notUnitOfRetention": true
-      },
-      "HOSPALTA1_items": {
-        "type": "string",
-        "elementKey": "HOSPALTA1_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "HOSPALTA1.items",
-        "notUnitOfRetention": true
-      },
-      "HOSPALTA2_items": {
-        "type": "string",
-        "elementKey": "HOSPALTA2_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "HOSPALTA2.items",
-        "notUnitOfRetention": true
-      },
-      "HOSPALTA3_items": {
-        "type": "string",
-        "elementKey": "HOSPALTA3_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "HOSPALTA3.items",
-        "notUnitOfRetention": true
-      },
-      "hospcode1ns_items": {
-        "type": "string",
-        "elementKey": "hospcode1ns_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "hospcode1ns.items",
-        "isSessionVariable": true,
-        "notUnitOfRetention": true
-      },
-      "hospcode2ns_items": {
-        "type": "string",
-        "elementKey": "hospcode2ns_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "hospcode2ns.items",
-        "isSessionVariable": true,
-        "notUnitOfRetention": true
-      },
-      "hospcode3ns_items": {
-        "type": "string",
-        "elementKey": "hospcode3ns_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "hospcode3ns.items",
-        "isSessionVariable": true,
-        "notUnitOfRetention": true
-      },
-      "VACTIPO_items": {
-        "type": "string",
-        "elementKey": "VACTIPO_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "VACTIPO.items",
         "notUnitOfRetention": true
       },
       "DIARREIDIA_items": {
