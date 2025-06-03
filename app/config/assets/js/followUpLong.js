@@ -106,13 +106,13 @@ function populateView() {
         } else if (child.FOLLOWUP == 2 & ((child.VITALCRI == null | child.HOSPI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
             child['FU'] = 2;
         } else if (child.FOLLOWUP == 2 & ((child.VITALCRI != null & child.HOSPI != null) | (child.CHAMADA13 != null | child.CHAMADA23 != null | child.CHAMADA33 != null))) {
-            child['FU'] = 9;
+            child['FU'] = 3;
         } else if (child.FOLLOWUP == 3 & ((child.VITALCRI == null | child.HOSPI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
-            child['FU'] = 9;
+            child['FU'] = 3;
         } else if (child.FOLLOWUP == 3 & ((child.VITALCRI != null & child.HOSPI != null) | (child.CHAMADA13 != null | child.CHAMADA23 != null | child.CHAMADA33 != null))) {
-            child['FU'] = 3;
+            child['FU'] = 4;
         } else if (child.FOLLOWUP == 4 & ((child.VITALCRI == null | child.HOSPI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
-            child['FU'] = 3;
+            child['FU'] = 4;
         }
     });
     console.log("CHILDREN - FU sortet:", children);
