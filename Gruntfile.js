@@ -321,6 +321,11 @@ module.exports = function (grunt) {
 
     // Just an alias task--shorthand for doing all the pushings
     grunt.registerTask(
+        'adbpush-no-csv',
+        'Perform all the adbpush tasks',
+        ['eqm-copy-custom', 'adbpull-props', 'remove-folders', 'adbpush-collect', 'adbpush-default-app-no-csv', 'adbpush-props', 'start-survey']);
+
+    grunt.registerTask(
         'adbpush',
         'Perform all the adbpush tasks',
         ['eqm-copy-custom', 'adbpull-props', 'remove-folders', 'adbpush-collect', 'adbpush-default-app', 'adbpush-props', 'start-survey']);
@@ -353,66 +358,158 @@ module.exports = function (grunt) {
             grunt.log.writeln('adb pull ' + src + ' ' + dest);
             grunt.task.run('exec:adbpull:' + src + ':' + dest);
         });
-    grunt.registerTask(
-        'eqm-backup',
-        'Pull the db from the device to backupfolder with specified filename',
-        // usage adbpull-db-backup:FILENAME
-        function(input) {
-            if (!input) {
-                grunt.log.error('No input provided. Usage: adbpull-db-backup:FILENAME');
-                return;
-            }
-            let today = new Date();
-            let dd = String(today.getDate()).padStart(2, '0');
-            let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            let yyyy = today.getFullYear();
-            today = yyyy + mm + dd; 
-            var dbPath = tablesConfig.deviceDbDirectoryPath + '/sqlite.db' ;
-            dbPath = dbPath.replace(tablesConfig.appStr, tablesConfig.appName);
-            var src = dbPath;
-            var dest = tablesConfig.backupDbDir + '/' + today;
-            grunt.log.writeln('adb pull ' + src + ' ' + dest);
-            grunt.task.run('exec:adbpull:' + src + ':' + dest);
-        });
+        grunt.registerTask(
+            'adbpush-db',
+            'Push the db to the device',
+            function(input) {
+                var dbPath = tablesConfig.deviceDbDirectoryPath;
+                dbPath = dbPath.replace(tablesConfig.appStr, tablesConfig.appName);
+                var src;
+                if (input){
+                    src = input;
+                } else {
+                    src = tablesConfig.appDir + '/' + tablesConfig.outputDbDir + '/webDb/sqlite.db';
+                }
+                var dest = dbPath ;
+                grunt.log.writeln('adb push ' + src + ' ' + dest);
+                grunt.task.run('exec:adbpush:' + src + ':' + dest);
+            });  
 
-    grunt.registerTask(
-        'adbpush-db',
-        'Push the db to the device',
-        function(input) {
-            var dbPath = tablesConfig.deviceDbDirectoryPath;
-            dbPath = dbPath.replace(tablesConfig.appStr, tablesConfig.appName);
-            var src;
-            if (input){
-                src = tablesConfig.backupDbDir + '/' + input + '.db';
-            } else {
-                src = tablesConfig.appDir + '/' + tablesConfig.outputDbDir + '/*';
-            }
-            var dest = dbPath ;
-            grunt.log.writeln('adb push ' + src + ' ' + dest);
-            grunt.task.run('exec:adbpush:' + src + ':' + dest);
-        });
+        grunt.registerTask(
+            'eqm-setup',
+            'Interactive setup with menu options',
+            function() {
+                var done = this.async();
+                var readline = require('readline');
+                
+                function showMenu() {
+                    var rl = readline.createInterface({
+                        input: process.stdin,
+                        output: process.stdout
+                    });
         
-    grunt.registerTask(
-        'easysetup',
-        'setup the tablet with cloned database',
-        function(input) {
-            if(input){
-                grunt.task.run('adbpush');
-                // Allow time for unzip
-                grunt.log.writeln('Ensure that survey app completely opens by pressing the button in the middle of the screen');
-                grunt.log.writeln('If it is already unzipping files then just sit back and enjoy the tablet working :) for 15 more seconds');
-                grunt.task.run('wait:15');
-                grunt.task.run('adbpush-db'  + ':' + input)
-            } else {
-                grunt.task.run('adbpush');
-                grunt.log.writeln('Ensure that survey app completely opens by pressing the button in the middle of the screen');
-                grunt.log.writeln('If it is already unzipping files then just sit back and enjoy the tablet working :) for 15 more seconds');
-                grunt.task.run('wait:15');
-                grunt.task.run('adbpush-db')
+                    grunt.log.writeln('');
+                    grunt.log.writeln('=== ODK-X Eqm Setup Menu ===');
+                    grunt.log.writeln('1. Push system scripts (fix for adate): Updates system/survey/js files');
+                    grunt.log.writeln('2. Push app with csv files (first tablet): Uploads config/assets/csv files');
+                    grunt.log.writeln('3. Push app database and scripts (all subsequent tablets): Uploads database (with file selection)');
+                    grunt.log.writeln('4. Exit');
+                    grunt.log.writeln('');
+                    
+                    rl.question('Select option (1-4): ', function(answer) {
+                        rl.close();
+                        handleMenuChoice(answer.trim());
+                    });
+                }
+                
+                function handleMenuChoice(choice) {
+                    switch(choice) {
+                        case '1':
+                            grunt.log.writeln('→ Pushing system scripts...');
+                            grunt.task.run('eqm-push-sysscripts');
+                            done();
+                            break;
+                            
+                        case '2':
+                            grunt.log.writeln('→ Setting up first tablet with CSV...');
+                            // Queue the tasks in sequence
+                            grunt.task.run('eqm-init');
+                            grunt.task.run('eqm-wait-for-first-setup');
+                            done();
+                            break;
+                            
+                        case '3':
+                            grunt.log.writeln('→ Setting up subsequent tablet...');
+                            // Queue the tasks in sequence  
+                            grunt.task.run('eqm-init-no-csv');
+                            grunt.task.run('eqm-wait-for-database-setup');
+                            done();
+                            break;
+                            
+                        case '4':
+                            grunt.log.writeln('→ Exiting...');
+                            done();
+                            break;
+                            
+                        default:
+                            grunt.log.error('Invalid option. Please choose 1-4.');
+                            showMenu(); // Show menu again
+                            break;
+                    }
+                }
+                
+                // Start the menu
+                showMenu();
             }
-
-        }
-    )
+        );
+        
+        // Helper task for first setup workflow
+        grunt.registerTask(
+            'eqm-wait-for-first-setup',
+            'Wait for first setup completion and pull database',
+            function() {
+                var done = this.async();
+                var readline = require('readline');
+                
+                var rl = readline.createInterface({
+                    input: process.stdin,
+                    output: process.stdout
+                });
+                
+                grunt.log.writeln('');
+                grunt.log.writeln('Has the app finished importing the CSV and is ready?');
+                grunt.log.writeln('Get a cup of coffee or something and remember to check that the tables app opens');
+                grunt.log.writeln('Press Enter when ready...');
+                
+                rl.question('Press Enter to continue: ', function() {
+                    rl.close();
+                    grunt.log.writeln('→ Pulling database from device...');
+                    grunt.task.run('killall');
+                    grunt.task.run('adbpull-db');
+                    done();
+                });
+            }
+        );
+        
+        // Helper task for subsequent setup workflow  
+        grunt.registerTask(
+            'eqm-wait-for-database-setup',
+            'Wait for setup completion and push database',
+            function() {
+                var done = this.async();
+                var readline = require('readline');
+                
+                grunt.log.writeln('');
+                grunt.log.writeln('After setup has run make sure the app opens and runs all the setup scripts');
+                grunt.log.writeln('Remember to check that the tables app can open');
+                grunt.log.writeln('Database push options:');
+                grunt.log.writeln('  - Enter filename to push .db');
+                grunt.log.writeln('  - Press Enter for default database from app/output/db/');
+                
+                var rl = readline.createInterface({
+                    input: process.stdin,
+                    output: process.stdout
+                });
+        
+                rl.question('Database filename (or Enter for default): ', function(dbFile) {
+                    rl.close();
+                    
+                    if (dbFile.trim()) {
+                        grunt.log.writeln('→ Pushing database: ' + dbFile.trim());
+                        grunt.task.run('killall');
+                        grunt.task.run('adbpush-db:' + dbFile.trim());
+                    } else {
+                        grunt.log.writeln('→ Pushing default database...');
+                        grunt.task.run('killall');
+                        grunt.task.run('adbpush-db');
+                    }
+                    
+                    grunt.log.writeln('→ Pushing system scripts...');
+                    grunt.task.run('eqm-push-sysscripts');
+                    done();
+                });
+            }
+        );
 
     grunt.registerTask(
         'adbpull-csv',
@@ -762,6 +859,42 @@ module.exports = function (grunt) {
                 '!system/**',
 				'!data/**',
 				'!output/**',
+                '!**/~$*.xlsx');
+
+            // Now push these files to the phone.
+            dirs.forEach(function(fileName) {
+                //  Have to add app back into the file name for the adb push
+                var src = tablesConfig.appDir + '/' + fileName;
+                var dest =
+                    tablesConfig.deviceMount +
+                    '/' +
+                    tablesConfig.appName +
+                    '/' +
+                    fileName;
+                grunt.log.writeln('adb push ' + src + ' ' + dest);
+                grunt.task.run('exec:adbpush:' + src + ':' + dest);
+            });
+        });
+
+    grunt.registerTask(
+        'adbpush-default-app-no-csv',
+        'Push everything in the app directory (except system) to the device',
+        function() {
+            // Do not push any system, data or output files.
+            // The first parameter is an options object where we specify that
+            // we only want files--this is important because otherwise when
+            // we get directory names adb will push everything in the directory
+            // name, effectively pushing everything twice.  We also specify that we
+            // want everything returned to be relative to 'app' by using 'cwd'.
+            var dirs = grunt.file.expand(
+                {filter: 'isFile',
+                 cwd: 'app' },
+				'.nomedia',
+                '**',
+                '!system/**',
+				'!data/**',
+				'!output/**',
+                '!config/assets/csv/**',      // Exclude CSV files
                 '!**/~$*.xlsx');
 
             // Now push these files to the phone.
@@ -1344,6 +1477,19 @@ module.exports = function (grunt) {
         grunt.task.run("exec:adbinstall:./Tablet_Install/OIFilemanager.apk");
         //grunt.task.run('adbpush-collect');
         grunt.task.run('adbpush');        
+    });    
+
+    grunt.registerTask('eqm-init-no-csv',
+    'Initializes a phressh Android tablet',
+    function eqmInit() {
+        grunt.log.writeln("Initializing phressh tablet.")
+        //grunt.task.run("exec:adbshell:am force-stop org.opendatakit.".concat(apps[i]));
+        grunt.task.run("exec:adbinstall:./Tablet_Install/services.apk");
+        grunt.task.run("exec:adbinstall:./Tablet_Install/survey.apk");
+        grunt.task.run("exec:adbinstall:./Tablet_Install/tables.apk");
+        grunt.task.run("exec:adbinstall:./Tablet_Install/OIFilemanager.apk");
+        //grunt.task.run('adbpush-collect');
+        grunt.task.run('adbpush-no-csv');        
     });    
 
     grunt.registerTask(
