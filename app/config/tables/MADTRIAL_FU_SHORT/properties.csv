@@ -28,4 +28,4 @@ Column,VOMITO,displayChoicesList,object,"[{""choice_list_name"":""sim/nao/naosab
 FormType,default,FormType.formType,string,SURVEY
 SurveyUtil,default,SurveyUtil.formId,string,MADTRIAL_FU_SHORT
 Table,default,defaultViewType,string,SPREADSHEET
-Table,default,displayName,object,"{""text"":{""english"":""MADtrial - Follow-up Visit"",""default"":""MADtrial - Seguimento Visita""}}"
+Table,default,displayName,object,"{""text"":{""english"":""MADtrial - AE Follow-up call"",""default"":""MADtrial - Seguimento Chamada EA""}}"

@@ -47,6 +47,7 @@ function loadChildren() {
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_SHORT ON i._id = MADTRIAL_FU_SHORT.IDINC " +
         " WHERE i.INC = 1 " +
+        " AND i.VACSAR = 1" + // 20250723Ane - conditioning on having received first MV as this is only for children enrolled for 2nd dose. 
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " +
         " ORDER BY i.NOMECRI ASC";
     children = [];

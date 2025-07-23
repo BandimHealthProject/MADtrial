@@ -21,8 +21,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrial - Seguimento Visita"
+              "english": "MADtrial - AE Follow-up call",
+              "default": "MADtrial - Seguimento Chamada EA"
             }
           }
         },
@@ -2326,7 +2326,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2360,7 +2360,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2394,7 +2394,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2428,7 +2428,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2462,7 +2462,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2496,7 +2496,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2530,7 +2530,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2564,7 +2564,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2598,7 +2598,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2654,7 +2654,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2725,7 +2725,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -3366,10 +3366,6 @@
         "query_type": "csv",
         "uri": "\"DIAS.csv\"",
         "callback": "_.map(context, function(place){place.data_value = place.DAYS_VALUE;\nplace.display = {title: {text: place.DAYS_NAME} };\nreturn place;\n})",
-        "__EMPTY_2": "dias_csv",
-        "__EMPTY_3": "csv",
-        "__EMPTY_4": "\"DIAS.csv\"",
-        "__EMPTY_5": "_.map(context, function(place){place.data_value = place.DAYS_VALUE;\nplace.display = {title: {text: place.DAYS_NAME} };\nreturn place;\n})",
         "_row_num": 3
       }
     ],
@@ -3838,8 +3834,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrial - Seguimento Visita"
+              "english": "MADtrial - AE Follow-up call",
+              "default": "MADtrial - Seguimento Chamada EA"
             }
           }
         },
@@ -3914,8 +3910,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrial - Seguimento Visita"
+              "english": "MADtrial - AE Follow-up call",
+              "default": "MADtrial - Seguimento Chamada EA"
             }
           }
         },
@@ -3925,8 +3921,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrial - Seguimento Visita"
+              "english": "MADtrial - AE Follow-up call",
+              "default": "MADtrial - Seguimento Chamada EA"
             }
           }
         }
@@ -4464,10 +4460,6 @@
         "query_type": "csv",
         "uri": "\"DIAS.csv\"",
         "callback": "_.map(context, function(place){place.data_value = place.DAYS_VALUE;\nplace.display = {title: {text: place.DAYS_NAME} };\nreturn place;\n})",
-        "__EMPTY_2": "dias_csv",
-        "__EMPTY_3": "csv",
-        "__EMPTY_4": "\"DIAS.csv\"",
-        "__EMPTY_5": "_.map(context, function(place){place.data_value = place.DAYS_VALUE;\nplace.display = {title: {text: place.DAYS_NAME} };\nreturn place;\n})",
         "_row_num": 3
       }
     },
@@ -7417,8 +7409,8 @@
             "display": {
               "title": {
                 "text": {
-                  "english": "MADtrial - Follow-up Visit",
-                  "default": "MADtrial - Seguimento Visita"
+                  "english": "MADtrial - AE Follow-up call",
+                  "default": "MADtrial - Seguimento Chamada EA"
                 }
               }
             },
@@ -8121,7 +8113,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8157,7 +8149,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8193,7 +8185,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8229,7 +8221,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8265,7 +8257,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8301,7 +8293,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8337,7 +8329,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8373,7 +8365,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8409,7 +8401,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8463,7 +8455,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8537,7 +8529,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Inclusão/Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8873,8 +8865,8 @@
             "display": {
               "title": {
                 "text": {
-                  "english": "MADtrial - Follow-up Visit",
-                  "default": "MADtrial - Seguimento Visita"
+                  "english": "MADtrial - AE Follow-up call",
+                  "default": "MADtrial - Seguimento Chamada EA"
                 }
               }
             },
@@ -10796,7 +10788,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":{\"english\":\"MADtrial - Follow-up Visit\",\"default\":\"MADtrial - Seguimento Visita\"}}"
+        "_value": "{\"text\":{\"english\":\"MADtrial - AE Follow-up call\",\"default\":\"MADtrial - Seguimento Chamada EA\"}}"
       }
     ]
   }
