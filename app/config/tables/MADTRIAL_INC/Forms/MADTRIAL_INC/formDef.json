@@ -640,8 +640,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "The child has to be under 5 years and over 15 months",
-              "default": "A criança deve ter entre 15 méses e 5 anos de idade"
+              "english": "The child has to be under 5 years and over 9 months",
+              "default": "A criança deve ter entre 9 méses e 5 anos de idade"
             }
           }
         },
@@ -1559,7 +1559,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || data('SARVAC') != '1' || data('SARVAC2') == '1'",
+        "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') == '1')||data('SARVAC2') == '1'",
         "_row_num": 178
       },
       {
@@ -1733,7 +1733,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('SARVAC') != '1'",
+        "condition": "data('SARVAC') == '1'&& data('SARVAC2')==1",
         "_row_num": 203
       },
       {
@@ -1741,8 +1741,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "The child has not previously received the first measles vaccine",
-              "default": "A criança não recebeu a primeira vacina do sarampo"
+              "english": "The child has previously received both measles vaccines",
+              "default": "A criança recebeu os seus vacinas do sarampo"
             }
           }
         },
@@ -2216,13 +2216,13 @@
         "_row_num": 15
       },
       {
-        "choice_list_name": "ass",
-        "data_value": "1",
+        "choice_list_name": "enf",
+        "data_value": "5",
         "display": {
           "title": {
             "text": {
-              "english": "Fatima",
-              "default": "Fatima"
+              "english": "Justiniano",
+              "default": "Justiniano"
             }
           }
         },
@@ -2240,6 +2240,7 @@
             }
           }
         },
+        "Comment": "removed fatima - ass=1 on 20250723",
         "_row_num": 17
       },
       {
@@ -2269,6 +2270,32 @@
         "_row_num": 19
       },
       {
+        "choice_list_name": "ass",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Josemira",
+              "default": "Josemira"
+            }
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "enf",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Justiniano",
+              "default": "Justiniano"
+            }
+          }
+        },
+        "_row_num": 21
+      },
+      {
         "choice_list_name": "tratament",
         "data_value": "1",
         "display": {
@@ -2279,7 +2306,7 @@
             }
           }
         },
-        "_row_num": 20
+        "_row_num": 22
       },
       {
         "choice_list_name": "tratament",
@@ -2292,7 +2319,7 @@
             }
           }
         },
-        "_row_num": 21
+        "_row_num": 23
       },
       {
         "choice_list_name": "tratament",
@@ -2305,7 +2332,7 @@
             }
           }
         },
-        "_row_num": 22
+        "_row_num": 24
       },
       {
         "choice_list_name": "tratament",
@@ -2318,7 +2345,7 @@
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 25
       },
       {
         "choice_list_name": "tratament",
@@ -2331,7 +2358,7 @@
             }
           }
         },
-        "_row_num": 24
+        "_row_num": 26
       },
       {
         "choice_list_name": "tratament",
@@ -2344,7 +2371,7 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 27
       },
       {
         "choice_list_name": "tratament",
@@ -2358,7 +2385,7 @@
           }
         },
         "Comment": "added 16-02-2022",
-        "_row_num": 26
+        "_row_num": 28
       },
       {
         "choice_list_name": "tratament",
@@ -2372,7 +2399,7 @@
           }
         },
         "Comment": "added 16-02-2023",
-        "_row_num": 27
+        "_row_num": 29
       },
       {
         "choice_list_name": "tratament",
@@ -2386,7 +2413,7 @@
           }
         },
         "Comment": "added 16-02-2024",
-        "_row_num": 28
+        "_row_num": 30
       },
       {
         "choice_list_name": "tratament",
@@ -2400,7 +2427,7 @@
           }
         },
         "Comment": "added 16-02-2025",
-        "_row_num": 29
+        "_row_num": 31
       },
       {
         "choice_list_name": "tratament",
@@ -2414,7 +2441,7 @@
           }
         },
         "Comment": "added 16-02-2026",
-        "_row_num": 30
+        "_row_num": 32
       },
       {
         "choice_list_name": "tratament",
@@ -2428,7 +2455,7 @@
           }
         },
         "Comment": "added 16-02-2027",
-        "_row_num": 31
+        "_row_num": 33
       },
       {
         "choice_list_name": "tratament",
@@ -2442,7 +2469,7 @@
           }
         },
         "Comment": "added 16-02-2028",
-        "_row_num": 32
+        "_row_num": 34
       },
       {
         "choice_list_name": "tratament",
@@ -2456,7 +2483,7 @@
           }
         },
         "Comment": "added 16-02-2029",
-        "_row_num": 33
+        "_row_num": 35
       },
       {
         "choice_list_name": "tratament",
@@ -2470,7 +2497,7 @@
           }
         },
         "Comment": "added 16-02-2030",
-        "_row_num": 34
+        "_row_num": 36
       },
       {
         "choice_list_name": "tratament",
@@ -2484,7 +2511,7 @@
           }
         },
         "Comment": "added 16-02-2031",
-        "_row_num": 35
+        "_row_num": 37
       },
       {
         "choice_list_name": "tratament",
@@ -2498,7 +2525,7 @@
           }
         },
         "Comment": "added 16-02-2032",
-        "_row_num": 36
+        "_row_num": 38
       },
       {
         "choice_list_name": "tratament",
@@ -2512,7 +2539,7 @@
           }
         },
         "Comment": "added 16-02-2033",
-        "_row_num": 37
+        "_row_num": 39
       },
       {
         "choice_list_name": "tratament",
@@ -2525,36 +2552,10 @@
             }
           }
         },
-        "_row_num": 38
-      },
-      {
-        "choice_list_name": "telinf1",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Mother",
-              "default": "Mãe"
-            }
-          }
-        },
-        "_row_num": 39
-      },
-      {
-        "choice_list_name": "telinf1",
-        "data_value": "2",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Father",
-              "default": "Pai"
-            }
-          }
-        },
         "_row_num": 40
       },
       {
-        "choice_list_name": "telinf2",
+        "choice_list_name": "telinf1",
         "data_value": "1",
         "display": {
           "title": {
@@ -2567,7 +2568,7 @@
         "_row_num": 41
       },
       {
-        "choice_list_name": "telinf2",
+        "choice_list_name": "telinf1",
         "data_value": "2",
         "display": {
           "title": {
@@ -2581,6 +2582,32 @@
       },
       {
         "choice_list_name": "telinf2",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Mother",
+              "default": "Mãe"
+            }
+          }
+        },
+        "_row_num": 43
+      },
+      {
+        "choice_list_name": "telinf2",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Father",
+              "default": "Pai"
+            }
+          }
+        },
+        "_row_num": 44
+      },
+      {
+        "choice_list_name": "telinf2",
         "data_value": "3",
         "display": {
           "title": {
@@ -2590,7 +2617,7 @@
             }
           }
         },
-        "_row_num": 43
+        "_row_num": 45
       },
       {
         "choice_list_name": "nsID",
@@ -2603,7 +2630,7 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 46
       },
       {
         "choice_list_name": "nsREGIDC",
@@ -2616,7 +2643,7 @@
             }
           }
         },
-        "_row_num": 45
+        "_row_num": 47
       },
       {
         "choice_list_name": "signature",
@@ -2629,7 +2656,7 @@
             }
           }
         },
-        "_row_num": 46
+        "_row_num": 48
       },
       {
         "choice_list_name": "signature",
@@ -2642,7 +2669,7 @@
             }
           }
         },
-        "_row_num": 47
+        "_row_num": 49
       },
       {
         "choice_list_name": "resp",
@@ -2655,7 +2682,7 @@
             }
           }
         },
-        "_row_num": 48
+        "_row_num": 50
       },
       {
         "choice_list_name": "resp",
@@ -2668,7 +2695,7 @@
             }
           }
         },
-        "_row_num": 49
+        "_row_num": 51
       },
       {
         "choice_list_name": "resp",
@@ -2681,7 +2708,7 @@
             }
           }
         },
-        "_row_num": 50
+        "_row_num": 52
       },
       {
         "choice_list_name": "resp",
@@ -2694,7 +2721,7 @@
             }
           }
         },
-        "_row_num": 51
+        "_row_num": 53
       },
       {
         "choice_list_name": "sim",
@@ -2707,7 +2734,7 @@
             }
           }
         },
-        "_row_num": 52
+        "_row_num": 54
       }
     ],
     "queries": [
@@ -3568,23 +3595,36 @@
             }
           },
           "_row_num": 15
-        }
-      ],
-      "ass": [
+        },
         {
-          "choice_list_name": "ass",
-          "data_value": "1",
+          "choice_list_name": "enf",
+          "data_value": "5",
           "display": {
             "title": {
               "text": {
-                "english": "Fatima",
-                "default": "Fatima"
+                "english": "Justiniano",
+                "default": "Justiniano"
               }
             }
           },
           "Comment": "removed Suzete (ass=11) on 19-01-2022",
           "_row_num": 16
         },
+        {
+          "choice_list_name": "enf",
+          "data_value": "6",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Justiniano",
+                "default": "Justiniano"
+              }
+            }
+          },
+          "_row_num": 21
+        }
+      ],
+      "ass": [
         {
           "choice_list_name": "ass",
           "data_value": "2",
@@ -3596,6 +3636,7 @@
               }
             }
           },
+          "Comment": "removed fatima - ass=1 on 20250723",
           "_row_num": 17
         },
         {
@@ -3623,6 +3664,19 @@
             }
           },
           "_row_num": 19
+        },
+        {
+          "choice_list_name": "ass",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Josemira",
+                "default": "Josemira"
+              }
+            }
+          },
+          "_row_num": 20
         }
       ],
       "tratament": [
@@ -3637,7 +3691,7 @@
               }
             }
           },
-          "_row_num": 20
+          "_row_num": 22
         },
         {
           "choice_list_name": "tratament",
@@ -3650,7 +3704,7 @@
               }
             }
           },
-          "_row_num": 21
+          "_row_num": 23
         },
         {
           "choice_list_name": "tratament",
@@ -3663,7 +3717,7 @@
               }
             }
           },
-          "_row_num": 22
+          "_row_num": 24
         },
         {
           "choice_list_name": "tratament",
@@ -3676,7 +3730,7 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 25
         },
         {
           "choice_list_name": "tratament",
@@ -3689,7 +3743,7 @@
               }
             }
           },
-          "_row_num": 24
+          "_row_num": 26
         },
         {
           "choice_list_name": "tratament",
@@ -3702,7 +3756,7 @@
               }
             }
           },
-          "_row_num": 25
+          "_row_num": 27
         },
         {
           "choice_list_name": "tratament",
@@ -3716,7 +3770,7 @@
             }
           },
           "Comment": "added 16-02-2022",
-          "_row_num": 26
+          "_row_num": 28
         },
         {
           "choice_list_name": "tratament",
@@ -3730,7 +3784,7 @@
             }
           },
           "Comment": "added 16-02-2023",
-          "_row_num": 27
+          "_row_num": 29
         },
         {
           "choice_list_name": "tratament",
@@ -3744,7 +3798,7 @@
             }
           },
           "Comment": "added 16-02-2024",
-          "_row_num": 28
+          "_row_num": 30
         },
         {
           "choice_list_name": "tratament",
@@ -3758,7 +3812,7 @@
             }
           },
           "Comment": "added 16-02-2025",
-          "_row_num": 29
+          "_row_num": 31
         },
         {
           "choice_list_name": "tratament",
@@ -3772,7 +3826,7 @@
             }
           },
           "Comment": "added 16-02-2026",
-          "_row_num": 30
+          "_row_num": 32
         },
         {
           "choice_list_name": "tratament",
@@ -3786,7 +3840,7 @@
             }
           },
           "Comment": "added 16-02-2027",
-          "_row_num": 31
+          "_row_num": 33
         },
         {
           "choice_list_name": "tratament",
@@ -3800,7 +3854,7 @@
             }
           },
           "Comment": "added 16-02-2028",
-          "_row_num": 32
+          "_row_num": 34
         },
         {
           "choice_list_name": "tratament",
@@ -3814,7 +3868,7 @@
             }
           },
           "Comment": "added 16-02-2029",
-          "_row_num": 33
+          "_row_num": 35
         },
         {
           "choice_list_name": "tratament",
@@ -3828,7 +3882,7 @@
             }
           },
           "Comment": "added 16-02-2030",
-          "_row_num": 34
+          "_row_num": 36
         },
         {
           "choice_list_name": "tratament",
@@ -3842,7 +3896,7 @@
             }
           },
           "Comment": "added 16-02-2031",
-          "_row_num": 35
+          "_row_num": 37
         },
         {
           "choice_list_name": "tratament",
@@ -3856,7 +3910,7 @@
             }
           },
           "Comment": "added 16-02-2032",
-          "_row_num": 36
+          "_row_num": 38
         },
         {
           "choice_list_name": "tratament",
@@ -3870,7 +3924,7 @@
             }
           },
           "Comment": "added 16-02-2033",
-          "_row_num": 37
+          "_row_num": 39
         },
         {
           "choice_list_name": "tratament",
@@ -3883,7 +3937,7 @@
               }
             }
           },
-          "_row_num": 38
+          "_row_num": 40
         }
       ],
       "telinf1": [
@@ -3898,7 +3952,7 @@
               }
             }
           },
-          "_row_num": 39
+          "_row_num": 41
         },
         {
           "choice_list_name": "telinf1",
@@ -3911,7 +3965,7 @@
               }
             }
           },
-          "_row_num": 40
+          "_row_num": 42
         }
       ],
       "telinf2": [
@@ -3926,7 +3980,7 @@
               }
             }
           },
-          "_row_num": 41
+          "_row_num": 43
         },
         {
           "choice_list_name": "telinf2",
@@ -3939,7 +3993,7 @@
               }
             }
           },
-          "_row_num": 42
+          "_row_num": 44
         },
         {
           "choice_list_name": "telinf2",
@@ -3952,7 +4006,7 @@
               }
             }
           },
-          "_row_num": 43
+          "_row_num": 45
         }
       ],
       "nsID": [
@@ -3967,7 +4021,7 @@
               }
             }
           },
-          "_row_num": 44
+          "_row_num": 46
         }
       ],
       "nsREGIDC": [
@@ -3982,7 +4036,7 @@
               }
             }
           },
-          "_row_num": 45
+          "_row_num": 47
         }
       ],
       "signature": [
@@ -3997,7 +4051,7 @@
               }
             }
           },
-          "_row_num": 46
+          "_row_num": 48
         },
         {
           "choice_list_name": "signature",
@@ -4010,7 +4064,7 @@
               }
             }
           },
-          "_row_num": 47
+          "_row_num": 49
         }
       ],
       "resp": [
@@ -4025,7 +4079,7 @@
               }
             }
           },
-          "_row_num": 48
+          "_row_num": 50
         },
         {
           "choice_list_name": "resp",
@@ -4038,7 +4092,7 @@
               }
             }
           },
-          "_row_num": 49
+          "_row_num": 51
         },
         {
           "choice_list_name": "resp",
@@ -4051,7 +4105,7 @@
               }
             }
           },
-          "_row_num": 50
+          "_row_num": 52
         },
         {
           "choice_list_name": "resp",
@@ -4064,7 +4118,7 @@
               }
             }
           },
-          "_row_num": 51
+          "_row_num": 53
         }
       ],
       "sim": [
@@ -4079,7 +4133,7 @@
               }
             }
           },
-          "_row_num": 52
+          "_row_num": 54
         }
       ]
     },
@@ -6016,8 +6070,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "The child has to be under 5 years and over 15 months",
-                  "default": "A criança deve ter entre 15 méses e 5 anos de idade"
+                  "english": "The child has to be under 5 years and over 9 months",
+                  "default": "A criança deve ter entre 9 méses e 5 anos de idade"
                 }
               }
             },
@@ -6988,8 +7042,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "The child has not previously received the first measles vaccine",
-                  "default": "A criança não recebeu a primeira vacina do sarampo"
+                  "english": "The child has previously received both measles vaccines",
+                  "default": "A criança recebeu os seus vacinas do sarampo"
                 }
               }
             },
@@ -7569,7 +7623,7 @@
           },
           {
             "clause": "if",
-            "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || data('SARVAC') != '1' || data('SARVAC2') == '1'",
+            "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') == '1')||data('SARVAC2') == '1'",
             "_row_num": 178,
             "__rowNum__": 177,
             "_token_type": "goto_label",
@@ -7594,7 +7648,7 @@
               "__rowNum__": 208,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(66);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(68);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(69);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(70);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC') != '1') {\nactivePromptIndicies.push(74);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(75);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(66);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(68);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(69);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(70);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC') == '1'&& data('SARVAC2')==1) {\nactivePromptIndicies.push(74);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(75);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 26
           },
           {
@@ -9810,7 +9864,7 @@
         "_aspect": "ASSISTEN",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Fatima\",\"default\":\"Fatima\"}}},\"Comment\":\"removed Suzete (ass=11) on 19-01-2022\",\"_row_num\":16},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":17},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":18},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":19}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comment\":\"removed fatima - ass=1 on 20250723\",\"_row_num\":17},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":18},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":19},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Josemira\",\"default\":\"Josemira\"}}},\"_row_num\":20}]"
       },
       {
         "_partition": "Column",
@@ -9831,7 +9885,7 @@
         "_aspect": "CONSENTTIPO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"signature\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Signature\",\"default\":\"Assinatura\"}}},\"_row_num\":46},{\"choice_list_name\":\"signature\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fingerprint\",\"default\":\"Impressão digital\"}}},\"_row_num\":47}]"
+        "_value": "[{\"choice_list_name\":\"signature\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Signature\",\"default\":\"Assinatura\"}}},\"_row_num\":48},{\"choice_list_name\":\"signature\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fingerprint\",\"default\":\"Impressão digital\"}}},\"_row_num\":49}]"
       },
       {
         "_partition": "Column",
@@ -9859,7 +9913,7 @@
         "_aspect": "ENFERMEI",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"enf\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comment\":\"removed Suzete (enf=1) on 19-01-2022\",\"_row_num\":13},{\"choice_list_name\":\"enf\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":14},{\"choice_list_name\":\"enf\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":15}]"
+        "_value": "[{\"choice_list_name\":\"enf\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comment\":\"removed Suzete (enf=1) on 19-01-2022\",\"_row_num\":13},{\"choice_list_name\":\"enf\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":14},{\"choice_list_name\":\"enf\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":15},{\"choice_list_name\":\"enf\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Justiniano\",\"default\":\"Justiniano\"}}},\"Comment\":\"removed Suzete (ass=11) on 19-01-2022\",\"_row_num\":16},{\"choice_list_name\":\"enf\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Justiniano\",\"default\":\"Justiniano\"}}},\"_row_num\":21}]"
       },
       {
         "_partition": "Column",
@@ -9908,7 +9962,7 @@
         "_aspect": "RESP",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"resp\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":48},{\"choice_list_name\":\"resp\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":49},{\"choice_list_name\":\"resp\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Sibling\",\"default\":\"Irmã(o)\"}}},\"_row_num\":50},{\"choice_list_name\":\"resp\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Mothers mother\",\"default\":\"Avó\"}}},\"_row_num\":51}]"
+        "_value": "[{\"choice_list_name\":\"resp\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":50},{\"choice_list_name\":\"resp\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":51},{\"choice_list_name\":\"resp\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Sibling\",\"default\":\"Irmã(o)\"}}},\"_row_num\":52},{\"choice_list_name\":\"resp\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Mothers mother\",\"default\":\"Avó\"}}},\"_row_num\":53}]"
       },
       {
         "_partition": "Column",
@@ -9936,28 +9990,28 @@
         "_aspect": "TELEINF1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":39},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":40}]"
+        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":41},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":42}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":41},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":42},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":43}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":43},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":44},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":45}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":41},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":42},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":43}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":43},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":44},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":45}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TESTEMUNHO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":52}]"
+        "_value": "[{\"choice_list_name\":\"sim\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":54}]"
       },
       {
         "_partition": "Column",
@@ -9985,14 +10039,14 @@
         "_aspect": "TRATQUAL_A",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":20},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":21},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro fisiologico\",\"default\":\"Soro fisiologico\"}}},\"Comment\":\"added 16-02-2022\",\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Vitamina C\",\"default\":\"Vitamina C\"}}},\"Comment\":\"added 16-02-2023\",\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"SRO\",\"default\":\"SRO\"}}},\"Comment\":\"added 16-02-2024\",\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Sulfate de Zinco\",\"default\":\"Sulfate de Zinco\"}}},\"Comment\":\"added 16-02-2025\",\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Azitomicina\",\"default\":\"Azitomicina\"}}},\"Comment\":\"added 16-02-2026\",\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Brufen\",\"default\":\"Brufen\"}}},\"Comment\":\"added 16-02-2027\",\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Albendazol\",\"default\":\"Albendazol\"}}},\"Comment\":\"added 16-02-2028\",\"_row_num\":32},{\"choice_list_name\":\"tratament\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Mebendazol\",\"default\":\"Mebendazol\"}}},\"Comment\":\"added 16-02-2029\",\"_row_num\":33},{\"choice_list_name\":\"tratament\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Metroniazol\",\"default\":\"Metroniazol\"}}},\"Comment\":\"added 16-02-2030\",\"_row_num\":34},{\"choice_list_name\":\"tratament\",\"data_value\":\"16\",\"display\":{\"title\":{\"text\":{\"english\":\"Nistatina\",\"default\":\"Nistatina\"}}},\"Comment\":\"added 16-02-2031\",\"_row_num\":35},{\"choice_list_name\":\"tratament\",\"data_value\":\"17\",\"display\":{\"title\":{\"text\":{\"english\":\"Augmentin\",\"default\":\"Augmentin\"}}},\"Comment\":\"added 16-02-2032\",\"_row_num\":36},{\"choice_list_name\":\"tratament\",\"data_value\":\"18\",\"display\":{\"title\":{\"text\":{\"english\":\"Erytromecina\",\"default\":\"Erytromecina\"}}},\"Comment\":\"added 16-02-2033\",\"_row_num\":37},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":38}]"
+        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro fisiologico\",\"default\":\"Soro fisiologico\"}}},\"Comment\":\"added 16-02-2022\",\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Vitamina C\",\"default\":\"Vitamina C\"}}},\"Comment\":\"added 16-02-2023\",\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"SRO\",\"default\":\"SRO\"}}},\"Comment\":\"added 16-02-2024\",\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Sulfate de Zinco\",\"default\":\"Sulfate de Zinco\"}}},\"Comment\":\"added 16-02-2025\",\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Azitomicina\",\"default\":\"Azitomicina\"}}},\"Comment\":\"added 16-02-2026\",\"_row_num\":32},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Brufen\",\"default\":\"Brufen\"}}},\"Comment\":\"added 16-02-2027\",\"_row_num\":33},{\"choice_list_name\":\"tratament\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Albendazol\",\"default\":\"Albendazol\"}}},\"Comment\":\"added 16-02-2028\",\"_row_num\":34},{\"choice_list_name\":\"tratament\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Mebendazol\",\"default\":\"Mebendazol\"}}},\"Comment\":\"added 16-02-2029\",\"_row_num\":35},{\"choice_list_name\":\"tratament\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Metroniazol\",\"default\":\"Metroniazol\"}}},\"Comment\":\"added 16-02-2030\",\"_row_num\":36},{\"choice_list_name\":\"tratament\",\"data_value\":\"16\",\"display\":{\"title\":{\"text\":{\"english\":\"Nistatina\",\"default\":\"Nistatina\"}}},\"Comment\":\"added 16-02-2031\",\"_row_num\":37},{\"choice_list_name\":\"tratament\",\"data_value\":\"17\",\"display\":{\"title\":{\"text\":{\"english\":\"Augmentin\",\"default\":\"Augmentin\"}}},\"Comment\":\"added 16-02-2032\",\"_row_num\":38},{\"choice_list_name\":\"tratament\",\"data_value\":\"18\",\"display\":{\"title\":{\"text\":{\"english\":\"Erytromecina\",\"default\":\"Erytromecina\"}}},\"Comment\":\"added 16-02-2033\",\"_row_num\":39},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":40}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TRATQUAL_R",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":20},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":21},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro fisiologico\",\"default\":\"Soro fisiologico\"}}},\"Comment\":\"added 16-02-2022\",\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Vitamina C\",\"default\":\"Vitamina C\"}}},\"Comment\":\"added 16-02-2023\",\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"SRO\",\"default\":\"SRO\"}}},\"Comment\":\"added 16-02-2024\",\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Sulfate de Zinco\",\"default\":\"Sulfate de Zinco\"}}},\"Comment\":\"added 16-02-2025\",\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Azitomicina\",\"default\":\"Azitomicina\"}}},\"Comment\":\"added 16-02-2026\",\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Brufen\",\"default\":\"Brufen\"}}},\"Comment\":\"added 16-02-2027\",\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Albendazol\",\"default\":\"Albendazol\"}}},\"Comment\":\"added 16-02-2028\",\"_row_num\":32},{\"choice_list_name\":\"tratament\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Mebendazol\",\"default\":\"Mebendazol\"}}},\"Comment\":\"added 16-02-2029\",\"_row_num\":33},{\"choice_list_name\":\"tratament\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Metroniazol\",\"default\":\"Metroniazol\"}}},\"Comment\":\"added 16-02-2030\",\"_row_num\":34},{\"choice_list_name\":\"tratament\",\"data_value\":\"16\",\"display\":{\"title\":{\"text\":{\"english\":\"Nistatina\",\"default\":\"Nistatina\"}}},\"Comment\":\"added 16-02-2031\",\"_row_num\":35},{\"choice_list_name\":\"tratament\",\"data_value\":\"17\",\"display\":{\"title\":{\"text\":{\"english\":\"Augmentin\",\"default\":\"Augmentin\"}}},\"Comment\":\"added 16-02-2032\",\"_row_num\":36},{\"choice_list_name\":\"tratament\",\"data_value\":\"18\",\"display\":{\"title\":{\"text\":{\"english\":\"Erytromecina\",\"default\":\"Erytromecina\"}}},\"Comment\":\"added 16-02-2033\",\"_row_num\":37},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":38}]"
+        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro fisiologico\",\"default\":\"Soro fisiologico\"}}},\"Comment\":\"added 16-02-2022\",\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Vitamina C\",\"default\":\"Vitamina C\"}}},\"Comment\":\"added 16-02-2023\",\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"SRO\",\"default\":\"SRO\"}}},\"Comment\":\"added 16-02-2024\",\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Sulfate de Zinco\",\"default\":\"Sulfate de Zinco\"}}},\"Comment\":\"added 16-02-2025\",\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Azitomicina\",\"default\":\"Azitomicina\"}}},\"Comment\":\"added 16-02-2026\",\"_row_num\":32},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Brufen\",\"default\":\"Brufen\"}}},\"Comment\":\"added 16-02-2027\",\"_row_num\":33},{\"choice_list_name\":\"tratament\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Albendazol\",\"default\":\"Albendazol\"}}},\"Comment\":\"added 16-02-2028\",\"_row_num\":34},{\"choice_list_name\":\"tratament\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Mebendazol\",\"default\":\"Mebendazol\"}}},\"Comment\":\"added 16-02-2029\",\"_row_num\":35},{\"choice_list_name\":\"tratament\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Metroniazol\",\"default\":\"Metroniazol\"}}},\"Comment\":\"added 16-02-2030\",\"_row_num\":36},{\"choice_list_name\":\"tratament\",\"data_value\":\"16\",\"display\":{\"title\":{\"text\":{\"english\":\"Nistatina\",\"default\":\"Nistatina\"}}},\"Comment\":\"added 16-02-2031\",\"_row_num\":37},{\"choice_list_name\":\"tratament\",\"data_value\":\"17\",\"display\":{\"title\":{\"text\":{\"english\":\"Augmentin\",\"default\":\"Augmentin\"}}},\"Comment\":\"added 16-02-2032\",\"_row_num\":38},{\"choice_list_name\":\"tratament\",\"data_value\":\"18\",\"display\":{\"title\":{\"text\":{\"english\":\"Erytromecina\",\"default\":\"Erytromecina\"}}},\"Comment\":\"added 16-02-2033\",\"_row_num\":39},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":40}]"
       },
       {
         "_partition": "Column",

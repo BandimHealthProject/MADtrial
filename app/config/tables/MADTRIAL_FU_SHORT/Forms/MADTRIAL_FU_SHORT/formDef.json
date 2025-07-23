@@ -2326,7 +2326,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2340,35 +2340,11 @@
           "prompt": {
             "text": {
               "english": "Has the child had diarrhoea?",
-              "default": "A criança teve diarréia?"
+              "default": "A criança teve diarréia durante ultimo semana?"
             }
           }
         },
         "_row_num": 25
-      },
-      {
-        "clause": "if",
-        "condition": "data('DIARREIA')=='1'",
-        "_row_num": 27
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "DIARREIDIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 29
-      },
-      {
-        "clause": "end if",
-        "_row_num": 30
       },
       {
         "clause": "end screen",
@@ -2384,7 +2360,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2398,35 +2374,11 @@
           "prompt": {
             "text": {
               "english": "Has the child been vomiting?",
-              "default": "A criança vomitou?"
+              "default": "A criança vomitou  durante ultimo semana?"
             }
           }
         },
         "_row_num": 34
-      },
-      {
-        "clause": "if",
-        "condition": "data('VOMITO')=='1'",
-        "_row_num": 35
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "VOMITODIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 36
-      },
-      {
-        "clause": "end if",
-        "_row_num": 37
       },
       {
         "clause": "end screen",
@@ -2442,7 +2394,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2456,35 +2408,11 @@
           "prompt": {
             "text": {
               "english": "Has the child been coughing?",
-              "default": "A criança teve tosse?"
+              "default": "A criança teve tosse  durante ultimo semana?"
             }
           }
         },
         "_row_num": 41
-      },
-      {
-        "clause": "if",
-        "condition": "data('TOSSE')=='1'",
-        "_row_num": 42
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "TOSSEDIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 43
-      },
-      {
-        "clause": "end if",
-        "_row_num": 44
       },
       {
         "clause": "end screen",
@@ -2500,7 +2428,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2514,35 +2442,11 @@
           "prompt": {
             "text": {
               "english": "Does the child have a cold?",
-              "default": "A criança está com constipação?"
+              "default": "A criança está com constipação  durante ultimo semana?"
             }
           }
         },
         "_row_num": 48
-      },
-      {
-        "clause": "if",
-        "condition": "data('CONSTIP')=='1'",
-        "_row_num": 49
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "CONSTIPDIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 50
-      },
-      {
-        "clause": "end if",
-        "_row_num": 51
       },
       {
         "clause": "end screen",
@@ -2558,7 +2462,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2572,35 +2476,11 @@
           "prompt": {
             "text": {
               "english": "Has the child lost ist appetite?",
-              "default": "A criança perdeu o seu apetite?"
+              "default": "A criança perdeu o seu apetite durante ultimo semana?"
             }
           }
         },
         "_row_num": 55
-      },
-      {
-        "clause": "if",
-        "condition": "data('PERAPPE')=='1'",
-        "_row_num": 56
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "PERAPPEDIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 57
-      },
-      {
-        "clause": "end if",
-        "_row_num": 58
       },
       {
         "clause": "end screen",
@@ -2616,7 +2496,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2630,35 +2510,11 @@
           "prompt": {
             "text": {
               "english": "Has the child cried more than habitual?",
-              "default": "A criança chorou mais do que o habitual?"
+              "default": "A criança chorou mais do que o habitual durante ultimo semana?"
             }
           }
         },
         "_row_num": 62
-      },
-      {
-        "clause": "if",
-        "condition": "data('CHOROU')=='1'",
-        "_row_num": 63
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "CHOROUDIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 64
-      },
-      {
-        "clause": "end if",
-        "_row_num": 65
       },
       {
         "clause": "end screen",
@@ -2674,7 +2530,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2688,35 +2544,11 @@
           "prompt": {
             "text": {
               "english": "Has the child had fever?",
-              "default": "A criança teve febre?"
+              "default": "A criança teve febre  durante ultimo semana?"
             }
           }
         },
         "_row_num": 69
-      },
-      {
-        "clause": "if",
-        "condition": "data('FEBRE')=='1'",
-        "_row_num": 70
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "FEBREDIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 71
-      },
-      {
-        "clause": "end if",
-        "_row_num": 72
       },
       {
         "clause": "end screen",
@@ -2732,7 +2564,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2746,35 +2578,11 @@
           "prompt": {
             "text": {
               "english": "Has the child had convulsions?",
-              "default": "A criança teve convulsões (desmaio)?"
+              "default": "A criança teve convulsões (desmaio) durante ultimo semana?"
             }
           }
         },
         "_row_num": 76
-      },
-      {
-        "clause": "if",
-        "condition": "data('CONVULSAO')=='1'",
-        "_row_num": 77
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "CONVULSAODIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 78
-      },
-      {
-        "clause": "end if",
-        "_row_num": 79
       },
       {
         "clause": "end screen",
@@ -2790,7 +2598,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2804,7 +2612,7 @@
           "prompt": {
             "text": {
               "english": "Has the child had other symptoms?",
-              "default": "A criança teve outras sintomas?"
+              "default": "A criança teve outras sintomas durante ultimo semana?"
             }
           }
         },
@@ -2829,21 +2637,6 @@
         "_row_num": 85
       },
       {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "OUTROSIMPDIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
-        "choice_filter": "choice_item.INTERVAL == data('interval')",
-        "_row_num": 86
-      },
-      {
         "clause": "end if",
         "_row_num": 87
       },
@@ -2861,7 +2654,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2915,20 +2708,6 @@
         "_row_num": 94
       },
       {
-        "type": "select_one",
-        "values_list": "sim/nao",
-        "name": "CONSDOC",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Can the mother show any documentation?",
-              "default": "A mãe pode mostrar alguma documentação?"
-            }
-          }
-        },
-        "_row_num": 95
-      },
-      {
         "clause": "end if",
         "_row_num": 96
       },
@@ -2946,7 +2725,7 @@
           "prompt": {
             "text": {
               "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-              "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+              "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
             }
           }
         },
@@ -2960,7 +2739,7 @@
           "prompt": {
             "text": {
               "english": "Has the child received medicine?",
-              "default": "A criança recebeu medicamentos?"
+              "default": "A criança recebeu medicamentos durante ultimo semana?"
             }
           }
         },
@@ -2972,17 +2751,6 @@
         "_row_num": 101
       },
       {
-        "type": "select_multiple",
-        "values_list": "dias_csv",
-        "name": "MEDICINDIA",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "On which day?",
-              "default": "Em qual dia?"
-            }
-          }
-        },
         "choice_filter": "choice_item.INTERVAL == data('interval')",
         "_row_num": 102
       },
@@ -3117,8 +2885,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Jailson",
-              "default": "Jailson"
+              "english": "Augusto da Costa",
+              "default": "Augusto da Costa"
             }
           }
         },
@@ -3130,25 +2898,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Laerte",
-              "default": "Laerte"
+              "english": "Josemira",
+              "default": "Josemira"
             }
           }
         },
         "_row_num": 9
-      },
-      {
-        "choice_list_name": "ass",
-        "data_value": "10",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Igualdino",
-              "default": "Igualdino"
-            }
-          }
-        },
-        "_row_num": 10
       },
       {
         "choice_list_name": "ass",
@@ -3161,20 +2916,7 @@
             }
           }
         },
-        "_row_num": 11
-      },
-      {
-        "choice_list_name": "ass",
-        "data_value": "5",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Armando",
-              "default": "Armando"
-            }
-          }
-        },
-        "_row_num": 12
+        "_row_num": 10
       },
       {
         "choice_list_name": "tratament",
@@ -3624,6 +3366,10 @@
         "query_type": "csv",
         "uri": "\"DIAS.csv\"",
         "callback": "_.map(context, function(place){place.data_value = place.DAYS_VALUE;\nplace.display = {title: {text: place.DAYS_NAME} };\nreturn place;\n})",
+        "__EMPTY_2": "dias_csv",
+        "__EMPTY_3": "csv",
+        "__EMPTY_4": "\"DIAS.csv\"",
+        "__EMPTY_5": "_.map(context, function(place){place.data_value = place.DAYS_VALUE;\nplace.display = {title: {text: place.DAYS_NAME} };\nreturn place;\n})",
         "_row_num": 3
       }
     ],
@@ -4277,8 +4023,8 @@
           "display": {
             "title": {
               "text": {
-                "english": "Jailson",
-                "default": "Jailson"
+                "english": "Augusto da Costa",
+                "default": "Augusto da Costa"
               }
             }
           },
@@ -4290,25 +4036,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Laerte",
-                "default": "Laerte"
+                "english": "Josemira",
+                "default": "Josemira"
               }
             }
           },
           "_row_num": 9
-        },
-        {
-          "choice_list_name": "ass",
-          "data_value": "10",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Igualdino",
-                "default": "Igualdino"
-              }
-            }
-          },
-          "_row_num": 10
         },
         {
           "choice_list_name": "ass",
@@ -4321,20 +4054,7 @@
               }
             }
           },
-          "_row_num": 11
-        },
-        {
-          "choice_list_name": "ass",
-          "data_value": "5",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Armando",
-                "default": "Armando"
-              }
-            }
-          },
-          "_row_num": 12
+          "_row_num": 10
         }
       ],
       "tratament": [
@@ -4744,6 +4464,10 @@
         "query_type": "csv",
         "uri": "\"DIAS.csv\"",
         "callback": "_.map(context, function(place){place.data_value = place.DAYS_VALUE;\nplace.display = {title: {text: place.DAYS_NAME} };\nreturn place;\n})",
+        "__EMPTY_2": "dias_csv",
+        "__EMPTY_3": "csv",
+        "__EMPTY_4": "\"DIAS.csv\"",
+        "__EMPTY_5": "_.map(context, function(place){place.data_value = place.DAYS_VALUE;\nplace.display = {title: {text: place.DAYS_NAME} };\nreturn place;\n})",
         "_row_num": 3
       }
     },
@@ -5354,12 +5078,7 @@
           "type": "string",
           "elementKey": "DIARREIDIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 29,
-            "section_name": "FU"
-          },
           {
             "_row_num": 42,
             "section_name": "model"
@@ -5390,12 +5109,7 @@
           "type": "string",
           "elementKey": "VOMITODIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 36,
-            "section_name": "FU"
-          },
           {
             "_row_num": 44,
             "section_name": "model"
@@ -5426,12 +5140,7 @@
           "type": "string",
           "elementKey": "TOSSEDIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 43,
-            "section_name": "FU"
-          },
           {
             "_row_num": 46,
             "section_name": "model"
@@ -5462,12 +5171,7 @@
           "type": "string",
           "elementKey": "CONSTIPDIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 50,
-            "section_name": "FU"
-          },
           {
             "_row_num": 48,
             "section_name": "model"
@@ -5498,12 +5202,7 @@
           "type": "string",
           "elementKey": "PERAPPEDIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 57,
-            "section_name": "FU"
-          },
           {
             "_row_num": 50,
             "section_name": "model"
@@ -5534,12 +5233,7 @@
           "type": "string",
           "elementKey": "CHOROUDIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 64,
-            "section_name": "FU"
-          },
           {
             "_row_num": 52,
             "section_name": "model"
@@ -5570,12 +5264,7 @@
           "type": "string",
           "elementKey": "FEBREDIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 71,
-            "section_name": "FU"
-          },
           {
             "_row_num": 54,
             "section_name": "model"
@@ -5606,12 +5295,7 @@
           "type": "string",
           "elementKey": "CONVULSAODIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 78,
-            "section_name": "FU"
-          },
           {
             "_row_num": 56,
             "section_name": "model"
@@ -5657,12 +5341,7 @@
           "type": "string",
           "elementKey": "OUTROSIMPDIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 86,
-            "section_name": "FU"
-          },
           {
             "_row_num": 59,
             "section_name": "model"
@@ -5724,12 +5403,7 @@
       },
       "CONSDOC": {
         "type": "string",
-        "valuesList": "sim/nao",
         "_defn": [
-          {
-            "_row_num": 95,
-            "section_name": "FU"
-          },
           {
             "_row_num": 63,
             "section_name": "model"
@@ -5760,12 +5434,7 @@
           "type": "string",
           "elementKey": "MEDICINDIA_items"
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 102,
-            "section_name": "FU"
-          },
           {
             "_row_num": 65,
             "section_name": "model"
@@ -8452,7 +8121,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8471,7 +8140,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child had diarrhoea?",
-                  "default": "A criança teve diarréia?"
+                  "default": "A criança teve diarréia durante ultimo semana?"
                 }
               }
             },
@@ -8483,32 +8152,12 @@
             "promptIdx": 7
           },
           {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "DIARREIDIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 29,
-            "__rowNum__": 28,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen23",
-            "promptIdx": 8
-          },
-          {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8517,7 +8166,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen32",
-            "promptIdx": 9
+            "promptIdx": 8
           },
           {
             "type": "select_one",
@@ -8527,7 +8176,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child been vomiting?",
-                  "default": "A criança vomitou?"
+                  "default": "A criança vomitou  durante ultimo semana?"
                 }
               }
             },
@@ -8536,27 +8185,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen32",
-            "promptIdx": 10
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "VOMITODIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 36,
-            "__rowNum__": 35,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen32",
-            "promptIdx": 11
+            "promptIdx": 9
           },
           {
             "type": "note",
@@ -8564,7 +8193,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8573,7 +8202,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen39",
-            "promptIdx": 12
+            "promptIdx": 10
           },
           {
             "type": "select_one",
@@ -8583,7 +8212,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child been coughing?",
-                  "default": "A criança teve tosse?"
+                  "default": "A criança teve tosse  durante ultimo semana?"
                 }
               }
             },
@@ -8592,27 +8221,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen39",
-            "promptIdx": 13
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "TOSSEDIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 43,
-            "__rowNum__": 42,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen39",
-            "promptIdx": 14
+            "promptIdx": 11
           },
           {
             "type": "note",
@@ -8620,7 +8229,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8629,7 +8238,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen46",
-            "promptIdx": 15
+            "promptIdx": 12
           },
           {
             "type": "select_one",
@@ -8639,7 +8248,7 @@
               "prompt": {
                 "text": {
                   "english": "Does the child have a cold?",
-                  "default": "A criança está com constipação?"
+                  "default": "A criança está com constipação  durante ultimo semana?"
                 }
               }
             },
@@ -8648,27 +8257,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen46",
-            "promptIdx": 16
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "CONSTIPDIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 50,
-            "__rowNum__": 49,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen46",
-            "promptIdx": 17
+            "promptIdx": 13
           },
           {
             "type": "note",
@@ -8676,7 +8265,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8685,7 +8274,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen53",
-            "promptIdx": 18
+            "promptIdx": 14
           },
           {
             "type": "select_one",
@@ -8695,7 +8284,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child lost ist appetite?",
-                  "default": "A criança perdeu o seu apetite?"
+                  "default": "A criança perdeu o seu apetite durante ultimo semana?"
                 }
               }
             },
@@ -8704,27 +8293,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen53",
-            "promptIdx": 19
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "PERAPPEDIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 57,
-            "__rowNum__": 56,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen53",
-            "promptIdx": 20
+            "promptIdx": 15
           },
           {
             "type": "note",
@@ -8732,7 +8301,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8741,7 +8310,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen60",
-            "promptIdx": 21
+            "promptIdx": 16
           },
           {
             "type": "select_one",
@@ -8751,7 +8320,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child cried more than habitual?",
-                  "default": "A criança chorou mais do que o habitual?"
+                  "default": "A criança chorou mais do que o habitual durante ultimo semana?"
                 }
               }
             },
@@ -8760,27 +8329,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen60",
-            "promptIdx": 22
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "CHOROUDIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 64,
-            "__rowNum__": 63,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen60",
-            "promptIdx": 23
+            "promptIdx": 17
           },
           {
             "type": "note",
@@ -8788,7 +8337,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8797,7 +8346,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen67",
-            "promptIdx": 24
+            "promptIdx": 18
           },
           {
             "type": "select_one",
@@ -8807,7 +8356,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child had fever?",
-                  "default": "A criança teve febre?"
+                  "default": "A criança teve febre  durante ultimo semana?"
                 }
               }
             },
@@ -8816,27 +8365,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen67",
-            "promptIdx": 25
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "FEBREDIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 71,
-            "__rowNum__": 70,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen67",
-            "promptIdx": 26
+            "promptIdx": 19
           },
           {
             "type": "note",
@@ -8844,7 +8373,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8853,7 +8382,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen74",
-            "promptIdx": 27
+            "promptIdx": 20
           },
           {
             "type": "select_one",
@@ -8863,7 +8392,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child had convulsions?",
-                  "default": "A criança teve convulsões (desmaio)?"
+                  "default": "A criança teve convulsões (desmaio) durante ultimo semana?"
                 }
               }
             },
@@ -8872,27 +8401,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen74",
-            "promptIdx": 28
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "CONVULSAODIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 78,
-            "__rowNum__": 77,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen74",
-            "promptIdx": 29
+            "promptIdx": 21
           },
           {
             "type": "note",
@@ -8900,7 +8409,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8909,7 +8418,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen81",
-            "promptIdx": 30
+            "promptIdx": 22
           },
           {
             "type": "select_one",
@@ -8919,7 +8428,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child had other symptoms?",
-                  "default": "A criança teve outras sintomas?"
+                  "default": "A criança teve outras sintomas durante ultimo semana?"
                 }
               }
             },
@@ -8928,7 +8437,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen81",
-            "promptIdx": 31
+            "promptIdx": 23
           },
           {
             "type": "text",
@@ -8946,27 +8455,7 @@
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "FU/_screen81",
-            "promptIdx": 32
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "OUTROSIMPDIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 86,
-            "__rowNum__": 85,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen81",
-            "promptIdx": 33
+            "promptIdx": 24
           },
           {
             "type": "note",
@@ -8974,7 +8463,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -8983,7 +8472,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen89",
-            "promptIdx": 34
+            "promptIdx": 25
           },
           {
             "type": "select_one",
@@ -9002,7 +8491,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen89",
-            "promptIdx": 35
+            "promptIdx": 26
           },
           {
             "type": "select_multiple",
@@ -9022,7 +8511,7 @@
             "_token_type": "prompt",
             "_type": "select_multiple",
             "_branch_label_enclosing_screen": "FU/_screen89",
-            "promptIdx": 36
+            "promptIdx": 27
           },
           {
             "type": "text",
@@ -9040,26 +8529,7 @@
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "FU/_screen89",
-            "promptIdx": 37
-          },
-          {
-            "type": "select_one",
-            "values_list": "sim/nao",
-            "name": "CONSDOC",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Can the mother show any documentation?",
-                  "default": "A mãe pode mostrar alguma documentação?"
-                }
-              }
-            },
-            "_row_num": 95,
-            "__rowNum__": 94,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "FU/_screen89",
-            "promptIdx": 38
+            "promptIdx": 28
           },
           {
             "type": "note",
@@ -9067,7 +8537,7 @@
               "prompt": {
                 "text": {
                   "english": "Last visit: <b>{{calculates.displayLASTFUSUC}}</b>",
-                  "default": "Última visita: <b>{{calculates.displayLASTFUSUC}}</b>"
+                  "default": "Último seguimento por telefone: <b>{{calculates.displayLASTFUSUC}}</b>"
                 }
               }
             },
@@ -9076,7 +8546,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "FU/_screen98",
-            "promptIdx": 39
+            "promptIdx": 29
           },
           {
             "type": "select_one",
@@ -9086,7 +8556,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child received medicine?",
-                  "default": "A criança recebeu medicamentos?"
+                  "default": "A criança recebeu medicamentos durante ultimo semana?"
                 }
               }
             },
@@ -9095,27 +8565,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "FU/_screen98",
-            "promptIdx": 40
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "dias_csv",
-            "name": "MEDICINDIA",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "On which day?",
-                  "default": "Em qual dia?"
-                }
-              }
-            },
-            "choice_filter": "choice_item.INTERVAL == data('interval')",
-            "_row_num": 102,
-            "__rowNum__": 101,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "FU/_screen98",
-            "promptIdx": 41
+            "promptIdx": 30
           },
           {
             "type": "select_multiple",
@@ -9134,7 +8584,7 @@
             "_token_type": "prompt",
             "_type": "select_multiple",
             "_branch_label_enclosing_screen": "FU/_screen98",
-            "promptIdx": 42
+            "promptIdx": 31
           },
           {
             "type": "text",
@@ -9152,7 +8602,7 @@
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "FU/_screen98",
-            "promptIdx": 43
+            "promptIdx": 32
           },
           {
             "_token_type": "prompt",
@@ -9160,7 +8610,7 @@
             "_type": "contents",
             "_row_num": 111,
             "_branch_label_enclosing_screen": "FU/_screen111",
-            "promptIdx": 44
+            "promptIdx": 33
           }
         ],
         "validation_tag_map": {
@@ -9209,7 +8659,7 @@
               "__rowNum__": 30,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\nif (data('DIARREIA')=='1') {\nactivePromptIndicies.push(8);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 2
           },
           {
@@ -9223,7 +8673,7 @@
               "__rowNum__": 37,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\nactivePromptIndicies.push(10);\nif (data('VOMITO')=='1') {\nactivePromptIndicies.push(11);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 3
           },
           {
@@ -9237,7 +8687,7 @@
               "__rowNum__": 44,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nif (data('TOSSE')=='1') {\nactivePromptIndicies.push(14);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 4
           },
           {
@@ -9251,7 +8701,7 @@
               "__rowNum__": 51,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nif (data('CONSTIP')=='1') {\nactivePromptIndicies.push(17);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
           },
           {
@@ -9265,7 +8715,7 @@
               "__rowNum__": 58,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nif (data('PERAPPE')=='1') {\nactivePromptIndicies.push(20);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 6
           },
           {
@@ -9279,7 +8729,7 @@
               "__rowNum__": 65,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nif (data('CHOROU')=='1') {\nactivePromptIndicies.push(23);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
@@ -9293,7 +8743,7 @@
               "__rowNum__": 72,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nif (data('FEBRE')=='1') {\nactivePromptIndicies.push(26);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 8
           },
           {
@@ -9307,7 +8757,7 @@
               "__rowNum__": 79,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nif (data('CONVULSAO')=='1') {\nactivePromptIndicies.push(29);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 9
           },
           {
@@ -9321,7 +8771,7 @@
               "__rowNum__": 87,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nif (data('OUTROSIMP')=='1') {\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nif (data('OUTROSIMP')=='1') {\nactivePromptIndicies.push(24);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 10
           },
           {
@@ -9335,7 +8785,7 @@
               "__rowNum__": 96,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nif (data('CONSULTA')=='1') {\nactivePromptIndicies.push(36);\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nif (data('CONSULTA')=='1') {\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 11
           },
           {
@@ -9349,7 +8799,7 @@
               "__rowNum__": 109,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nif (data('MEDICIN')=='1') {\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nif (selected(data('MEDICIN_Q'),'77')) {\nactivePromptIndicies.push(43);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nif (data('MEDICIN')=='1') {\nactivePromptIndicies.push(31);\nif (selected(data('MEDICIN_Q'),'77')) {\nactivePromptIndicies.push(32);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 12
           },
           {
@@ -9361,7 +8811,7 @@
           {
             "_row_num": 111,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(44);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -10258,12 +9708,7 @@
           "elementPath": "DIARREIDIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 29,
-            "section_name": "FU"
-          },
           {
             "_row_num": 42,
             "section_name": "model"
@@ -10307,12 +9752,7 @@
           "elementPath": "VOMITODIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 36,
-            "section_name": "FU"
-          },
           {
             "_row_num": 44,
             "section_name": "model"
@@ -10356,12 +9796,7 @@
           "elementPath": "TOSSEDIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 43,
-            "section_name": "FU"
-          },
           {
             "_row_num": 46,
             "section_name": "model"
@@ -10405,12 +9840,7 @@
           "elementPath": "CONSTIPDIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 50,
-            "section_name": "FU"
-          },
           {
             "_row_num": 48,
             "section_name": "model"
@@ -10454,12 +9884,7 @@
           "elementPath": "PERAPPEDIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 57,
-            "section_name": "FU"
-          },
           {
             "_row_num": 50,
             "section_name": "model"
@@ -10503,12 +9928,7 @@
           "elementPath": "CHOROUDIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 64,
-            "section_name": "FU"
-          },
           {
             "_row_num": 52,
             "section_name": "model"
@@ -10552,12 +9972,7 @@
           "elementPath": "FEBREDIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 71,
-            "section_name": "FU"
-          },
           {
             "_row_num": 54,
             "section_name": "model"
@@ -10601,12 +10016,7 @@
           "elementPath": "CONVULSAODIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 78,
-            "section_name": "FU"
-          },
           {
             "_row_num": 56,
             "section_name": "model"
@@ -10668,12 +10078,7 @@
           "elementPath": "OUTROSIMPDIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 86,
-            "section_name": "FU"
-          },
           {
             "_row_num": 59,
             "section_name": "model"
@@ -10757,12 +10162,7 @@
       },
       "CONSDOC": {
         "type": "string",
-        "valuesList": "sim/nao",
         "_defn": [
-          {
-            "_row_num": 95,
-            "section_name": "FU"
-          },
           {
             "_row_num": 63,
             "section_name": "model"
@@ -10803,12 +10203,7 @@
           "elementPath": "MEDICINDIA.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "dias_csv",
         "_defn": [
-          {
-            "_row_num": 102,
-            "section_name": "FU"
-          },
           {
             "_row_num": 65,
             "section_name": "model"
@@ -11198,21 +10593,21 @@
         "_aspect": "ASSISTENTE1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comments\":\"Eduardo replaced by Abrao on 16-2-2022\",\"_row_num\":7},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":8},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":9},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":10},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":11},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Armando\",\"default\":\"Armando\"}}},\"_row_num\":12}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comments\":\"Eduardo replaced by Abrao on 16-2-2022\",\"_row_num\":7},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"_row_num\":8},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Josemira\",\"default\":\"Josemira\"}}},\"_row_num\":9},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":10}]"
       },
       {
         "_partition": "Column",
         "_aspect": "ASSISTENTE2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comments\":\"Eduardo replaced by Abrao on 16-2-2022\",\"_row_num\":7},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":8},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":9},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":10},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":11},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Armando\",\"default\":\"Armando\"}}},\"_row_num\":12}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comments\":\"Eduardo replaced by Abrao on 16-2-2022\",\"_row_num\":7},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"_row_num\":8},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Josemira\",\"default\":\"Josemira\"}}},\"_row_num\":9},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":10}]"
       },
       {
         "_partition": "Column",
         "_aspect": "ASSISTENTE3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comments\":\"Eduardo replaced by Abrao on 16-2-2022\",\"_row_num\":7},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":8},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":9},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":10},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":11},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Armando\",\"default\":\"Armando\"}}},\"_row_num\":12}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comments\":\"Eduardo replaced by Abrao on 16-2-2022\",\"_row_num\":7},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"_row_num\":8},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Josemira\",\"default\":\"Josemira\"}}},\"_row_num\":9},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":10}]"
       },
       {
         "_partition": "Column",
@@ -11283,13 +10678,6 @@
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":2},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":3},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":4}]"
-      },
-      {
-        "_partition": "Column",
-        "_aspect": "CONSDOC",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim/nao\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":5},{\"choice_list_name\":\"sim/nao\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
