@@ -70,16 +70,26 @@
         "_row_num": 2
       },
       {
+        "clause": "if",
+        "condition": "data('DATINC') == null",
+        "comment": "added by Ane 2025-07-24 - to avoid overwriting information",
+        "_row_num": 3
+      },
+      {
         "type": "assign",
         "name": "START",
         "calculation": "now()",
-        "_row_num": 3
+        "_row_num": 4
       },
       {
         "type": "assign",
         "name": "DATINC",
         "calculation": "adate.today()",
-        "_row_num": 4
+        "_row_num": 5
+      },
+      {
+        "clause": "end if",
+        "_row_num": 6
       },
       {
         "type": "adate",
@@ -95,15 +105,15 @@
             "helperText": false
           }
         },
-        "_row_num": 5
+        "_row_num": 7
       },
       {
         "clause": "end screen",
-        "_row_num": 6
+        "_row_num": 8
       },
       {
         "clause": "begin screen",
-        "_row_num": 7
+        "_row_num": 9
       },
       {
         "type": "select_one_dropdown",
@@ -117,12 +127,12 @@
             }
           }
         },
-        "_row_num": 8
+        "_row_num": 10
       },
       {
         "clause": "if",
         "condition": "data('BAIRRO') == 77",
-        "_row_num": 9
+        "_row_num": 11
       },
       {
         "type": "select_one_dropdown",
@@ -137,12 +147,12 @@
           }
         },
         "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-        "_row_num": 10
+        "_row_num": 12
       },
       {
         "clause": "if",
         "condition": "data('TABZ') == 7777",
-        "_row_num": 11
+        "_row_num": 13
       },
       {
         "type": "text",
@@ -155,11 +165,11 @@
             }
           }
         },
-        "_row_num": 12
+        "_row_num": 14
       },
       {
         "clause": "else",
-        "_row_num": 13
+        "_row_num": 15
       },
       {
         "type": "text",
@@ -179,21 +189,21 @@
           }
         },
         "constraint": "data('CAMOONDE') != null || data('TABZ') == 7777 || data('CAMO') != 9999",
-        "_row_num": 14
+        "_row_num": 16
       },
       {
         "clause": "end if",
-        "_row_num": 15
+        "_row_num": 17
       },
       {
         "type": "assign",
         "name": "CAMO",
         "calculation": 9999,
-        "_row_num": 16
+        "_row_num": 18
       },
       {
         "clause": "else",
-        "_row_num": 17
+        "_row_num": 19
       },
       {
         "type": "select_one_dropdown",
@@ -208,7 +218,7 @@
           }
         },
         "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-        "_row_num": 18
+        "_row_num": 20
       },
       {
         "type": "integer",
@@ -228,24 +238,24 @@
           }
         },
         "constraint": "data('CAMO') != null || data('CAMOONDE') != null",
-        "_row_num": 19
+        "_row_num": 21
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "camons",
-        "_row_num": 20
+        "_row_num": 22
       },
       {
         "clause": "if",
         "condition": "data('camons') !=null",
-        "_row_num": 21
+        "_row_num": 23
       },
       {
         "type": "assign",
         "name": "CAMO",
         "calculation": 9999,
-        "_row_num": 22
+        "_row_num": 24
       },
       {
         "type": "text",
@@ -265,11 +275,11 @@
           }
         },
         "constraint": "data('CAMOONDE') != null || data('TABZ') == 7777 || data('CAMO') != 9999",
-        "_row_num": 23
+        "_row_num": 25
       },
       {
         "clause": "end if",
-        "_row_num": 24
+        "_row_num": 26
       },
       {
         "type": "text",
@@ -292,40 +302,40 @@
         "inputAttributes": {
           "type": "number"
         },
-        "_row_num": 25
+        "_row_num": 27
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "cnons",
-        "_row_num": 26
+        "_row_num": 28
       },
       {
         "clause": "if",
         "condition": "data('cnons') != null",
-        "_row_num": 27
+        "_row_num": 29
       },
       {
         "type": "assign",
         "name": "CNO",
         "calculation": 99999,
-        "_row_num": 28
-      },
-      {
-        "clause": "end if",
-        "_row_num": 29
-      },
-      {
-        "clause": "end if",
         "_row_num": 30
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 31
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 32
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 33
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 34
       },
       {
         "type": "text",
@@ -339,7 +349,7 @@
           }
         },
         "required": true,
-        "_row_num": 33
+        "_row_num": 35
       },
       {
         "type": "select_one",
@@ -354,7 +364,7 @@
           }
         },
         "required": true,
-        "_row_num": 34
+        "_row_num": 36
       },
       {
         "type": "text",
@@ -367,15 +377,15 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 37
       },
       {
         "clause": "end screen",
-        "_row_num": 36
+        "_row_num": 38
       },
       {
         "clause": "begin screen",
-        "_row_num": 37
+        "_row_num": 39
       },
       {
         "type": "select_one_with_other",
@@ -389,12 +399,12 @@
             }
           }
         },
-        "_row_num": 38
+        "_row_num": 40
       },
       {
         "clause": "if",
         "condition": "data('RESP') != '1' && data('RESP') != null",
-        "_row_num": 39
+        "_row_num": 41
       },
       {
         "type": "text",
@@ -407,19 +417,19 @@
             }
           }
         },
-        "_row_num": 40
-      },
-      {
-        "clause": "end if",
-        "_row_num": 41
-      },
-      {
-        "clause": "end screen",
         "_row_num": 42
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 43
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 44
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 45
       },
       {
         "type": "integer",
@@ -432,33 +442,33 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 46
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "regnons",
-        "_row_num": 45
+        "_row_num": 47
       },
       {
         "clause": "if",
         "condition": "data('regnons') != null",
-        "_row_num": 46
+        "_row_num": 48
       },
       {
         "type": "assign",
         "name": "REGNO",
         "calculation": 999,
-        "_row_num": 47
+        "_row_num": 49
       },
       {
         "clause": "end if",
-        "_row_num": 48
+        "_row_num": 50
       },
       {
         "clause": "if",
         "condition": "data('BAIRRO') != 77",
-        "_row_num": 49
+        "_row_num": 51
       },
       {
         "type": "integer",
@@ -478,32 +488,32 @@
           }
         },
         "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('BAIRRO') == 77",
-        "_row_num": 50
+        "_row_num": 52
       },
       {
         "type": "select_multiple",
         "values_list": "nsID",
         "name": "idns",
-        "_row_num": 51
+        "_row_num": 53
       },
       {
         "clause": "if",
         "condition": "data('idns') != null",
-        "_row_num": 52
+        "_row_num": 54
       },
       {
         "type": "assign",
         "name": "ID",
         "calculation": 9999999,
-        "_row_num": 53
+        "_row_num": 55
       },
       {
         "clause": "end if",
-        "_row_num": 54
+        "_row_num": 56
       },
       {
         "clause": "else",
-        "_row_num": 55
+        "_row_num": 57
       },
       {
         "type": "integer",
@@ -523,40 +533,40 @@
           }
         },
         "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 1000000000 || data('BAIRRO') != 77",
-        "_row_num": 56
+        "_row_num": 58
       },
       {
         "type": "select_multiple",
         "values_list": "nsREGIDC",
         "name": "regidcns",
-        "_row_num": 57
+        "_row_num": 59
       },
       {
         "clause": "if",
         "condition": "data('regidcns') !=null",
-        "_row_num": 58
+        "_row_num": 60
       },
       {
         "type": "assign",
         "name": "REGIDC",
         "calculation": 999999999,
-        "_row_num": 59
-      },
-      {
-        "clause": "end if",
-        "_row_num": 60
-      },
-      {
-        "clause": "end if",
         "_row_num": 61
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 62
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 63
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 64
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 65
       },
       {
         "type": "adate",
@@ -577,33 +587,33 @@
         },
         "constraint": "adate.diffInDays(data('DATINC'), data('DOB'))<1 || adate.hasUncertainty(data('DOB'))",
         "required": true,
-        "_row_num": 64
+        "_row_num": 66
       },
       {
         "type": "select_multiple",
         "values_list": "datens",
         "name": "dobns",
-        "_row_num": 65
+        "_row_num": 67
       },
       {
         "clause": "if",
         "condition": "data('dobns') != null",
-        "_row_num": 66
+        "_row_num": 68
       },
       {
         "type": "assign",
         "name": "DOB",
         "calculation": "\"D:NS,M:NS,Y:NS\"",
-        "_row_num": 67
+        "_row_num": 69
       },
       {
         "clause": "end if",
-        "_row_num": 68
+        "_row_num": 70
       },
       {
         "clause": "if",
         "condition": "data('DOB')==\"D:NS,M:NS,Y:NS\"",
-        "_row_num": 69
+        "_row_num": 71
       },
       {
         "type": "integer",
@@ -616,7 +626,7 @@
             }
           }
         },
-        "_row_num": 70
+        "_row_num": 72
       },
       {
         "type": "integer",
@@ -629,11 +639,11 @@
             }
           }
         },
-        "_row_num": 71
+        "_row_num": 73
       },
       {
         "clause": "end if",
-        "_row_num": 72
+        "_row_num": 74
       },
       {
         "type": "note",
@@ -645,15 +655,15 @@
             }
           }
         },
-        "_row_num": 73
+        "_row_num": 75
       },
       {
         "clause": "end screen",
-        "_row_num": 74
+        "_row_num": 76
       },
       {
         "clause": "begin screen",
-        "_row_num": 75
+        "_row_num": 77
       },
       {
         "type": "select_one",
@@ -668,12 +678,12 @@
           }
         },
         "required": true,
-        "_row_num": 76
+        "_row_num": 78
       },
       {
         "clause": "if",
         "condition": "data('CONSENT') == '1'",
-        "_row_num": 77
+        "_row_num": 79
       },
       {
         "type": "select_one",
@@ -687,12 +697,12 @@
             }
           }
         },
-        "_row_num": 78
+        "_row_num": 80
       },
       {
         "clause": "if",
         "condition": "data('CONSENTTIPO') == '2'",
-        "_row_num": 79
+        "_row_num": 81
       },
       {
         "type": "select_one",
@@ -713,28 +723,28 @@
           }
         },
         "constraint": "selected(data('TESTEMUNHO'),'1') || data('CONSENTTIPO') != '2'",
-        "_row_num": 80
-      },
-      {
-        "clause": "end if",
-        "_row_num": 81
-      },
-      {
-        "clause": "end if",
         "_row_num": 82
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 83
+      },
+      {
+        "clause": "end if",
+        "_row_num": 84
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 85
       },
       {
         "clause": "if",
         "condition": "data('CONSENT') == '1'",
-        "_row_num": 84
+        "_row_num": 86
       },
       {
         "clause": "begin screen",
-        "_row_num": 85
+        "_row_num": 87
       },
       {
         "type": "integer",
@@ -754,13 +764,13 @@
           }
         },
         "constraint": "data('TELEMOVEL1') > 99999999 && data('TELEMOVEL1') < 1000000000 || data('CONSENT') == '2'",
-        "_row_num": 86
+        "_row_num": 88
       },
       {
         "type": "select_one_with_other",
         "values_list": "telinf1",
         "name": "TELEINF1",
-        "_row_num": 87
+        "_row_num": 89
       },
       {
         "type": "integer",
@@ -780,13 +790,13 @@
           }
         },
         "constraint": "data('TELEMOVEL2') > 99999999 && data('TELEMOVEL2') < 1000000000 || data('CONSENT') == '2'",
-        "_row_num": 88
+        "_row_num": 90
       },
       {
         "type": "select_one_with_other",
         "values_list": "telinf2",
         "name": "TELEINF2",
-        "_row_num": 89
+        "_row_num": 91
       },
       {
         "type": "integer",
@@ -806,51 +816,51 @@
           }
         },
         "constraint": "data('TELEMOVEL3') > 99999999 && data('TELEMOVEL3') < 1000000000 || data('CONSENT') == '2'",
-        "_row_num": 90
+        "_row_num": 92
       },
       {
         "type": "select_one_with_other",
         "values_list": "telinf2",
         "name": "TELEINF3",
-        "_row_num": 91
+        "_row_num": 93
       },
       {
         "clause": "if",
         "condition": "data('TELEINF2') == '3'",
-        "_row_num": 92
+        "_row_num": 94
       },
       {
         "type": "assign",
         "name": "TELEMOVEL2",
         "calculation": 999999999,
-        "_row_num": 93
+        "_row_num": 95
       },
       {
         "clause": "end if",
-        "_row_num": 94
+        "_row_num": 96
       },
       {
         "clause": "if",
         "condition": "data('TELEINF3') == '3'",
-        "_row_num": 95
+        "_row_num": 97
       },
       {
         "type": "assign",
         "name": "TELEMOVEL3",
         "calculation": 999999999,
-        "_row_num": 96
-      },
-      {
-        "clause": "end if",
-        "_row_num": 97
-      },
-      {
-        "clause": "end screen",
         "_row_num": 98
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 99
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 100
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 101
       },
       {
         "type": "select_one",
@@ -871,12 +881,12 @@
           }
         },
         "constraint": "data('CARTVIS') != null || data('CONSENT') == '2'",
-        "_row_num": 100
+        "_row_num": 102
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '1'",
-        "_row_num": 101
+        "_row_num": 103
       },
       {
         "type": "select_one",
@@ -897,16 +907,16 @@
           }
         },
         "constraint": "data('SARVAC') != null || data('CONSENT') == '2' || data('CARTVIS') == '2'",
-        "_row_num": 102
+        "_row_num": 104
       },
       {
         "clause": "end if",
-        "_row_num": 103
+        "_row_num": 105
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '2'",
-        "_row_num": 104
+        "_row_num": 106
       },
       {
         "type": "select_one",
@@ -915,8 +925,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Mother/guardian confirmed that the child did not receive the second measles vaccine",
-              "default": "A mãe/tutor confirmou que a criança não recebeu a vacina do sarampo"
+              "english": "Mother/guardian confirmed that the child did not receive the first measles vaccine",
+              "default": "A mãe/tutor confirmou que a criança não recebeu o primero deose de vacina do sarampo"
             }
           },
           "constraint_message": {
@@ -927,21 +937,21 @@
           }
         },
         "constraint": "data('VENAOVAS') != null || data('CONSENT') == '2' || data('CARTVIS') == '1'",
-        "_row_num": 105
+        "_row_num": 107
       },
       {
         "clause": "end if",
-        "_row_num": 106
+        "_row_num": 108
       },
       {
         "clause": "if",
-        "condition": "calculates.childAGE <453 || adate.hasUncertainty(data('DOB')) && (date('IDADEANO') == '1' && data('IDADEMES')< '3' || data('IDADEMES')< '15')",
-        "_row_num": 107
+        "condition": "calculates.childAGE > '453' || adate.hasUncertainty(data('DOB')) && (data('IDADEANO') == '1' && data('IDADEMES') > '3' || data('IDADEMES')> '14' || data('IDADEANO') > '1' )",
+        "_row_num": 109
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '1'",
-        "_row_num": 108
+        "_row_num": 110
       },
       {
         "type": "select_one",
@@ -951,7 +961,7 @@
           "prompt": {
             "text": {
               "english": "Has the child received the second measles vaccine",
-              "default": "A criança recebeu a seguna vacina do sarampo"
+              "default": "A criança recebeu a segunda vacina do sarampo"
             }
           },
           "constraint_message": {
@@ -962,16 +972,16 @@
           }
         },
         "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2'",
-        "_row_num": 109
+        "_row_num": 111
       },
       {
         "clause": "end if",
-        "_row_num": 110
+        "_row_num": 112
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '2'",
-        "_row_num": 112
+        "_row_num": 114
       },
       {
         "type": "select_one",
@@ -992,24 +1002,24 @@
           }
         },
         "constraint": "data('VENAOVAS') != null || data('CONSENT') == '2' || data('CARTVIS') == '1'",
-        "_row_num": 113
-      },
-      {
-        "clause": "end if",
-        "_row_num": 114
-      },
-      {
-        "clause": "end if",
         "_row_num": 115
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 116
+      },
+      {
+        "clause": "end if",
+        "_row_num": 117
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 118
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '1'",
-        "_row_num": 117
+        "_row_num": 119
       },
       {
         "type": "image",
@@ -1022,15 +1032,15 @@
             }
           }
         },
-        "_row_num": 118
+        "_row_num": 120
       },
       {
         "clause": "end if",
-        "_row_num": 119
+        "_row_num": 121
       },
       {
         "clause": "begin screen",
-        "_row_num": 120
+        "_row_num": 122
       },
       {
         "type": "text",
@@ -1059,7 +1069,7 @@
         "inputAttributes": {
           "type": "number"
         },
-        "_row_num": 121
+        "_row_num": 123
       },
       {
         "type": "integer",
@@ -1079,15 +1089,15 @@
           }
         },
         "constraint": "(data('BRACOCRI')>49 && data('BRACOCRI')<343 && data('BRACOCRI')%2 == 0) || data('CONSENT') == '2' || data('BRACOCRI') == 999",
-        "_row_num": 122
+        "_row_num": 124
       },
       {
         "clause": "end screen",
-        "_row_num": 123
+        "_row_num": 125
       },
       {
         "clause": "begin screen",
-        "_row_num": 124
+        "_row_num": 126
       },
       {
         "type": "select_one",
@@ -1101,12 +1111,12 @@
             }
           }
         },
-        "_row_num": 125
+        "_row_num": 127
       },
       {
         "clause": "if",
         "condition": "data('MOTCONT')=='2'",
-        "_row_num": 126
+        "_row_num": 128
       },
       {
         "type": "adate",
@@ -1126,19 +1136,19 @@
           }
         },
         "constraint": "adate.diffInDays(data('DATINC'), data('INTINICI'))<1 || adate.hasUncertainty(data('INTINICI')) ||data('CONSENT') == '2'",
-        "_row_num": 127
-      },
-      {
-        "clause": "end if",
-        "_row_num": 128
-      },
-      {
-        "clause": "end screen",
         "_row_num": 129
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 130
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 131
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 132
       },
       {
         "type": "select_one",
@@ -1152,7 +1162,7 @@
             }
           }
         },
-        "_row_num": 131
+        "_row_num": 133
       },
       {
         "type": "select_one",
@@ -1166,7 +1176,7 @@
             }
           }
         },
-        "_row_num": 132
+        "_row_num": 134
       },
       {
         "type": "select_one",
@@ -1180,40 +1190,40 @@
             }
           }
         },
-        "_row_num": 133
+        "_row_num": 135
       },
       {
         "clause": "if",
         "condition": "data('MOTCONT')=='1'",
-        "_row_num": 134
-      },
-      {
-        "type": "assign",
-        "name": "REGDATE",
-        "calculation": "data(\"DATINC\")",
-        "_row_num": 135
-      },
-      {
-        "clause": "else",
         "_row_num": 136
       },
       {
         "type": "assign",
         "name": "REGDATE",
-        "calculation": "data(\"INTINICI\")",
+        "calculation": "data(\"DATINC\")",
         "_row_num": 137
       },
       {
-        "clause": "end if",
+        "clause": "else",
         "_row_num": 138
       },
       {
-        "clause": "end screen",
+        "type": "assign",
+        "name": "REGDATE",
+        "calculation": "data(\"INTINICI\")",
         "_row_num": 139
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 140
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 141
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 142
       },
       {
         "type": "select_one",
@@ -1227,7 +1237,7 @@
             }
           }
         },
-        "_row_num": 141
+        "_row_num": 143
       },
       {
         "type": "select_one",
@@ -1241,7 +1251,7 @@
             }
           }
         },
-        "_row_num": 142
+        "_row_num": 144
       },
       {
         "type": "select_one",
@@ -1255,15 +1265,15 @@
             }
           }
         },
-        "_row_num": 143
+        "_row_num": 145
       },
       {
         "clause": "end screen",
-        "_row_num": 144
+        "_row_num": 146
       },
       {
         "clause": "begin screen",
-        "_row_num": 145
+        "_row_num": 147
       },
       {
         "type": "select_one",
@@ -1277,7 +1287,7 @@
             }
           }
         },
-        "_row_num": 146
+        "_row_num": 148
       },
       {
         "type": "text",
@@ -1290,15 +1300,15 @@
             }
           }
         },
-        "_row_num": 147
+        "_row_num": 149
       },
       {
         "clause": "end screen",
-        "_row_num": 148
+        "_row_num": 150
       },
       {
         "clause": "begin screen",
-        "_row_num": 149
+        "_row_num": 151
       },
       {
         "type": "select_one",
@@ -1312,12 +1322,12 @@
             }
           }
         },
-        "_row_num": 150
+        "_row_num": 152
       },
       {
         "clause": "if",
         "condition": "data('TRATAMENT_A') =='1'",
-        "_row_num": 151
+        "_row_num": 153
       },
       {
         "type": "select_multiple",
@@ -1331,12 +1341,12 @@
             }
           }
         },
-        "_row_num": 152
+        "_row_num": 154
       },
       {
         "clause": "if",
         "condition": "selected(data('TRATQUAL_A'),'77')",
-        "_row_num": 153
+        "_row_num": 155
       },
       {
         "type": "text",
@@ -1349,23 +1359,23 @@
             }
           }
         },
-        "_row_num": 154
-      },
-      {
-        "clause": "end if",
-        "_row_num": 155
-      },
-      {
-        "clause": "end if",
         "_row_num": 156
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 157
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 158
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 159
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 160
       },
       {
         "type": "select_one",
@@ -1379,12 +1389,12 @@
             }
           }
         },
-        "_row_num": 159
+        "_row_num": 161
       },
       {
         "clause": "if",
         "condition": "data('TRATAMENT_R') =='1'",
-        "_row_num": 160
+        "_row_num": 162
       },
       {
         "type": "select_multiple",
@@ -1398,12 +1408,12 @@
             }
           }
         },
-        "_row_num": 161
+        "_row_num": 163
       },
       {
         "clause": "if",
         "condition": "selected(data('TRATQUAL_R'),'77')",
-        "_row_num": 162
+        "_row_num": 164
       },
       {
         "type": "text",
@@ -1416,23 +1426,23 @@
             }
           }
         },
-        "_row_num": 163
-      },
-      {
-        "clause": "end if",
-        "_row_num": 164
-      },
-      {
-        "clause": "end if",
         "_row_num": 165
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 166
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 167
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 168
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 169
       },
       {
         "type": "image",
@@ -1445,15 +1455,15 @@
             }
           }
         },
-        "_row_num": 168
+        "_row_num": 170
       },
       {
         "clause": "end screen",
-        "_row_num": 169
+        "_row_num": 171
       },
       {
         "clause": "begin screen",
-        "_row_num": 170
+        "_row_num": 172
       },
       {
         "type": "select_one",
@@ -1474,12 +1484,12 @@
           }
         },
         "constraint": "data('PODEVAC') != null || data('CONSENT') == '2'",
-        "_row_num": 171
+        "_row_num": 173
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 172
+        "_row_num": 174
       },
       {
         "type": "text",
@@ -1492,11 +1502,11 @@
             }
           }
         },
-        "_row_num": 173
+        "_row_num": 175
       },
       {
         "clause": "end if",
-        "_row_num": 174
+        "_row_num": 176
       },
       {
         "type": "select_one",
@@ -1517,12 +1527,12 @@
           }
         },
         "constraint": "data('PODEINC') != null || data('CONSENT') == '2'",
-        "_row_num": 175
+        "_row_num": 177
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 176
+        "_row_num": 178
       },
       {
         "type": "text",
@@ -1535,11 +1545,11 @@
             }
           }
         },
-        "_row_num": 177
+        "_row_num": 179
       },
       {
         "clause": "end if",
-        "_row_num": 178
+        "_row_num": 180
       },
       {
         "type": "select_one",
@@ -1560,26 +1570,26 @@
           }
         },
         "constraint": "data('JAINC') != null || data('CONSENT') == '2'",
-        "_row_num": 179
+        "_row_num": 181
       },
       {
         "clause": "end screen",
-        "_row_num": 180
+        "_row_num": 182
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') != '2')||data('SARVAC2') == '1'",
-        "_row_num": 181
+        "_row_num": 183
       },
       {
         "clause": "begin screen",
-        "_row_num": 182
+        "_row_num": 184
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 183
+        "_row_num": 185
       },
       {
         "type": "note",
@@ -1591,12 +1601,12 @@
             }
           }
         },
-        "_row_num": 184
+        "_row_num": 186
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 185
+        "_row_num": 187
       },
       {
         "type": "note",
@@ -1608,16 +1618,16 @@
             }
           }
         },
-        "_row_num": 186
+        "_row_num": 188
       },
       {
         "clause": "end if",
-        "_row_num": 187
+        "_row_num": 189
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 188
+        "_row_num": 190
       },
       {
         "type": "note",
@@ -1629,16 +1639,16 @@
             }
           }
         },
-        "_row_num": 189
+        "_row_num": 191
       },
       {
         "clause": "end if",
-        "_row_num": 190
+        "_row_num": 192
       },
       {
         "clause": "if",
         "condition": "data('JAINC') == '1'",
-        "_row_num": 191
+        "_row_num": 193
       },
       {
         "type": "note",
@@ -1650,16 +1660,16 @@
             }
           }
         },
-        "_row_num": 192
+        "_row_num": 194
       },
       {
         "clause": "end if",
-        "_row_num": 193
+        "_row_num": 195
       },
       {
         "clause": "if",
         "condition": "data('BRACOCRI') <110",
-        "_row_num": 194
+        "_row_num": 196
       },
       {
         "type": "note",
@@ -1671,16 +1681,16 @@
             }
           }
         },
-        "_row_num": 195
+        "_row_num": 197
       },
       {
         "clause": "end if",
-        "_row_num": 196
+        "_row_num": 198
       },
       {
         "clause": "if",
         "condition": "data('TEMPERATURA')>38",
-        "_row_num": 197
+        "_row_num": 199
       },
       {
         "type": "note",
@@ -1692,16 +1702,16 @@
             }
           }
         },
-        "_row_num": 198
+        "_row_num": 200
       },
       {
         "clause": "end if",
-        "_row_num": 199
+        "_row_num": 201
       },
       {
         "clause": "if",
         "condition": "data('VENAOVAS2') == '2'",
-        "_row_num": 200
+        "_row_num": 202
       },
       {
         "type": "note",
@@ -1713,16 +1723,16 @@
             }
           }
         },
-        "_row_num": 201
+        "_row_num": 203
       },
       {
         "clause": "end if",
-        "_row_num": 202
+        "_row_num": 204
       },
       {
         "clause": "if",
         "condition": "data('VENAOVAS') == '2'",
-        "_row_num": 203
+        "_row_num": 205
       },
       {
         "type": "note",
@@ -1734,16 +1744,16 @@
             }
           }
         },
-        "_row_num": 204
+        "_row_num": 206
       },
       {
         "clause": "end if",
-        "_row_num": 205
+        "_row_num": 207
       },
       {
         "clause": "if",
         "condition": "data('SARVAC') == '1'&& data('SARVAC2')==1",
-        "_row_num": 206
+        "_row_num": 208
       },
       {
         "type": "note",
@@ -1755,16 +1765,16 @@
             }
           }
         },
-        "_row_num": 207
+        "_row_num": 209
       },
       {
         "clause": "end if",
-        "_row_num": 208
+        "_row_num": 210
       },
       {
         "clause": "if",
         "condition": "data('SARVAC2') == '1'",
-        "_row_num": 209
+        "_row_num": 211
       },
       {
         "type": "note",
@@ -1776,16 +1786,16 @@
             }
           }
         },
-        "_row_num": 210
+        "_row_num": 212
       },
       {
         "clause": "end if",
-        "_row_num": 211
+        "_row_num": 213
       },
       {
         "clause": "if",
         "condition": "data('SARVAC') == '1' && calculates.childAGE <453",
-        "_row_num": 213
+        "_row_num": 215
       },
       {
         "type": "note",
@@ -1797,23 +1807,23 @@
             }
           }
         },
-        "_row_num": 214
-      },
-      {
-        "clause": "end if",
-        "_row_num": 215
-      },
-      {
-        "clause": "end screen",
         "_row_num": 216
       },
       {
-        "clause": "else",
+        "clause": "end if",
         "_row_num": 217
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 218
+      },
+      {
+        "clause": "else",
+        "_row_num": 219
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 220
       },
       {
         "type": "integer",
@@ -1833,7 +1843,7 @@
           }
         },
         "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-        "_row_num": 219
+        "_row_num": 221
       },
       {
         "type": "integer",
@@ -1853,13 +1863,13 @@
           }
         },
         "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-        "_row_num": 220
+        "_row_num": 222
       },
       {
         "type": "assign",
         "name": "RANDOM",
         "calculation": "freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2'))",
-        "_row_num": 221
+        "_row_num": 223
       },
       {
         "type": "note",
@@ -1871,27 +1881,27 @@
             }
           }
         },
-        "_row_num": 222
+        "_row_num": 224
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 1,
-        "_row_num": 223
+        "_row_num": 225
       },
       {
         "clause": "end screen",
-        "_row_num": 224
+        "_row_num": 226
       },
       {
         "clause": "begin screen",
-        "_row_num": 225
+        "_row_num": 227
       },
       {
         "type": "assign",
         "name": "DATVACVAS",
         "calculation": "data('DATINC')",
-        "_row_num": 226
+        "_row_num": 228
       },
       {
         "type": "adate",
@@ -1907,7 +1917,7 @@
             "helperText": false
           }
         },
-        "_row_num": 227
+        "_row_num": 229
       },
       {
         "type": "time",
@@ -1927,13 +1937,13 @@
           }
         },
         "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-        "_row_num": 228
+        "_row_num": 230
       },
       {
         "type": "assign",
         "name": "HORVACVAS",
         "calculation": "adate.hoursMinutes(data('HORA'))",
-        "_row_num": 229
+        "_row_num": 231
       },
       {
         "type": "integer",
@@ -1953,13 +1963,13 @@
           }
         },
         "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-        "_row_num": 230
+        "_row_num": 232
       },
       {
         "type": "assign",
         "name": "NUMEST",
         "calculation": "freebase.studyNumber(\"MAD\",4,data('NUM'))",
-        "_row_num": 231
+        "_row_num": 233
       },
       {
         "type": "note",
@@ -1971,19 +1981,19 @@
             }
           }
         },
-        "_row_num": 232
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 233
-      },
-      {
-        "clause": "end if",
         "_row_num": 234
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 235
+      },
+      {
+        "clause": "end if",
+        "_row_num": 236
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 237
       },
       {
         "type": "select_one_with_other",
@@ -1997,12 +2007,12 @@
             }
           }
         },
-        "_row_num": 236
+        "_row_num": 238
       },
       {
         "clause": "if",
         "condition": "data('INC') == '1'",
-        "_row_num": 237
+        "_row_num": 239
       },
       {
         "type": "select_one_with_other",
@@ -2016,23 +2026,23 @@
             }
           }
         },
-        "_row_num": 238
-      },
-      {
-        "clause": "end if",
-        "_row_num": 239
-      },
-      {
-        "clause": "end screen",
         "_row_num": 240
       },
       {
-        "clause": "else",
+        "clause": "end if",
         "_row_num": 241
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 242
+      },
+      {
+        "clause": "else",
+        "_row_num": 243
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 244
       },
       {
         "type": "note",
@@ -2044,21 +2054,21 @@
             }
           }
         },
-        "_row_num": 243
+        "_row_num": 245
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 244
+        "_row_num": 246
       },
       {
         "clause": "end screen",
-        "_row_num": 245
+        "_row_num": 247
       },
       {
         "clause": "end if",
-        "_row_num": 246
+        "_row_num": 248
       }
     ],
     "choices": [
@@ -4206,7 +4216,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 238,
+            "_row_num": 240,
             "section_name": "inc"
           },
           {
@@ -4222,7 +4232,7 @@
         "valuesList": "bairro_csv",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 10,
             "section_name": "inc"
           },
           {
@@ -4237,7 +4247,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 124,
             "section_name": "inc"
           },
           {
@@ -4252,7 +4262,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 21,
             "section_name": "inc"
           },
           {
@@ -4272,7 +4282,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "inc"
           },
           {
@@ -4287,11 +4297,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 16,
             "section_name": "inc"
           },
           {
-            "_row_num": 23,
+            "_row_num": 25,
             "section_name": "inc"
           },
           {
@@ -4320,7 +4330,7 @@
         },
         "_defn": [
           {
-            "_row_num": 118,
+            "_row_num": 120,
             "section_name": "inc"
           },
           {
@@ -4336,7 +4346,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 100,
+            "_row_num": 102,
             "section_name": "inc"
           },
           {
@@ -4351,7 +4361,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 25,
+            "_row_num": 27,
             "section_name": "inc"
           },
           {
@@ -4371,7 +4381,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 26,
+            "_row_num": 28,
             "section_name": "inc"
           },
           {
@@ -4387,7 +4397,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 76,
+            "_row_num": 78,
             "section_name": "inc"
           },
           {
@@ -4403,7 +4413,7 @@
         "valuesList": "signature",
         "_defn": [
           {
-            "_row_num": 78,
+            "_row_num": 80,
             "section_name": "inc"
           },
           {
@@ -4419,7 +4429,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 146,
+            "_row_num": 148,
             "section_name": "inc"
           },
           {
@@ -4439,7 +4449,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 7,
             "section_name": "inc"
           },
           {
@@ -4459,7 +4469,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 227,
+            "_row_num": 229,
             "section_name": "inc"
           },
           {
@@ -4475,7 +4485,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 132,
+            "_row_num": 134,
             "section_name": "inc"
           },
           {
@@ -4491,7 +4501,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 143,
+            "_row_num": 145,
             "section_name": "inc"
           },
           {
@@ -4511,7 +4521,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 66,
             "section_name": "inc"
           },
           {
@@ -4531,7 +4541,7 @@
         "valuesList": "datens",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 67,
             "section_name": "inc"
           },
           {
@@ -4547,7 +4557,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 236,
+            "_row_num": 238,
             "section_name": "inc"
           },
           {
@@ -4563,7 +4573,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 131,
+            "_row_num": 133,
             "section_name": "inc"
           },
           {
@@ -4579,7 +4589,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 228,
+            "_row_num": 230,
             "section_name": "inc"
           },
           {
@@ -4605,7 +4615,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 52,
             "section_name": "inc"
           },
           {
@@ -4620,7 +4630,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 72,
             "section_name": "inc"
           },
           {
@@ -4635,7 +4645,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 73,
             "section_name": "inc"
           },
           {
@@ -4655,7 +4665,7 @@
         "valuesList": "nsID",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 53,
             "section_name": "inc"
           },
           {
@@ -4686,7 +4696,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 127,
+            "_row_num": 129,
             "section_name": "inc"
           },
           {
@@ -4702,7 +4712,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 179,
+            "_row_num": 181,
             "section_name": "inc"
           },
           {
@@ -4718,7 +4728,7 @@
         "valuesList": "Motivo",
         "_defn": [
           {
-            "_row_num": 125,
+            "_row_num": 127,
             "section_name": "inc"
           },
           {
@@ -4733,7 +4743,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 177,
+            "_row_num": 179,
             "section_name": "inc"
           },
           {
@@ -4748,7 +4758,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 35,
             "section_name": "inc"
           },
           {
@@ -4763,7 +4773,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 37,
             "section_name": "inc"
           },
           {
@@ -4778,7 +4788,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 40,
+            "_row_num": 42,
             "section_name": "inc"
           },
           {
@@ -4793,7 +4803,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 230,
+            "_row_num": 232,
             "section_name": "inc"
           },
           {
@@ -4819,7 +4829,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 173,
+            "_row_num": 175,
             "section_name": "inc"
           },
           {
@@ -4834,7 +4844,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 147,
+            "_row_num": 149,
             "section_name": "inc"
           },
           {
@@ -4849,7 +4859,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 14,
             "section_name": "inc"
           },
           {
@@ -4865,7 +4875,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 175,
+            "_row_num": 177,
             "section_name": "inc"
           },
           {
@@ -4881,7 +4891,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 171,
+            "_row_num": 173,
             "section_name": "inc"
           },
           {
@@ -4907,7 +4917,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 219,
+            "_row_num": 221,
             "section_name": "inc"
           },
           {
@@ -4922,7 +4932,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 220,
+            "_row_num": 222,
             "section_name": "inc"
           },
           {
@@ -4937,7 +4947,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 58,
             "section_name": "inc"
           },
           {
@@ -4957,7 +4967,7 @@
         "valuesList": "nsREGIDC",
         "_defn": [
           {
-            "_row_num": 57,
+            "_row_num": 59,
             "section_name": "inc"
           },
           {
@@ -4972,7 +4982,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 46,
             "section_name": "inc"
           },
           {
@@ -4992,7 +5002,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 47,
             "section_name": "inc"
           },
           {
@@ -5008,7 +5018,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 141,
+            "_row_num": 143,
             "section_name": "inc"
           },
           {
@@ -5024,7 +5034,7 @@
         "valuesList": "resp",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 40,
             "section_name": "inc"
           },
           {
@@ -5040,7 +5050,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 102,
+            "_row_num": 104,
             "section_name": "inc"
           },
           {
@@ -5056,7 +5066,7 @@
         "valuesList": "sexo",
         "_defn": [
           {
-            "_row_num": 34,
+            "_row_num": 36,
             "section_name": "inc"
           },
           {
@@ -5083,11 +5093,11 @@
         "valuesList": "tabz_csv",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "inc"
           },
           {
-            "_row_num": 18,
+            "_row_num": 20,
             "section_name": "inc"
           },
           {
@@ -5103,7 +5113,7 @@
         "valuesList": "telinf1",
         "_defn": [
           {
-            "_row_num": 87,
+            "_row_num": 89,
             "section_name": "inc"
           },
           {
@@ -5119,7 +5129,7 @@
         "valuesList": "telinf2",
         "_defn": [
           {
-            "_row_num": 89,
+            "_row_num": 91,
             "section_name": "inc"
           },
           {
@@ -5135,7 +5145,7 @@
         "valuesList": "telinf2",
         "_defn": [
           {
-            "_row_num": 91,
+            "_row_num": 93,
             "section_name": "inc"
           },
           {
@@ -5150,7 +5160,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 86,
+            "_row_num": 88,
             "section_name": "inc"
           },
           {
@@ -5165,7 +5175,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 88,
+            "_row_num": 90,
             "section_name": "inc"
           },
           {
@@ -5180,7 +5190,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 90,
+            "_row_num": 92,
             "section_name": "inc"
           },
           {
@@ -5195,7 +5205,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 121,
+            "_row_num": 123,
             "section_name": "inc"
           },
           {
@@ -5211,7 +5221,7 @@
         "valuesList": "sim",
         "_defn": [
           {
-            "_row_num": 80,
+            "_row_num": 82,
             "section_name": "inc"
           },
           {
@@ -5227,7 +5237,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 142,
+            "_row_num": 144,
             "section_name": "inc"
           },
           {
@@ -5254,7 +5264,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 150,
+            "_row_num": 152,
             "section_name": "inc"
           },
           {
@@ -5270,7 +5280,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 159,
+            "_row_num": 161,
             "section_name": "inc"
           },
           {
@@ -5299,7 +5309,7 @@
         },
         "_defn": [
           {
-            "_row_num": 168,
+            "_row_num": 170,
             "section_name": "inc"
           },
           {
@@ -5334,7 +5344,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 152,
+            "_row_num": 154,
             "section_name": "inc"
           },
           {
@@ -5354,7 +5364,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 161,
+            "_row_num": 163,
             "section_name": "inc"
           },
           {
@@ -5380,7 +5390,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 154,
+            "_row_num": 156,
             "section_name": "inc"
           },
           {
@@ -5395,7 +5405,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 163,
+            "_row_num": 165,
             "section_name": "inc"
           },
           {
@@ -5411,7 +5421,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 105,
+            "_row_num": 107,
             "section_name": "inc"
           },
           {
@@ -5427,7 +5437,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 133,
+            "_row_num": 135,
             "section_name": "inc"
           },
           {
@@ -5503,7 +5513,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 111,
             "section_name": "inc"
           },
           {
@@ -5519,7 +5529,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 113,
+            "_row_num": 115,
             "section_name": "inc"
           },
           {
@@ -5631,8 +5641,8 @@
                 "helperText": false
               }
             },
-            "_row_num": 5,
-            "__rowNum__": 4,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_type": "adate",
             "_branch_label_enclosing_screen": "inc/_screen2",
@@ -5650,11 +5660,11 @@
                 }
               }
             },
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 10,
+            "__rowNum__": 9,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 1
           },
           {
@@ -5670,11 +5680,11 @@
               }
             },
             "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 12,
+            "__rowNum__": 11,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 2
           },
           {
@@ -5688,11 +5698,11 @@
                 }
               }
             },
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "_row_num": 14,
+            "__rowNum__": 13,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 3
           },
           {
@@ -5713,11 +5723,11 @@
               }
             },
             "constraint": "data('CAMOONDE') != null || data('TABZ') == 7777 || data('CAMO') != 9999",
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 16,
+            "__rowNum__": 15,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 4
           },
           {
@@ -5733,11 +5743,11 @@
               }
             },
             "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 20,
+            "__rowNum__": 19,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 5
           },
           {
@@ -5758,22 +5768,22 @@
               }
             },
             "constraint": "data('CAMO') != null || data('CAMOONDE') != null",
-            "_row_num": 19,
-            "__rowNum__": 18,
+            "_row_num": 21,
+            "__rowNum__": 20,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 6
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "camons",
-            "_row_num": 20,
-            "__rowNum__": 19,
+            "_row_num": 22,
+            "__rowNum__": 21,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 7
           },
           {
@@ -5794,11 +5804,11 @@
               }
             },
             "constraint": "data('CAMOONDE') != null || data('TABZ') == 7777 || data('CAMO') != 9999",
-            "_row_num": 23,
-            "__rowNum__": 22,
+            "_row_num": 25,
+            "__rowNum__": 24,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 8
           },
           {
@@ -5822,22 +5832,22 @@
             "inputAttributes": {
               "type": "number"
             },
-            "_row_num": 25,
-            "__rowNum__": 24,
+            "_row_num": 27,
+            "__rowNum__": 26,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 9
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "cnons",
-            "_row_num": 26,
-            "__rowNum__": 25,
+            "_row_num": 28,
+            "__rowNum__": 27,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen7",
+            "_branch_label_enclosing_screen": "inc/_screen9",
             "promptIdx": 10
           },
           {
@@ -5852,11 +5862,11 @@
               }
             },
             "required": true,
-            "_row_num": 33,
-            "__rowNum__": 32,
+            "_row_num": 35,
+            "__rowNum__": 34,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen32",
+            "_branch_label_enclosing_screen": "inc/_screen34",
             "promptIdx": 11
           },
           {
@@ -5872,11 +5882,11 @@
               }
             },
             "required": true,
-            "_row_num": 34,
-            "__rowNum__": 33,
+            "_row_num": 36,
+            "__rowNum__": 35,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen32",
+            "_branch_label_enclosing_screen": "inc/_screen34",
             "promptIdx": 12
           },
           {
@@ -5890,11 +5900,11 @@
                 }
               }
             },
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 37,
+            "__rowNum__": 36,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen32",
+            "_branch_label_enclosing_screen": "inc/_screen34",
             "promptIdx": 13
           },
           {
@@ -5909,11 +5919,11 @@
                 }
               }
             },
-            "_row_num": 38,
-            "__rowNum__": 37,
+            "_row_num": 40,
+            "__rowNum__": 39,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen37",
+            "_branch_label_enclosing_screen": "inc/_screen39",
             "promptIdx": 14
           },
           {
@@ -5927,11 +5937,11 @@
                 }
               }
             },
-            "_row_num": 40,
-            "__rowNum__": 39,
+            "_row_num": 42,
+            "__rowNum__": 41,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen37",
+            "_branch_label_enclosing_screen": "inc/_screen39",
             "promptIdx": 15
           },
           {
@@ -5945,22 +5955,22 @@
                 }
               }
             },
-            "_row_num": 44,
-            "__rowNum__": 43,
+            "_row_num": 46,
+            "__rowNum__": 45,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen43",
+            "_branch_label_enclosing_screen": "inc/_screen45",
             "promptIdx": 16
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "regnons",
-            "_row_num": 45,
-            "__rowNum__": 44,
+            "_row_num": 47,
+            "__rowNum__": 46,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen43",
+            "_branch_label_enclosing_screen": "inc/_screen45",
             "promptIdx": 17
           },
           {
@@ -5981,22 +5991,22 @@
               }
             },
             "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('BAIRRO') == 77",
-            "_row_num": 50,
-            "__rowNum__": 49,
+            "_row_num": 52,
+            "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen43",
+            "_branch_label_enclosing_screen": "inc/_screen45",
             "promptIdx": 18
           },
           {
             "type": "select_multiple",
             "values_list": "nsID",
             "name": "idns",
-            "_row_num": 51,
-            "__rowNum__": 50,
+            "_row_num": 53,
+            "__rowNum__": 52,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen43",
+            "_branch_label_enclosing_screen": "inc/_screen45",
             "promptIdx": 19
           },
           {
@@ -6017,22 +6027,22 @@
               }
             },
             "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 1000000000 || data('BAIRRO') != 77",
-            "_row_num": 56,
-            "__rowNum__": 55,
+            "_row_num": 58,
+            "__rowNum__": 57,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen43",
+            "_branch_label_enclosing_screen": "inc/_screen45",
             "promptIdx": 20
           },
           {
             "type": "select_multiple",
             "values_list": "nsREGIDC",
             "name": "regidcns",
-            "_row_num": 57,
-            "__rowNum__": 56,
+            "_row_num": 59,
+            "__rowNum__": 58,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen43",
+            "_branch_label_enclosing_screen": "inc/_screen45",
             "promptIdx": 21
           },
           {
@@ -6054,22 +6064,22 @@
             },
             "constraint": "adate.diffInDays(data('DATINC'), data('DOB'))<1 || adate.hasUncertainty(data('DOB'))",
             "required": true,
-            "_row_num": 64,
-            "__rowNum__": 63,
+            "_row_num": 66,
+            "__rowNum__": 65,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen63",
+            "_branch_label_enclosing_screen": "inc/_screen65",
             "promptIdx": 22
           },
           {
             "type": "select_multiple",
             "values_list": "datens",
             "name": "dobns",
-            "_row_num": 65,
-            "__rowNum__": 64,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen63",
+            "_branch_label_enclosing_screen": "inc/_screen65",
             "promptIdx": 23
           },
           {
@@ -6083,11 +6093,11 @@
                 }
               }
             },
-            "_row_num": 70,
-            "__rowNum__": 69,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen63",
+            "_branch_label_enclosing_screen": "inc/_screen65",
             "promptIdx": 24
           },
           {
@@ -6101,11 +6111,11 @@
                 }
               }
             },
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 73,
+            "__rowNum__": 72,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen63",
+            "_branch_label_enclosing_screen": "inc/_screen65",
             "promptIdx": 25
           },
           {
@@ -6118,11 +6128,11 @@
                 }
               }
             },
-            "_row_num": 73,
-            "__rowNum__": 72,
+            "_row_num": 75,
+            "__rowNum__": 74,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen63",
+            "_branch_label_enclosing_screen": "inc/_screen65",
             "promptIdx": 26
           },
           {
@@ -6138,11 +6148,11 @@
               }
             },
             "required": true,
-            "_row_num": 76,
-            "__rowNum__": 75,
+            "_row_num": 78,
+            "__rowNum__": 77,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen75",
+            "_branch_label_enclosing_screen": "inc/_screen77",
             "promptIdx": 27
           },
           {
@@ -6157,11 +6167,11 @@
                 }
               }
             },
-            "_row_num": 78,
-            "__rowNum__": 77,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen75",
+            "_branch_label_enclosing_screen": "inc/_screen77",
             "promptIdx": 28
           },
           {
@@ -6183,11 +6193,11 @@
               }
             },
             "constraint": "selected(data('TESTEMUNHO'),'1') || data('CONSENTTIPO') != '2'",
-            "_row_num": 80,
-            "__rowNum__": 79,
+            "_row_num": 82,
+            "__rowNum__": 81,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen75",
+            "_branch_label_enclosing_screen": "inc/_screen77",
             "promptIdx": 29
           },
           {
@@ -6208,22 +6218,22 @@
               }
             },
             "constraint": "data('TELEMOVEL1') > 99999999 && data('TELEMOVEL1') < 1000000000 || data('CONSENT') == '2'",
-            "_row_num": 86,
-            "__rowNum__": 85,
+            "_row_num": 88,
+            "__rowNum__": 87,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen85",
+            "_branch_label_enclosing_screen": "inc/_screen87",
             "promptIdx": 30
           },
           {
             "type": "select_one_with_other",
             "values_list": "telinf1",
             "name": "TELEINF1",
-            "_row_num": 87,
-            "__rowNum__": 86,
+            "_row_num": 89,
+            "__rowNum__": 88,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen85",
+            "_branch_label_enclosing_screen": "inc/_screen87",
             "promptIdx": 31
           },
           {
@@ -6244,22 +6254,22 @@
               }
             },
             "constraint": "data('TELEMOVEL2') > 99999999 && data('TELEMOVEL2') < 1000000000 || data('CONSENT') == '2'",
-            "_row_num": 88,
-            "__rowNum__": 87,
+            "_row_num": 90,
+            "__rowNum__": 89,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen85",
+            "_branch_label_enclosing_screen": "inc/_screen87",
             "promptIdx": 32
           },
           {
             "type": "select_one_with_other",
             "values_list": "telinf2",
             "name": "TELEINF2",
-            "_row_num": 89,
-            "__rowNum__": 88,
+            "_row_num": 91,
+            "__rowNum__": 90,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen85",
+            "_branch_label_enclosing_screen": "inc/_screen87",
             "promptIdx": 33
           },
           {
@@ -6280,22 +6290,22 @@
               }
             },
             "constraint": "data('TELEMOVEL3') > 99999999 && data('TELEMOVEL3') < 1000000000 || data('CONSENT') == '2'",
-            "_row_num": 90,
-            "__rowNum__": 89,
+            "_row_num": 92,
+            "__rowNum__": 91,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen85",
+            "_branch_label_enclosing_screen": "inc/_screen87",
             "promptIdx": 34
           },
           {
             "type": "select_one_with_other",
             "values_list": "telinf2",
             "name": "TELEINF3",
-            "_row_num": 91,
-            "__rowNum__": 90,
+            "_row_num": 93,
+            "__rowNum__": 92,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen85",
+            "_branch_label_enclosing_screen": "inc/_screen87",
             "promptIdx": 35
           },
           {
@@ -6317,11 +6327,11 @@
               }
             },
             "constraint": "data('CARTVIS') != null || data('CONSENT') == '2'",
-            "_row_num": 100,
-            "__rowNum__": 99,
+            "_row_num": 102,
+            "__rowNum__": 101,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen99",
+            "_branch_label_enclosing_screen": "inc/_screen101",
             "promptIdx": 36
           },
           {
@@ -6343,11 +6353,11 @@
               }
             },
             "constraint": "data('SARVAC') != null || data('CONSENT') == '2' || data('CARTVIS') == '2'",
-            "_row_num": 102,
-            "__rowNum__": 101,
+            "_row_num": 104,
+            "__rowNum__": 103,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen99",
+            "_branch_label_enclosing_screen": "inc/_screen101",
             "promptIdx": 37
           },
           {
@@ -6357,8 +6367,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Mother/guardian confirmed that the child did not receive the second measles vaccine",
-                  "default": "A mãe/tutor confirmou que a criança não recebeu a vacina do sarampo"
+                  "english": "Mother/guardian confirmed that the child did not receive the first measles vaccine",
+                  "default": "A mãe/tutor confirmou que a criança não recebeu o primero deose de vacina do sarampo"
                 }
               },
               "constraint_message": {
@@ -6369,11 +6379,11 @@
               }
             },
             "constraint": "data('VENAOVAS') != null || data('CONSENT') == '2' || data('CARTVIS') == '1'",
-            "_row_num": 105,
-            "__rowNum__": 104,
+            "_row_num": 107,
+            "__rowNum__": 106,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen99",
+            "_branch_label_enclosing_screen": "inc/_screen101",
             "promptIdx": 38
           },
           {
@@ -6384,7 +6394,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child received the second measles vaccine",
-                  "default": "A criança recebeu a seguna vacina do sarampo"
+                  "default": "A criança recebeu a segunda vacina do sarampo"
                 }
               },
               "constraint_message": {
@@ -6395,11 +6405,11 @@
               }
             },
             "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2'",
-            "_row_num": 109,
-            "__rowNum__": 108,
+            "_row_num": 111,
+            "__rowNum__": 110,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen99",
+            "_branch_label_enclosing_screen": "inc/_screen101",
             "promptIdx": 39
           },
           {
@@ -6421,11 +6431,11 @@
               }
             },
             "constraint": "data('VENAOVAS') != null || data('CONSENT') == '2' || data('CARTVIS') == '1'",
-            "_row_num": 113,
-            "__rowNum__": 112,
+            "_row_num": 115,
+            "__rowNum__": 114,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen99",
+            "_branch_label_enclosing_screen": "inc/_screen101",
             "promptIdx": 40
           },
           {
@@ -6439,11 +6449,11 @@
                 }
               }
             },
-            "_row_num": 118,
-            "__rowNum__": 117,
+            "_row_num": 120,
+            "__rowNum__": 119,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "inc/_screen118",
+            "_branch_label_enclosing_screen": "inc/_screen120",
             "promptIdx": 41
           },
           {
@@ -6473,11 +6483,11 @@
             "inputAttributes": {
               "type": "number"
             },
-            "_row_num": 121,
-            "__rowNum__": 120,
+            "_row_num": 123,
+            "__rowNum__": 122,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen120",
+            "_branch_label_enclosing_screen": "inc/_screen122",
             "promptIdx": 42
           },
           {
@@ -6498,11 +6508,11 @@
               }
             },
             "constraint": "(data('BRACOCRI')>49 && data('BRACOCRI')<343 && data('BRACOCRI')%2 == 0) || data('CONSENT') == '2' || data('BRACOCRI') == 999",
-            "_row_num": 122,
-            "__rowNum__": 121,
+            "_row_num": 124,
+            "__rowNum__": 123,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen120",
+            "_branch_label_enclosing_screen": "inc/_screen122",
             "promptIdx": 43
           },
           {
@@ -6517,11 +6527,11 @@
                 }
               }
             },
-            "_row_num": 125,
-            "__rowNum__": 124,
+            "_row_num": 127,
+            "__rowNum__": 126,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen124",
+            "_branch_label_enclosing_screen": "inc/_screen126",
             "promptIdx": 44
           },
           {
@@ -6542,11 +6552,11 @@
               }
             },
             "constraint": "adate.diffInDays(data('DATINC'), data('INTINICI'))<1 || adate.hasUncertainty(data('INTINICI')) ||data('CONSENT') == '2'",
-            "_row_num": 127,
-            "__rowNum__": 126,
+            "_row_num": 129,
+            "__rowNum__": 128,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen124",
+            "_branch_label_enclosing_screen": "inc/_screen126",
             "promptIdx": 45
           },
           {
@@ -6561,11 +6571,11 @@
                 }
               }
             },
-            "_row_num": 131,
-            "__rowNum__": 130,
+            "_row_num": 133,
+            "__rowNum__": 132,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen130",
+            "_branch_label_enclosing_screen": "inc/_screen132",
             "promptIdx": 46
           },
           {
@@ -6580,11 +6590,11 @@
                 }
               }
             },
-            "_row_num": 132,
-            "__rowNum__": 131,
+            "_row_num": 134,
+            "__rowNum__": 133,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen130",
+            "_branch_label_enclosing_screen": "inc/_screen132",
             "promptIdx": 47
           },
           {
@@ -6599,11 +6609,11 @@
                 }
               }
             },
-            "_row_num": 133,
-            "__rowNum__": 132,
+            "_row_num": 135,
+            "__rowNum__": 134,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen130",
+            "_branch_label_enclosing_screen": "inc/_screen132",
             "promptIdx": 48
           },
           {
@@ -6618,11 +6628,11 @@
                 }
               }
             },
-            "_row_num": 141,
-            "__rowNum__": 140,
+            "_row_num": 143,
+            "__rowNum__": 142,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen140",
+            "_branch_label_enclosing_screen": "inc/_screen142",
             "promptIdx": 49
           },
           {
@@ -6637,11 +6647,11 @@
                 }
               }
             },
-            "_row_num": 142,
-            "__rowNum__": 141,
+            "_row_num": 144,
+            "__rowNum__": 143,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen140",
+            "_branch_label_enclosing_screen": "inc/_screen142",
             "promptIdx": 50
           },
           {
@@ -6656,11 +6666,11 @@
                 }
               }
             },
-            "_row_num": 143,
-            "__rowNum__": 142,
+            "_row_num": 145,
+            "__rowNum__": 144,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen140",
+            "_branch_label_enclosing_screen": "inc/_screen142",
             "promptIdx": 51
           },
           {
@@ -6675,11 +6685,11 @@
                 }
               }
             },
-            "_row_num": 146,
-            "__rowNum__": 145,
+            "_row_num": 148,
+            "__rowNum__": 147,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen145",
+            "_branch_label_enclosing_screen": "inc/_screen147",
             "promptIdx": 52
           },
           {
@@ -6693,11 +6703,11 @@
                 }
               }
             },
-            "_row_num": 147,
-            "__rowNum__": 146,
+            "_row_num": 149,
+            "__rowNum__": 148,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen145",
+            "_branch_label_enclosing_screen": "inc/_screen147",
             "promptIdx": 53
           },
           {
@@ -6712,11 +6722,11 @@
                 }
               }
             },
-            "_row_num": 150,
-            "__rowNum__": 149,
+            "_row_num": 152,
+            "__rowNum__": 151,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen149",
+            "_branch_label_enclosing_screen": "inc/_screen151",
             "promptIdx": 54
           },
           {
@@ -6731,11 +6741,11 @@
                 }
               }
             },
-            "_row_num": 152,
-            "__rowNum__": 151,
+            "_row_num": 154,
+            "__rowNum__": 153,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen149",
+            "_branch_label_enclosing_screen": "inc/_screen151",
             "promptIdx": 55
           },
           {
@@ -6749,11 +6759,11 @@
                 }
               }
             },
-            "_row_num": 154,
-            "__rowNum__": 153,
+            "_row_num": 156,
+            "__rowNum__": 155,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen149",
+            "_branch_label_enclosing_screen": "inc/_screen151",
             "promptIdx": 56
           },
           {
@@ -6768,11 +6778,11 @@
                 }
               }
             },
-            "_row_num": 159,
-            "__rowNum__": 158,
+            "_row_num": 161,
+            "__rowNum__": 160,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen158",
+            "_branch_label_enclosing_screen": "inc/_screen160",
             "promptIdx": 57
           },
           {
@@ -6787,11 +6797,11 @@
                 }
               }
             },
-            "_row_num": 161,
-            "__rowNum__": 160,
+            "_row_num": 163,
+            "__rowNum__": 162,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen158",
+            "_branch_label_enclosing_screen": "inc/_screen160",
             "promptIdx": 58
           },
           {
@@ -6805,11 +6815,11 @@
                 }
               }
             },
-            "_row_num": 163,
-            "__rowNum__": 162,
+            "_row_num": 165,
+            "__rowNum__": 164,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen158",
+            "_branch_label_enclosing_screen": "inc/_screen160",
             "promptIdx": 59
           },
           {
@@ -6823,11 +6833,11 @@
                 }
               }
             },
-            "_row_num": 168,
-            "__rowNum__": 167,
+            "_row_num": 170,
+            "__rowNum__": 169,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen169",
             "promptIdx": 60
           },
           {
@@ -6849,11 +6859,11 @@
               }
             },
             "constraint": "data('PODEVAC') != null || data('CONSENT') == '2'",
-            "_row_num": 171,
-            "__rowNum__": 170,
+            "_row_num": 173,
+            "__rowNum__": 172,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen170",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 61
           },
           {
@@ -6867,11 +6877,11 @@
                 }
               }
             },
-            "_row_num": 173,
-            "__rowNum__": 172,
+            "_row_num": 175,
+            "__rowNum__": 174,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen170",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 62
           },
           {
@@ -6893,11 +6903,11 @@
               }
             },
             "constraint": "data('PODEINC') != null || data('CONSENT') == '2'",
-            "_row_num": 175,
-            "__rowNum__": 174,
+            "_row_num": 177,
+            "__rowNum__": 176,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen170",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 63
           },
           {
@@ -6911,11 +6921,11 @@
                 }
               }
             },
-            "_row_num": 177,
-            "__rowNum__": 176,
+            "_row_num": 179,
+            "__rowNum__": 178,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen170",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 64
           },
           {
@@ -6937,11 +6947,11 @@
               }
             },
             "constraint": "data('JAINC') != null || data('CONSENT') == '2'",
-            "_row_num": 179,
-            "__rowNum__": 178,
+            "_row_num": 181,
+            "__rowNum__": 180,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen170",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 65
           },
           {
@@ -6954,11 +6964,11 @@
                 }
               }
             },
-            "_row_num": 184,
-            "__rowNum__": 183,
+            "_row_num": 186,
+            "__rowNum__": 185,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 66
           },
           {
@@ -6971,11 +6981,11 @@
                 }
               }
             },
-            "_row_num": 186,
-            "__rowNum__": 185,
+            "_row_num": 188,
+            "__rowNum__": 187,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 67
           },
           {
@@ -6988,11 +6998,11 @@
                 }
               }
             },
-            "_row_num": 189,
-            "__rowNum__": 188,
+            "_row_num": 191,
+            "__rowNum__": 190,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 68
           },
           {
@@ -7005,11 +7015,11 @@
                 }
               }
             },
-            "_row_num": 192,
-            "__rowNum__": 191,
+            "_row_num": 194,
+            "__rowNum__": 193,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 69
           },
           {
@@ -7022,11 +7032,11 @@
                 }
               }
             },
-            "_row_num": 195,
-            "__rowNum__": 194,
+            "_row_num": 197,
+            "__rowNum__": 196,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 70
           },
           {
@@ -7039,11 +7049,11 @@
                 }
               }
             },
-            "_row_num": 198,
-            "__rowNum__": 197,
+            "_row_num": 200,
+            "__rowNum__": 199,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 71
           },
           {
@@ -7056,11 +7066,11 @@
                 }
               }
             },
-            "_row_num": 201,
-            "__rowNum__": 200,
+            "_row_num": 203,
+            "__rowNum__": 202,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 72
           },
           {
@@ -7073,11 +7083,11 @@
                 }
               }
             },
-            "_row_num": 204,
-            "__rowNum__": 203,
+            "_row_num": 206,
+            "__rowNum__": 205,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 73
           },
           {
@@ -7090,11 +7100,11 @@
                 }
               }
             },
-            "_row_num": 207,
-            "__rowNum__": 206,
+            "_row_num": 209,
+            "__rowNum__": 208,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 74
           },
           {
@@ -7107,11 +7117,11 @@
                 }
               }
             },
-            "_row_num": 210,
-            "__rowNum__": 209,
+            "_row_num": 212,
+            "__rowNum__": 211,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 75
           },
           {
@@ -7124,11 +7134,11 @@
                 }
               }
             },
-            "_row_num": 214,
-            "__rowNum__": 213,
+            "_row_num": 216,
+            "__rowNum__": 215,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen182",
+            "_branch_label_enclosing_screen": "inc/_screen184",
             "promptIdx": 76
           },
           {
@@ -7149,11 +7159,11 @@
               }
             },
             "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-            "_row_num": 219,
-            "__rowNum__": 218,
+            "_row_num": 221,
+            "__rowNum__": 220,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen218",
+            "_branch_label_enclosing_screen": "inc/_screen220",
             "promptIdx": 77
           },
           {
@@ -7174,11 +7184,11 @@
               }
             },
             "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-            "_row_num": 220,
-            "__rowNum__": 219,
+            "_row_num": 222,
+            "__rowNum__": 221,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen218",
+            "_branch_label_enclosing_screen": "inc/_screen220",
             "promptIdx": 78
           },
           {
@@ -7191,11 +7201,11 @@
                 }
               }
             },
-            "_row_num": 222,
-            "__rowNum__": 221,
+            "_row_num": 224,
+            "__rowNum__": 223,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen218",
+            "_branch_label_enclosing_screen": "inc/_screen220",
             "promptIdx": 79
           },
           {
@@ -7212,11 +7222,11 @@
                 "helperText": false
               }
             },
-            "_row_num": 227,
-            "__rowNum__": 226,
+            "_row_num": 229,
+            "__rowNum__": 228,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen225",
+            "_branch_label_enclosing_screen": "inc/_screen227",
             "promptIdx": 80
           },
           {
@@ -7237,11 +7247,11 @@
               }
             },
             "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-            "_row_num": 228,
-            "__rowNum__": 227,
+            "_row_num": 230,
+            "__rowNum__": 229,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "inc/_screen225",
+            "_branch_label_enclosing_screen": "inc/_screen227",
             "promptIdx": 81
           },
           {
@@ -7262,11 +7272,11 @@
               }
             },
             "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-            "_row_num": 230,
-            "__rowNum__": 229,
+            "_row_num": 232,
+            "__rowNum__": 231,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen225",
+            "_branch_label_enclosing_screen": "inc/_screen227",
             "promptIdx": 82
           },
           {
@@ -7279,11 +7289,11 @@
                 }
               }
             },
-            "_row_num": 232,
-            "__rowNum__": 231,
+            "_row_num": 234,
+            "__rowNum__": 233,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen225",
+            "_branch_label_enclosing_screen": "inc/_screen227",
             "promptIdx": 83
           },
           {
@@ -7298,11 +7308,11 @@
                 }
               }
             },
-            "_row_num": 236,
-            "__rowNum__": 235,
+            "_row_num": 238,
+            "__rowNum__": 237,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen235",
+            "_branch_label_enclosing_screen": "inc/_screen237",
             "promptIdx": 84
           },
           {
@@ -7317,11 +7327,11 @@
                 }
               }
             },
-            "_row_num": 238,
-            "__rowNum__": 237,
+            "_row_num": 240,
+            "__rowNum__": 239,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen235",
+            "_branch_label_enclosing_screen": "inc/_screen237",
             "promptIdx": 85
           },
           {
@@ -7334,19 +7344,19 @@
                 }
               }
             },
-            "_row_num": 243,
-            "__rowNum__": 242,
+            "_row_num": 245,
+            "__rowNum__": 244,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen242",
+            "_branch_label_enclosing_screen": "inc/_screen244",
             "promptIdx": 86
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 247,
-            "_branch_label_enclosing_screen": "inc/_screen247",
+            "_row_num": 249,
+            "_branch_label_enclosing_screen": "inc/_screen249",
             "promptIdx": 87
           }
         ],
@@ -7391,22 +7401,22 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 6,
-              "__rowNum__": 5,
+              "_row_num": 8,
+              "__rowNum__": 7,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATINC', adate.today());\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nif (data('DATINC') == null) {\nassign('START', now());\nassign('DATINC', adate.today());\n}\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
             "clause": "begin screen",
-            "_row_num": 7,
-            "__rowNum__": 6,
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 31,
-              "__rowNum__": 30,
+              "_row_num": 33,
+              "__rowNum__": 32,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nif (data('BAIRRO') == 77) {\nactivePromptIndicies.push(2);\nif (data('TABZ') == 7777) {\nactivePromptIndicies.push(3);\n}\nelse {\nactivePromptIndicies.push(4);\n}\nassign('CAMO', 9999);\n}\nelse {\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\nif (data('camons') !=null) {\nassign('CAMO', 9999);\nactivePromptIndicies.push(8);\n}\nactivePromptIndicies.push(9);\nactivePromptIndicies.push(10);\nif (data('cnons') != null) {\nassign('CNO', 99999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7414,13 +7424,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "_row_num": 34,
+            "__rowNum__": 33,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 36,
-              "__rowNum__": 35,
+              "_row_num": 38,
+              "__rowNum__": 37,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
@@ -7428,13 +7438,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 37,
-            "__rowNum__": 36,
+            "_row_num": 39,
+            "__rowNum__": 38,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 42,
-              "__rowNum__": 41,
+              "_row_num": 44,
+              "__rowNum__": 43,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nif (data('RESP') != '1' && data('RESP') != null) {\nactivePromptIndicies.push(15);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7442,13 +7452,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 43,
-            "__rowNum__": 42,
+            "_row_num": 45,
+            "__rowNum__": 44,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 62,
-              "__rowNum__": 61,
+              "_row_num": 64,
+              "__rowNum__": 63,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nif (data('regnons') != null) {\nassign('REGNO', 999);\n}\nif (data('BAIRRO') != 77) {\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nif (data('idns') != null) {\nassign('ID', 9999999);\n}\n}\nelse {\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nif (data('regidcns') !=null) {\nassign('REGIDC', 999999999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7456,13 +7466,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 63,
-            "__rowNum__": 62,
+            "_row_num": 65,
+            "__rowNum__": 64,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 74,
-              "__rowNum__": 73,
+              "_row_num": 76,
+              "__rowNum__": 75,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nif (data('dobns') != null) {\nassign('DOB', \"D:NS,M:NS,Y:NS\");\n}\nif (data('DOB')==\"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n}\nactivePromptIndicies.push(26);\n\nreturn activePromptIndicies;\n}\n",
@@ -7470,13 +7480,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "_row_num": 77,
+            "__rowNum__": 76,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 83,
-              "__rowNum__": 82,
+              "_row_num": 85,
+              "__rowNum__": 84,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nif (data('CONSENT') == '1') {\nactivePromptIndicies.push(28);\nif (data('CONSENTTIPO') == '2') {\nactivePromptIndicies.push(29);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7485,28 +7495,28 @@
           {
             "clause": "if",
             "condition": "data('CONSENT') == '1'",
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 86,
+            "__rowNum__": 85,
             "_token_type": "goto_label",
-            "_branch_label": "_then84",
+            "_branch_label": "_then86",
             "operationIdx": 7
           },
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else241",
-            "_row_num": 241,
+            "_branch_label": "_else243",
+            "_row_num": 243,
             "operationIdx": 8
           },
           {
             "clause": "begin screen",
-            "_row_num": 85,
-            "__rowNum__": 84,
+            "_row_num": 87,
+            "__rowNum__": 86,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 98,
-              "__rowNum__": 97,
+              "_row_num": 100,
+              "__rowNum__": 99,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nif (data('TELEINF2') == '3') {\nassign('TELEMOVEL2', 999999999);\n}\nif (data('TELEINF3') == '3') {\nassign('TELEMOVEL3', 999999999);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7514,36 +7524,36 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 99,
-            "__rowNum__": 98,
+            "_row_num": 101,
+            "__rowNum__": 100,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 116,
-              "__rowNum__": 115,
+              "_row_num": 118,
+              "__rowNum__": 117,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(37);\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(38);\n}\nif (calculates.childAGE <453 || adate.hasUncertainty(data('DOB')) && (date('IDADEANO') == '1' && data('IDADEMES')< '3' || data('IDADEMES')< '15')) {\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(39);\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(40);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(37);\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(38);\n}\nif (calculates.childAGE > '453' || adate.hasUncertainty(data('DOB')) && (data('IDADEANO') == '1' && data('IDADEMES') > '3' || data('IDADEMES')> '14' || data('IDADEANO') > '1' )) {\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(39);\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(40);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 10
           },
           {
             "clause": "if",
             "condition": "data('CARTVIS') == '1'",
-            "_row_num": 117,
-            "__rowNum__": 116,
+            "_row_num": 119,
+            "__rowNum__": 118,
             "_token_type": "goto_label",
-            "_branch_label": "_then117",
+            "_branch_label": "_then119",
             "operationIdx": 11
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else119",
-            "_row_num": 119,
+            "_branch_label": "_else121",
+            "_row_num": 121,
             "operationIdx": 12
           },
           {
-            "_row_num": 118,
+            "_row_num": 120,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 13
@@ -7551,19 +7561,19 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif119",
-            "_row_num": 119,
+            "_branch_label": "_endif121",
+            "_row_num": 121,
             "operationIdx": 14
           },
           {
             "clause": "begin screen",
-            "_row_num": 120,
-            "__rowNum__": 119,
+            "_row_num": 122,
+            "__rowNum__": 121,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 123,
-              "__rowNum__": 122,
+              "_row_num": 125,
+              "__rowNum__": 124,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\n\nreturn activePromptIndicies;\n}\n",
@@ -7571,13 +7581,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 124,
-            "__rowNum__": 123,
+            "_row_num": 126,
+            "__rowNum__": 125,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 129,
-              "__rowNum__": 128,
+              "_row_num": 131,
+              "__rowNum__": 130,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(44);\nif (data('MOTCONT')=='2') {\nactivePromptIndicies.push(45);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7585,13 +7595,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 130,
-            "__rowNum__": 129,
+            "_row_num": 132,
+            "__rowNum__": 131,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 139,
-              "__rowNum__": 138,
+              "_row_num": 141,
+              "__rowNum__": 140,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\nif (data('MOTCONT')=='1') {\nassign('REGDATE', data(\"DATINC\"));\n}\nelse {\nassign('REGDATE', data(\"INTINICI\"));\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7599,13 +7609,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 140,
-            "__rowNum__": 139,
+            "_row_num": 142,
+            "__rowNum__": 141,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 144,
-              "__rowNum__": 143,
+              "_row_num": 146,
+              "__rowNum__": 145,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\n\nreturn activePromptIndicies;\n}\n",
@@ -7613,13 +7623,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 145,
-            "__rowNum__": 144,
+            "_row_num": 147,
+            "__rowNum__": 146,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 148,
-              "__rowNum__": 147,
+              "_row_num": 150,
+              "__rowNum__": 149,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\n\nreturn activePromptIndicies;\n}\n",
@@ -7627,13 +7637,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 149,
-            "__rowNum__": 148,
+            "_row_num": 151,
+            "__rowNum__": 150,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 157,
-              "__rowNum__": 156,
+              "_row_num": 159,
+              "__rowNum__": 158,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\nif (data('TRATAMENT_A') =='1') {\nactivePromptIndicies.push(55);\nif (selected(data('TRATQUAL_A'),'77')) {\nactivePromptIndicies.push(56);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7641,13 +7651,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 158,
-            "__rowNum__": 157,
+            "_row_num": 160,
+            "__rowNum__": 159,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 166,
-              "__rowNum__": 165,
+              "_row_num": 168,
+              "__rowNum__": 167,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(57);\nif (data('TRATAMENT_R') =='1') {\nactivePromptIndicies.push(58);\nif (selected(data('TRATQUAL_R'),'77')) {\nactivePromptIndicies.push(59);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7655,13 +7665,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 167,
-            "__rowNum__": 166,
+            "_row_num": 169,
+            "__rowNum__": 168,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 169,
-              "__rowNum__": 168,
+              "_row_num": 171,
+              "__rowNum__": 170,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(60);\n\nreturn activePromptIndicies;\n}\n",
@@ -7669,13 +7679,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 170,
-            "__rowNum__": 169,
+            "_row_num": 172,
+            "__rowNum__": 171,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 180,
-              "__rowNum__": 179,
+              "_row_num": 182,
+              "__rowNum__": 181,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(61);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(62);\n}\nactivePromptIndicies.push(63);\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(64);\n}\nactivePromptIndicies.push(65);\n\nreturn activePromptIndicies;\n}\n",
@@ -7684,28 +7694,28 @@
           {
             "clause": "if",
             "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') != '2')||data('SARVAC2') == '1'",
-            "_row_num": 181,
-            "__rowNum__": 180,
+            "_row_num": 183,
+            "__rowNum__": 182,
             "_token_type": "goto_label",
-            "_branch_label": "_then181",
+            "_branch_label": "_then183",
             "operationIdx": 24
           },
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else217",
-            "_row_num": 217,
+            "_branch_label": "_else219",
+            "_row_num": 219,
             "operationIdx": 25
           },
           {
             "clause": "begin screen",
-            "_row_num": 182,
-            "__rowNum__": 181,
+            "_row_num": 184,
+            "__rowNum__": 183,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 216,
-              "__rowNum__": 215,
+              "_row_num": 218,
+              "__rowNum__": 217,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(66);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(68);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(69);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(70);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC') == '1'&& data('SARVAC2')==1) {\nactivePromptIndicies.push(74);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(75);\n}\nif (data('SARVAC') == '1' && calculates.childAGE <453) {\nactivePromptIndicies.push(76);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7714,19 +7724,19 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif234",
-            "_row_num": 234,
+            "_branch_label": "_endif236",
+            "_row_num": 236,
             "operationIdx": 27
           },
           {
             "clause": "begin screen",
-            "_row_num": 218,
-            "__rowNum__": 217,
+            "_row_num": 220,
+            "__rowNum__": 219,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 224,
-              "__rowNum__": 223,
+              "_row_num": 226,
+              "__rowNum__": 225,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(77);\nactivePromptIndicies.push(78);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(79);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
@@ -7734,13 +7744,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 225,
-            "__rowNum__": 224,
+            "_row_num": 227,
+            "__rowNum__": 226,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 233,
-              "__rowNum__": 232,
+              "_row_num": 235,
+              "__rowNum__": 234,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(80);\nactivePromptIndicies.push(81);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(82);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(83);\n\nreturn activePromptIndicies;\n}\n",
@@ -7748,13 +7758,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 235,
-            "__rowNum__": 234,
+            "_row_num": 237,
+            "__rowNum__": 236,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 240,
-              "__rowNum__": 239,
+              "_row_num": 242,
+              "__rowNum__": 241,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(84);\nif (data('INC') == '1') {\nactivePromptIndicies.push(85);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7763,19 +7773,19 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif246",
-            "_row_num": 246,
+            "_branch_label": "_endif248",
+            "_row_num": 248,
             "operationIdx": 31
           },
           {
             "clause": "begin screen",
-            "_row_num": 242,
-            "__rowNum__": 241,
+            "_row_num": 244,
+            "__rowNum__": 243,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 245,
-              "__rowNum__": 244,
+              "_row_num": 247,
+              "__rowNum__": 246,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(86);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
@@ -7784,11 +7794,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 247,
+            "_row_num": 249,
             "operationIdx": 33
           },
           {
-            "_row_num": 247,
+            "_row_num": 249,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(87);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -7799,46 +7809,46 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 247,
+            "_row_num": 249,
             "operationIdx": 35
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_screen7": 1,
-          "_screen32": 2,
-          "_screen37": 3,
-          "_screen43": 4,
-          "_screen63": 5,
-          "_screen75": 6,
-          "_then84": 9,
-          "_screen85": 9,
-          "_screen99": 10,
-          "_then117": 13,
-          "_screen118": 13,
-          "_else119": 15,
-          "_endif119": 15,
-          "_screen120": 15,
-          "_screen124": 16,
-          "_screen130": 17,
-          "_screen140": 18,
-          "_screen145": 19,
-          "_screen149": 20,
-          "_screen158": 21,
-          "_screen167": 22,
-          "_screen170": 23,
-          "_then181": 26,
-          "_screen182": 26,
-          "_else217": 28,
-          "_screen218": 28,
-          "_screen225": 29,
-          "_endif234": 30,
-          "_screen235": 30,
-          "_else241": 32,
-          "_screen242": 32,
-          "_endif246": 33,
+          "_screen9": 1,
+          "_screen34": 2,
+          "_screen39": 3,
+          "_screen45": 4,
+          "_screen65": 5,
+          "_screen77": 6,
+          "_then86": 9,
+          "_screen87": 9,
+          "_screen101": 10,
+          "_then119": 13,
+          "_screen120": 13,
+          "_else121": 15,
+          "_endif121": 15,
+          "_screen122": 15,
+          "_screen126": 16,
+          "_screen132": 17,
+          "_screen142": 18,
+          "_screen147": 19,
+          "_screen151": 20,
+          "_screen160": 21,
+          "_screen169": 22,
+          "_screen172": 23,
+          "_then183": 26,
+          "_screen184": 26,
+          "_else219": 28,
+          "_screen220": 28,
+          "_screen227": 29,
+          "_endif236": 30,
+          "_screen237": 30,
+          "_else243": 32,
+          "_screen244": 32,
+          "_endif248": 33,
           "_contents": 34,
-          "_screen247": 34
+          "_screen249": 34
         }
       },
       "initial": {
@@ -8029,7 +8039,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 238,
+            "_row_num": 240,
             "section_name": "inc"
           },
           {
@@ -8048,7 +8058,7 @@
         "valuesList": "bairro_csv",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 10,
             "section_name": "inc"
           },
           {
@@ -8066,7 +8076,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 124,
             "section_name": "inc"
           },
           {
@@ -8084,7 +8094,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 21,
             "section_name": "inc"
           },
           {
@@ -8112,7 +8122,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "inc"
           },
           {
@@ -8133,11 +8143,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 16,
             "section_name": "inc"
           },
           {
-            "_row_num": 23,
+            "_row_num": 25,
             "section_name": "inc"
           },
           {
@@ -8175,7 +8185,7 @@
         },
         "_defn": [
           {
-            "_row_num": 118,
+            "_row_num": 120,
             "section_name": "inc"
           },
           {
@@ -8199,7 +8209,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 100,
+            "_row_num": 102,
             "section_name": "inc"
           },
           {
@@ -8217,7 +8227,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 25,
+            "_row_num": 27,
             "section_name": "inc"
           },
           {
@@ -8245,7 +8255,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 26,
+            "_row_num": 28,
             "section_name": "inc"
           },
           {
@@ -8267,7 +8277,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 76,
+            "_row_num": 78,
             "section_name": "inc"
           },
           {
@@ -8286,7 +8296,7 @@
         "valuesList": "signature",
         "_defn": [
           {
-            "_row_num": 78,
+            "_row_num": 80,
             "section_name": "inc"
           },
           {
@@ -8305,7 +8315,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 146,
+            "_row_num": 148,
             "section_name": "inc"
           },
           {
@@ -8328,7 +8338,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 7,
             "section_name": "inc"
           },
           {
@@ -8351,7 +8361,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 227,
+            "_row_num": 229,
             "section_name": "inc"
           },
           {
@@ -8370,7 +8380,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 132,
+            "_row_num": 134,
             "section_name": "inc"
           },
           {
@@ -8389,7 +8399,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 143,
+            "_row_num": 145,
             "section_name": "inc"
           },
           {
@@ -8412,7 +8422,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 66,
             "section_name": "inc"
           },
           {
@@ -8440,7 +8450,7 @@
         "valuesList": "datens",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 67,
             "section_name": "inc"
           },
           {
@@ -8462,7 +8472,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 236,
+            "_row_num": 238,
             "section_name": "inc"
           },
           {
@@ -8481,7 +8491,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 131,
+            "_row_num": 133,
             "section_name": "inc"
           },
           {
@@ -8500,7 +8510,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 228,
+            "_row_num": 230,
             "section_name": "inc"
           },
           {
@@ -8532,7 +8542,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 52,
             "section_name": "inc"
           },
           {
@@ -8550,7 +8560,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 72,
             "section_name": "inc"
           },
           {
@@ -8568,7 +8578,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 73,
             "section_name": "inc"
           },
           {
@@ -8596,7 +8606,7 @@
         "valuesList": "nsID",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 53,
             "section_name": "inc"
           },
           {
@@ -8636,7 +8646,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 127,
+            "_row_num": 129,
             "section_name": "inc"
           },
           {
@@ -8655,7 +8665,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 179,
+            "_row_num": 181,
             "section_name": "inc"
           },
           {
@@ -8674,7 +8684,7 @@
         "valuesList": "Motivo",
         "_defn": [
           {
-            "_row_num": 125,
+            "_row_num": 127,
             "section_name": "inc"
           },
           {
@@ -8692,7 +8702,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 177,
+            "_row_num": 179,
             "section_name": "inc"
           },
           {
@@ -8710,7 +8720,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 35,
             "section_name": "inc"
           },
           {
@@ -8728,7 +8738,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 37,
             "section_name": "inc"
           },
           {
@@ -8746,7 +8756,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 40,
+            "_row_num": 42,
             "section_name": "inc"
           },
           {
@@ -8764,7 +8774,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 230,
+            "_row_num": 232,
             "section_name": "inc"
           },
           {
@@ -8796,7 +8806,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 173,
+            "_row_num": 175,
             "section_name": "inc"
           },
           {
@@ -8814,7 +8824,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 147,
+            "_row_num": 149,
             "section_name": "inc"
           },
           {
@@ -8832,7 +8842,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 14,
             "section_name": "inc"
           },
           {
@@ -8851,7 +8861,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 175,
+            "_row_num": 177,
             "section_name": "inc"
           },
           {
@@ -8870,7 +8880,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 171,
+            "_row_num": 173,
             "section_name": "inc"
           },
           {
@@ -8902,7 +8912,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 219,
+            "_row_num": 221,
             "section_name": "inc"
           },
           {
@@ -8920,7 +8930,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 220,
+            "_row_num": 222,
             "section_name": "inc"
           },
           {
@@ -8938,7 +8948,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 58,
             "section_name": "inc"
           },
           {
@@ -8966,7 +8976,7 @@
         "valuesList": "nsREGIDC",
         "_defn": [
           {
-            "_row_num": 57,
+            "_row_num": 59,
             "section_name": "inc"
           },
           {
@@ -8987,7 +8997,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 46,
             "section_name": "inc"
           },
           {
@@ -9015,7 +9025,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 47,
             "section_name": "inc"
           },
           {
@@ -9037,7 +9047,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 141,
+            "_row_num": 143,
             "section_name": "inc"
           },
           {
@@ -9056,7 +9066,7 @@
         "valuesList": "resp",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 40,
             "section_name": "inc"
           },
           {
@@ -9075,7 +9085,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 102,
+            "_row_num": 104,
             "section_name": "inc"
           },
           {
@@ -9094,7 +9104,7 @@
         "valuesList": "sexo",
         "_defn": [
           {
-            "_row_num": 34,
+            "_row_num": 36,
             "section_name": "inc"
           },
           {
@@ -9127,11 +9137,11 @@
         "valuesList": "tabz_csv",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "inc"
           },
           {
-            "_row_num": 18,
+            "_row_num": 20,
             "section_name": "inc"
           },
           {
@@ -9150,7 +9160,7 @@
         "valuesList": "telinf1",
         "_defn": [
           {
-            "_row_num": 87,
+            "_row_num": 89,
             "section_name": "inc"
           },
           {
@@ -9169,7 +9179,7 @@
         "valuesList": "telinf2",
         "_defn": [
           {
-            "_row_num": 89,
+            "_row_num": 91,
             "section_name": "inc"
           },
           {
@@ -9188,7 +9198,7 @@
         "valuesList": "telinf2",
         "_defn": [
           {
-            "_row_num": 91,
+            "_row_num": 93,
             "section_name": "inc"
           },
           {
@@ -9206,7 +9216,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 86,
+            "_row_num": 88,
             "section_name": "inc"
           },
           {
@@ -9224,7 +9234,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 88,
+            "_row_num": 90,
             "section_name": "inc"
           },
           {
@@ -9242,7 +9252,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 90,
+            "_row_num": 92,
             "section_name": "inc"
           },
           {
@@ -9260,7 +9270,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 121,
+            "_row_num": 123,
             "section_name": "inc"
           },
           {
@@ -9279,7 +9289,7 @@
         "valuesList": "sim",
         "_defn": [
           {
-            "_row_num": 80,
+            "_row_num": 82,
             "section_name": "inc"
           },
           {
@@ -9298,7 +9308,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 142,
+            "_row_num": 144,
             "section_name": "inc"
           },
           {
@@ -9331,7 +9341,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 150,
+            "_row_num": 152,
             "section_name": "inc"
           },
           {
@@ -9350,7 +9360,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 159,
+            "_row_num": 161,
             "section_name": "inc"
           },
           {
@@ -9388,7 +9398,7 @@
         },
         "_defn": [
           {
-            "_row_num": 168,
+            "_row_num": 170,
             "section_name": "inc"
           },
           {
@@ -9445,7 +9455,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 152,
+            "_row_num": 154,
             "section_name": "inc"
           },
           {
@@ -9475,7 +9485,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 161,
+            "_row_num": 163,
             "section_name": "inc"
           },
           {
@@ -9510,7 +9520,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 154,
+            "_row_num": 156,
             "section_name": "inc"
           },
           {
@@ -9528,7 +9538,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 163,
+            "_row_num": 165,
             "section_name": "inc"
           },
           {
@@ -9547,7 +9557,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 105,
+            "_row_num": 107,
             "section_name": "inc"
           },
           {
@@ -9566,7 +9576,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 133,
+            "_row_num": 135,
             "section_name": "inc"
           },
           {
@@ -9660,7 +9670,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 111,
             "section_name": "inc"
           },
           {
@@ -9679,7 +9689,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 113,
+            "_row_num": 115,
             "section_name": "inc"
           },
           {

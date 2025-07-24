@@ -60,6 +60,7 @@ OUTROSIMPDIA_items,items,string,[]
 PERAPPE,PERAPPE,string,[]
 PERAPPEDIA,PERAPPEDIA,array,"[""PERAPPEDIA_items""]"
 PERAPPEDIA_items,items,string,[]
+SARVAC,SARVAC,string,[]
 SEX,SEX,string,[]
 SIMPQUAL,SIMPQUAL,string,[]
 START,START,assign,[]

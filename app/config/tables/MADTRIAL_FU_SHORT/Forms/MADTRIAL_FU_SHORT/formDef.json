@@ -3610,190 +3610,196 @@
         "_row_num": 40
       },
       {
-        "name": "DIARREIA",
+        "name": "SARVAC",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 41
       },
       {
+        "name": "DIARREIA",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 42
+      },
+      {
         "name": "DIARREIDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 42
+        "_row_num": 43
       },
       {
         "name": "VOMITO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 43
+        "_row_num": 44
       },
       {
         "name": "VOMITODIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 44
+        "_row_num": 45
       },
       {
         "name": "TOSSE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 45
+        "_row_num": 46
       },
       {
         "name": "TOSSEDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 46
+        "_row_num": 47
       },
       {
         "name": "CONSTIP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 47
+        "_row_num": 48
       },
       {
         "name": "CONSTIPDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 48
+        "_row_num": 49
       },
       {
         "name": "PERAPPE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 49
+        "_row_num": 50
       },
       {
         "name": "PERAPPEDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 50
+        "_row_num": 51
       },
       {
         "name": "CHOROU",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 51
+        "_row_num": 52
       },
       {
         "name": "CHOROUDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 52
+        "_row_num": 53
       },
       {
         "name": "FEBRE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 53
+        "_row_num": 54
       },
       {
         "name": "FEBREDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 54
+        "_row_num": 55
       },
       {
         "name": "CONVULSAO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 55
+        "_row_num": 56
       },
       {
         "name": "CONVULSAODIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 56
+        "_row_num": 57
       },
       {
         "name": "OUTROSIMP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 57
+        "_row_num": 58
       },
       {
         "name": "SIMPQUAL",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 58
+        "_row_num": 59
       },
       {
         "name": "OUTROSIMPDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 59
+        "_row_num": 60
       },
       {
         "name": "CONSULTA",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 60
+        "_row_num": 61
       },
       {
         "name": "CONSULTADIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 61
+        "_row_num": 62
       },
       {
         "name": "CONSCAUSA",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 62
+        "_row_num": 63
       },
       {
         "name": "CONSDOC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 63
+        "_row_num": 64
       },
       {
         "name": "MEDICIN",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 64
+        "_row_num": 65
       },
       {
         "name": "MEDICINDIA",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 65
+        "_row_num": 66
       },
       {
         "name": "MEDICIN_Q",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 66
+        "_row_num": 67
       },
       {
         "name": "MEDICINOU_Q",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 67
+        "_row_num": 68
       },
       {
         "name": "DATASAI",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 70
+        "_row_num": 71
       },
       {
         "name": "LASTFUSUC",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 71
+        "_row_num": 72
       },
       {
         "name": "DATINC",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 72
+        "_row_num": 73
       },
       {
         "name": "interval",
         "type": "assign",
         "isSessionVariable": true,
-        "_row_num": 73
+        "_row_num": 74
       }
     ]
   },
@@ -5048,6 +5054,17 @@
         "isSessionVariable": false,
         "elementKey": "TELEMOVEL3"
       },
+      "SARVAC": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 41,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SARVAC"
+      },
       "DIARREIA": {
         "type": "string",
         "valuesList": "sim/nao/naosabe",
@@ -5057,7 +5074,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 41,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -5072,7 +5089,7 @@
         },
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -5088,7 +5105,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 43,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -5103,7 +5120,7 @@
         },
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -5119,7 +5136,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 45,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -5134,7 +5151,7 @@
         },
         "_defn": [
           {
-            "_row_num": 46,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -5150,7 +5167,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 47,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -5165,7 +5182,7 @@
         },
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -5181,7 +5198,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 49,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -5196,7 +5213,7 @@
         },
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -5212,7 +5229,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 51,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -5227,7 +5244,7 @@
         },
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -5243,7 +5260,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 53,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -5258,7 +5275,7 @@
         },
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -5274,7 +5291,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 55,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -5289,7 +5306,7 @@
         },
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -5305,7 +5322,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 57,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -5320,7 +5337,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 58,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -5335,7 +5352,7 @@
         },
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -5351,7 +5368,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 60,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -5371,7 +5388,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 61,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -5386,7 +5403,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 62,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -5397,7 +5414,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -5413,7 +5430,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 64,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -5428,7 +5445,7 @@
         },
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -5448,7 +5465,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 66,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -5463,7 +5480,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 67,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -5483,7 +5500,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 70,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -5499,7 +5516,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -5515,7 +5532,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -5525,7 +5542,7 @@
       "interval": {
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
@@ -9671,6 +9688,20 @@
         "elementSet": "data",
         "elementPath": "TELEMOVEL3"
       },
+      "SARVAC": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 41,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SARVAC",
+        "elementName": "SARVAC",
+        "elementSet": "data",
+        "elementPath": "SARVAC"
+      },
       "DIARREIA": {
         "type": "string",
         "valuesList": "sim/nao/naosabe",
@@ -9680,7 +9711,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 41,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -9702,7 +9733,7 @@
         },
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -9724,7 +9755,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 43,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -9746,7 +9777,7 @@
         },
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -9768,7 +9799,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 45,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -9790,7 +9821,7 @@
         },
         "_defn": [
           {
-            "_row_num": 46,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -9812,7 +9843,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 47,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -9834,7 +9865,7 @@
         },
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -9856,7 +9887,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 49,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -9878,7 +9909,7 @@
         },
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -9900,7 +9931,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 51,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -9922,7 +9953,7 @@
         },
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -9944,7 +9975,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 53,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -9966,7 +9997,7 @@
         },
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -9988,7 +10019,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 55,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -10010,7 +10041,7 @@
         },
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -10032,7 +10063,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 57,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -10050,7 +10081,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 58,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -10072,7 +10103,7 @@
         },
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -10094,7 +10125,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 60,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -10121,7 +10152,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 61,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -10142,7 +10173,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 62,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -10156,7 +10187,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -10175,7 +10206,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 64,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -10197,7 +10228,7 @@
         },
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -10227,7 +10258,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 66,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -10248,7 +10279,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 67,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -10271,7 +10302,7 @@
             "section_name": "FU"
           },
           {
-            "_row_num": 70,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -10290,7 +10321,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -10309,7 +10340,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -10322,7 +10353,7 @@
       "interval": {
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],

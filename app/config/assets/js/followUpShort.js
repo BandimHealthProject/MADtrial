@@ -42,12 +42,12 @@ function getTabzList(data) {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST, i._id, i.DATINC, i.ID, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, MADTRIAL_FU_SHORT._id AS FUrowId "
+    var varNames = "i.NUMEST, i._id, i.DATINC, i.ID, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.OUBAIRRO, i.SARVAC, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, MADTRIAL_FU_SHORT._id AS FUrowId "
     var sql = "SELECT " + varNames + ", i.DOB, i.IDADEANO, i.IDADEMES " +
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_SHORT ON i._id = MADTRIAL_FU_SHORT.IDINC " +
         " WHERE i.INC = 1 " +
-        " AND i.VACSAR = 1" + // 20250723Ane - conditioning on having received first MV as this is only for children enrolled for 2nd dose. 
+        " AND i.SARVAC = 1 " + // 20250723Ane - conditioning on having received first MV as this is only for children enrolled for 2nd dose. 
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " +
         " ORDER BY i.NOMECRI ASC";
     children = [];
