@@ -8,7 +8,7 @@
       },
       {
         "setting_name": "form_version",
-        "value": 60120,
+        "value": 20250725,
         "_row_num": 3
       },
       {
@@ -3239,6 +3239,33 @@
       },
       {
         "choice_list_name": "vac",
+        "data_value": "MENA",
+        "display": {
+          "title": {
+            "text": {
+              "english": "MeningitisA",
+              "default": "MenA"
+            }
+          }
+        },
+        "__EMPTY": "added 2025-07-25",
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "MCV2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "MCV2",
+              "default": "Sarampo2"
+            }
+          }
+        },
+        "_row_num": 22
+      },
+      {
+        "choice_list_name": "vac",
         "data_value": "Ou",
         "display": {
           "title": {
@@ -3248,7 +3275,7 @@
             }
           }
         },
-        "_row_num": 21
+        "_row_num": 23
       },
       {
         "choice_list_name": "sim/não",
@@ -3261,7 +3288,7 @@
             }
           }
         },
-        "_row_num": 22
+        "_row_num": 24
       },
       {
         "choice_list_name": "sim/não",
@@ -3274,20 +3301,11 @@
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 25
       },
       {
-        "choice_list_name": "ass",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Eduardo",
-              "default": "Eduardo"
-            }
-          }
-        },
-        "_row_num": 24
+        "__EMPTY": "1 - Eduardo removed 25-07-2025",
+        "_row_num": 26
       },
       {
         "choice_list_name": "ass",
@@ -3300,7 +3318,7 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 27
       },
       {
         "choice_list_name": "ass",
@@ -3313,7 +3331,7 @@
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 28
       },
       {
         "choice_list_name": "ass",
@@ -3326,7 +3344,7 @@
             }
           }
         },
-        "_row_num": 27
+        "_row_num": 29
       },
       {
         "choice_list_name": "ass",
@@ -3340,7 +3358,7 @@
           }
         },
         "__EMPTY": "11 - Suzete removed 16-02-2022",
-        "_row_num": 28
+        "_row_num": 30
       },
       {
         "choice_list_name": "ass",
@@ -3353,7 +3371,7 @@
             }
           }
         },
-        "_row_num": 29
+        "_row_num": 31
       },
       {
         "choice_list_name": "ass",
@@ -3366,7 +3384,7 @@
             }
           }
         },
-        "_row_num": 30
+        "_row_num": 32
       },
       {
         "choice_list_name": "ns",
@@ -3379,7 +3397,7 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 33
       },
       {
         "choice_list_name": "vezes",
@@ -3392,7 +3410,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 34
       },
       {
         "choice_list_name": "vezes",
@@ -3405,7 +3423,7 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 35
       },
       {
         "choice_list_name": "vezes",
@@ -3418,7 +3436,7 @@
             }
           }
         },
-        "_row_num": 34
+        "_row_num": 36
       },
       {
         "choice_list_name": "vezes",
@@ -3431,7 +3449,7 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 37
       },
       {
         "choice_list_name": "vezes",
@@ -3444,7 +3462,7 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 38
       },
       {
         "choice_list_name": "hospalta",
@@ -3457,7 +3475,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 39
       },
       {
         "choice_list_name": "dontknowhosp",
@@ -3470,7 +3488,7 @@
             }
           }
         },
-        "_row_num": 38
+        "_row_num": 40
       },
       {
         "choice_list_name": "dontknowhosp",
@@ -3483,7 +3501,7 @@
             }
           }
         },
-        "_row_num": 39
+        "_row_num": 41
       },
       {
         "choice_list_name": "reg",
@@ -3496,7 +3514,7 @@
             }
           }
         },
-        "_row_num": 40
+        "_row_num": 42
       },
       {
         "choice_list_name": "reg",
@@ -3509,7 +3527,7 @@
             }
           }
         },
-        "_row_num": 41
+        "_row_num": 43
       },
       {
         "choice_list_name": "reg",
@@ -3522,7 +3540,7 @@
             }
           }
         },
-        "_row_num": 42
+        "_row_num": 44
       },
       {
         "choice_list_name": "reg",
@@ -3535,7 +3553,7 @@
             }
           }
         },
-        "_row_num": 43
+        "_row_num": 45
       },
       {
         "choice_list_name": "reg",
@@ -3548,7 +3566,7 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 46
       },
       {
         "choice_list_name": "reg",
@@ -3561,7 +3579,7 @@
             }
           }
         },
-        "_row_num": 45
+        "_row_num": 47
       },
       {
         "choice_list_name": "reg",
@@ -3574,7 +3592,7 @@
             }
           }
         },
-        "_row_num": 46
+        "_row_num": 48
       },
       {
         "choice_list_name": "reg",
@@ -3587,7 +3605,7 @@
             }
           }
         },
-        "_row_num": 47
+        "_row_num": 49
       },
       {
         "choice_list_name": "reg",
@@ -3600,7 +3618,7 @@
             }
           }
         },
-        "_row_num": 48
+        "_row_num": 50
       },
       {
         "choice_list_name": "reg",
@@ -3613,7 +3631,7 @@
             }
           }
         },
-        "_row_num": 49
+        "_row_num": 51
       },
       {
         "choice_list_name": "reg",
@@ -3626,7 +3644,7 @@
             }
           }
         },
-        "_row_num": 50
+        "_row_num": 52
       },
       {
         "choice_list_name": "reg",
@@ -3639,7 +3657,7 @@
             }
           }
         },
-        "_row_num": 51
+        "_row_num": 53
       }
     ],
     "calculates": [
@@ -4167,7 +4185,7 @@
       },
       "form_version": {
         "setting_name": "form_version",
-        "value": 60120,
+        "value": 20250725,
         "_row_num": 3
       },
       "table_id": {
@@ -4533,6 +4551,33 @@
         },
         {
           "choice_list_name": "vac",
+          "data_value": "MENA",
+          "display": {
+            "title": {
+              "text": {
+                "english": "MeningitisA",
+                "default": "MenA"
+              }
+            }
+          },
+          "__EMPTY": "added 2025-07-25",
+          "_row_num": 21
+        },
+        {
+          "choice_list_name": "vac",
+          "data_value": "MCV2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "MCV2",
+                "default": "Sarampo2"
+              }
+            }
+          },
+          "_row_num": 22
+        },
+        {
+          "choice_list_name": "vac",
           "data_value": "Ou",
           "display": {
             "title": {
@@ -4542,7 +4587,7 @@
               }
             }
           },
-          "_row_num": 21
+          "_row_num": 23
         }
       ],
       "sim/não": [
@@ -4557,7 +4602,7 @@
               }
             }
           },
-          "_row_num": 22
+          "_row_num": 24
         },
         {
           "choice_list_name": "sim/não",
@@ -4570,23 +4615,10 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 25
         }
       ],
       "ass": [
-        {
-          "choice_list_name": "ass",
-          "data_value": "1",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Eduardo",
-                "default": "Eduardo"
-              }
-            }
-          },
-          "_row_num": 24
-        },
         {
           "choice_list_name": "ass",
           "data_value": "2",
@@ -4598,7 +4630,7 @@
               }
             }
           },
-          "_row_num": 25
+          "_row_num": 27
         },
         {
           "choice_list_name": "ass",
@@ -4611,7 +4643,7 @@
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 28
         },
         {
           "choice_list_name": "ass",
@@ -4624,7 +4656,7 @@
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 29
         },
         {
           "choice_list_name": "ass",
@@ -4638,7 +4670,7 @@
             }
           },
           "__EMPTY": "11 - Suzete removed 16-02-2022",
-          "_row_num": 28
+          "_row_num": 30
         },
         {
           "choice_list_name": "ass",
@@ -4651,7 +4683,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 31
         },
         {
           "choice_list_name": "ass",
@@ -4664,7 +4696,7 @@
               }
             }
           },
-          "_row_num": 30
+          "_row_num": 32
         }
       ],
       "ns": [
@@ -4679,7 +4711,7 @@
               }
             }
           },
-          "_row_num": 31
+          "_row_num": 33
         }
       ],
       "vezes": [
@@ -4694,7 +4726,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 34
         },
         {
           "choice_list_name": "vezes",
@@ -4707,7 +4739,7 @@
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 35
         },
         {
           "choice_list_name": "vezes",
@@ -4720,7 +4752,7 @@
               }
             }
           },
-          "_row_num": 34
+          "_row_num": 36
         },
         {
           "choice_list_name": "vezes",
@@ -4733,7 +4765,7 @@
               }
             }
           },
-          "_row_num": 35
+          "_row_num": 37
         },
         {
           "choice_list_name": "vezes",
@@ -4746,7 +4778,7 @@
               }
             }
           },
-          "_row_num": 36
+          "_row_num": 38
         }
       ],
       "hospalta": [
@@ -4761,7 +4793,7 @@
               }
             }
           },
-          "_row_num": 37
+          "_row_num": 39
         }
       ],
       "dontknowhosp": [
@@ -4776,7 +4808,7 @@
               }
             }
           },
-          "_row_num": 38
+          "_row_num": 40
         },
         {
           "choice_list_name": "dontknowhosp",
@@ -4789,7 +4821,7 @@
               }
             }
           },
-          "_row_num": 39
+          "_row_num": 41
         }
       ],
       "reg": [
@@ -4804,7 +4836,7 @@
               }
             }
           },
-          "_row_num": 40
+          "_row_num": 42
         },
         {
           "choice_list_name": "reg",
@@ -4817,7 +4849,7 @@
               }
             }
           },
-          "_row_num": 41
+          "_row_num": 43
         },
         {
           "choice_list_name": "reg",
@@ -4830,7 +4862,7 @@
               }
             }
           },
-          "_row_num": 42
+          "_row_num": 44
         },
         {
           "choice_list_name": "reg",
@@ -4843,7 +4875,7 @@
               }
             }
           },
-          "_row_num": 43
+          "_row_num": 45
         },
         {
           "choice_list_name": "reg",
@@ -4856,7 +4888,7 @@
               }
             }
           },
-          "_row_num": 44
+          "_row_num": 46
         },
         {
           "choice_list_name": "reg",
@@ -4869,7 +4901,7 @@
               }
             }
           },
-          "_row_num": 45
+          "_row_num": 47
         },
         {
           "choice_list_name": "reg",
@@ -4882,7 +4914,7 @@
               }
             }
           },
-          "_row_num": 46
+          "_row_num": 48
         },
         {
           "choice_list_name": "reg",
@@ -4895,7 +4927,7 @@
               }
             }
           },
-          "_row_num": 47
+          "_row_num": 49
         },
         {
           "choice_list_name": "reg",
@@ -4908,7 +4940,7 @@
               }
             }
           },
-          "_row_num": 48
+          "_row_num": 50
         },
         {
           "choice_list_name": "reg",
@@ -4921,7 +4953,7 @@
               }
             }
           },
-          "_row_num": 49
+          "_row_num": 51
         },
         {
           "choice_list_name": "reg",
@@ -4934,7 +4966,7 @@
               }
             }
           },
-          "_row_num": 50
+          "_row_num": 52
         },
         {
           "choice_list_name": "reg",
@@ -4947,7 +4979,7 @@
               }
             }
           },
-          "_row_num": 51
+          "_row_num": 53
         }
       ]
     },
@@ -11559,21 +11591,21 @@
         "_aspect": "ASSISTENTE1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Eduardo\",\"default\":\"Eduardo\"}}},\"_row_num\":24},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":25},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":26},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":27},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"__EMPTY\":\"11 - Suzete removed 16-02-2022\",\"_row_num\":28},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":29},{\"choice_list_name\":\"ass\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Justiniano\",\"default\":\"Justiniano\"}}},\"_row_num\":30}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":27},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":28},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":29},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"__EMPTY\":\"11 - Suzete removed 16-02-2022\",\"_row_num\":30},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":31},{\"choice_list_name\":\"ass\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Justiniano\",\"default\":\"Justiniano\"}}},\"_row_num\":32}]"
       },
       {
         "_partition": "Column",
         "_aspect": "ASSISTENTE2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Eduardo\",\"default\":\"Eduardo\"}}},\"_row_num\":24},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":25},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":26},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":27},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"__EMPTY\":\"11 - Suzete removed 16-02-2022\",\"_row_num\":28},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":29},{\"choice_list_name\":\"ass\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Justiniano\",\"default\":\"Justiniano\"}}},\"_row_num\":30}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":27},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":28},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":29},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"__EMPTY\":\"11 - Suzete removed 16-02-2022\",\"_row_num\":30},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":31},{\"choice_list_name\":\"ass\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Justiniano\",\"default\":\"Justiniano\"}}},\"_row_num\":32}]"
       },
       {
         "_partition": "Column",
         "_aspect": "ASSISTENTE3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Eduardo\",\"default\":\"Eduardo\"}}},\"_row_num\":24},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":25},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":26},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":27},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"__EMPTY\":\"11 - Suzete removed 16-02-2022\",\"_row_num\":28},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":29},{\"choice_list_name\":\"ass\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Justiniano\",\"default\":\"Justiniano\"}}},\"_row_num\":30}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":27},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":28},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":29},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Augusto da Costa\",\"default\":\"Augusto da Costa\"}}},\"__EMPTY\":\"11 - Suzete removed 16-02-2022\",\"_row_num\":30},{\"choice_list_name\":\"ass\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":31},{\"choice_list_name\":\"ass\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Justiniano\",\"default\":\"Justiniano\"}}},\"_row_num\":32}]"
       },
       {
         "_partition": "Column",
@@ -11643,21 +11675,21 @@
         "_aspect": "HOSPALTA1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":37}]"
+        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":39}]"
       },
       {
         "_partition": "Column",
         "_aspect": "HOSPALTA2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":37}]"
+        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":39}]"
       },
       {
         "_partition": "Column",
         "_aspect": "HOSPALTA3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":37}]"
+        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":39}]"
       },
       {
         "_partition": "Column",
@@ -11685,7 +11717,7 @@
         "_aspect": "HOSPIVEZ",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"vezes\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"1\",\"default\":\"1\"}}},\"_row_num\":32},{\"choice_list_name\":\"vezes\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"2\",\"default\":\"2\"}}},\"_row_num\":33},{\"choice_list_name\":\"vezes\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"3\",\"default\":\"3\"}}},\"_row_num\":34},{\"choice_list_name\":\"vezes\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"More than 3 times\",\"default\":\"Mais de 3 vezes\"}}},\"_row_num\":35},{\"choice_list_name\":\"vezes\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não Sabe\"}}},\"_row_num\":36}]"
+        "_value": "[{\"choice_list_name\":\"vezes\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"1\",\"default\":\"1\"}}},\"_row_num\":34},{\"choice_list_name\":\"vezes\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"2\",\"default\":\"2\"}}},\"_row_num\":35},{\"choice_list_name\":\"vezes\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"3\",\"default\":\"3\"}}},\"_row_num\":36},{\"choice_list_name\":\"vezes\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"More than 3 times\",\"default\":\"Mais de 3 vezes\"}}},\"_row_num\":37},{\"choice_list_name\":\"vezes\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não Sabe\"}}},\"_row_num\":38}]"
       },
       {
         "_partition": "Column",
@@ -11699,14 +11731,14 @@
         "_aspect": "PODEAUT",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim/não\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":22},{\"choice_list_name\":\"sim/não\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":23}]"
+        "_value": "[{\"choice_list_name\":\"sim/não\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":24},{\"choice_list_name\":\"sim/não\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":25}]"
       },
       {
         "_partition": "Column",
         "_aspect": "REG",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"reg\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"SAB\",\"default\":\"SAB\"}}},\"_row_num\":40},{\"choice_list_name\":\"reg\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Oio\",\"default\":\"Oio\"}}},\"_row_num\":41},{\"choice_list_name\":\"reg\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Farim\",\"default\":\"Farim\"}}},\"_row_num\":42},{\"choice_list_name\":\"reg\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Biombo\",\"default\":\"Biombo\"}}},\"_row_num\":43},{\"choice_list_name\":\"reg\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Cacheu\",\"default\":\"Cacheu\"}}},\"_row_num\":44},{\"choice_list_name\":\"reg\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Sao Domingos\",\"default\":\"Sao Domingos\"}}},\"_row_num\":45},{\"choice_list_name\":\"reg\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Bafata\",\"default\":\"Bafata\"}}},\"_row_num\":46},{\"choice_list_name\":\"reg\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Gabu\",\"default\":\"Gabu\"}}},\"_row_num\":47},{\"choice_list_name\":\"reg\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Quinara\",\"default\":\"Quinara\"}}},\"_row_num\":48},{\"choice_list_name\":\"reg\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Tombali\",\"default\":\"Tombali\"}}},\"_row_num\":49},{\"choice_list_name\":\"reg\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Bubaque\",\"default\":\"Bubaque\"}}},\"_row_num\":50},{\"choice_list_name\":\"reg\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Bolama\",\"default\":\"Bolama\"}}},\"_row_num\":51}]"
+        "_value": "[{\"choice_list_name\":\"reg\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"SAB\",\"default\":\"SAB\"}}},\"_row_num\":42},{\"choice_list_name\":\"reg\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Oio\",\"default\":\"Oio\"}}},\"_row_num\":43},{\"choice_list_name\":\"reg\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Farim\",\"default\":\"Farim\"}}},\"_row_num\":44},{\"choice_list_name\":\"reg\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Biombo\",\"default\":\"Biombo\"}}},\"_row_num\":45},{\"choice_list_name\":\"reg\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Cacheu\",\"default\":\"Cacheu\"}}},\"_row_num\":46},{\"choice_list_name\":\"reg\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Sao Domingos\",\"default\":\"Sao Domingos\"}}},\"_row_num\":47},{\"choice_list_name\":\"reg\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Bafata\",\"default\":\"Bafata\"}}},\"_row_num\":48},{\"choice_list_name\":\"reg\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Gabu\",\"default\":\"Gabu\"}}},\"_row_num\":49},{\"choice_list_name\":\"reg\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Quinara\",\"default\":\"Quinara\"}}},\"_row_num\":50},{\"choice_list_name\":\"reg\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Tombali\",\"default\":\"Tombali\"}}},\"_row_num\":51},{\"choice_list_name\":\"reg\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Bubaque\",\"default\":\"Bubaque\"}}},\"_row_num\":52},{\"choice_list_name\":\"reg\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Bolama\",\"default\":\"Bolama\"}}},\"_row_num\":53}]"
       },
       {
         "_partition": "Column",
@@ -11720,7 +11752,7 @@
         "_aspect": "VACTIPO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"vac\",\"data_value\":\"BCG\",\"display\":{\"title\":{\"text\":{\"english\":\"BCG\",\"default\":\"BCG\"}}},\"_row_num\":13},{\"choice_list_name\":\"vac\",\"data_value\":\"VPO\",\"display\":{\"title\":{\"text\":{\"english\":\"VPO\",\"default\":\"VPO\"}}},\"_row_num\":14},{\"choice_list_name\":\"vac\",\"data_value\":\"Penta\",\"display\":{\"title\":{\"text\":{\"english\":\"Penta\",\"default\":\"Penta\"}}},\"_row_num\":15},{\"choice_list_name\":\"vac\",\"data_value\":\"PCV\",\"display\":{\"title\":{\"text\":{\"english\":\"PCV\",\"default\":\"PCV\"}}},\"_row_num\":16},{\"choice_list_name\":\"vac\",\"data_value\":\"Rota\",\"display\":{\"title\":{\"text\":{\"english\":\"Rota\",\"default\":\"Rota\"}}},\"_row_num\":17},{\"choice_list_name\":\"vac\",\"data_value\":\"VPI\",\"display\":{\"title\":{\"text\":{\"english\":\"VPI\",\"default\":\"VPI\"}}},\"_row_num\":18},{\"choice_list_name\":\"vac\",\"data_value\":\"Sarampo\",\"display\":{\"title\":{\"text\":{\"english\":\"Measles\",\"default\":\"Sarampo\"}}},\"_row_num\":19},{\"choice_list_name\":\"vac\",\"data_value\":\"Amarelo\",\"display\":{\"title\":{\"text\":{\"english\":\"Yellow fever\",\"default\":\"Febre amarela\"}}},\"_row_num\":20},{\"choice_list_name\":\"vac\",\"data_value\":\"Ou\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":21}]"
+        "_value": "[{\"choice_list_name\":\"vac\",\"data_value\":\"BCG\",\"display\":{\"title\":{\"text\":{\"english\":\"BCG\",\"default\":\"BCG\"}}},\"_row_num\":13},{\"choice_list_name\":\"vac\",\"data_value\":\"VPO\",\"display\":{\"title\":{\"text\":{\"english\":\"VPO\",\"default\":\"VPO\"}}},\"_row_num\":14},{\"choice_list_name\":\"vac\",\"data_value\":\"Penta\",\"display\":{\"title\":{\"text\":{\"english\":\"Penta\",\"default\":\"Penta\"}}},\"_row_num\":15},{\"choice_list_name\":\"vac\",\"data_value\":\"PCV\",\"display\":{\"title\":{\"text\":{\"english\":\"PCV\",\"default\":\"PCV\"}}},\"_row_num\":16},{\"choice_list_name\":\"vac\",\"data_value\":\"Rota\",\"display\":{\"title\":{\"text\":{\"english\":\"Rota\",\"default\":\"Rota\"}}},\"_row_num\":17},{\"choice_list_name\":\"vac\",\"data_value\":\"VPI\",\"display\":{\"title\":{\"text\":{\"english\":\"VPI\",\"default\":\"VPI\"}}},\"_row_num\":18},{\"choice_list_name\":\"vac\",\"data_value\":\"Sarampo\",\"display\":{\"title\":{\"text\":{\"english\":\"Measles\",\"default\":\"Sarampo\"}}},\"_row_num\":19},{\"choice_list_name\":\"vac\",\"data_value\":\"Amarelo\",\"display\":{\"title\":{\"text\":{\"english\":\"Yellow fever\",\"default\":\"Febre amarela\"}}},\"_row_num\":20},{\"choice_list_name\":\"vac\",\"data_value\":\"MENA\",\"display\":{\"title\":{\"text\":{\"english\":\"MeningitisA\",\"default\":\"MenA\"}}},\"__EMPTY\":\"added 2025-07-25\",\"_row_num\":21},{\"choice_list_name\":\"vac\",\"data_value\":\"MCV2\",\"display\":{\"title\":{\"text\":{\"english\":\"MCV2\",\"default\":\"Sarampo2\"}}},\"_row_num\":22},{\"choice_list_name\":\"vac\",\"data_value\":\"Ou\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":23}]"
       },
       {
         "_partition": "Column",

@@ -144,7 +144,7 @@ function populateView() {
             FuDate = new Date(incY, incM-1 + 6, incD);
         } else if (this.FU == 3) {
             FuDate = new Date(incY, incM-1 + 9, incD);
-        } else if (this.FU == 4) {
+        } else if (this.FU == 4 & (incY > 2023 & incM >8 | incY > 2024 ))    {   // 20250725Ane: Added to avoid having 10000 children for a 9 months visit 
             FuDate = new Date(incY, incM-1 + 12, incD);
         }
         
