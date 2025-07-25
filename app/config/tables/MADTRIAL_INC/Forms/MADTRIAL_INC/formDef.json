@@ -1579,6 +1579,7 @@
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') != '2')||data('SARVAC2') == '1'",
+        "comment": "|| calculates.childAGE >'1826'",
         "_row_num": 183
       },
       {
@@ -1794,7 +1795,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('SARVAC') == '1' && calculates.childAGE <453",
+        "condition": "data('SARVAC') == '1' && calculates.childAGE <'453'",
         "_row_num": 215
       },
       {
@@ -1814,16 +1815,31 @@
         "_row_num": 217
       },
       {
-        "clause": "end screen",
+        "comment": "if",
+        "__EMPTY": "calculates.childAGE >'1826'",
         "_row_num": 218
       },
       {
-        "clause": "else",
+        "__EMPTY_1": "note",
+        "__EMPTY_4": "The child is too old",
+        "__EMPTY_5": "A crianca tem idade maior de 5 anos",
         "_row_num": 219
       },
       {
-        "clause": "begin screen",
+        "comment": "end if",
         "_row_num": 220
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 225
+      },
+      {
+        "clause": "else",
+        "_row_num": 226
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 227
       },
       {
         "type": "integer",
@@ -1843,7 +1859,7 @@
           }
         },
         "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-        "_row_num": 221
+        "_row_num": 228
       },
       {
         "type": "integer",
@@ -1863,13 +1879,13 @@
           }
         },
         "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-        "_row_num": 222
+        "_row_num": 229
       },
       {
         "type": "assign",
         "name": "RANDOM",
         "calculation": "freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2'))",
-        "_row_num": 223
+        "_row_num": 230
       },
       {
         "type": "note",
@@ -1881,27 +1897,27 @@
             }
           }
         },
-        "_row_num": 224
+        "_row_num": 231
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 1,
-        "_row_num": 225
+        "_row_num": 232
       },
       {
         "clause": "end screen",
-        "_row_num": 226
+        "_row_num": 233
       },
       {
         "clause": "begin screen",
-        "_row_num": 227
+        "_row_num": 234
       },
       {
         "type": "assign",
         "name": "DATVACVAS",
         "calculation": "data('DATINC')",
-        "_row_num": 228
+        "_row_num": 235
       },
       {
         "type": "adate",
@@ -1917,7 +1933,7 @@
             "helperText": false
           }
         },
-        "_row_num": 229
+        "_row_num": 236
       },
       {
         "type": "time",
@@ -1937,13 +1953,13 @@
           }
         },
         "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-        "_row_num": 230
+        "_row_num": 237
       },
       {
         "type": "assign",
         "name": "HORVACVAS",
         "calculation": "adate.hoursMinutes(data('HORA'))",
-        "_row_num": 231
+        "_row_num": 238
       },
       {
         "type": "integer",
@@ -1963,13 +1979,13 @@
           }
         },
         "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-        "_row_num": 232
+        "_row_num": 239
       },
       {
         "type": "assign",
         "name": "NUMEST",
         "calculation": "freebase.studyNumber(\"MAD\",4,data('NUM'))",
-        "_row_num": 233
+        "_row_num": 240
       },
       {
         "type": "note",
@@ -1981,19 +1997,19 @@
             }
           }
         },
-        "_row_num": 234
+        "_row_num": 241
       },
       {
         "clause": "end screen",
-        "_row_num": 235
+        "_row_num": 242
       },
       {
         "clause": "end if",
-        "_row_num": 236
+        "_row_num": 243
       },
       {
         "clause": "begin screen",
-        "_row_num": 237
+        "_row_num": 244
       },
       {
         "type": "select_one_with_other",
@@ -2007,12 +2023,12 @@
             }
           }
         },
-        "_row_num": 238
+        "_row_num": 245
       },
       {
         "clause": "if",
         "condition": "data('INC') == '1'",
-        "_row_num": 239
+        "_row_num": 246
       },
       {
         "type": "select_one_with_other",
@@ -2026,23 +2042,23 @@
             }
           }
         },
-        "_row_num": 240
+        "_row_num": 247
       },
       {
         "clause": "end if",
-        "_row_num": 241
+        "_row_num": 248
       },
       {
         "clause": "end screen",
-        "_row_num": 242
+        "_row_num": 249
       },
       {
         "clause": "else",
-        "_row_num": 243
+        "_row_num": 250
       },
       {
         "clause": "begin screen",
-        "_row_num": 244
+        "_row_num": 251
       },
       {
         "type": "note",
@@ -2054,21 +2070,21 @@
             }
           }
         },
-        "_row_num": 245
+        "_row_num": 252
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 246
+        "_row_num": 253
       },
       {
         "clause": "end screen",
-        "_row_num": 247
+        "_row_num": 254
       },
       {
         "clause": "end if",
-        "_row_num": 248
+        "_row_num": 255
       }
     ],
     "choices": [
@@ -4216,7 +4232,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 240,
+            "_row_num": 247,
             "section_name": "inc"
           },
           {
@@ -4469,7 +4485,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 229,
+            "_row_num": 236,
             "section_name": "inc"
           },
           {
@@ -4557,7 +4573,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 238,
+            "_row_num": 245,
             "section_name": "inc"
           },
           {
@@ -4589,7 +4605,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 230,
+            "_row_num": 237,
             "section_name": "inc"
           },
           {
@@ -4803,7 +4819,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 232,
+            "_row_num": 239,
             "section_name": "inc"
           },
           {
@@ -4917,7 +4933,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 221,
+            "_row_num": 228,
             "section_name": "inc"
           },
           {
@@ -4932,7 +4948,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 222,
+            "_row_num": 229,
             "section_name": "inc"
           },
           {
@@ -7159,11 +7175,11 @@
               }
             },
             "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-            "_row_num": 221,
-            "__rowNum__": 220,
+            "_row_num": 228,
+            "__rowNum__": 227,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen220",
+            "_branch_label_enclosing_screen": "inc/_screen227",
             "promptIdx": 77
           },
           {
@@ -7184,11 +7200,11 @@
               }
             },
             "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-            "_row_num": 222,
-            "__rowNum__": 221,
+            "_row_num": 229,
+            "__rowNum__": 228,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen220",
+            "_branch_label_enclosing_screen": "inc/_screen227",
             "promptIdx": 78
           },
           {
@@ -7201,11 +7217,11 @@
                 }
               }
             },
-            "_row_num": 224,
-            "__rowNum__": 223,
+            "_row_num": 231,
+            "__rowNum__": 230,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen220",
+            "_branch_label_enclosing_screen": "inc/_screen227",
             "promptIdx": 79
           },
           {
@@ -7222,11 +7238,11 @@
                 "helperText": false
               }
             },
-            "_row_num": 229,
-            "__rowNum__": 228,
+            "_row_num": 236,
+            "__rowNum__": 235,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen227",
+            "_branch_label_enclosing_screen": "inc/_screen234",
             "promptIdx": 80
           },
           {
@@ -7247,11 +7263,11 @@
               }
             },
             "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-            "_row_num": 230,
-            "__rowNum__": 229,
+            "_row_num": 237,
+            "__rowNum__": 236,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "inc/_screen227",
+            "_branch_label_enclosing_screen": "inc/_screen234",
             "promptIdx": 81
           },
           {
@@ -7272,11 +7288,11 @@
               }
             },
             "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-            "_row_num": 232,
-            "__rowNum__": 231,
+            "_row_num": 239,
+            "__rowNum__": 238,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen227",
+            "_branch_label_enclosing_screen": "inc/_screen234",
             "promptIdx": 82
           },
           {
@@ -7289,11 +7305,11 @@
                 }
               }
             },
-            "_row_num": 234,
-            "__rowNum__": 233,
+            "_row_num": 241,
+            "__rowNum__": 240,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen227",
+            "_branch_label_enclosing_screen": "inc/_screen234",
             "promptIdx": 83
           },
           {
@@ -7308,11 +7324,11 @@
                 }
               }
             },
-            "_row_num": 238,
-            "__rowNum__": 237,
+            "_row_num": 245,
+            "__rowNum__": 244,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen237",
+            "_branch_label_enclosing_screen": "inc/_screen244",
             "promptIdx": 84
           },
           {
@@ -7327,11 +7343,11 @@
                 }
               }
             },
-            "_row_num": 240,
-            "__rowNum__": 239,
+            "_row_num": 247,
+            "__rowNum__": 246,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen237",
+            "_branch_label_enclosing_screen": "inc/_screen244",
             "promptIdx": 85
           },
           {
@@ -7344,19 +7360,19 @@
                 }
               }
             },
-            "_row_num": 245,
-            "__rowNum__": 244,
+            "_row_num": 252,
+            "__rowNum__": 251,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen244",
+            "_branch_label_enclosing_screen": "inc/_screen251",
             "promptIdx": 86
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 249,
-            "_branch_label_enclosing_screen": "inc/_screen249",
+            "_row_num": 256,
+            "_branch_label_enclosing_screen": "inc/_screen256",
             "promptIdx": 87
           }
         ],
@@ -7504,8 +7520,8 @@
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else243",
-            "_row_num": 243,
+            "_branch_label": "_else250",
+            "_row_num": 250,
             "operationIdx": 8
           },
           {
@@ -7694,6 +7710,7 @@
           {
             "clause": "if",
             "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') != '2')||data('SARVAC2') == '1'",
+            "comment": "|| calculates.childAGE >'1826'",
             "_row_num": 183,
             "__rowNum__": 182,
             "_token_type": "goto_label",
@@ -7703,8 +7720,8 @@
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else219",
-            "_row_num": 219,
+            "_branch_label": "_else226",
+            "_row_num": 226,
             "operationIdx": 25
           },
           {
@@ -7714,33 +7731,19 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 218,
-              "__rowNum__": 217,
+              "_row_num": 225,
+              "__rowNum__": 224,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(66);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(68);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(69);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(70);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC') == '1'&& data('SARVAC2')==1) {\nactivePromptIndicies.push(74);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(75);\n}\nif (data('SARVAC') == '1' && calculates.childAGE <453) {\nactivePromptIndicies.push(76);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(66);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(68);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(69);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(70);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC') == '1'&& data('SARVAC2')==1) {\nactivePromptIndicies.push(74);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(75);\n}\nif (data('SARVAC') == '1' && calculates.childAGE <'453') {\nactivePromptIndicies.push(76);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 26
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif236",
-            "_row_num": 236,
+            "_branch_label": "_endif243",
+            "_row_num": 243,
             "operationIdx": 27
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 220,
-            "__rowNum__": 219,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 226,
-              "__rowNum__": 225,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(77);\nactivePromptIndicies.push(78);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(79);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 28
           },
           {
             "clause": "begin screen",
@@ -7749,17 +7752,17 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 235,
-              "__rowNum__": 234,
+              "_row_num": 233,
+              "__rowNum__": 232,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(80);\nactivePromptIndicies.push(81);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(82);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(83);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 29
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(77);\nactivePromptIndicies.push(78);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(79);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 28
           },
           {
             "clause": "begin screen",
-            "_row_num": 237,
-            "__rowNum__": 236,
+            "_row_num": 234,
+            "__rowNum__": 233,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -7767,15 +7770,8 @@
               "__rowNum__": 241,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(84);\nif (data('INC') == '1') {\nactivePromptIndicies.push(85);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 30
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif248",
-            "_row_num": 248,
-            "operationIdx": 31
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(80);\nactivePromptIndicies.push(81);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(82);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(83);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 29
           },
           {
             "clause": "begin screen",
@@ -7784,8 +7780,29 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 247,
-              "__rowNum__": 246,
+              "_row_num": 249,
+              "__rowNum__": 248,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(84);\nif (data('INC') == '1') {\nactivePromptIndicies.push(85);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 30
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif255",
+            "_row_num": 255,
+            "operationIdx": 31
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 251,
+            "__rowNum__": 250,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 254,
+              "__rowNum__": 253,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(86);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
@@ -7794,11 +7811,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 249,
+            "_row_num": 256,
             "operationIdx": 33
           },
           {
-            "_row_num": 249,
+            "_row_num": 256,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(87);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -7809,7 +7826,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 249,
+            "_row_num": 256,
             "operationIdx": 35
           }
         ],
@@ -7839,16 +7856,16 @@
           "_screen172": 23,
           "_then183": 26,
           "_screen184": 26,
-          "_else219": 28,
-          "_screen220": 28,
-          "_screen227": 29,
-          "_endif236": 30,
-          "_screen237": 30,
-          "_else243": 32,
-          "_screen244": 32,
-          "_endif248": 33,
+          "_else226": 28,
+          "_screen227": 28,
+          "_screen234": 29,
+          "_endif243": 30,
+          "_screen244": 30,
+          "_else250": 32,
+          "_screen251": 32,
+          "_endif255": 33,
           "_contents": 34,
-          "_screen249": 34
+          "_screen256": 34
         }
       },
       "initial": {
@@ -8039,7 +8056,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 240,
+            "_row_num": 247,
             "section_name": "inc"
           },
           {
@@ -8361,7 +8378,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 229,
+            "_row_num": 236,
             "section_name": "inc"
           },
           {
@@ -8472,7 +8489,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 238,
+            "_row_num": 245,
             "section_name": "inc"
           },
           {
@@ -8510,7 +8527,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 230,
+            "_row_num": 237,
             "section_name": "inc"
           },
           {
@@ -8774,7 +8791,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 232,
+            "_row_num": 239,
             "section_name": "inc"
           },
           {
@@ -8912,7 +8929,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 221,
+            "_row_num": 228,
             "section_name": "inc"
           },
           {
@@ -8930,7 +8947,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 222,
+            "_row_num": 229,
             "section_name": "inc"
           },
           {
