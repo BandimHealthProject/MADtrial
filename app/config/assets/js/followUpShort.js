@@ -47,7 +47,7 @@ function loadChildren() {
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_SHORT ON i._id = MADTRIAL_FU_SHORT.IDINC " +
         " WHERE i.INC = 1 " +
-        " AND i.SARVAC = 1 " + // 20250723Ane - conditioning on having received first MV as this is only for children enrolled for 2nd dose. 
+        " AND (i.SARVAC = 1 OR i.VENAOVAS = 1) " + // 20250723Ane - conditioning on having received first MV as this is only for children enrolled for 2nd dose. 
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " +
         " ORDER BY i.NOMECRI ASC";
     children = [];
@@ -131,6 +131,8 @@ function populateView() {
             child['FU'] = 2;
         } else if (child.FOLLOWUP == 2 & ((child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
             child['FU'] = 2;
+        } else if (child.FOLLOWUP == 2 & (child.CHAMADA13 != null & child.CHAMADA23 != null & child.CHAMADA33 != null) ){
+            child['FU'] = 3;
         }
         // Inclusion date and constrains on FU
         var incD = Number(child.DATINC.slice(2, child.DATINC.search("M")-1));
@@ -185,12 +187,12 @@ function populateView() {
         console.log(incM)
         console.log(this.DATINC)
         
-        if (this.FU == 1 & FuDate <= today) {
+        if (this.FU == 1 && this.DATSEGUI1 == null && FuDate <= today) {
             ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        if (this.FU == 2 & FuDate <= today) {
+        if (this.FU == 2 && this.DATSEGUI2 == null && FuDate <= today) {
             ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
