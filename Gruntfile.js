@@ -666,6 +666,8 @@ module.exports = function (grunt) {
                 //console.log(src, dest);
                 grunt.task.run('exec:adbpush:' + src + ':' + dest);
             });
+            // Overwrites old index to indicate a sucessfull push
+            grunt.task.run('exec:adbpush:app/config/assets/js/index_pushedadate.js:/sdcard/opendatakit/default/config/assets/js/index.js')
         }
     );
 
@@ -901,6 +903,8 @@ module.exports = function (grunt) {
                 grunt.log.writeln('adb push ' + src + ' ' + dest);
                 grunt.task.run('exec:adbpush:' + src + ':' + dest);
             });
+            // Overwrites old index to indicate a sucessfull push
+            grunt.task.run('exec:adbpush:app/config/assets/js/index_pushedjs.js:/sdcard/opendatakit/default/config/assets/js/index.js')
         });
 
     grunt.registerTask(
