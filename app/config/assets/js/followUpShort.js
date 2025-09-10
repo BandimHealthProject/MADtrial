@@ -131,7 +131,7 @@ function populateView() {
         } else if (child.FOLLOWUP == 1 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ) {
             child['FU'] = 1;
         } else if (child.FOLLOWUP == 1 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ) {
-            child['FU'] = 2; // Move up if visit is registered
+            child['FU'] = 2; // Move up if visit is registered VITALCRI or if all CHAMADAx3 have failed
         } else if (child.FOLLOWUP == 2 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ){
             child['FU'] = 2;
         } else if (child.FOLLOWUP == 2 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ){ 
@@ -165,7 +165,7 @@ function populateView() {
     var ul1 = $('#fu1');
     var ul2 = $('#fu2');
 
-    // Display logic - simplified
+    // Display logic
     $.each(children, function() {
         var that = this;      
         
@@ -174,7 +174,7 @@ function populateView() {
             visited = "visited";
         }
 
-        // Calculate days since inclusion for display timing
+        // Days since inclusion
         var incD = Number(this.DATINC.slice(2, this.DATINC.search("M")-1));
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
         var incY = this.DATINC.slice(this.DATINC.search("Y")+2);
