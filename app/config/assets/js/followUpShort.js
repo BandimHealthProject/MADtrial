@@ -42,7 +42,7 @@ function getTabzList(data) {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST, i._id, i.DATINC, i.ID, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.OUBAIRRO, i.SARVAC, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, MADTRIAL_FU_SHORT._id AS FUrowId "
+    var varNames = "i.NUMEST, i._id, i.DATINC, i.ID, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.OUBAIRRO, i.SARVAC, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, MADTRIAL_FU_SHORT._id AS FUrowId, VITALCRI "
     var sql = "SELECT " + varNames + ", i.DOB, i.IDADEANO, i.IDADEMES " +
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_SHORT ON i._id = MADTRIAL_FU_SHORT.IDINC " +
@@ -91,7 +91,8 @@ function loadChildren() {
             var DATSEGUI1 = result.getData(row,"DATSEGUI1");
             var DATSEGUI2 = result.getData(row,"DATSEGUI2");
             var DATSEGUI3 = result.getData(row,"DATSEGUI3");
-            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, TELEINF1, TELEINF2, TELEINF3, OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3 };
+            var VITALCRI = result.getData(row, "VITALCRI");
+            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, TELEINF1, TELEINF2, TELEINF3, OUBAIRRO, DATASAI, FOLLOWUP, LASTFUSUC, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, VITALCRI };
             //console.log(p);
             children.push(p);
         }
@@ -120,99 +121,84 @@ function populateView() {
         var visitedToday;
         if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate) {
             visitedToday = true;
+            console.log("visittoday")
+            console.log(child)
         }
 
         // Visits
         if (child.FOLLOWUP == 0) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 && ((child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true)) {
+        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 && (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null)) {
+        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ) {
+            child['FU'] = 2; // Move up if visit is registered
+        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ){
             child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 && ((child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true)) {
-            child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 && (child.CHAMADA13 != null && child.CHAMADA23 != null && child.CHAMADA33 != null) ){
+        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ){ 
             child['FU'] = 3;
         }
-        // Inclusion date and constrains on FU
+
+        // Time constraints
         var incD = Number(child.DATINC.slice(2, child.DATINC.search("M")-1));
         var incM = child.DATINC.slice(child.DATINC.search("M")+2, child.DATINC.search("Y")-1);
         var incY = child.DATINC.slice(child.DATINC.search("Y")+2);  
         var dateInc = new Date(incY, incM-1, incD);
         var diffInDays = (today.getTime() - dateInc.getTime())/(1000*3600*24);
-        console.log("diff", diffInDays);
+        
         // Move up to FU2 if 14 or more days
-        // This sets the upper bounds and other "exclusion criteria"
-        if (child.FU == 1 && diffInDays >= 14) {
+        if (child.FU == 1 && diffInDays >= 14 && !visitedToday) {
             child['FU'] = 2;
-        } if (child.FU == 2 && diffInDays > 21) {
+        } 
+        // Exclude if over 21 days
+        if (child.FU == 2 && diffInDays > 21 && !visitedToday) {
             child['FU'] = null;
-        } if (child.DATASAI != null) {
-            // Exclude dead children
-            child['FU'] = null
+        } 
+        
+        if (child.DATASAI != null && !visitedToday) {
+            child['FU'] = null; // Exclude dead children
         }
-        if (child.FU == 3) {
-            // Child has completed all follow-ups, exclude from display
-            child['FU'] = null;
+        if (child.FU == 3 && !visitedToday) {
+            child['FU'] = null; // Child completed all follow-ups
         }
     });
     console.log("CHILDREN - FU sortet:", children);
     var ul1 = $('#fu1');
     var ul2 = $('#fu2');
 
-    // Follow-up list
+    // Display logic - simplified
     $.each(children, function() {
-        //console.log(this);
         var that = this;      
         
-        // Check if visited today
         var visited = '';
         if (this.DATSEGUI1 == todayAdate || this.DATSEGUI2 == todayAdate) {
             visited = "visited";
-        };
+        }
 
-        // Set date/time contraint
-        // Lower bounds - Inclusive
-        var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
+        // Calculate days since inclusion for display timing
+        var incD = Number(this.DATINC.slice(2, this.DATINC.search("M")-1));
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
         var incY = this.DATINC.slice(this.DATINC.search("Y")+2);
-        var FuDate; 
         var incDate = new Date(incY, incM-1, incD);
-        if (this.FU == 1) {
-            FuDate = new Date(incDate.getTime() + (7 * 24 * 60 * 60 * 1000));
-        } else if (this.FU == 2) {
-            FuDate = new Date(incDate.getTime() + (14 * 24 * 60 * 60 * 1000));
-        }
+        var diffInDays = (today.getTime() - incDate.getTime())/(1000*3600*24);
 
-        // set text to display
         var displayText = setDisplayText(that);
-        console.log(FuDate)
-        console.log(incD)
-        console.log(incM)
-        console.log(this.DATINC)
         
-        var visitedToday = (this.DATSEGUI1 == todayAdate || this.DATSEGUI2 == todayAdate);
-        
-        if (this.FU == 1 && this.DATSEGUI1 == null && FuDate <= today && !visitedToday) {
+        // Show if in correct time window OR visited today
+        if (this.FU == 1 && (diffInDays >= 7)) {
             ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
-            console.log("FU", this.FU);
-            console.log("FuDate", FuDate);
-        }
-        if (this.FU == 2 && this.DATSEGUI2 == null && FuDate <= today && !visitedToday) {
+        } else if (this.FU == 2 && (diffInDays >= 14)) {
             ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
-            console.log("FU", this.FU);
-            console.log("FuDate", FuDate);
+        } else {
+            console.log("skipped child", this)
+            console.log("with diffindays: ", diffInDays)
+            console.log("with numest: ", this.NUMEST)
         }
 
         // Buttons
         var btn1 = ul1.find('#' + this.rowId);
-        btn1.on("click", function() {
-            openForm(that);
-        })        
+        btn1.on("click", function() { openForm(that); });        
         var btn2 = ul2.find('#' + this.rowId);
-        btn2.on("click", function() {
-            openForm(that);
-        })                
+        btn2.on("click", function() { openForm(that); });                
     });
 }
 
