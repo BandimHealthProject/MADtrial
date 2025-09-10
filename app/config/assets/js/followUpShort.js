@@ -125,19 +125,6 @@ function populateView() {
             console.log(child)
         }
 
-        // Visits
-        if (child.FOLLOWUP == 0) {
-            child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ) {
-            child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ) {
-            child['FU'] = 2; // Move up if visit is registered VITALCRI or if all CHAMADAx3 have failed
-        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ){
-            child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ){ 
-            child['FU'] = 3;
-        }
-
         // Time constraints
         var incD = Number(child.DATINC.slice(2, child.DATINC.search("M")-1));
         var incM = child.DATINC.slice(child.DATINC.search("M")+2, child.DATINC.search("Y")-1);
@@ -160,6 +147,20 @@ function populateView() {
         if (child.FU == 3 && !visitedToday) {
             child['FU'] = null; // Child completed all follow-ups
         }
+
+        // Visits
+        if (child.FOLLOWUP == 0) {
+            child['FU'] = 1;
+        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ) {
+            child['FU'] = 1;
+        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ) {
+            child['FU'] = 2; // Move up if visit is registered VITALCRI or if all CHAMADAx3 have failed
+        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ){
+            child['FU'] = 2;
+        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ){ 
+            child['FU'] = 3;
+        }
+
     });
     console.log("CHILDREN - FU sortet:", children);
     var ul1 = $('#fu1');
