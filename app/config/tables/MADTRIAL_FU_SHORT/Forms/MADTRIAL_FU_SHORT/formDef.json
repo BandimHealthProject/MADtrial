@@ -2340,7 +2340,7 @@
           "prompt": {
             "text": {
               "english": "Has the child had diarrhoea?",
-              "default": "A criança teve diarréia durante ultimo semana?"
+              "default": "A criança teve diarréia durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
             }
           }
         },
@@ -2374,7 +2374,7 @@
           "prompt": {
             "text": {
               "english": "Has the child been vomiting?",
-              "default": "A criança vomitou  durante ultimo semana?"
+              "default": "A criança vomitou  durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
             }
           }
         },
@@ -2408,7 +2408,7 @@
           "prompt": {
             "text": {
               "english": "Has the child been coughing?",
-              "default": "A criança teve tosse  durante ultimo semana?"
+              "default": "A criança teve tosse  durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
             }
           }
         },
@@ -2442,7 +2442,7 @@
           "prompt": {
             "text": {
               "english": "Does the child have a cold?",
-              "default": "A criança está com constipação  durante ultimo semana?"
+              "default": "A criança está com constipação  durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
             }
           }
         },
@@ -2476,7 +2476,7 @@
           "prompt": {
             "text": {
               "english": "Has the child lost ist appetite?",
-              "default": "A criança perdeu o seu apetite durante ultimo semana?"
+              "default": "A criança perdeu o seu apetite durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
             }
           }
         },
@@ -2510,7 +2510,7 @@
           "prompt": {
             "text": {
               "english": "Has the child cried more than habitual?",
-              "default": "A criança chorou mais do que o habitual durante ultimo semana?"
+              "default": "A criança chorou mais do que o habitual durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
             }
           }
         },
@@ -2544,7 +2544,7 @@
           "prompt": {
             "text": {
               "english": "Has the child had fever?",
-              "default": "A criança teve febre  durante ultimo semana?"
+              "default": "A criança teve febre  durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
             }
           }
         },
@@ -2578,7 +2578,7 @@
           "prompt": {
             "text": {
               "english": "Has the child had convulsions?",
-              "default": "A criança teve convulsões (desmaio) durante ultimo semana?"
+              "default": "A criança teve convulsões (ataque) durante ultimo semana?"
             }
           }
         },
@@ -2612,7 +2612,7 @@
           "prompt": {
             "text": {
               "english": "Has the child had other symptoms?",
-              "default": "A criança teve outras sintomas durante ultimo semana?"
+              "default": "A criança teve outras sintomas durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
             }
           }
         },
@@ -2739,7 +2739,7 @@
           "prompt": {
             "text": {
               "english": "Has the child received medicine?",
-              "default": "A criança recebeu medicamentos durante ultimo semana?"
+              "default": "A criança recebeu medicamentos durante a ultima semana? (Se sim - são novos medicamentos, ou aqueles receitados no HNSM?)"
             }
           }
         },
@@ -8162,7 +8162,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child had diarrhoea?",
-                  "default": "A criança teve diarréia durante ultimo semana?"
+                  "default": "A criança teve diarréia durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
                 }
               }
             },
@@ -8198,7 +8198,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child been vomiting?",
-                  "default": "A criança vomitou  durante ultimo semana?"
+                  "default": "A criança vomitou  durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
                 }
               }
             },
@@ -8234,7 +8234,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child been coughing?",
-                  "default": "A criança teve tosse  durante ultimo semana?"
+                  "default": "A criança teve tosse  durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
                 }
               }
             },
@@ -8270,7 +8270,7 @@
               "prompt": {
                 "text": {
                   "english": "Does the child have a cold?",
-                  "default": "A criança está com constipação  durante ultimo semana?"
+                  "default": "A criança está com constipação  durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
                 }
               }
             },
@@ -8306,7 +8306,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child lost ist appetite?",
-                  "default": "A criança perdeu o seu apetite durante ultimo semana?"
+                  "default": "A criança perdeu o seu apetite durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
                 }
               }
             },
@@ -8342,7 +8342,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child cried more than habitual?",
-                  "default": "A criança chorou mais do que o habitual durante ultimo semana?"
+                  "default": "A criança chorou mais do que o habitual durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
                 }
               }
             },
@@ -8378,7 +8378,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child had fever?",
-                  "default": "A criança teve febre  durante ultimo semana?"
+                  "default": "A criança teve febre  durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
                 }
               }
             },
@@ -8414,7 +8414,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child had convulsions?",
-                  "default": "A criança teve convulsões (desmaio) durante ultimo semana?"
+                  "default": "A criança teve convulsões (ataque) durante ultimo semana?"
                 }
               }
             },
@@ -8450,7 +8450,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child had other symptoms?",
-                  "default": "A criança teve outras sintomas durante ultimo semana?"
+                  "default": "A criança teve outras sintomas durante ultimo semana? (Se sim - este e novo sintoma, ou aquele com que ele(a) saiu do HNSM com?)"
                 }
               }
             },
@@ -8578,7 +8578,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child received medicine?",
-                  "default": "A criança recebeu medicamentos durante ultimo semana?"
+                  "default": "A criança recebeu medicamentos durante a ultima semana? (Se sim - são novos medicamentos, ou aqueles receitados no HNSM?)"
                 }
               }
             },

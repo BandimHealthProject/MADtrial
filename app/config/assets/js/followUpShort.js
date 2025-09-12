@@ -119,7 +119,7 @@ function populateView() {
 
     children.forEach(function(child) {
         var visitedToday;
-        if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate) {
+        if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate  || child.DATSEGUI3 == todayAdate) { // Ane20250912: Added for 3rd visit
             visitedToday = true;
             console.log("visittoday")
             console.log(child)
@@ -171,7 +171,11 @@ function populateView() {
         var that = this;      
         
         var visited = '';
-        if (this.DATSEGUI1 == todayAdate || this.DATSEGUI2 == todayAdate) {
+//       if (this.DATSEGUI1 == todayAdate || this.DATSEGUI2 == todayAdate ) {  - Ane 12-09-2025 - Changed 12-09-2025
+        if (this.DATSEGUI1 == todayAdate  || this.DATSEGUI2 == todayAdate || this.DATSEGUI3 == todayAdate ) {
+            visited = "attempt";
+        }
+        if (this.DATSEGUI1 == todayAdate && (this.CHAMADA11 == 1 || this.CHAMADA21 == 1 || this.CHAMADA31 ==  1) || this.DATSEGUI2 == todayAdate && (this.CHAMADA12 == 1 || this.CHAMADA22 == 1 || this.CHAMADA32 ==  1) || this.DATSEGUI3 == todayAdate && (this.CHAMADA13 == 1 || this.CHAMADA23 == 1 || this.CHAMADA33 ==  1)) {
             visited = "visited";
         }
 
@@ -237,7 +241,7 @@ function openForm(child) {
     var formId = 'MADTRIAL_FU_SHORT';
     var todayAdate = setTodayAdate();
 
-    if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate) {
+    if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate || child.DATSEGUI3 == todayAdate) {  //Ane 12-09-2025: We have up to 3 dates
         var defaults = {};
         defaults['editvisit'] = "true"
         console.log("Opening FU for edit", defaults);
