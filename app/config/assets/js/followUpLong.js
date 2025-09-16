@@ -20,7 +20,7 @@ function display() {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST, i._id, i.DATINC, i.DOB, i.IDADEANO, i.IDADEMES, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, HOSPI, VITALCRI, MADTRIAL_FU_PHONE._id AS FUrowId "
+    var varNames = "i.NUMEST, i._id, i.DATINC, i.DOB, i.IDADEANO, i.IDADEMES, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, HOSPI, VITALCRI, DOD, MADTRIAL_FU_PHONE._id AS FUrowId "
     var sql = "SELECT " + varNames + 
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_PHONE ON i._id = MADTRIAL_FU_PHONE.IDINC " + // join on tablet generated IDs
@@ -67,8 +67,9 @@ function loadChildren() {
             var FOLLOWUP = Number(result.getData(row,"FOLLOWUP")); // variabel for followup
             var HOSPI = result.getData(row,"HOSPI");
             var VITALCRI = result.getData(row,"VITALCRI");
+            var DOD = result.getData(row,"DOD");
 
-            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEINF1, TELEINF2, TELEINF3, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, HOSPI, VITALCRI };
+            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEINF1, TELEINF2, TELEINF3, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, HOSPI, VITALCRI, DOD};
             console.log(p);
             children.push(p);
         }
@@ -152,22 +153,22 @@ function populateView() {
         var displayText = setDisplayText(that);
 
         // list
-        if (this.FU == 1 & FuDate <= today) {
+        if (this.FU == 1 & FuDate <= today & this.DOD == null) {
             ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        if (this.FU == 2 & FuDate <= today) {
+        if (this.FU == 2 & FuDate <= today & this.DOD == null) {
             ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        if (this.FU == 3 & FuDate <= today) {
+        if (this.FU == 3 & FuDate <= today & this.DOD == null) {
             ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        if (this.FU == 4 & FuDate <= today) {
+        if (this.FU == 4 & FuDate <= today & this.DOD == null) {
             ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
