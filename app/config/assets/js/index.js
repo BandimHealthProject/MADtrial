@@ -11,7 +11,29 @@ function display() {
     //body.css('background', 'url(img/form_logo.png) fixed');
     doSanityCheck();
     initButtons();
+
 }
+
+var adatePath = '../../system/survey/js/adateHelpers.js';
+$.ajax({
+    url: adatePath,
+    method: 'GET',
+    cache: true,
+    dataType: 'text'
+}).done(function() {
+$('body').append(`
+<footer id="fixFooter" style="position:fixed;bottom:10px;right:10px;background:#e0ffe0;padding:8px 16px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);font-size:16px;display:flex;align-items:center;z-index:100;">
+    <span style="color:green;font-size:20px;margin-right:8px;">&#10003;</span>
+    <span>adate fixed</span>
+</footer>
+`);
+}).fail(function() {
+$('body').append(`
+<footer id="fixFooter" style="position:fixed;bottom:10px;right:10px;background:#ffe0e0;padding:8px 16px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);font-size:16px;display:flex;align-items:center;z-index:100;">
+    <span style="color:red;font-size:20px;margin-right:8px;">&#128500;</span>
+    <span>adate not fixed</span>
+</footer>`)
+});
 
 function doSanityCheck() {
     console.log("Checking things");
