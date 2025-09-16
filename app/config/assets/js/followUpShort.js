@@ -153,10 +153,7 @@ function populateView() {
         if (child.FU == 2 && diffInDays > 21 && !visitedToday) {
             child['FU'] = null;
         } 
-        
-        if (child.DATASAI != null && !visitedToday) {
-            child['FU'] = null; // Exclude dead children
-        }
+
         if (child.FU == 3 && !visitedToday) {
             child['FU'] = null; // Child completed all follow-ups
         }
@@ -184,9 +181,9 @@ function populateView() {
         var displayText = setDisplayText(that);
         
         // Show if in correct time window OR visited today
-        if (this.FU == 1 && (diffInDays >= 7)) {
+        if (this.FU == 1 && (diffInDays >= 7) & (this.VITALCRI != "2" | visited == "visited")) {
             ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
-        } else if (this.FU == 2 && (diffInDays >= 14)) {
+        } else if (this.FU == 2 && (diffInDays >= 14) & (this.VITALCRI != "2" | visited == "visited")) {
             ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
         } else {
             console.log("skipped child", this)

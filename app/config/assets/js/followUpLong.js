@@ -132,6 +132,7 @@ function populateView() {
         var visited = '';
         if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate| this.DATSEGUI4 == todayAdate) {
             visited = "visited";
+            console.log("visited", visited);
         };
         
         // Set date/time contraint
@@ -153,22 +154,22 @@ function populateView() {
         var displayText = setDisplayText(that);
 
         // list
-        if (this.FU == 1 & FuDate <= today & this.DOD == null) {
+        if (this.FU == 1 & FuDate <= today & (this.VITALCRI != "2" | visited == "visited")) {
             ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        if (this.FU == 2 & FuDate <= today & this.DOD == null) {
+        if (this.FU == 2 & FuDate <= today & (this.VITALCRI != "2" | visited == "visited")) {
             ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        if (this.FU == 3 & FuDate <= today & this.DOD == null) {
+        if (this.FU == 3 & FuDate <= today & (this.VITALCRI != "2" | visited == "visited")) {
             ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        if (this.FU == 4 & FuDate <= today & this.DOD == null) {
+        if (this.FU == 4 & FuDate <= today & (this.VITALCRI != "2" | visited == "visited")) {
             ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
