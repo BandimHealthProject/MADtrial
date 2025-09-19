@@ -119,23 +119,10 @@ function populateView() {
 
     children.forEach(function(child) {
         var visitedToday;
-        if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate) {
+        if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate  || child.DATSEGUI3 == todayAdate) { // Ane20250912: Added for 3rd visit
             visitedToday = true;
             console.log("visittoday")
             console.log(child)
-        }
-
-        // Visits
-        if (child.FOLLOWUP == 0) {
-            child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ) {
-            child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ) {
-            child['FU'] = 2; // Move up if visit is registered
-        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ){
-            child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ){ 
-            child['FU'] = 3;
         }
 
         // Time constraints
@@ -157,21 +144,39 @@ function populateView() {
         if (child.FU == 3 && !visitedToday) {
             child['FU'] = null; // Child completed all follow-ups
         }
+
+        // Visits
+        if (child.FOLLOWUP == 0) {
+            child['FU'] = 1;
+        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ) {
+            child['FU'] = 1;
+        } else if (child.FOLLOWUP == 1 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ) {
+            child['FU'] = 2; // Move up if visit is registered VITALCRI or if all CHAMADAx3 have failed
+        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI == null && (child.CHAMADA13 == null && child.CHAMADA23 == null && child.CHAMADA33 == null) || visitedToday == true) ){
+            child['FU'] = 2;
+        } else if (child.FOLLOWUP == 2 && ( child.VITALCRI != null || (child.CHAMADA13 != null || child.CHAMADA23 != null || child.CHAMADA33 != null) ) ){ 
+            child['FU'] = 3;
+        }
+
     });
     console.log("CHILDREN - FU sortet:", children);
     var ul1 = $('#fu1');
     var ul2 = $('#fu2');
 
-    // Display logic - simplified
+    // Display logic
     $.each(children, function() {
         var that = this;      
         
         var visited = '';
-        if (this.DATSEGUI1 == todayAdate || this.DATSEGUI2 == todayAdate) {
+//       if (this.DATSEGUI1 == todayAdate || this.DATSEGUI2 == todayAdate ) {  - Ane 12-09-2025 - Changed 12-09-2025
+        if (this.DATSEGUI1 == todayAdate  || this.DATSEGUI2 == todayAdate || this.DATSEGUI3 == todayAdate ) {
+            visited = "attempt";
+        }
+        if (this.DATSEGUI1 == todayAdate && (this.CHAMADA11 == 1 || this.CHAMADA21 == 1 || this.CHAMADA31 ==  1) || this.DATSEGUI2 == todayAdate && (this.CHAMADA12 == 1 || this.CHAMADA22 == 1 || this.CHAMADA32 ==  1) || this.DATSEGUI3 == todayAdate && (this.CHAMADA13 == 1 || this.CHAMADA23 == 1 || this.CHAMADA33 ==  1)) {
             visited = "visited";
         }
 
-        // Calculate days since inclusion for display timing
+        // Days since inclusion
         var incD = Number(this.DATINC.slice(2, this.DATINC.search("M")-1));
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
         var incY = this.DATINC.slice(this.DATINC.search("Y")+2);
@@ -233,7 +238,7 @@ function openForm(child) {
     var formId = 'MADTRIAL_FU_SHORT';
     var todayAdate = setTodayAdate();
 
-    if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate) {
+    if (child.DATSEGUI1 == todayAdate || child.DATSEGUI2 == todayAdate || child.DATSEGUI3 == todayAdate) {  //Ane 12-09-2025: We have up to 3 dates
         var defaults = {};
         defaults['editvisit'] = "true"
         console.log("Opening FU for edit", defaults);
