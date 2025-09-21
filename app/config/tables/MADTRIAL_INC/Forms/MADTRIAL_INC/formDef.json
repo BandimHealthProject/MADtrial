@@ -971,7 +971,7 @@
             }
           }
         },
-        "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2'",
+        "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2' || data('SARVAC') == '1'",
         "_row_num": 116
       },
       {
@@ -1753,7 +1753,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('SARVAC') == '1'&& data('SARVAC2')==1",
+        "condition": "data('SARVAC') == '1'&& data('SARVAC2')=='1'",
         "_row_num": 214
       },
       {
@@ -1795,7 +1795,7 @@
       },
       {
         "clause": "if",
-        "condition": "(adate.diffInDays(data('DOB'), data('DATINC'))>1826) || (adate.diffInDays(data('DOB'), data('DATINC'))<270)",
+        "condition": "((adate.diffInDays(data('DOB'), data('DATINC'))>1826) || (adate.diffInDays(data('DOB'), data('DATINC'))<270)) && data('DOB') != \"D:NS,M:NS,Y:NS\"",
         "_row_num": 221
       },
       {
@@ -1815,17 +1815,29 @@
         "_row_num": 223
       },
       {
+        "clause": "if",
+        "condition": "((adate.diffInDays(data('DOB'), data('DATINC'))<453) && data('SARVAC')=='1') && data('DOB') != \"D:NS,M:NS,Y:NS\"",
         "comment": "if",
         "__EMPTY": "calculates.childAGE >'1826'",
         "_row_num": 224
       },
       {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "The child is <15 months and has received the first MV",
+              "default": "A criança recebeu a primeia vacina do sarampo e ainda não tem idade para o segundo dose"
+            }
+          }
+        },
         "__EMPTY_1": "note",
         "__EMPTY_4": "The child is too old",
         "__EMPTY_5": "A crianca tem idade maior de 5 anos",
         "_row_num": 225
       },
       {
+        "clause": "end if",
         "comment": "end if",
         "_row_num": 226
       },
@@ -2682,7 +2694,7 @@
           "title": {
             "text": {
               "english": "Didn't suceed to identify ID",
-              "default": "Não conseguiu identifcar o ID"
+              "default": "Não conseguiu identificar o ID"
             }
           }
         },
@@ -4080,7 +4092,7 @@
             "title": {
               "text": {
                 "english": "Didn't suceed to identify ID",
-                "default": "Não conseguiu identifcar o ID"
+                "default": "Não conseguiu identificar o ID"
               }
             }
           },
@@ -6420,7 +6432,7 @@
                 }
               }
             },
-            "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2'",
+            "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2' || data('SARVAC') == '1'",
             "_row_num": 116,
             "__rowNum__": 115,
             "_token_type": "prompt",
@@ -7158,6 +7170,26 @@
             "promptIdx": 76
           },
           {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "The child is <15 months and has received the first MV",
+                  "default": "A criança recebeu a primeia vacina do sarampo e ainda não tem idade para o segundo dose"
+                }
+              }
+            },
+            "__EMPTY_1": "note",
+            "__EMPTY_4": "The child is too old",
+            "__EMPTY_5": "A crianca tem idade maior de 5 anos",
+            "_row_num": 225,
+            "__rowNum__": 224,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "inc/_screen190",
+            "promptIdx": 77
+          },
+          {
             "type": "integer",
             "name": "RANDOM1",
             "display": {
@@ -7180,7 +7212,7 @@
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "inc/_screen233",
-            "promptIdx": 77
+            "promptIdx": 78
           },
           {
             "type": "integer",
@@ -7205,7 +7237,7 @@
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "inc/_screen233",
-            "promptIdx": 78
+            "promptIdx": 79
           },
           {
             "type": "note",
@@ -7222,7 +7254,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "inc/_screen233",
-            "promptIdx": 79
+            "promptIdx": 80
           },
           {
             "type": "adate",
@@ -7243,7 +7275,7 @@
             "_token_type": "prompt",
             "_type": "adate",
             "_branch_label_enclosing_screen": "inc/_screen240",
-            "promptIdx": 80
+            "promptIdx": 81
           },
           {
             "type": "time",
@@ -7268,7 +7300,7 @@
             "_token_type": "prompt",
             "_type": "time",
             "_branch_label_enclosing_screen": "inc/_screen240",
-            "promptIdx": 81
+            "promptIdx": 82
           },
           {
             "type": "integer",
@@ -7293,7 +7325,7 @@
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "inc/_screen240",
-            "promptIdx": 82
+            "promptIdx": 83
           },
           {
             "type": "note",
@@ -7310,7 +7342,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "inc/_screen240",
-            "promptIdx": 83
+            "promptIdx": 84
           },
           {
             "type": "select_one_with_other",
@@ -7329,7 +7361,7 @@
             "_token_type": "prompt",
             "_type": "select_one_with_other",
             "_branch_label_enclosing_screen": "inc/_screen250",
-            "promptIdx": 84
+            "promptIdx": 85
           },
           {
             "type": "select_one_with_other",
@@ -7348,7 +7380,7 @@
             "_token_type": "prompt",
             "_type": "select_one_with_other",
             "_branch_label_enclosing_screen": "inc/_screen250",
-            "promptIdx": 85
+            "promptIdx": 86
           },
           {
             "type": "note",
@@ -7365,7 +7397,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "inc/_screen257",
-            "promptIdx": 86
+            "promptIdx": 87
           },
           {
             "_token_type": "prompt",
@@ -7373,7 +7405,7 @@
             "_type": "contents",
             "_row_num": 262,
             "_branch_label_enclosing_screen": "inc/_screen262",
-            "promptIdx": 87
+            "promptIdx": 88
           }
         ],
         "validation_tag_map": {
@@ -7403,10 +7435,10 @@
             61,
             63,
             65,
-            77,
             78,
-            81,
-            82
+            79,
+            82,
+            83
           ]
         },
         "operations": [
@@ -7735,7 +7767,7 @@
               "__rowNum__": 230,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(66);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(68);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(69);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(70);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC') == '1'&& data('SARVAC2')==1) {\nactivePromptIndicies.push(74);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(75);\n}\nif ((adate.diffInDays(data('DOB'), data('DATINC'))>1826) || (adate.diffInDays(data('DOB'), data('DATINC'))<270)) {\nactivePromptIndicies.push(76);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(66);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(68);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(69);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(70);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC') == '1'&& data('SARVAC2')=='1') {\nactivePromptIndicies.push(74);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(75);\n}\nif (((adate.diffInDays(data('DOB'), data('DATINC'))>1826) || (adate.diffInDays(data('DOB'), data('DATINC'))<270)) && data('DOB') != \"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(76);\n}\nif (((adate.diffInDays(data('DOB'), data('DATINC'))<453) && data('SARVAC')=='1') && data('DOB') != \"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(77);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 26
           },
           {
@@ -7756,7 +7788,7 @@
               "__rowNum__": 238,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(77);\nactivePromptIndicies.push(78);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(79);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(78);\nactivePromptIndicies.push(79);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(80);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 28
           },
           {
@@ -7770,7 +7802,7 @@
               "__rowNum__": 247,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(80);\nactivePromptIndicies.push(81);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(82);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(83);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(81);\nactivePromptIndicies.push(82);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(83);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(84);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 29
           },
           {
@@ -7784,7 +7816,7 @@
               "__rowNum__": 254,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(84);\nif (data('INC') == '1') {\nactivePromptIndicies.push(85);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(85);\nif (data('INC') == '1') {\nactivePromptIndicies.push(86);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 30
           },
           {
@@ -7805,7 +7837,7 @@
               "__rowNum__": 259,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(86);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(87);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 32
           },
           {
@@ -7817,7 +7849,7 @@
           {
             "_row_num": 262,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(87);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(88);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
