@@ -168,7 +168,6 @@ function populateView() {
         var that = this;      
         
         var visited = '';
-//       if (this.DATSEGUI1 == todayAdate || this.DATSEGUI2 == todayAdate ) {  - Ane 12-09-2025 - Changed 12-09-2025
         if (this.DATSEGUI1 == todayAdate  || this.DATSEGUI2 == todayAdate || this.DATSEGUI3 == todayAdate ) {
             visited = "attempt";
         }

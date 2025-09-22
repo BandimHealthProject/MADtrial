@@ -128,12 +128,13 @@ function populateView() {
         console.log(this);
         var that = this;      
         
-        // Check if visited today
         var visited = '';
-        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate| this.DATSEGUI4 == todayAdate) {
+        if (this.DATSEGUI1 == todayAdate  || this.DATSEGUI2 == todayAdate || this.DATSEGUI3 == todayAdate ) {
+            visited = "attempt";
+        }
+        if (this.DATSEGUI1 == todayAdate && (this.CHAMADA11 == 1 || this.CHAMADA21 == 1 || this.CHAMADA31 ==  1) || this.DATSEGUI2 == todayAdate && (this.CHAMADA12 == 1 || this.CHAMADA22 == 1 || this.CHAMADA32 ==  1) || this.DATSEGUI3 == todayAdate && (this.CHAMADA13 == 1 || this.CHAMADA23 == 1 || this.CHAMADA33 ==  1)) {
             visited = "visited";
-            console.log("visited", visited);
-        };
+        }
         
         // Set date/time contraint
         var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
