@@ -971,7 +971,7 @@
             }
           }
         },
-        "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2' || data('SARVAC') == '1'",
+        "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2' || data('SARVAC') == '2'",
         "_row_num": 116
       },
       {
@@ -6432,7 +6432,7 @@
                 }
               }
             },
-            "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2' || data('SARVAC') == '1'",
+            "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2' || data('SARVAC') == '2'",
             "_row_num": 116,
             "__rowNum__": 115,
             "_token_type": "prompt",
