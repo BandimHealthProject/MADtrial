@@ -48,6 +48,13 @@ function loadChildren() {
         " LEFT JOIN MADTRIAL_FU_SHORT ON i._id = MADTRIAL_FU_SHORT.IDINC " +
         " WHERE i.INC = 1 " +
         " AND (i.SARVAC = 1 OR i.VENAOVAS = 1) " + // 20250723Ane - conditioning on having received first MV as this is only for children enrolled for 2nd dose. 
+        " AND date(" +
+        "substr(i.DATINC, instr(i.DATINC,'Y:') + 2, 4) || '-' ||" + // year
+        "substr(i.DATINC, instr(i.DATINC,'M:') + 2, (instr(i.DATINC, ',Y:') - (instr(i.DATINC,'M:') +2 )) ) " + // month
+        " || '-' ||" +
+        "substr(i.DATINC, 3, (instr(i.DATINC, ',M:') - 3 ))" + //Day
+        ")" +
+        " < date('2026-02-23') " +
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " +
         " ORDER BY i.NOMECRI ASC";
     children = [];
