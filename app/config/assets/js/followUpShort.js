@@ -50,9 +50,8 @@ function loadChildren() {
         " AND (i.SARVAC = 1 OR i.VENAOVAS = 1) " + // 20250723Ane - conditioning on having received first MV as this is only for children enrolled for 2nd dose. 
         " AND date(" +
         "substr(i.DATINC, instr(i.DATINC,'Y:') + 2, 4) || '-' ||" + // year
-        "substr(i.DATINC, instr(i.DATINC,'M:') + 2, (instr(i.DATINC, ',Y:') - (instr(i.DATINC,'M:') +2 )) ) " + // month
-        " || '-' ||" +
-        "substr(i.DATINC, 3, (instr(i.DATINC, ',M:') - 3 ))" + //Day
+        "printf('%02d', CAST(substr(i.DATINC, instr(i.DATINC,'M:') + 2, instr(i.DATINC, ',Y:') - instr(i.DATINC,'M:') - 2) AS INTEGER)) || '-' ||" + // month, zero-padded
+        "printf('%02d', CAST(substr(i.DATINC, 3, instr(i.DATINC, ',M:') - 3) AS INTEGER))" + // day, zero-padded
         ")" +
         " < date('2026-02-23') " +
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " +
