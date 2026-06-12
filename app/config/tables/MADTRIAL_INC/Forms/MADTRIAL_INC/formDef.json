@@ -433,42 +433,55 @@
       },
       {
         "type": "integer",
-        "name": "REGNO",
+        "name": "REGNO_ASSIST",
         "display": {
           "prompt": {
             "text": {
-              "english": "Register number (triage survey)",
-              "default": "Número de registo (ficha de triagem)"
+              "english": "First Register number (assistant)",
+              "default": "Primeira número de registo (assistente)"
             }
           }
         },
         "_row_num": 50
       },
       {
+        "type": "integer",
+        "name": "REGNO",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Second Register number (triage survey)",
+              "default": "Segundo Número de registo (nummero de triagem)"
+            }
+          }
+        },
+        "_row_num": 51
+      },
+      {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "regnons",
-        "_row_num": 51
+        "_row_num": 52
       },
       {
         "clause": "if",
         "condition": "data('regnons') != null",
-        "_row_num": 52
+        "_row_num": 53
       },
       {
         "type": "assign",
         "name": "REGNO",
         "calculation": 999,
-        "_row_num": 53
+        "_row_num": 54
       },
       {
         "clause": "end if",
-        "_row_num": 54
+        "_row_num": 55
       },
       {
         "clause": "if",
         "condition": "data('BAIRRO') != 77",
-        "_row_num": 55
+        "_row_num": 56
       },
       {
         "type": "integer",
@@ -488,32 +501,32 @@
           }
         },
         "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('BAIRRO') == 77",
-        "_row_num": 56
+        "_row_num": 57
       },
       {
         "type": "select_multiple",
         "values_list": "nsID",
         "name": "idns",
-        "_row_num": 57
+        "_row_num": 58
       },
       {
         "clause": "if",
         "condition": "data('idns') != null",
-        "_row_num": 58
+        "_row_num": 59
       },
       {
         "type": "assign",
         "name": "ID",
         "calculation": 9999999,
-        "_row_num": 59
-      },
-      {
-        "clause": "end if",
         "_row_num": 60
       },
       {
-        "clause": "else",
+        "clause": "end if",
         "_row_num": 61
+      },
+      {
+        "clause": "else",
+        "_row_num": 62
       },
       {
         "type": "integer",
@@ -533,27 +546,23 @@
           }
         },
         "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 1000000000 || data('BAIRRO') != 77",
-        "_row_num": 62
+        "_row_num": 63
       },
       {
         "type": "select_multiple",
         "values_list": "nsREGIDC",
         "name": "regidcns",
-        "_row_num": 63
+        "_row_num": 64
       },
       {
         "clause": "if",
         "condition": "data('regidcns') !=null",
-        "_row_num": 64
+        "_row_num": 65
       },
       {
         "type": "assign",
         "name": "REGIDC",
         "calculation": 999999999,
-        "_row_num": 65
-      },
-      {
-        "clause": "end if",
         "_row_num": 66
       },
       {
@@ -561,12 +570,16 @@
         "_row_num": 67
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 68
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 69
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 70
       },
       {
         "type": "adate",
@@ -587,33 +600,33 @@
         },
         "constraint": "adate.diffInDays(data('DATINC'), data('DOB'))<1 || adate.hasUncertainty(data('DOB'))",
         "required": true,
-        "_row_num": 70
+        "_row_num": 71
       },
       {
         "type": "select_multiple",
         "values_list": "datens",
         "name": "dobns",
-        "_row_num": 71
+        "_row_num": 72
       },
       {
         "clause": "if",
         "condition": "data('dobns') != null",
-        "_row_num": 72
+        "_row_num": 73
       },
       {
         "type": "assign",
         "name": "DOB",
         "calculation": "\"D:NS,M:NS,Y:NS\"",
-        "_row_num": 73
+        "_row_num": 74
       },
       {
         "clause": "end if",
-        "_row_num": 74
+        "_row_num": 75
       },
       {
         "clause": "if",
         "condition": "data('DOB')==\"D:NS,M:NS,Y:NS\"",
-        "_row_num": 75
+        "_row_num": 76
       },
       {
         "type": "integer",
@@ -626,7 +639,7 @@
             }
           }
         },
-        "_row_num": 76
+        "_row_num": 77
       },
       {
         "type": "integer",
@@ -639,11 +652,11 @@
             }
           }
         },
-        "_row_num": 77
+        "_row_num": 78
       },
       {
         "clause": "end if",
-        "_row_num": 78
+        "_row_num": 79
       },
       {
         "type": "note",
@@ -655,15 +668,15 @@
             }
           }
         },
-        "_row_num": 79
-      },
-      {
-        "clause": "end screen",
         "_row_num": 80
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 81
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 82
       },
       {
         "type": "select_one",
@@ -678,12 +691,12 @@
           }
         },
         "required": true,
-        "_row_num": 82
+        "_row_num": 83
       },
       {
         "clause": "if",
         "condition": "data('CONSENT') == '1'",
-        "_row_num": 83
+        "_row_num": 84
       },
       {
         "type": "select_one",
@@ -697,12 +710,12 @@
             }
           }
         },
-        "_row_num": 84
+        "_row_num": 85
       },
       {
         "clause": "if",
         "condition": "data('CONSENTTIPO') == '2'",
-        "_row_num": 85
+        "_row_num": 86
       },
       {
         "type": "select_one",
@@ -723,10 +736,6 @@
           }
         },
         "constraint": "selected(data('TESTEMUNHO'),'1') || data('CONSENTTIPO') != '2'",
-        "_row_num": 86
-      },
-      {
-        "clause": "end if",
         "_row_num": 87
       },
       {
@@ -734,17 +743,21 @@
         "_row_num": 88
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 89
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 90
       },
       {
         "clause": "if",
         "condition": "data('CONSENT') == '1'",
-        "_row_num": 90
+        "_row_num": 91
       },
       {
         "clause": "begin screen",
-        "_row_num": 91
+        "_row_num": 92
       },
       {
         "type": "integer",
@@ -764,13 +777,13 @@
           }
         },
         "constraint": "data('TELEMOVEL1') > 99999999 && data('TELEMOVEL1') < 1000000000 || data('CONSENT') == '2'",
-        "_row_num": 92
+        "_row_num": 93
       },
       {
         "type": "select_one_with_other",
         "values_list": "telinf1",
         "name": "TELEINF1",
-        "_row_num": 93
+        "_row_num": 94
       },
       {
         "type": "integer",
@@ -790,13 +803,13 @@
           }
         },
         "constraint": "data('TELEMOVEL2') > 99999999 && data('TELEMOVEL2') < 1000000000 || data('CONSENT') == '2'",
-        "_row_num": 94
+        "_row_num": 95
       },
       {
         "type": "select_one_with_other",
         "values_list": "telinf2",
         "name": "TELEINF2",
-        "_row_num": 95
+        "_row_num": 96
       },
       {
         "type": "integer",
@@ -816,51 +829,51 @@
           }
         },
         "constraint": "data('TELEMOVEL3') > 99999999 && data('TELEMOVEL3') < 1000000000 || data('CONSENT') == '2'",
-        "_row_num": 96
+        "_row_num": 97
       },
       {
         "type": "select_one_with_other",
         "values_list": "telinf2",
         "name": "TELEINF3",
-        "_row_num": 97
+        "_row_num": 98
       },
       {
         "clause": "if",
         "condition": "data('TELEINF2') == '3'",
-        "_row_num": 98
+        "_row_num": 99
       },
       {
         "type": "assign",
         "name": "TELEMOVEL2",
         "calculation": 999999999,
-        "_row_num": 99
+        "_row_num": 100
       },
       {
         "clause": "end if",
-        "_row_num": 100
+        "_row_num": 101
       },
       {
         "clause": "if",
         "condition": "data('TELEINF3') == '3'",
-        "_row_num": 101
+        "_row_num": 102
       },
       {
         "type": "assign",
         "name": "TELEMOVEL3",
         "calculation": 999999999,
-        "_row_num": 102
-      },
-      {
-        "clause": "end if",
         "_row_num": 103
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 104
       },
       {
+        "clause": "end screen",
+        "_row_num": 105
+      },
+      {
         "clause": "begin screen",
-        "_row_num": 106
+        "_row_num": 107
       },
       {
         "type": "select_one",
@@ -881,12 +894,12 @@
           }
         },
         "constraint": "data('CARTVIS') != null || data('CONSENT') == '2'",
-        "_row_num": 107
+        "_row_num": 108
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '1'",
-        "_row_num": 108
+        "_row_num": 109
       },
       {
         "type": "select_one",
@@ -907,16 +920,16 @@
           }
         },
         "constraint": "data('SARVAC') != null || data('CONSENT') == '2' || data('CARTVIS') == '2'",
-        "_row_num": 109
+        "_row_num": 110
       },
       {
         "clause": "end if",
-        "_row_num": 110
+        "_row_num": 111
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '2'",
-        "_row_num": 111
+        "_row_num": 112
       },
       {
         "type": "select_one",
@@ -937,21 +950,21 @@
           }
         },
         "constraint": "data('VENAOVAS') != null || data('CONSENT') == '2' || data('CARTVIS') == '1'",
-        "_row_num": 112
-      },
-      {
-        "clause": "end if",
         "_row_num": 113
       },
       {
-        "clause": "if",
-        "condition": "adate.diffInDays(data('DOB'), data('DATINC')) > 453 || adate.hasUncertainty(data('DOB')) || (data('IDADEANO') == '1' && data('IDADEMES') > '3' || data('IDADEMES')> '14' || data('IDADEANO') > '1' )",
+        "clause": "end if",
         "_row_num": 114
       },
       {
         "clause": "if",
-        "condition": "data('CARTVIS') == '1'",
+        "condition": "adate.diffInDays(data('DOB'), data('DATINC')) > 453 || adate.hasUncertainty(data('DOB')) || (data('IDADEANO') == '1' && data('IDADEMES') > '3' || data('IDADEMES')> '14' || data('IDADEANO') > '1' )",
         "_row_num": 115
+      },
+      {
+        "clause": "if",
+        "condition": "data('CARTVIS') == '1'",
+        "_row_num": 116
       },
       {
         "type": "select_one",
@@ -972,16 +985,16 @@
           }
         },
         "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2' || data('SARVAC') == '2'",
-        "_row_num": 116
+        "_row_num": 117
       },
       {
         "clause": "end if",
-        "_row_num": 117
+        "_row_num": 118
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '2'",
-        "_row_num": 119
+        "_row_num": 120
       },
       {
         "type": "select_one",
@@ -1002,10 +1015,6 @@
           }
         },
         "constraint": "data('VENAOVAS') != null || data('CONSENT') == '2' || data('CARTVIS') == '1'",
-        "_row_num": 120
-      },
-      {
-        "clause": "end if",
         "_row_num": 121
       },
       {
@@ -1013,13 +1022,17 @@
         "_row_num": 122
       },
       {
+        "clause": "end if",
+        "_row_num": 123
+      },
+      {
         "clause": "end screen",
-        "_row_num": 124
+        "_row_num": 125
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '1'",
-        "_row_num": 125
+        "_row_num": 126
       },
       {
         "type": "image",
@@ -1032,15 +1045,15 @@
             }
           }
         },
-        "_row_num": 126
-      },
-      {
-        "clause": "end if",
         "_row_num": 127
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 128
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 129
       },
       {
         "type": "text",
@@ -1069,7 +1082,7 @@
         "inputAttributes": {
           "type": "number"
         },
-        "_row_num": 129
+        "_row_num": 130
       },
       {
         "type": "integer",
@@ -1089,15 +1102,183 @@
           }
         },
         "constraint": "(data('BRACOCRI')>49 && data('BRACOCRI')<343 && data('BRACOCRI')%2 == 0) || data('CONSENT') == '2' || data('BRACOCRI') == 999",
-        "_row_num": 130
-      },
-      {
-        "clause": "end screen",
         "_row_num": 131
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 132
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 133
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/ns",
+        "name": "CICA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Does the child have a BCG scar?",
+              "default": "A crianca tem cicatriz de BCG ?"
+            }
+          }
+        },
+        "constraint": "data('CICA')!=null",
+        "_row_num": 134
+      },
+      {
+        "clause": "if",
+        "condition": "selected(data('CICA'),'1')",
+        "_row_num": 135
+      },
+      {
+        "type": "integer",
+        "name": "CICAH",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Horizontal measurement",
+              "default": "Medição - Largura"
+            }
+          }
+        },
+        "constraint": "data('CICAH')>0 || data('CICA')!='1'",
+        "_row_num": 136
+      },
+      {
+        "type": "integer",
+        "name": "CICAV",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Vertical measurement",
+              "default": "Medição - Altura"
+            }
+          }
+        },
+        "constraint": "data('CICAV')>0 || data('CICA') != '1'",
+        "_row_num": 137
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "evuloir",
+        "name": "evolucao",
+        "_row_num": 138
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"evulocao\") != null",
+        "_row_num": 139
+      },
+      {
+        "type": "assign",
+        "name": "CICAH",
+        "calculation": 88,
+        "_row_num": 140
+      },
+      {
+        "type": "assign",
+        "name": "CICAV",
+        "calculation": 88,
+        "_row_num": 141
+      },
+      {
+        "clause": "end if",
+        "_row_num": 142
+      },
+      {
+        "clause": "end if",
+        "_row_num": 143
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 144
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 145
+      },
+      {
+        "type": "select_one",
+        "values_list": "tipomae",
+        "name": "CICA_M",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Does the mother have a BCG scar?",
+              "default": "A mãe tem cicatriz de BCG ?"
+            }
+          }
+        },
+        "constraint": "data('CICA_M')!=null",
+        "_row_num": 146
+      },
+      {
+        "clause": "if",
+        "condition": "selected(data('CICA_M'),'1')",
+        "_row_num": 147
+      },
+      {
+        "type": "integer",
+        "name": "CICAH_M",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Horizontal measurement",
+              "default": "Medição - Largura"
+            }
+          }
+        },
+        "constraint": "data('CICAH_M')>0|| data('CICA_M')!='1'",
+        "_row_num": 148
+      },
+      {
+        "type": "integer",
+        "name": "CICAV_M",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Vertical measurement",
+              "default": "Medição - Altura"
+            }
+          }
+        },
+        "constraint": "data('CICAV_M')>0 || data('CICA_M')!='1'",
+        "_row_num": 149
+      },
+      {
+        "clause": "if",
+        "condition": "selected(data('CICA_M'),'8')",
+        "_row_num": 150
+      },
+      {
+        "type": "assign",
+        "name": "CICAH_M",
+        "calculation": 99,
+        "_row_num": 151
+      },
+      {
+        "type": "assign",
+        "name": "CICAV_M",
+        "calculation": 99,
+        "_row_num": 152
+      },
+      {
+        "clause": "end if",
+        "_row_num": 153
+      },
+      {
+        "clause": "end if",
+        "_row_num": 154
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 155
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 156
       },
       {
         "type": "select_one",
@@ -1111,12 +1292,12 @@
             }
           }
         },
-        "_row_num": 133
+        "_row_num": 157
       },
       {
         "clause": "if",
         "condition": "data('MOTCONT')=='2'",
-        "_row_num": 134
+        "_row_num": 158
       },
       {
         "type": "adate",
@@ -1136,19 +1317,19 @@
           }
         },
         "constraint": "adate.diffInDays(data('DATINC'), data('INTINICI'))<1 || adate.hasUncertainty(data('INTINICI')) ||data('CONSENT') == '2'",
-        "_row_num": 135
+        "_row_num": 159
       },
       {
         "clause": "end if",
-        "_row_num": 136
+        "_row_num": 160
       },
       {
         "clause": "end screen",
-        "_row_num": 137
+        "_row_num": 161
       },
       {
         "clause": "begin screen",
-        "_row_num": 138
+        "_row_num": 162
       },
       {
         "type": "select_one",
@@ -1162,7 +1343,7 @@
             }
           }
         },
-        "_row_num": 139
+        "_row_num": 163
       },
       {
         "type": "select_one",
@@ -1176,7 +1357,7 @@
             }
           }
         },
-        "_row_num": 140
+        "_row_num": 164
       },
       {
         "type": "select_one",
@@ -1190,40 +1371,40 @@
             }
           }
         },
-        "_row_num": 141
+        "_row_num": 165
       },
       {
         "clause": "if",
         "condition": "data('MOTCONT')=='1'",
-        "_row_num": 142
+        "_row_num": 166
       },
       {
         "type": "assign",
         "name": "REGDATE",
         "calculation": "data(\"DATINC\")",
-        "_row_num": 143
+        "_row_num": 167
       },
       {
         "clause": "else",
-        "_row_num": 144
+        "_row_num": 168
       },
       {
         "type": "assign",
         "name": "REGDATE",
         "calculation": "data(\"INTINICI\")",
-        "_row_num": 145
+        "_row_num": 169
       },
       {
         "clause": "end if",
-        "_row_num": 146
+        "_row_num": 170
       },
       {
         "clause": "end screen",
-        "_row_num": 147
+        "_row_num": 171
       },
       {
         "clause": "begin screen",
-        "_row_num": 148
+        "_row_num": 172
       },
       {
         "type": "select_one",
@@ -1237,7 +1418,7 @@
             }
           }
         },
-        "_row_num": 149
+        "_row_num": 173
       },
       {
         "type": "select_one",
@@ -1251,7 +1432,7 @@
             }
           }
         },
-        "_row_num": 150
+        "_row_num": 174
       },
       {
         "type": "select_one",
@@ -1265,15 +1446,15 @@
             }
           }
         },
-        "_row_num": 151
+        "_row_num": 175
       },
       {
         "clause": "end screen",
-        "_row_num": 152
+        "_row_num": 176
       },
       {
         "clause": "begin screen",
-        "_row_num": 153
+        "_row_num": 177
       },
       {
         "type": "select_one",
@@ -1287,7 +1468,7 @@
             }
           }
         },
-        "_row_num": 154
+        "_row_num": 178
       },
       {
         "type": "text",
@@ -1300,15 +1481,15 @@
             }
           }
         },
-        "_row_num": 155
+        "_row_num": 179
       },
       {
         "clause": "end screen",
-        "_row_num": 156
+        "_row_num": 180
       },
       {
         "clause": "begin screen",
-        "_row_num": 157
+        "_row_num": 181
       },
       {
         "type": "select_one",
@@ -1322,12 +1503,12 @@
             }
           }
         },
-        "_row_num": 158
+        "_row_num": 182
       },
       {
         "clause": "if",
         "condition": "data('TRATAMENT_A') =='1'",
-        "_row_num": 159
+        "_row_num": 183
       },
       {
         "type": "select_multiple",
@@ -1341,12 +1522,12 @@
             }
           }
         },
-        "_row_num": 160
+        "_row_num": 184
       },
       {
         "clause": "if",
         "condition": "selected(data('TRATQUAL_A'),'77')",
-        "_row_num": 161
+        "_row_num": 185
       },
       {
         "type": "text",
@@ -1359,23 +1540,23 @@
             }
           }
         },
-        "_row_num": 162
+        "_row_num": 186
       },
       {
         "clause": "end if",
-        "_row_num": 163
+        "_row_num": 187
       },
       {
         "clause": "end if",
-        "_row_num": 164
+        "_row_num": 188
       },
       {
         "clause": "end screen",
-        "_row_num": 165
+        "_row_num": 189
       },
       {
         "clause": "begin screen",
-        "_row_num": 166
+        "_row_num": 190
       },
       {
         "type": "select_one",
@@ -1389,12 +1570,12 @@
             }
           }
         },
-        "_row_num": 167
+        "_row_num": 191
       },
       {
         "clause": "if",
         "condition": "data('TRATAMENT_R') =='1'",
-        "_row_num": 168
+        "_row_num": 192
       },
       {
         "type": "select_multiple",
@@ -1408,12 +1589,12 @@
             }
           }
         },
-        "_row_num": 169
+        "_row_num": 193
       },
       {
         "clause": "if",
         "condition": "selected(data('TRATQUAL_R'),'77')",
-        "_row_num": 170
+        "_row_num": 194
       },
       {
         "type": "text",
@@ -1426,23 +1607,23 @@
             }
           }
         },
-        "_row_num": 171
+        "_row_num": 195
       },
       {
         "clause": "end if",
-        "_row_num": 172
+        "_row_num": 196
       },
       {
         "clause": "end if",
-        "_row_num": 173
+        "_row_num": 197
       },
       {
         "clause": "end screen",
-        "_row_num": 174
+        "_row_num": 198
       },
       {
         "clause": "begin screen",
-        "_row_num": 175
+        "_row_num": 199
       },
       {
         "type": "image",
@@ -1455,15 +1636,15 @@
             }
           }
         },
-        "_row_num": 176
+        "_row_num": 200
       },
       {
         "clause": "end screen",
-        "_row_num": 177
+        "_row_num": 201
       },
       {
         "clause": "begin screen",
-        "_row_num": 178
+        "_row_num": 202
       },
       {
         "type": "select_one",
@@ -1484,12 +1665,12 @@
           }
         },
         "constraint": "data('PODEVAC') != null || data('CONSENT') == '2'",
-        "_row_num": 179
+        "_row_num": 203
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 180
+        "_row_num": 204
       },
       {
         "type": "text",
@@ -1502,11 +1683,11 @@
             }
           }
         },
-        "_row_num": 181
+        "_row_num": 205
       },
       {
         "clause": "end if",
-        "_row_num": 182
+        "_row_num": 206
       },
       {
         "type": "select_one",
@@ -1527,12 +1708,12 @@
           }
         },
         "constraint": "data('PODEINC') != null || data('CONSENT') == '2'",
-        "_row_num": 183
+        "_row_num": 207
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 184
+        "_row_num": 208
       },
       {
         "type": "text",
@@ -1545,11 +1726,11 @@
             }
           }
         },
-        "_row_num": 185
+        "_row_num": 209
       },
       {
         "clause": "end if",
-        "_row_num": 186
+        "_row_num": 210
       },
       {
         "type": "select_one",
@@ -1570,27 +1751,27 @@
           }
         },
         "constraint": "data('JAINC') != null || data('CONSENT') == '2'",
-        "_row_num": 187
+        "_row_num": 211
       },
       {
         "clause": "end screen",
-        "_row_num": 188
+        "_row_num": 212
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') != '2')||data('SARVAC2') == '1'  || adate.diffInDays(data('DOB'), data('DATINC')) > 1826 || adate.diffInDays(data('DOB'), data('DATINC')) < 270",
         "comment": "|| calculates.childAGE >'1826",
-        "_row_num": 189
+        "_row_num": 213
       },
       {
         "clause": "begin screen",
-        "_row_num": 190
+        "_row_num": 214
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 191
+        "_row_num": 215
       },
       {
         "type": "note",
@@ -1602,12 +1783,12 @@
             }
           }
         },
-        "_row_num": 192
+        "_row_num": 216
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 193
+        "_row_num": 217
       },
       {
         "type": "note",
@@ -1619,16 +1800,16 @@
             }
           }
         },
-        "_row_num": 194
+        "_row_num": 218
       },
       {
         "clause": "end if",
-        "_row_num": 195
+        "_row_num": 219
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 196
+        "_row_num": 220
       },
       {
         "type": "note",
@@ -1640,16 +1821,16 @@
             }
           }
         },
-        "_row_num": 197
+        "_row_num": 221
       },
       {
         "clause": "end if",
-        "_row_num": 198
+        "_row_num": 222
       },
       {
         "clause": "if",
         "condition": "data('JAINC') == '1'",
-        "_row_num": 199
+        "_row_num": 223
       },
       {
         "type": "note",
@@ -1661,16 +1842,16 @@
             }
           }
         },
-        "_row_num": 200
+        "_row_num": 224
       },
       {
         "clause": "end if",
-        "_row_num": 201
+        "_row_num": 225
       },
       {
         "clause": "if",
         "condition": "data('BRACOCRI') <110",
-        "_row_num": 202
+        "_row_num": 226
       },
       {
         "type": "note",
@@ -1682,16 +1863,16 @@
             }
           }
         },
-        "_row_num": 203
+        "_row_num": 227
       },
       {
         "clause": "end if",
-        "_row_num": 204
+        "_row_num": 228
       },
       {
         "clause": "if",
         "condition": "data('TEMPERATURA')>38",
-        "_row_num": 205
+        "_row_num": 229
       },
       {
         "type": "note",
@@ -1703,16 +1884,16 @@
             }
           }
         },
-        "_row_num": 206
+        "_row_num": 230
       },
       {
         "clause": "end if",
-        "_row_num": 207
+        "_row_num": 231
       },
       {
         "clause": "if",
         "condition": "data('VENAOVAS2') == '2'",
-        "_row_num": 208
+        "_row_num": 232
       },
       {
         "type": "note",
@@ -1724,16 +1905,16 @@
             }
           }
         },
-        "_row_num": 209
+        "_row_num": 233
       },
       {
         "clause": "end if",
-        "_row_num": 210
+        "_row_num": 234
       },
       {
         "clause": "if",
         "condition": "data('VENAOVAS') == '2'",
-        "_row_num": 211
+        "_row_num": 235
       },
       {
         "type": "note",
@@ -1745,16 +1926,16 @@
             }
           }
         },
-        "_row_num": 212
+        "_row_num": 236
       },
       {
         "clause": "end if",
-        "_row_num": 213
+        "_row_num": 237
       },
       {
         "clause": "if",
         "condition": "data('SARVAC') == '1'&& data('SARVAC2')=='1'",
-        "_row_num": 214
+        "_row_num": 238
       },
       {
         "type": "note",
@@ -1766,16 +1947,16 @@
             }
           }
         },
-        "_row_num": 215
+        "_row_num": 239
       },
       {
         "clause": "end if",
-        "_row_num": 216
+        "_row_num": 240
       },
       {
         "clause": "if",
         "condition": "data('SARVAC2') == '1'",
-        "_row_num": 217
+        "_row_num": 241
       },
       {
         "type": "note",
@@ -1787,16 +1968,16 @@
             }
           }
         },
-        "_row_num": 218
+        "_row_num": 242
       },
       {
         "clause": "end if",
-        "_row_num": 219
+        "_row_num": 243
       },
       {
         "clause": "if",
         "condition": "((adate.diffInDays(data('DOB'), data('DATINC'))>1826) || (adate.diffInDays(data('DOB'), data('DATINC'))<270)) && data('DOB') != \"D:NS,M:NS,Y:NS\"",
-        "_row_num": 221
+        "_row_num": 245
       },
       {
         "type": "note",
@@ -1808,18 +1989,18 @@
             }
           }
         },
-        "_row_num": 222
+        "_row_num": 246
       },
       {
         "clause": "end if",
-        "_row_num": 223
+        "_row_num": 247
       },
       {
         "clause": "if",
         "condition": "((adate.diffInDays(data('DOB'), data('DATINC'))<453) && data('SARVAC')=='1') && data('DOB') != \"D:NS,M:NS,Y:NS\"",
         "comment": "if",
         "__EMPTY": "calculates.childAGE >'1826'",
-        "_row_num": 224
+        "_row_num": 248
       },
       {
         "type": "note",
@@ -1834,24 +2015,24 @@
         "__EMPTY_1": "note",
         "__EMPTY_4": "The child is too old",
         "__EMPTY_5": "A crianca tem idade maior de 5 anos",
-        "_row_num": 225
+        "_row_num": 249
       },
       {
         "clause": "end if",
         "comment": "end if",
-        "_row_num": 226
+        "_row_num": 250
       },
       {
         "clause": "end screen",
-        "_row_num": 231
+        "_row_num": 255
       },
       {
         "clause": "else",
-        "_row_num": 232
+        "_row_num": 256
       },
       {
         "clause": "begin screen",
-        "_row_num": 233
+        "_row_num": 257
       },
       {
         "type": "integer",
@@ -1871,7 +2052,7 @@
           }
         },
         "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-        "_row_num": 234
+        "_row_num": 258
       },
       {
         "type": "integer",
@@ -1891,13 +2072,13 @@
           }
         },
         "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-        "_row_num": 235
+        "_row_num": 259
       },
       {
         "type": "assign",
         "name": "RANDOM",
         "calculation": "freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2'))",
-        "_row_num": 236
+        "_row_num": 260
       },
       {
         "type": "note",
@@ -1909,27 +2090,27 @@
             }
           }
         },
-        "_row_num": 237
+        "_row_num": 261
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 1,
-        "_row_num": 238
+        "_row_num": 262
       },
       {
         "clause": "end screen",
-        "_row_num": 239
+        "_row_num": 263
       },
       {
         "clause": "begin screen",
-        "_row_num": 240
+        "_row_num": 264
       },
       {
         "type": "assign",
         "name": "DATVACVAS",
         "calculation": "data('DATINC')",
-        "_row_num": 241
+        "_row_num": 265
       },
       {
         "type": "adate",
@@ -1945,7 +2126,7 @@
             "helperText": false
           }
         },
-        "_row_num": 242
+        "_row_num": 266
       },
       {
         "type": "time",
@@ -1965,13 +2146,13 @@
           }
         },
         "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-        "_row_num": 243
+        "_row_num": 267
       },
       {
         "type": "assign",
         "name": "HORVACVAS",
         "calculation": "adate.hoursMinutes(data('HORA'))",
-        "_row_num": 244
+        "_row_num": 268
       },
       {
         "type": "integer",
@@ -1991,13 +2172,13 @@
           }
         },
         "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-        "_row_num": 245
+        "_row_num": 269
       },
       {
         "type": "assign",
         "name": "NUMEST",
         "calculation": "freebase.studyNumber(\"MAD\",4,data('NUM'))",
-        "_row_num": 246
+        "_row_num": 270
       },
       {
         "type": "note",
@@ -2009,19 +2190,19 @@
             }
           }
         },
-        "_row_num": 247
+        "_row_num": 271
       },
       {
         "clause": "end screen",
-        "_row_num": 248
+        "_row_num": 272
       },
       {
         "clause": "end if",
-        "_row_num": 249
+        "_row_num": 273
       },
       {
         "clause": "begin screen",
-        "_row_num": 250
+        "_row_num": 274
       },
       {
         "type": "select_one_with_other",
@@ -2035,12 +2216,12 @@
             }
           }
         },
-        "_row_num": 251
+        "_row_num": 275
       },
       {
         "clause": "if",
         "condition": "data('INC') == '1'",
-        "_row_num": 252
+        "_row_num": 276
       },
       {
         "type": "select_one_with_other",
@@ -2054,23 +2235,23 @@
             }
           }
         },
-        "_row_num": 253
+        "_row_num": 277
       },
       {
         "clause": "end if",
-        "_row_num": 254
+        "_row_num": 278
       },
       {
         "clause": "end screen",
-        "_row_num": 255
+        "_row_num": 279
       },
       {
         "clause": "else",
-        "_row_num": 256
+        "_row_num": 280
       },
       {
         "clause": "begin screen",
-        "_row_num": 257
+        "_row_num": 281
       },
       {
         "type": "note",
@@ -2082,21 +2263,21 @@
             }
           }
         },
-        "_row_num": 258
+        "_row_num": 282
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 259
+        "_row_num": 283
       },
       {
         "clause": "end screen",
-        "_row_num": 260
+        "_row_num": 284
       },
       {
         "clause": "end if",
-        "_row_num": 261
+        "_row_num": 285
       }
     ],
     "choices": [
@@ -2803,6 +2984,58 @@
           }
         },
         "_row_num": 54
+      },
+      {
+        "choice_list_name": "tipomae",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Scar",
+              "default": "Cicatriz"
+            }
+          }
+        },
+        "_row_num": 55
+      },
+      {
+        "choice_list_name": "tipomae",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No scar",
+              "default": "Nada"
+            }
+          }
+        },
+        "_row_num": 56
+      },
+      {
+        "choice_list_name": "tipomae",
+        "data_value": "8",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Not possible to measure",
+              "default": "Condição de midir não tem"
+            }
+          }
+        },
+        "_row_num": 57
+      },
+      {
+        "choice_list_name": "evuloir",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Evoluir",
+              "default": "Evoluir"
+            }
+          }
+        },
+        "_row_num": 58
       }
     ],
     "calculates": [
@@ -2888,458 +3121,514 @@
         "_row_num": 9
       },
       {
+        "name": "CICA",
+        "type": "text",
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "_row_num": 10
+      },
+      {
+        "name": "CICA_M",
+        "type": "text",
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "_row_num": 11
+      },
+      {
+        "name": "CICAH",
+        "type": "integer",
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "_row_num": 12
+      },
+      {
+        "name": "CICAH_M",
+        "type": "integer",
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "_row_num": 13
+      },
+      {
+        "name": "CICAV",
+        "type": "integer",
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "_row_num": 14
+      },
+      {
+        "name": "CICAV_M",
+        "type": "integer",
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "_row_num": 15
+      },
+      {
         "name": "CNO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 10
+        "_row_num": 16
       },
       {
         "name": "cnons",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 11
+        "_row_num": 17
       },
       {
         "name": "CONSENT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 12
+        "_row_num": 18
       },
       {
         "name": "CONSENTTIPO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 13
+        "_row_num": 19
       },
       {
         "name": "CONVULSA",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 14
+        "_row_num": 20
       },
       {
         "name": "DATINC",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 15
+        "_row_num": 21
       },
       {
         "name": "DATVACVAS",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 16
+        "_row_num": 22
       },
       {
         "name": "DIARREIA",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 17
+        "_row_num": 23
       },
       {
         "name": "DIFRESP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 18
+        "_row_num": 24
       },
       {
         "name": "DOB",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 19
+        "_row_num": 25
       },
       {
         "name": "dobns",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 20
+        "_row_num": 26
       },
       {
         "name": "ENFERMEI",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 21
+        "_row_num": 27
+      },
+      {
+        "name": "evolucao",
+        "type": "text",
+        "isSessionVariable": true,
+        "__EMPTY": "added 12-06-2026",
+        "_row_num": 28
       },
       {
         "name": "FEBRE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 22
+        "_row_num": 29
       },
       {
         "name": "HORA",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 23
+        "_row_num": 30
       },
       {
         "name": "HORVACVAS",
         "type": "assign",
         "isSessionVariable": false,
-        "_row_num": 24
+        "_row_num": 31
       },
       {
         "name": "ID",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 25
+        "_row_num": 32
       },
       {
         "name": "IDADEANO",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 26
+        "_row_num": 33
       },
       {
         "name": "IDADEMES",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 27
+        "_row_num": 34
       },
       {
         "name": "idns",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 28
+        "_row_num": 35
       },
       {
         "name": "INC",
         "type": "assign",
         "isSessionVariable": false,
-        "_row_num": 29
+        "_row_num": 36
       },
       {
         "name": "INTINICI",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 30
+        "_row_num": 37
       },
       {
         "name": "JAINC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 31
+        "_row_num": 38
       },
       {
         "name": "MOTCONT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 32
+        "_row_num": 39
       },
       {
         "name": "NINCPOR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 33
+        "_row_num": 40
       },
       {
         "name": "NOMECRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 34
+        "_row_num": 41
       },
       {
         "name": "NOMEMAE",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 35
+        "_row_num": 42
       },
       {
         "name": "NOMERESP",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 36
+        "_row_num": 43
       },
       {
         "name": "NUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 37
+        "_row_num": 44
       },
       {
         "name": "NUMEST",
         "type": "assign",
         "isSessionVariable": false,
-        "_row_num": 38
+        "_row_num": 45
       },
       {
         "name": "NVACPOR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 39
+        "_row_num": 46
       },
       {
         "name": "OSIMP",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 40
+        "_row_num": 47
       },
       {
         "name": "OUBAIRRO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 41
+        "_row_num": 48
       },
       {
         "name": "PODEINC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 42
+        "_row_num": 49
       },
       {
         "name": "PODEVAC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 43
+        "_row_num": 50
       },
       {
         "name": "RANDOM",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 44
+        "_row_num": 51
       },
       {
         "name": "RANDOM1",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 45
+        "_row_num": 52
       },
       {
         "name": "RANDOM2",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 46
+        "_row_num": 53
       },
       {
         "name": "REGIDC",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 47
+        "_row_num": 54
       },
       {
         "name": "regidcns",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 48
+        "_row_num": 55
       },
       {
         "name": "REGNO",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 49
+        "_row_num": 56
       },
       {
         "name": "regnons",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 50
+        "_row_num": 57
       },
       {
         "name": "RENORREI",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 51
+        "_row_num": 58
       },
       {
         "name": "RESP",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 52
+        "_row_num": 59
       },
       {
         "name": "SARVAC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 53
+        "_row_num": 60
       },
       {
         "name": "SEX",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 54
+        "_row_num": 61
       },
       {
         "name": "START",
         "type": "assign",
         "isSessionVariable": false,
-        "_row_num": 55
+        "_row_num": 62
       },
       {
         "name": "TABZ",
         "type": "select_one_dropdown",
         "isSessionVariable": false,
-        "_row_num": 56
+        "_row_num": 63
       },
       {
         "name": "TELEINF1",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 57
+        "_row_num": 64
       },
       {
         "name": "TELEINF2",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 58
+        "_row_num": 65
       },
       {
         "name": "TELEINF3",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 59
+        "_row_num": 66
       },
       {
         "name": "TELEMOVEL1",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 60
+        "_row_num": 67
       },
       {
         "name": "TELEMOVEL2",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 61
+        "_row_num": 68
       },
       {
         "name": "TELEMOVEL3",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 62
+        "_row_num": 69
       },
       {
         "name": "TEMPERATURA",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 63
+        "_row_num": 70
       },
       {
         "name": "TESTEMUNHO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 64
+        "_row_num": 71
       },
       {
         "name": "TOSSE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 65
+        "_row_num": 72
       },
       {
         "name": "TRATAMENT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 66
+        "_row_num": 73
       },
       {
         "name": "TRATAMENT_A",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 67
+        "_row_num": 74
       },
       {
         "name": "TRATAMENT_R",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 68
+        "_row_num": 75
       },
       {
         "name": "TRATIMG",
         "type": "image",
         "isSessionVariable": false,
-        "_row_num": 69
+        "_row_num": 76
       },
       {
         "name": "TRATQUAL",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 70
+        "_row_num": 77
       },
       {
         "name": "TRATQUAL_A",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 71
+        "_row_num": 78
       },
       {
         "name": "TRATQUAL_R",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 72
+        "_row_num": 79
       },
       {
         "name": "TRATQUALOU",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 73
+        "_row_num": 80
       },
       {
         "name": "TRATQUALOU_A",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 74
+        "_row_num": 81
       },
       {
         "name": "TRATQUALOU_R",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 75
+        "_row_num": 82
       },
       {
         "name": "VENAOVAS",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 76
+        "_row_num": 83
       },
       {
         "name": "VOMITO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 77
+        "_row_num": 84
       },
       {
         "name": "changeid",
         "type": "select_one",
         "isSessionVariable": true,
         "comments": "edit",
-        "_row_num": 79
+        "_row_num": 86
       },
       {
         "name": "changetabz",
         "type": "select_one",
         "isSessionVariable": true,
-        "_row_num": 80
+        "_row_num": 87
       },
       {
         "name": "changeregno",
         "type": "select_one",
         "isSessionVariable": true,
         "comments": "added 16-02-2022",
-        "_row_num": 81
+        "_row_num": 88
       },
       {
         "name": "changeregdate",
         "type": "select_one",
         "isSessionVariable": true,
         "comments": "added 16-02-2022",
-        "_row_num": 82
+        "_row_num": 89
       },
       {
         "name": "REGDATE",
         "type": "adate",
         "isSessionVariable": false,
         "comments": "added 16-02-2022",
-        "_row_num": 83
+        "_row_num": 90
       },
       {
         "name": "SARVAC2",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 85
+        "_row_num": 92
       },
       {
         "name": "VENAOVAS2",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 86
+        "_row_num": 93
+      },
+      {
+        "name": "REGNO_ASSIST",
+        "type": "integer",
+        "isSessionVariable": false,
+        "comments": "added 12-06-2026",
+        "_row_num": 94
       }
     ]
   },
@@ -4210,6 +4499,62 @@
           },
           "_row_num": 54
         }
+      ],
+      "tipomae": [
+        {
+          "choice_list_name": "tipomae",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Scar",
+                "default": "Cicatriz"
+              }
+            }
+          },
+          "_row_num": 55
+        },
+        {
+          "choice_list_name": "tipomae",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No scar",
+                "default": "Nada"
+              }
+            }
+          },
+          "_row_num": 56
+        },
+        {
+          "choice_list_name": "tipomae",
+          "data_value": "8",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Not possible to measure",
+                "default": "Condição de midir não tem"
+              }
+            }
+          },
+          "_row_num": 57
+        }
+      ],
+      "evuloir": [
+        {
+          "choice_list_name": "evuloir",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Evoluir",
+                "default": "Evoluir"
+              }
+            }
+          },
+          "_row_num": 58
+        }
       ]
     },
     "table_specific_definitions": {
@@ -4244,7 +4589,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 253,
+            "_row_num": 277,
             "section_name": "inc"
           },
           {
@@ -4275,7 +4620,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 130,
+            "_row_num": 131,
             "section_name": "inc"
           },
           {
@@ -4358,7 +4703,7 @@
         },
         "_defn": [
           {
-            "_row_num": 126,
+            "_row_num": 127,
             "section_name": "inc"
           },
           {
@@ -4374,7 +4719,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 108,
             "section_name": "inc"
           },
           {
@@ -4385,6 +4730,104 @@
         "isSessionVariable": false,
         "elementKey": "CARTVIS"
       },
+      "CICA": {
+        "type": "string",
+        "valuesList": "sim/não/ns",
+        "_defn": [
+          {
+            "_row_num": 134,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICA"
+      },
+      "CICA_M": {
+        "type": "string",
+        "valuesList": "tipomae",
+        "_defn": [
+          {
+            "_row_num": 146,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICA_M"
+      },
+      "CICAH": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 136,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICAH"
+      },
+      "CICAH_M": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 148,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICAH_M"
+      },
+      "CICAV": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 137,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICAV"
+      },
+      "CICAV_M": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 149,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICAV_M"
+      },
       "CNO": {
         "type": "string",
         "_defn": [
@@ -4393,7 +4836,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 10,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -4413,7 +4856,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 11,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -4425,11 +4868,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 82,
+            "_row_num": 83,
             "section_name": "inc"
           },
           {
-            "_row_num": 12,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -4441,11 +4884,11 @@
         "valuesList": "signature",
         "_defn": [
           {
-            "_row_num": 84,
+            "_row_num": 85,
             "section_name": "inc"
           },
           {
-            "_row_num": 13,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -4457,11 +4900,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 154,
+            "_row_num": 178,
             "section_name": "inc"
           },
           {
-            "_row_num": 14,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -4481,7 +4924,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 15,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -4497,11 +4940,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 242,
+            "_row_num": 266,
             "section_name": "inc"
           },
           {
-            "_row_num": 16,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -4513,11 +4956,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 140,
+            "_row_num": 164,
             "section_name": "inc"
           },
           {
-            "_row_num": 17,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -4529,11 +4972,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 151,
+            "_row_num": 175,
             "section_name": "inc"
           },
           {
-            "_row_num": 18,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -4549,11 +4992,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 71,
             "section_name": "inc"
           },
           {
-            "_row_num": 19,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -4569,11 +5012,11 @@
         "valuesList": "datens",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 72,
             "section_name": "inc"
           },
           {
-            "_row_num": 20,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -4585,27 +5028,47 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 251,
+            "_row_num": 275,
             "section_name": "inc"
           },
           {
-            "_row_num": 21,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "ENFERMEI"
       },
+      "evolucao": {
+        "type": "string",
+        "items": {
+          "type": "string"
+        },
+        "valuesList": "evuloir",
+        "_defn": [
+          {
+            "_row_num": 138,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 28,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "evolucao"
+      },
       "FEBRE": {
         "type": "string",
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 139,
+            "_row_num": 163,
             "section_name": "inc"
           },
           {
-            "_row_num": 22,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -4617,11 +5080,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 243,
+            "_row_num": 267,
             "section_name": "inc"
           },
           {
-            "_row_num": 23,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -4631,7 +5094,7 @@
       "HORVACVAS": {
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -4643,11 +5106,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 57,
             "section_name": "inc"
           },
           {
-            "_row_num": 25,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -4658,11 +5121,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 76,
+            "_row_num": 77,
             "section_name": "inc"
           },
           {
-            "_row_num": 26,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -4673,11 +5136,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 77,
+            "_row_num": 78,
             "section_name": "inc"
           },
           {
-            "_row_num": 27,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -4693,11 +5156,11 @@
         "valuesList": "nsID",
         "_defn": [
           {
-            "_row_num": 57,
+            "_row_num": 58,
             "section_name": "inc"
           },
           {
-            "_row_num": 28,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -4707,7 +5170,7 @@
       "INC": {
         "_defn": [
           {
-            "_row_num": 29,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -4724,11 +5187,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 135,
+            "_row_num": 159,
             "section_name": "inc"
           },
           {
-            "_row_num": 30,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -4740,11 +5203,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 187,
+            "_row_num": 211,
             "section_name": "inc"
           },
           {
-            "_row_num": 31,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -4756,11 +5219,11 @@
         "valuesList": "Motivo",
         "_defn": [
           {
-            "_row_num": 133,
+            "_row_num": 157,
             "section_name": "inc"
           },
           {
-            "_row_num": 32,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -4771,11 +5234,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 185,
+            "_row_num": 209,
             "section_name": "inc"
           },
           {
-            "_row_num": 33,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -4790,7 +5253,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 34,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -4805,7 +5268,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 35,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -4820,7 +5283,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 36,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -4831,11 +5294,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 245,
+            "_row_num": 269,
             "section_name": "inc"
           },
           {
-            "_row_num": 37,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -4845,7 +5308,7 @@
       "NUMEST": {
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -4857,11 +5320,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 181,
+            "_row_num": 205,
             "section_name": "inc"
           },
           {
-            "_row_num": 39,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -4872,11 +5335,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 155,
+            "_row_num": 179,
             "section_name": "inc"
           },
           {
-            "_row_num": 40,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -4891,7 +5354,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 41,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -4903,11 +5366,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 183,
+            "_row_num": 207,
             "section_name": "inc"
           },
           {
-            "_row_num": 42,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -4919,11 +5382,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 179,
+            "_row_num": 203,
             "section_name": "inc"
           },
           {
-            "_row_num": 43,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -4934,7 +5397,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -4945,11 +5408,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 234,
+            "_row_num": 258,
             "section_name": "inc"
           },
           {
-            "_row_num": 45,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -4960,11 +5423,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 235,
+            "_row_num": 259,
             "section_name": "inc"
           },
           {
-            "_row_num": 46,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -4975,11 +5438,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 63,
             "section_name": "inc"
           },
           {
-            "_row_num": 47,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -4995,11 +5458,11 @@
         "valuesList": "nsREGIDC",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 64,
             "section_name": "inc"
           },
           {
-            "_row_num": 48,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -5010,11 +5473,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 51,
             "section_name": "inc"
           },
           {
-            "_row_num": 49,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -5030,11 +5493,11 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 52,
             "section_name": "inc"
           },
           {
-            "_row_num": 50,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -5046,11 +5509,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 149,
+            "_row_num": 173,
             "section_name": "inc"
           },
           {
-            "_row_num": 51,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -5066,7 +5529,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 52,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -5078,11 +5541,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 110,
             "section_name": "inc"
           },
           {
-            "_row_num": 53,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -5098,7 +5561,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 54,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -5108,7 +5571,7 @@
       "START": {
         "_defn": [
           {
-            "_row_num": 55,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -5129,7 +5592,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 56,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -5141,11 +5604,11 @@
         "valuesList": "telinf1",
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 94,
             "section_name": "inc"
           },
           {
-            "_row_num": 57,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -5157,11 +5620,11 @@
         "valuesList": "telinf2",
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 96,
             "section_name": "inc"
           },
           {
-            "_row_num": 58,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -5173,11 +5636,11 @@
         "valuesList": "telinf2",
         "_defn": [
           {
-            "_row_num": 97,
+            "_row_num": 98,
             "section_name": "inc"
           },
           {
-            "_row_num": 59,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -5188,11 +5651,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 92,
+            "_row_num": 93,
             "section_name": "inc"
           },
           {
-            "_row_num": 60,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -5203,11 +5666,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 95,
             "section_name": "inc"
           },
           {
-            "_row_num": 61,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -5218,11 +5681,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 96,
+            "_row_num": 97,
             "section_name": "inc"
           },
           {
-            "_row_num": 62,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -5233,11 +5696,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 129,
+            "_row_num": 130,
             "section_name": "inc"
           },
           {
-            "_row_num": 63,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -5249,11 +5712,11 @@
         "valuesList": "sim",
         "_defn": [
           {
-            "_row_num": 86,
+            "_row_num": 87,
             "section_name": "inc"
           },
           {
-            "_row_num": 64,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -5265,11 +5728,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 150,
+            "_row_num": 174,
             "section_name": "inc"
           },
           {
-            "_row_num": 65,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -5280,7 +5743,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -5292,11 +5755,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 182,
             "section_name": "inc"
           },
           {
-            "_row_num": 67,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
@@ -5308,11 +5771,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 167,
+            "_row_num": 191,
             "section_name": "inc"
           },
           {
-            "_row_num": 68,
+            "_row_num": 75,
             "section_name": "model"
           }
         ],
@@ -5337,11 +5800,11 @@
         },
         "_defn": [
           {
-            "_row_num": 176,
+            "_row_num": 200,
             "section_name": "inc"
           },
           {
-            "_row_num": 69,
+            "_row_num": 76,
             "section_name": "model"
           }
         ],
@@ -5356,7 +5819,7 @@
         },
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 77,
             "section_name": "model"
           }
         ],
@@ -5372,11 +5835,11 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 160,
+            "_row_num": 184,
             "section_name": "inc"
           },
           {
-            "_row_num": 71,
+            "_row_num": 78,
             "section_name": "model"
           }
         ],
@@ -5392,11 +5855,11 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 169,
+            "_row_num": 193,
             "section_name": "inc"
           },
           {
-            "_row_num": 72,
+            "_row_num": 79,
             "section_name": "model"
           }
         ],
@@ -5407,7 +5870,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 80,
             "section_name": "model"
           }
         ],
@@ -5418,11 +5881,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 162,
+            "_row_num": 186,
             "section_name": "inc"
           },
           {
-            "_row_num": 74,
+            "_row_num": 81,
             "section_name": "model"
           }
         ],
@@ -5433,11 +5896,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 171,
+            "_row_num": 195,
             "section_name": "inc"
           },
           {
-            "_row_num": 75,
+            "_row_num": 82,
             "section_name": "model"
           }
         ],
@@ -5449,11 +5912,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 112,
+            "_row_num": 113,
             "section_name": "inc"
           },
           {
-            "_row_num": 76,
+            "_row_num": 83,
             "section_name": "model"
           }
         ],
@@ -5465,11 +5928,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 141,
+            "_row_num": 165,
             "section_name": "inc"
           },
           {
-            "_row_num": 77,
+            "_row_num": 84,
             "section_name": "model"
           }
         ],
@@ -5480,7 +5943,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 79,
+            "_row_num": 86,
             "section_name": "model"
           }
         ],
@@ -5491,7 +5954,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 80,
+            "_row_num": 87,
             "section_name": "model"
           }
         ],
@@ -5502,7 +5965,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 88,
             "section_name": "model"
           }
         ],
@@ -5513,7 +5976,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 82,
+            "_row_num": 89,
             "section_name": "model"
           }
         ],
@@ -5529,7 +5992,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 90,
             "section_name": "model"
           }
         ],
@@ -5541,11 +6004,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 116,
+            "_row_num": 117,
             "section_name": "inc"
           },
           {
-            "_row_num": 85,
+            "_row_num": 92,
             "section_name": "model"
           }
         ],
@@ -5557,16 +6020,31 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 120,
+            "_row_num": 121,
             "section_name": "inc"
           },
           {
-            "_row_num": 86,
+            "_row_num": 93,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "VENAOVAS2"
+      },
+      "REGNO_ASSIST": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 50,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 94,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGNO_ASSIST"
       }
     },
     "section_names": [
@@ -5974,12 +6452,12 @@
           },
           {
             "type": "integer",
-            "name": "REGNO",
+            "name": "REGNO_ASSIST",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Register number (triage survey)",
-                  "default": "Número de registo (ficha de triagem)"
+                  "english": "First Register number (assistant)",
+                  "default": "Primeira número de registo (assistente)"
                 }
               }
             },
@@ -5991,15 +6469,33 @@
             "promptIdx": 16
           },
           {
-            "type": "select_multiple",
-            "values_list": "ns",
-            "name": "regnons",
+            "type": "integer",
+            "name": "REGNO",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Second Register number (triage survey)",
+                  "default": "Segundo Número de registo (nummero de triagem)"
+                }
+              }
+            },
             "_row_num": 51,
             "__rowNum__": 50,
             "_token_type": "prompt",
-            "_type": "select_multiple",
+            "_type": "integer",
             "_branch_label_enclosing_screen": "inc/_screen49",
             "promptIdx": 17
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "ns",
+            "name": "regnons",
+            "_row_num": 52,
+            "__rowNum__": 51,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "inc/_screen49",
+            "promptIdx": 18
           },
           {
             "type": "integer",
@@ -6019,23 +6515,23 @@
               }
             },
             "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('BAIRRO') == 77",
-            "_row_num": 56,
-            "__rowNum__": 55,
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "inc/_screen49",
-            "promptIdx": 18
+            "promptIdx": 19
           },
           {
             "type": "select_multiple",
             "values_list": "nsID",
             "name": "idns",
-            "_row_num": 57,
-            "__rowNum__": 56,
+            "_row_num": 58,
+            "__rowNum__": 57,
             "_token_type": "prompt",
             "_type": "select_multiple",
             "_branch_label_enclosing_screen": "inc/_screen49",
-            "promptIdx": 19
+            "promptIdx": 20
           },
           {
             "type": "integer",
@@ -6055,23 +6551,23 @@
               }
             },
             "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 1000000000 || data('BAIRRO') != 77",
-            "_row_num": 62,
-            "__rowNum__": 61,
+            "_row_num": 63,
+            "__rowNum__": 62,
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "inc/_screen49",
-            "promptIdx": 20
+            "promptIdx": 21
           },
           {
             "type": "select_multiple",
             "values_list": "nsREGIDC",
             "name": "regidcns",
-            "_row_num": 63,
-            "__rowNum__": 62,
+            "_row_num": 64,
+            "__rowNum__": 63,
             "_token_type": "prompt",
             "_type": "select_multiple",
             "_branch_label_enclosing_screen": "inc/_screen49",
-            "promptIdx": 21
+            "promptIdx": 22
           },
           {
             "type": "adate",
@@ -6092,23 +6588,23 @@
             },
             "constraint": "adate.diffInDays(data('DATINC'), data('DOB'))<1 || adate.hasUncertainty(data('DOB'))",
             "required": true,
-            "_row_num": 70,
-            "__rowNum__": 69,
+            "_row_num": 71,
+            "__rowNum__": 70,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen69",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "inc/_screen70",
+            "promptIdx": 23
           },
           {
             "type": "select_multiple",
             "values_list": "datens",
             "name": "dobns",
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen69",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "inc/_screen70",
+            "promptIdx": 24
           },
           {
             "type": "integer",
@@ -6121,12 +6617,12 @@
                 }
               }
             },
-            "_row_num": 76,
-            "__rowNum__": 75,
+            "_row_num": 77,
+            "__rowNum__": 76,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen69",
-            "promptIdx": 24
+            "_branch_label_enclosing_screen": "inc/_screen70",
+            "promptIdx": 25
           },
           {
             "type": "integer",
@@ -6139,12 +6635,12 @@
                 }
               }
             },
-            "_row_num": 77,
-            "__rowNum__": 76,
+            "_row_num": 78,
+            "__rowNum__": 77,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen69",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "inc/_screen70",
+            "promptIdx": 26
           },
           {
             "type": "note",
@@ -6156,12 +6652,12 @@
                 }
               }
             },
-            "_row_num": 79,
-            "__rowNum__": 78,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen69",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "inc/_screen70",
+            "promptIdx": 27
           },
           {
             "type": "select_one",
@@ -6176,12 +6672,12 @@
               }
             },
             "required": true,
-            "_row_num": 82,
-            "__rowNum__": 81,
+            "_row_num": 83,
+            "__rowNum__": 82,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen81",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "inc/_screen82",
+            "promptIdx": 28
           },
           {
             "type": "select_one",
@@ -6195,12 +6691,12 @@
                 }
               }
             },
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 85,
+            "__rowNum__": 84,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen81",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "inc/_screen82",
+            "promptIdx": 29
           },
           {
             "type": "select_one",
@@ -6221,12 +6717,12 @@
               }
             },
             "constraint": "selected(data('TESTEMUNHO'),'1') || data('CONSENTTIPO') != '2'",
-            "_row_num": 86,
-            "__rowNum__": 85,
+            "_row_num": 87,
+            "__rowNum__": 86,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen81",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "inc/_screen82",
+            "promptIdx": 30
           },
           {
             "type": "integer",
@@ -6246,23 +6742,23 @@
               }
             },
             "constraint": "data('TELEMOVEL1') > 99999999 && data('TELEMOVEL1') < 1000000000 || data('CONSENT') == '2'",
-            "_row_num": 92,
-            "__rowNum__": 91,
+            "_row_num": 93,
+            "__rowNum__": 92,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen91",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "inc/_screen92",
+            "promptIdx": 31
           },
           {
             "type": "select_one_with_other",
             "values_list": "telinf1",
             "name": "TELEINF1",
-            "_row_num": 93,
-            "__rowNum__": 92,
+            "_row_num": 94,
+            "__rowNum__": 93,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen91",
-            "promptIdx": 31
+            "_branch_label_enclosing_screen": "inc/_screen92",
+            "promptIdx": 32
           },
           {
             "type": "integer",
@@ -6282,23 +6778,23 @@
               }
             },
             "constraint": "data('TELEMOVEL2') > 99999999 && data('TELEMOVEL2') < 1000000000 || data('CONSENT') == '2'",
-            "_row_num": 94,
-            "__rowNum__": 93,
+            "_row_num": 95,
+            "__rowNum__": 94,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen91",
-            "promptIdx": 32
+            "_branch_label_enclosing_screen": "inc/_screen92",
+            "promptIdx": 33
           },
           {
             "type": "select_one_with_other",
             "values_list": "telinf2",
             "name": "TELEINF2",
-            "_row_num": 95,
-            "__rowNum__": 94,
+            "_row_num": 96,
+            "__rowNum__": 95,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen91",
-            "promptIdx": 33
+            "_branch_label_enclosing_screen": "inc/_screen92",
+            "promptIdx": 34
           },
           {
             "type": "integer",
@@ -6318,23 +6814,23 @@
               }
             },
             "constraint": "data('TELEMOVEL3') > 99999999 && data('TELEMOVEL3') < 1000000000 || data('CONSENT') == '2'",
-            "_row_num": 96,
-            "__rowNum__": 95,
+            "_row_num": 97,
+            "__rowNum__": 96,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen91",
-            "promptIdx": 34
+            "_branch_label_enclosing_screen": "inc/_screen92",
+            "promptIdx": 35
           },
           {
             "type": "select_one_with_other",
             "values_list": "telinf2",
             "name": "TELEINF3",
-            "_row_num": 97,
-            "__rowNum__": 96,
+            "_row_num": 98,
+            "__rowNum__": 97,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen91",
-            "promptIdx": 35
+            "_branch_label_enclosing_screen": "inc/_screen92",
+            "promptIdx": 36
           },
           {
             "type": "select_one",
@@ -6355,12 +6851,12 @@
               }
             },
             "constraint": "data('CARTVIS') != null || data('CONSENT') == '2'",
-            "_row_num": 107,
-            "__rowNum__": 106,
+            "_row_num": 108,
+            "__rowNum__": 107,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen106",
-            "promptIdx": 36
+            "_branch_label_enclosing_screen": "inc/_screen107",
+            "promptIdx": 37
           },
           {
             "type": "select_one",
@@ -6381,12 +6877,12 @@
               }
             },
             "constraint": "data('SARVAC') != null || data('CONSENT') == '2' || data('CARTVIS') == '2'",
-            "_row_num": 109,
-            "__rowNum__": 108,
+            "_row_num": 110,
+            "__rowNum__": 109,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen106",
-            "promptIdx": 37
+            "_branch_label_enclosing_screen": "inc/_screen107",
+            "promptIdx": 38
           },
           {
             "type": "select_one",
@@ -6407,12 +6903,12 @@
               }
             },
             "constraint": "data('VENAOVAS') != null || data('CONSENT') == '2' || data('CARTVIS') == '1'",
-            "_row_num": 112,
-            "__rowNum__": 111,
+            "_row_num": 113,
+            "__rowNum__": 112,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen106",
-            "promptIdx": 38
+            "_branch_label_enclosing_screen": "inc/_screen107",
+            "promptIdx": 39
           },
           {
             "type": "select_one",
@@ -6433,12 +6929,12 @@
               }
             },
             "constraint": "data('SARVAC2') != null || data('CONSENT') == '2' || data('CARTVIS') == '2' || data('SARVAC') == '2'",
-            "_row_num": 116,
-            "__rowNum__": 115,
+            "_row_num": 117,
+            "__rowNum__": 116,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen106",
-            "promptIdx": 39
+            "_branch_label_enclosing_screen": "inc/_screen107",
+            "promptIdx": 40
           },
           {
             "type": "select_one",
@@ -6459,12 +6955,12 @@
               }
             },
             "constraint": "data('VENAOVAS') != null || data('CONSENT') == '2' || data('CARTVIS') == '1'",
-            "_row_num": 120,
-            "__rowNum__": 119,
+            "_row_num": 121,
+            "__rowNum__": 120,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen106",
-            "promptIdx": 40
+            "_branch_label_enclosing_screen": "inc/_screen107",
+            "promptIdx": 41
           },
           {
             "type": "image",
@@ -6477,12 +6973,12 @@
                 }
               }
             },
-            "_row_num": 126,
-            "__rowNum__": 125,
+            "_row_num": 127,
+            "__rowNum__": 126,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "inc/_screen126",
-            "promptIdx": 41
+            "_branch_label_enclosing_screen": "inc/_screen127",
+            "promptIdx": 42
           },
           {
             "type": "text",
@@ -6511,12 +7007,12 @@
             "inputAttributes": {
               "type": "number"
             },
-            "_row_num": 129,
-            "__rowNum__": 128,
+            "_row_num": 130,
+            "__rowNum__": 129,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen128",
-            "promptIdx": 42
+            "_branch_label_enclosing_screen": "inc/_screen129",
+            "promptIdx": 43
           },
           {
             "type": "integer",
@@ -6536,12 +7032,139 @@
               }
             },
             "constraint": "(data('BRACOCRI')>49 && data('BRACOCRI')<343 && data('BRACOCRI')%2 == 0) || data('CONSENT') == '2' || data('BRACOCRI') == 999",
-            "_row_num": 130,
-            "__rowNum__": 129,
+            "_row_num": 131,
+            "__rowNum__": 130,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen128",
-            "promptIdx": 43
+            "_branch_label_enclosing_screen": "inc/_screen129",
+            "promptIdx": 44
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não/ns",
+            "name": "CICA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Does the child have a BCG scar?",
+                  "default": "A crianca tem cicatriz de BCG ?"
+                }
+              }
+            },
+            "constraint": "data('CICA')!=null",
+            "_row_num": 134,
+            "__rowNum__": 133,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 45
+          },
+          {
+            "type": "integer",
+            "name": "CICAH",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Horizontal measurement",
+                  "default": "Medição - Largura"
+                }
+              }
+            },
+            "constraint": "data('CICAH')>0 || data('CICA')!='1'",
+            "_row_num": 136,
+            "__rowNum__": 135,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 46
+          },
+          {
+            "type": "integer",
+            "name": "CICAV",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Vertical measurement",
+                  "default": "Medição - Altura"
+                }
+              }
+            },
+            "constraint": "data('CICAV')>0 || data('CICA') != '1'",
+            "_row_num": 137,
+            "__rowNum__": 136,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 47
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "evuloir",
+            "name": "evolucao",
+            "_row_num": 138,
+            "__rowNum__": 137,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 48
+          },
+          {
+            "type": "select_one",
+            "values_list": "tipomae",
+            "name": "CICA_M",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Does the mother have a BCG scar?",
+                  "default": "A mãe tem cicatriz de BCG ?"
+                }
+              }
+            },
+            "constraint": "data('CICA_M')!=null",
+            "_row_num": 146,
+            "__rowNum__": 145,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "inc/_screen145",
+            "promptIdx": 49
+          },
+          {
+            "type": "integer",
+            "name": "CICAH_M",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Horizontal measurement",
+                  "default": "Medição - Largura"
+                }
+              }
+            },
+            "constraint": "data('CICAH_M')>0|| data('CICA_M')!='1'",
+            "_row_num": 148,
+            "__rowNum__": 147,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "inc/_screen145",
+            "promptIdx": 50
+          },
+          {
+            "type": "integer",
+            "name": "CICAV_M",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Vertical measurement",
+                  "default": "Medição - Altura"
+                }
+              }
+            },
+            "constraint": "data('CICAV_M')>0 || data('CICA_M')!='1'",
+            "_row_num": 149,
+            "__rowNum__": 148,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "inc/_screen145",
+            "promptIdx": 51
           },
           {
             "type": "select_one",
@@ -6555,12 +7178,12 @@
                 }
               }
             },
-            "_row_num": 133,
-            "__rowNum__": 132,
+            "_row_num": 157,
+            "__rowNum__": 156,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen132",
-            "promptIdx": 44
+            "_branch_label_enclosing_screen": "inc/_screen156",
+            "promptIdx": 52
           },
           {
             "type": "adate",
@@ -6580,12 +7203,12 @@
               }
             },
             "constraint": "adate.diffInDays(data('DATINC'), data('INTINICI'))<1 || adate.hasUncertainty(data('INTINICI')) ||data('CONSENT') == '2'",
-            "_row_num": 135,
-            "__rowNum__": 134,
+            "_row_num": 159,
+            "__rowNum__": 158,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen132",
-            "promptIdx": 45
+            "_branch_label_enclosing_screen": "inc/_screen156",
+            "promptIdx": 53
           },
           {
             "type": "select_one",
@@ -6599,12 +7222,12 @@
                 }
               }
             },
-            "_row_num": 139,
-            "__rowNum__": 138,
+            "_row_num": 163,
+            "__rowNum__": 162,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen138",
-            "promptIdx": 46
+            "_branch_label_enclosing_screen": "inc/_screen162",
+            "promptIdx": 54
           },
           {
             "type": "select_one",
@@ -6618,12 +7241,12 @@
                 }
               }
             },
-            "_row_num": 140,
-            "__rowNum__": 139,
+            "_row_num": 164,
+            "__rowNum__": 163,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen138",
-            "promptIdx": 47
+            "_branch_label_enclosing_screen": "inc/_screen162",
+            "promptIdx": 55
           },
           {
             "type": "select_one",
@@ -6637,12 +7260,12 @@
                 }
               }
             },
-            "_row_num": 141,
-            "__rowNum__": 140,
+            "_row_num": 165,
+            "__rowNum__": 164,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen138",
-            "promptIdx": 48
+            "_branch_label_enclosing_screen": "inc/_screen162",
+            "promptIdx": 56
           },
           {
             "type": "select_one",
@@ -6656,12 +7279,12 @@
                 }
               }
             },
-            "_row_num": 149,
-            "__rowNum__": 148,
+            "_row_num": 173,
+            "__rowNum__": 172,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen148",
-            "promptIdx": 49
+            "_branch_label_enclosing_screen": "inc/_screen172",
+            "promptIdx": 57
           },
           {
             "type": "select_one",
@@ -6675,12 +7298,12 @@
                 }
               }
             },
-            "_row_num": 150,
-            "__rowNum__": 149,
+            "_row_num": 174,
+            "__rowNum__": 173,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen148",
-            "promptIdx": 50
+            "_branch_label_enclosing_screen": "inc/_screen172",
+            "promptIdx": 58
           },
           {
             "type": "select_one",
@@ -6694,12 +7317,12 @@
                 }
               }
             },
-            "_row_num": 151,
-            "__rowNum__": 150,
+            "_row_num": 175,
+            "__rowNum__": 174,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen148",
-            "promptIdx": 51
+            "_branch_label_enclosing_screen": "inc/_screen172",
+            "promptIdx": 59
           },
           {
             "type": "select_one",
@@ -6713,12 +7336,12 @@
                 }
               }
             },
-            "_row_num": 154,
-            "__rowNum__": 153,
+            "_row_num": 178,
+            "__rowNum__": 177,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen153",
-            "promptIdx": 52
+            "_branch_label_enclosing_screen": "inc/_screen177",
+            "promptIdx": 60
           },
           {
             "type": "text",
@@ -6731,12 +7354,12 @@
                 }
               }
             },
-            "_row_num": 155,
-            "__rowNum__": 154,
+            "_row_num": 179,
+            "__rowNum__": 178,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen153",
-            "promptIdx": 53
+            "_branch_label_enclosing_screen": "inc/_screen177",
+            "promptIdx": 61
           },
           {
             "type": "select_one",
@@ -6750,12 +7373,12 @@
                 }
               }
             },
-            "_row_num": 158,
-            "__rowNum__": 157,
+            "_row_num": 182,
+            "__rowNum__": 181,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen157",
-            "promptIdx": 54
+            "_branch_label_enclosing_screen": "inc/_screen181",
+            "promptIdx": 62
           },
           {
             "type": "select_multiple",
@@ -6769,12 +7392,12 @@
                 }
               }
             },
-            "_row_num": 160,
-            "__rowNum__": 159,
+            "_row_num": 184,
+            "__rowNum__": 183,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen157",
-            "promptIdx": 55
+            "_branch_label_enclosing_screen": "inc/_screen181",
+            "promptIdx": 63
           },
           {
             "type": "text",
@@ -6787,12 +7410,12 @@
                 }
               }
             },
-            "_row_num": 162,
-            "__rowNum__": 161,
+            "_row_num": 186,
+            "__rowNum__": 185,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen157",
-            "promptIdx": 56
+            "_branch_label_enclosing_screen": "inc/_screen181",
+            "promptIdx": 64
           },
           {
             "type": "select_one",
@@ -6806,12 +7429,12 @@
                 }
               }
             },
-            "_row_num": 167,
-            "__rowNum__": 166,
+            "_row_num": 191,
+            "__rowNum__": 190,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen166",
-            "promptIdx": 57
+            "_branch_label_enclosing_screen": "inc/_screen190",
+            "promptIdx": 65
           },
           {
             "type": "select_multiple",
@@ -6825,12 +7448,12 @@
                 }
               }
             },
-            "_row_num": 169,
-            "__rowNum__": 168,
+            "_row_num": 193,
+            "__rowNum__": 192,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen166",
-            "promptIdx": 58
+            "_branch_label_enclosing_screen": "inc/_screen190",
+            "promptIdx": 66
           },
           {
             "type": "text",
@@ -6843,12 +7466,12 @@
                 }
               }
             },
-            "_row_num": 171,
-            "__rowNum__": 170,
+            "_row_num": 195,
+            "__rowNum__": 194,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen166",
-            "promptIdx": 59
+            "_branch_label_enclosing_screen": "inc/_screen190",
+            "promptIdx": 67
           },
           {
             "type": "image",
@@ -6861,12 +7484,12 @@
                 }
               }
             },
-            "_row_num": 176,
-            "__rowNum__": 175,
+            "_row_num": 200,
+            "__rowNum__": 199,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "inc/_screen175",
-            "promptIdx": 60
+            "_branch_label_enclosing_screen": "inc/_screen199",
+            "promptIdx": 68
           },
           {
             "type": "select_one",
@@ -6887,12 +7510,12 @@
               }
             },
             "constraint": "data('PODEVAC') != null || data('CONSENT') == '2'",
-            "_row_num": 179,
-            "__rowNum__": 178,
+            "_row_num": 203,
+            "__rowNum__": 202,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen178",
-            "promptIdx": 61
+            "_branch_label_enclosing_screen": "inc/_screen202",
+            "promptIdx": 69
           },
           {
             "type": "text",
@@ -6905,12 +7528,12 @@
                 }
               }
             },
-            "_row_num": 181,
-            "__rowNum__": 180,
+            "_row_num": 205,
+            "__rowNum__": 204,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen178",
-            "promptIdx": 62
+            "_branch_label_enclosing_screen": "inc/_screen202",
+            "promptIdx": 70
           },
           {
             "type": "select_one",
@@ -6931,12 +7554,12 @@
               }
             },
             "constraint": "data('PODEINC') != null || data('CONSENT') == '2'",
-            "_row_num": 183,
-            "__rowNum__": 182,
+            "_row_num": 207,
+            "__rowNum__": 206,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen178",
-            "promptIdx": 63
+            "_branch_label_enclosing_screen": "inc/_screen202",
+            "promptIdx": 71
           },
           {
             "type": "text",
@@ -6949,12 +7572,12 @@
                 }
               }
             },
-            "_row_num": 185,
-            "__rowNum__": 184,
+            "_row_num": 209,
+            "__rowNum__": 208,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen178",
-            "promptIdx": 64
+            "_branch_label_enclosing_screen": "inc/_screen202",
+            "promptIdx": 72
           },
           {
             "type": "select_one",
@@ -6975,12 +7598,12 @@
               }
             },
             "constraint": "data('JAINC') != null || data('CONSENT') == '2'",
-            "_row_num": 187,
-            "__rowNum__": 186,
+            "_row_num": 211,
+            "__rowNum__": 210,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen178",
-            "promptIdx": 65
+            "_branch_label_enclosing_screen": "inc/_screen202",
+            "promptIdx": 73
           },
           {
             "type": "note",
@@ -6992,12 +7615,12 @@
                 }
               }
             },
-            "_row_num": 192,
-            "__rowNum__": 191,
+            "_row_num": 216,
+            "__rowNum__": 215,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 66
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 74
           },
           {
             "type": "note",
@@ -7009,12 +7632,12 @@
                 }
               }
             },
-            "_row_num": 194,
-            "__rowNum__": 193,
+            "_row_num": 218,
+            "__rowNum__": 217,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 67
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 75
           },
           {
             "type": "note",
@@ -7026,12 +7649,12 @@
                 }
               }
             },
-            "_row_num": 197,
-            "__rowNum__": 196,
+            "_row_num": 221,
+            "__rowNum__": 220,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 68
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 76
           },
           {
             "type": "note",
@@ -7043,12 +7666,12 @@
                 }
               }
             },
-            "_row_num": 200,
-            "__rowNum__": 199,
+            "_row_num": 224,
+            "__rowNum__": 223,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 69
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 77
           },
           {
             "type": "note",
@@ -7060,12 +7683,12 @@
                 }
               }
             },
-            "_row_num": 203,
-            "__rowNum__": 202,
+            "_row_num": 227,
+            "__rowNum__": 226,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 70
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 78
           },
           {
             "type": "note",
@@ -7077,12 +7700,12 @@
                 }
               }
             },
-            "_row_num": 206,
-            "__rowNum__": 205,
+            "_row_num": 230,
+            "__rowNum__": 229,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 71
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 79
           },
           {
             "type": "note",
@@ -7094,12 +7717,12 @@
                 }
               }
             },
-            "_row_num": 209,
-            "__rowNum__": 208,
+            "_row_num": 233,
+            "__rowNum__": 232,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 72
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 80
           },
           {
             "type": "note",
@@ -7111,12 +7734,12 @@
                 }
               }
             },
-            "_row_num": 212,
-            "__rowNum__": 211,
+            "_row_num": 236,
+            "__rowNum__": 235,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 73
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 81
           },
           {
             "type": "note",
@@ -7128,12 +7751,12 @@
                 }
               }
             },
-            "_row_num": 215,
-            "__rowNum__": 214,
+            "_row_num": 239,
+            "__rowNum__": 238,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 74
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 82
           },
           {
             "type": "note",
@@ -7145,12 +7768,12 @@
                 }
               }
             },
-            "_row_num": 218,
-            "__rowNum__": 217,
+            "_row_num": 242,
+            "__rowNum__": 241,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 75
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 83
           },
           {
             "type": "note",
@@ -7162,12 +7785,12 @@
                 }
               }
             },
-            "_row_num": 222,
-            "__rowNum__": 221,
+            "_row_num": 246,
+            "__rowNum__": 245,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 76
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 84
           },
           {
             "type": "note",
@@ -7182,12 +7805,12 @@
             "__EMPTY_1": "note",
             "__EMPTY_4": "The child is too old",
             "__EMPTY_5": "A crianca tem idade maior de 5 anos",
-            "_row_num": 225,
-            "__rowNum__": 224,
+            "_row_num": 249,
+            "__rowNum__": 248,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen190",
-            "promptIdx": 77
+            "_branch_label_enclosing_screen": "inc/_screen214",
+            "promptIdx": 85
           },
           {
             "type": "integer",
@@ -7207,12 +7830,12 @@
               }
             },
             "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-            "_row_num": 234,
-            "__rowNum__": 233,
+            "_row_num": 258,
+            "__rowNum__": 257,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen233",
-            "promptIdx": 78
+            "_branch_label_enclosing_screen": "inc/_screen257",
+            "promptIdx": 86
           },
           {
             "type": "integer",
@@ -7232,12 +7855,12 @@
               }
             },
             "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-            "_row_num": 235,
-            "__rowNum__": 234,
+            "_row_num": 259,
+            "__rowNum__": 258,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen233",
-            "promptIdx": 79
+            "_branch_label_enclosing_screen": "inc/_screen257",
+            "promptIdx": 87
           },
           {
             "type": "note",
@@ -7249,12 +7872,12 @@
                 }
               }
             },
-            "_row_num": 237,
-            "__rowNum__": 236,
+            "_row_num": 261,
+            "__rowNum__": 260,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen233",
-            "promptIdx": 80
+            "_branch_label_enclosing_screen": "inc/_screen257",
+            "promptIdx": 88
           },
           {
             "type": "adate",
@@ -7270,12 +7893,12 @@
                 "helperText": false
               }
             },
-            "_row_num": 242,
-            "__rowNum__": 241,
+            "_row_num": 266,
+            "__rowNum__": 265,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen240",
-            "promptIdx": 81
+            "_branch_label_enclosing_screen": "inc/_screen264",
+            "promptIdx": 89
           },
           {
             "type": "time",
@@ -7295,12 +7918,12 @@
               }
             },
             "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-            "_row_num": 243,
-            "__rowNum__": 242,
+            "_row_num": 267,
+            "__rowNum__": 266,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "inc/_screen240",
-            "promptIdx": 82
+            "_branch_label_enclosing_screen": "inc/_screen264",
+            "promptIdx": 90
           },
           {
             "type": "integer",
@@ -7320,12 +7943,12 @@
               }
             },
             "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-            "_row_num": 245,
-            "__rowNum__": 244,
+            "_row_num": 269,
+            "__rowNum__": 268,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen240",
-            "promptIdx": 83
+            "_branch_label_enclosing_screen": "inc/_screen264",
+            "promptIdx": 91
           },
           {
             "type": "note",
@@ -7337,12 +7960,12 @@
                 }
               }
             },
-            "_row_num": 247,
-            "__rowNum__": 246,
+            "_row_num": 271,
+            "__rowNum__": 270,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen240",
-            "promptIdx": 84
+            "_branch_label_enclosing_screen": "inc/_screen264",
+            "promptIdx": 92
           },
           {
             "type": "select_one_with_other",
@@ -7356,12 +7979,12 @@
                 }
               }
             },
-            "_row_num": 251,
-            "__rowNum__": 250,
+            "_row_num": 275,
+            "__rowNum__": 274,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen250",
-            "promptIdx": 85
+            "_branch_label_enclosing_screen": "inc/_screen274",
+            "promptIdx": 93
           },
           {
             "type": "select_one_with_other",
@@ -7375,12 +7998,12 @@
                 }
               }
             },
-            "_row_num": 253,
-            "__rowNum__": 252,
+            "_row_num": 277,
+            "__rowNum__": 276,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen250",
-            "promptIdx": 86
+            "_branch_label_enclosing_screen": "inc/_screen274",
+            "promptIdx": 94
           },
           {
             "type": "note",
@@ -7392,20 +8015,20 @@
                 }
               }
             },
-            "_row_num": 258,
-            "__rowNum__": 257,
+            "_row_num": 282,
+            "__rowNum__": 281,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen257",
-            "promptIdx": 87
+            "_branch_label_enclosing_screen": "inc/_screen281",
+            "promptIdx": 95
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 262,
-            "_branch_label_enclosing_screen": "inc/_screen262",
-            "promptIdx": 88
+            "_row_num": 286,
+            "_branch_label_enclosing_screen": "inc/_screen286",
+            "promptIdx": 96
           }
         ],
         "validation_tag_map": {
@@ -7416,29 +8039,35 @@
             9,
             11,
             12,
-            18,
-            20,
-            22,
-            27,
-            29,
+            19,
+            21,
+            23,
+            28,
             30,
-            32,
-            34,
-            36,
+            31,
+            33,
+            35,
             37,
             38,
             39,
             40,
-            42,
+            41,
             43,
+            44,
             45,
-            61,
-            63,
-            65,
-            78,
-            79,
-            82,
-            83
+            46,
+            47,
+            49,
+            50,
+            51,
+            53,
+            69,
+            71,
+            73,
+            86,
+            87,
+            90,
+            91
           ]
         },
         "operations": [
@@ -7505,256 +8134,225 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 68,
-              "__rowNum__": 67,
+              "_row_num": 69,
+              "__rowNum__": 68,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nif (data('regnons') != null) {\nassign('REGNO', 999);\n}\nif (data('BAIRRO') != 77) {\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nif (data('idns') != null) {\nassign('ID', 9999999);\n}\n}\nelse {\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nif (data('regidcns') !=null) {\nassign('REGIDC', 999999999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nif (data('regnons') != null) {\nassign('REGNO', 999);\n}\nif (data('BAIRRO') != 77) {\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nif (data('idns') != null) {\nassign('ID', 9999999);\n}\n}\nelse {\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nif (data('regidcns') !=null) {\nassign('REGIDC', 999999999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 4
           },
           {
             "clause": "begin screen",
-            "_row_num": 69,
-            "__rowNum__": 68,
+            "_row_num": 70,
+            "__rowNum__": 69,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 80,
-              "__rowNum__": 79,
+              "_row_num": 81,
+              "__rowNum__": 80,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nif (data('dobns') != null) {\nassign('DOB', \"D:NS,M:NS,Y:NS\");\n}\nif (data('DOB')==\"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n}\nactivePromptIndicies.push(26);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nif (data('dobns') != null) {\nassign('DOB', \"D:NS,M:NS,Y:NS\");\n}\nif (data('DOB')==\"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\n}\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
           },
           {
             "clause": "begin screen",
-            "_row_num": 81,
-            "__rowNum__": 80,
+            "_row_num": 82,
+            "__rowNum__": 81,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 89,
-              "__rowNum__": 88,
+              "_row_num": 90,
+              "__rowNum__": 89,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nif (data('CONSENT') == '1') {\nactivePromptIndicies.push(28);\nif (data('CONSENTTIPO') == '2') {\nactivePromptIndicies.push(29);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\nif (data('CONSENT') == '1') {\nactivePromptIndicies.push(29);\nif (data('CONSENTTIPO') == '2') {\nactivePromptIndicies.push(30);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 6
           },
           {
             "clause": "if",
             "condition": "data('CONSENT') == '1'",
-            "_row_num": 90,
-            "__rowNum__": 89,
+            "_row_num": 91,
+            "__rowNum__": 90,
             "_token_type": "goto_label",
-            "_branch_label": "_then90",
+            "_branch_label": "_then91",
             "operationIdx": 7
           },
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else256",
-            "_row_num": 256,
+            "_branch_label": "_else280",
+            "_row_num": 280,
             "operationIdx": 8
           },
           {
             "clause": "begin screen",
-            "_row_num": 91,
-            "__rowNum__": 90,
+            "_row_num": 92,
+            "__rowNum__": 91,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 104,
-              "__rowNum__": 103,
+              "_row_num": 105,
+              "__rowNum__": 104,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nif (data('TELEINF2') == '3') {\nassign('TELEMOVEL2', 999999999);\n}\nif (data('TELEINF3') == '3') {\nassign('TELEMOVEL3', 999999999);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\nif (data('TELEINF2') == '3') {\nassign('TELEMOVEL2', 999999999);\n}\nif (data('TELEINF3') == '3') {\nassign('TELEMOVEL3', 999999999);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 9
           },
           {
             "clause": "begin screen",
-            "_row_num": 106,
-            "__rowNum__": 105,
+            "_row_num": 107,
+            "__rowNum__": 106,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 124,
-              "__rowNum__": 123,
+              "_row_num": 125,
+              "__rowNum__": 124,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(37);\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(38);\n}\nif (adate.diffInDays(data('DOB'), data('DATINC')) > 453 || adate.hasUncertainty(data('DOB')) || (data('IDADEANO') == '1' && data('IDADEMES') > '3' || data('IDADEMES')> '14' || data('IDADEANO') > '1' )) {\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(39);\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(40);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(38);\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(39);\n}\nif (adate.diffInDays(data('DOB'), data('DATINC')) > 453 || adate.hasUncertainty(data('DOB')) || (data('IDADEANO') == '1' && data('IDADEMES') > '3' || data('IDADEMES')> '14' || data('IDADEANO') > '1' )) {\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(40);\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(41);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 10
           },
           {
             "clause": "if",
             "condition": "data('CARTVIS') == '1'",
-            "_row_num": 125,
-            "__rowNum__": 124,
+            "_row_num": 126,
+            "__rowNum__": 125,
             "_token_type": "goto_label",
-            "_branch_label": "_then125",
+            "_branch_label": "_then126",
             "operationIdx": 11
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else127",
-            "_row_num": 127,
+            "_branch_label": "_else128",
+            "_row_num": 128,
             "operationIdx": 12
           },
           {
-            "_row_num": 126,
+            "_row_num": 127,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 13
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif127",
-            "_row_num": 127,
+            "_branch_label": "_endif128",
+            "_row_num": 128,
             "operationIdx": 14
           },
           {
             "clause": "begin screen",
-            "_row_num": 128,
-            "__rowNum__": 127,
+            "_row_num": 129,
+            "__rowNum__": 128,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 131,
-              "__rowNum__": 130,
+              "_row_num": 132,
+              "__rowNum__": 131,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 15
           },
           {
             "clause": "begin screen",
-            "_row_num": 132,
-            "__rowNum__": 131,
+            "_row_num": 133,
+            "__rowNum__": 132,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 137,
-              "__rowNum__": 136,
+              "_row_num": 144,
+              "__rowNum__": 143,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(44);\nif (data('MOTCONT')=='2') {\nactivePromptIndicies.push(45);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(45);\nif (selected(data('CICA'),'1')) {\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\nif (data(\"evulocao\") != null) {\nassign('CICAH', 88);\nassign('CICAV', 88);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 16
           },
           {
             "clause": "begin screen",
-            "_row_num": 138,
-            "__rowNum__": 137,
+            "_row_num": 145,
+            "__rowNum__": 144,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 147,
-              "__rowNum__": 146,
+              "_row_num": 155,
+              "__rowNum__": 154,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\nif (data('MOTCONT')=='1') {\nassign('REGDATE', data(\"DATINC\"));\n}\nelse {\nassign('REGDATE', data(\"INTINICI\"));\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(49);\nif (selected(data('CICA_M'),'1')) {\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\nif (selected(data('CICA_M'),'8')) {\nassign('CICAH_M', 99);\nassign('CICAV_M', 99);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 17
           },
           {
             "clause": "begin screen",
-            "_row_num": 148,
-            "__rowNum__": 147,
+            "_row_num": 156,
+            "__rowNum__": 155,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 152,
-              "__rowNum__": 151,
+              "_row_num": 161,
+              "__rowNum__": 160,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(52);\nif (data('MOTCONT')=='2') {\nactivePromptIndicies.push(53);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 18
           },
           {
             "clause": "begin screen",
-            "_row_num": 153,
-            "__rowNum__": 152,
+            "_row_num": 162,
+            "__rowNum__": 161,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 156,
-              "__rowNum__": 155,
+              "_row_num": 171,
+              "__rowNum__": 170,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\nactivePromptIndicies.push(55);\nactivePromptIndicies.push(56);\nif (data('MOTCONT')=='1') {\nassign('REGDATE', data(\"DATINC\"));\n}\nelse {\nassign('REGDATE', data(\"INTINICI\"));\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 19
           },
           {
             "clause": "begin screen",
-            "_row_num": 157,
-            "__rowNum__": 156,
+            "_row_num": 172,
+            "__rowNum__": 171,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 165,
-              "__rowNum__": 164,
+              "_row_num": 176,
+              "__rowNum__": 175,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\nif (data('TRATAMENT_A') =='1') {\nactivePromptIndicies.push(55);\nif (selected(data('TRATQUAL_A'),'77')) {\nactivePromptIndicies.push(56);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(57);\nactivePromptIndicies.push(58);\nactivePromptIndicies.push(59);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 20
           },
           {
             "clause": "begin screen",
-            "_row_num": 166,
-            "__rowNum__": 165,
+            "_row_num": 177,
+            "__rowNum__": 176,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 174,
-              "__rowNum__": 173,
+              "_row_num": 180,
+              "__rowNum__": 179,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(57);\nif (data('TRATAMENT_R') =='1') {\nactivePromptIndicies.push(58);\nif (selected(data('TRATQUAL_R'),'77')) {\nactivePromptIndicies.push(59);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(60);\nactivePromptIndicies.push(61);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 21
           },
           {
             "clause": "begin screen",
-            "_row_num": 175,
-            "__rowNum__": 174,
+            "_row_num": 181,
+            "__rowNum__": 180,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 177,
-              "__rowNum__": 176,
+              "_row_num": 189,
+              "__rowNum__": 188,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(60);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(62);\nif (data('TRATAMENT_A') =='1') {\nactivePromptIndicies.push(63);\nif (selected(data('TRATQUAL_A'),'77')) {\nactivePromptIndicies.push(64);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 22
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 178,
-            "__rowNum__": 177,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 188,
-              "__rowNum__": 187,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(61);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(62);\n}\nactivePromptIndicies.push(63);\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(64);\n}\nactivePromptIndicies.push(65);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 23
-          },
-          {
-            "clause": "if",
-            "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') != '2')||data('SARVAC2') == '1'  || adate.diffInDays(data('DOB'), data('DATINC')) > 1826 || adate.diffInDays(data('DOB'), data('DATINC')) < 270",
-            "comment": "|| calculates.childAGE >'1826",
-            "_row_num": 189,
-            "__rowNum__": 188,
-            "_token_type": "goto_label",
-            "_branch_label": "_then189",
-            "operationIdx": 24
-          },
-          {
-            "clause": "else",
-            "_token_type": "goto_label",
-            "_branch_label": "_else232",
-            "_row_num": 232,
-            "operationIdx": 25
           },
           {
             "clause": "begin screen",
@@ -7763,52 +8361,62 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 231,
-              "__rowNum__": 230,
+              "_row_num": 198,
+              "__rowNum__": 197,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(66);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(67);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(68);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(69);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(70);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(71);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(72);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(73);\n}\nif (data('SARVAC') == '1'&& data('SARVAC2')=='1') {\nactivePromptIndicies.push(74);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(75);\n}\nif (((adate.diffInDays(data('DOB'), data('DATINC'))>1826) || (adate.diffInDays(data('DOB'), data('DATINC'))<270)) && data('DOB') != \"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(76);\n}\nif (((adate.diffInDays(data('DOB'), data('DATINC'))<453) && data('SARVAC')=='1') && data('DOB') != \"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(77);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(65);\nif (data('TRATAMENT_R') =='1') {\nactivePromptIndicies.push(66);\nif (selected(data('TRATQUAL_R'),'77')) {\nactivePromptIndicies.push(67);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 23
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 199,
+            "__rowNum__": 198,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 201,
+              "__rowNum__": 200,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(68);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 24
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 202,
+            "__rowNum__": 201,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 212,
+              "__rowNum__": 211,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(69);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(70);\n}\nactivePromptIndicies.push(71);\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(72);\n}\nactivePromptIndicies.push(73);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 25
+          },
+          {
+            "clause": "if",
+            "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' ||  data('VENAOVAS2') == '2' || (data('SARVAC') == '1' &&  data('SARVAC2') != '2')||data('SARVAC2') == '1'  || adate.diffInDays(data('DOB'), data('DATINC')) > 1826 || adate.diffInDays(data('DOB'), data('DATINC')) < 270",
+            "comment": "|| calculates.childAGE >'1826",
+            "_row_num": 213,
+            "__rowNum__": 212,
+            "_token_type": "goto_label",
+            "_branch_label": "_then213",
             "operationIdx": 26
           },
           {
-            "clause": "end if",
+            "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_endif249",
-            "_row_num": 249,
+            "_branch_label": "_else256",
+            "_row_num": 256,
             "operationIdx": 27
           },
           {
             "clause": "begin screen",
-            "_row_num": 233,
-            "__rowNum__": 232,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 239,
-              "__rowNum__": 238,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(78);\nactivePromptIndicies.push(79);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(80);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 28
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 240,
-            "__rowNum__": 239,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 248,
-              "__rowNum__": 247,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(81);\nactivePromptIndicies.push(82);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(83);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(84);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 29
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 250,
-            "__rowNum__": 249,
+            "_row_num": 214,
+            "__rowNum__": 213,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -7816,15 +8424,15 @@
               "__rowNum__": 254,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(85);\nif (data('INC') == '1') {\nactivePromptIndicies.push(86);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 30
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(74);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(75);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(76);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(77);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(78);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(79);\n}\nif (data('VENAOVAS2') == '2') {\nactivePromptIndicies.push(80);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(81);\n}\nif (data('SARVAC') == '1'&& data('SARVAC2')=='1') {\nactivePromptIndicies.push(82);\n}\nif (data('SARVAC2') == '1') {\nactivePromptIndicies.push(83);\n}\nif (((adate.diffInDays(data('DOB'), data('DATINC'))>1826) || (adate.diffInDays(data('DOB'), data('DATINC'))<270)) && data('DOB') != \"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(84);\n}\nif (((adate.diffInDays(data('DOB'), data('DATINC'))<453) && data('SARVAC')=='1') && data('DOB') != \"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(85);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 28
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif261",
-            "_row_num": 261,
-            "operationIdx": 31
+            "_branch_label": "_endif273",
+            "_row_num": 273,
+            "operationIdx": 29
           },
           {
             "clause": "begin screen",
@@ -7833,33 +8441,82 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 260,
-              "__rowNum__": 259,
+              "_row_num": 263,
+              "__rowNum__": 262,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(87);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(86);\nactivePromptIndicies.push(87);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(88);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 30
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 264,
+            "__rowNum__": 263,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 272,
+              "__rowNum__": 271,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(89);\nactivePromptIndicies.push(90);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(91);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(92);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 31
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 274,
+            "__rowNum__": 273,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 279,
+              "__rowNum__": 278,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(93);\nif (data('INC') == '1') {\nactivePromptIndicies.push(94);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 32
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif285",
+            "_row_num": 285,
+            "operationIdx": 33
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 281,
+            "__rowNum__": 280,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 284,
+              "__rowNum__": 283,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(95);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 34
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 262,
-            "operationIdx": 33
+            "_row_num": 286,
+            "operationIdx": 35
           },
           {
-            "_row_num": 262,
+            "_row_num": 286,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(88);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(96);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 34
+            "operationIdx": 36
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 262,
-            "operationIdx": 35
+            "_row_num": 286,
+            "operationIdx": 37
           }
         ],
         "branch_label_map": {
@@ -7868,36 +8525,38 @@
           "_screen38": 2,
           "_screen43": 3,
           "_screen49": 4,
-          "_screen69": 5,
-          "_screen81": 6,
-          "_then90": 9,
-          "_screen91": 9,
-          "_screen106": 10,
-          "_then125": 13,
-          "_screen126": 13,
-          "_else127": 15,
-          "_endif127": 15,
-          "_screen128": 15,
-          "_screen132": 16,
-          "_screen138": 17,
-          "_screen148": 18,
-          "_screen153": 19,
-          "_screen157": 20,
-          "_screen166": 21,
-          "_screen175": 22,
-          "_screen178": 23,
-          "_then189": 26,
-          "_screen190": 26,
-          "_else232": 28,
-          "_screen233": 28,
-          "_screen240": 29,
-          "_endif249": 30,
-          "_screen250": 30,
-          "_else256": 32,
-          "_screen257": 32,
-          "_endif261": 33,
-          "_contents": 34,
-          "_screen262": 34
+          "_screen70": 5,
+          "_screen82": 6,
+          "_then91": 9,
+          "_screen92": 9,
+          "_screen107": 10,
+          "_then126": 13,
+          "_screen127": 13,
+          "_else128": 15,
+          "_endif128": 15,
+          "_screen129": 15,
+          "_screen133": 16,
+          "_screen145": 17,
+          "_screen156": 18,
+          "_screen162": 19,
+          "_screen172": 20,
+          "_screen177": 21,
+          "_screen181": 22,
+          "_screen190": 23,
+          "_screen199": 24,
+          "_screen202": 25,
+          "_then213": 28,
+          "_screen214": 28,
+          "_else256": 30,
+          "_screen257": 30,
+          "_screen264": 31,
+          "_endif273": 32,
+          "_screen274": 32,
+          "_else280": 34,
+          "_screen281": 34,
+          "_endif285": 35,
+          "_contents": 36,
+          "_screen286": 36
         }
       },
       "initial": {
@@ -8088,7 +8747,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 253,
+            "_row_num": 277,
             "section_name": "inc"
           },
           {
@@ -8125,7 +8784,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 130,
+            "_row_num": 131,
             "section_name": "inc"
           },
           {
@@ -8234,7 +8893,7 @@
         },
         "_defn": [
           {
-            "_row_num": 126,
+            "_row_num": 127,
             "section_name": "inc"
           },
           {
@@ -8258,7 +8917,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 108,
             "section_name": "inc"
           },
           {
@@ -8272,6 +8931,122 @@
         "elementSet": "data",
         "elementPath": "CARTVIS"
       },
+      "CICA": {
+        "type": "string",
+        "valuesList": "sim/não/ns",
+        "_defn": [
+          {
+            "_row_num": 134,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICA",
+        "elementName": "CICA",
+        "elementSet": "data",
+        "elementPath": "CICA"
+      },
+      "CICA_M": {
+        "type": "string",
+        "valuesList": "tipomae",
+        "_defn": [
+          {
+            "_row_num": 146,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICA_M",
+        "elementName": "CICA_M",
+        "elementSet": "data",
+        "elementPath": "CICA_M"
+      },
+      "CICAH": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 136,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICAH",
+        "elementName": "CICAH",
+        "elementSet": "data",
+        "elementPath": "CICAH"
+      },
+      "CICAH_M": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 148,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICAH_M",
+        "elementName": "CICAH_M",
+        "elementSet": "data",
+        "elementPath": "CICAH_M"
+      },
+      "CICAV": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 137,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICAV",
+        "elementName": "CICAV",
+        "elementSet": "data",
+        "elementPath": "CICAV"
+      },
+      "CICAV_M": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 149,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "CICAV_M",
+        "elementName": "CICAV_M",
+        "elementSet": "data",
+        "elementPath": "CICAV_M"
+      },
       "CNO": {
         "type": "string",
         "_defn": [
@@ -8280,7 +9055,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 10,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -8308,7 +9083,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 11,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -8326,11 +9101,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 82,
+            "_row_num": 83,
             "section_name": "inc"
           },
           {
-            "_row_num": 12,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -8345,11 +9120,11 @@
         "valuesList": "signature",
         "_defn": [
           {
-            "_row_num": 84,
+            "_row_num": 85,
             "section_name": "inc"
           },
           {
-            "_row_num": 13,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -8364,11 +9139,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 154,
+            "_row_num": 178,
             "section_name": "inc"
           },
           {
-            "_row_num": 14,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -8391,7 +9166,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 15,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -8410,11 +9185,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 242,
+            "_row_num": 266,
             "section_name": "inc"
           },
           {
-            "_row_num": 16,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -8429,11 +9204,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 140,
+            "_row_num": 164,
             "section_name": "inc"
           },
           {
-            "_row_num": 17,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -8448,11 +9223,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 151,
+            "_row_num": 175,
             "section_name": "inc"
           },
           {
-            "_row_num": 18,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -8471,11 +9246,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 71,
             "section_name": "inc"
           },
           {
-            "_row_num": 19,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -8499,11 +9274,11 @@
         "valuesList": "datens",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 72,
             "section_name": "inc"
           },
           {
-            "_row_num": 20,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -8521,11 +9296,11 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 251,
+            "_row_num": 275,
             "section_name": "inc"
           },
           {
-            "_row_num": 21,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -8535,16 +9310,39 @@
         "elementSet": "data",
         "elementPath": "ENFERMEI"
       },
+      "evolucao": {
+        "type": "string",
+        "items": {
+          "type": "string"
+        },
+        "valuesList": "evuloir",
+        "_defn": [
+          {
+            "_row_num": 138,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 28,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "__EMPTY": "added 12-06-2026",
+        "elementKey": "evolucao",
+        "elementName": "evolucao",
+        "elementSet": "data",
+        "elementPath": "evolucao"
+      },
       "FEBRE": {
         "type": "string",
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 139,
+            "_row_num": 163,
             "section_name": "inc"
           },
           {
-            "_row_num": 22,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -8559,11 +9357,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 243,
+            "_row_num": 267,
             "section_name": "inc"
           },
           {
-            "_row_num": 23,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -8576,7 +9374,7 @@
       "HORVACVAS": {
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -8591,11 +9389,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 57,
             "section_name": "inc"
           },
           {
-            "_row_num": 25,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -8609,11 +9407,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 76,
+            "_row_num": 77,
             "section_name": "inc"
           },
           {
-            "_row_num": 26,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -8627,11 +9425,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 77,
+            "_row_num": 78,
             "section_name": "inc"
           },
           {
-            "_row_num": 27,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -8655,11 +9453,11 @@
         "valuesList": "nsID",
         "_defn": [
           {
-            "_row_num": 57,
+            "_row_num": 58,
             "section_name": "inc"
           },
           {
-            "_row_num": 28,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -8675,7 +9473,7 @@
       "INC": {
         "_defn": [
           {
-            "_row_num": 29,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -8695,11 +9493,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 135,
+            "_row_num": 159,
             "section_name": "inc"
           },
           {
-            "_row_num": 30,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -8714,11 +9512,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 187,
+            "_row_num": 211,
             "section_name": "inc"
           },
           {
-            "_row_num": 31,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -8733,11 +9531,11 @@
         "valuesList": "Motivo",
         "_defn": [
           {
-            "_row_num": 133,
+            "_row_num": 157,
             "section_name": "inc"
           },
           {
-            "_row_num": 32,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -8751,11 +9549,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 185,
+            "_row_num": 209,
             "section_name": "inc"
           },
           {
-            "_row_num": 33,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -8773,7 +9571,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 34,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -8791,7 +9589,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 35,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -8809,7 +9607,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 36,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -8823,11 +9621,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 245,
+            "_row_num": 269,
             "section_name": "inc"
           },
           {
-            "_row_num": 37,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -8840,7 +9638,7 @@
       "NUMEST": {
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -8855,11 +9653,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 181,
+            "_row_num": 205,
             "section_name": "inc"
           },
           {
-            "_row_num": 39,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -8873,11 +9671,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 155,
+            "_row_num": 179,
             "section_name": "inc"
           },
           {
-            "_row_num": 40,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -8895,7 +9693,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 41,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -8910,11 +9708,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 183,
+            "_row_num": 207,
             "section_name": "inc"
           },
           {
-            "_row_num": 42,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -8929,11 +9727,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 179,
+            "_row_num": 203,
             "section_name": "inc"
           },
           {
-            "_row_num": 43,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -8947,7 +9745,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -8961,11 +9759,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 234,
+            "_row_num": 258,
             "section_name": "inc"
           },
           {
-            "_row_num": 45,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -8979,11 +9777,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 235,
+            "_row_num": 259,
             "section_name": "inc"
           },
           {
-            "_row_num": 46,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -8997,11 +9795,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 63,
             "section_name": "inc"
           },
           {
-            "_row_num": 47,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -9025,11 +9823,11 @@
         "valuesList": "nsREGIDC",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 64,
             "section_name": "inc"
           },
           {
-            "_row_num": 48,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -9046,11 +9844,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 51,
             "section_name": "inc"
           },
           {
-            "_row_num": 49,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -9074,11 +9872,11 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 52,
             "section_name": "inc"
           },
           {
-            "_row_num": 50,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -9096,11 +9894,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 149,
+            "_row_num": 173,
             "section_name": "inc"
           },
           {
-            "_row_num": 51,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -9119,7 +9917,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 52,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -9134,11 +9932,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 110,
             "section_name": "inc"
           },
           {
-            "_row_num": 53,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -9157,7 +9955,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 54,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -9170,7 +9968,7 @@
       "START": {
         "_defn": [
           {
-            "_row_num": 55,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -9194,7 +9992,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 56,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -9209,11 +10007,11 @@
         "valuesList": "telinf1",
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 94,
             "section_name": "inc"
           },
           {
-            "_row_num": 57,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -9228,11 +10026,11 @@
         "valuesList": "telinf2",
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 96,
             "section_name": "inc"
           },
           {
-            "_row_num": 58,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -9247,11 +10045,11 @@
         "valuesList": "telinf2",
         "_defn": [
           {
-            "_row_num": 97,
+            "_row_num": 98,
             "section_name": "inc"
           },
           {
-            "_row_num": 59,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -9265,11 +10063,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 92,
+            "_row_num": 93,
             "section_name": "inc"
           },
           {
-            "_row_num": 60,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -9283,11 +10081,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 95,
             "section_name": "inc"
           },
           {
-            "_row_num": 61,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -9301,11 +10099,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 96,
+            "_row_num": 97,
             "section_name": "inc"
           },
           {
-            "_row_num": 62,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -9319,11 +10117,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 129,
+            "_row_num": 130,
             "section_name": "inc"
           },
           {
-            "_row_num": 63,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -9338,11 +10136,11 @@
         "valuesList": "sim",
         "_defn": [
           {
-            "_row_num": 86,
+            "_row_num": 87,
             "section_name": "inc"
           },
           {
-            "_row_num": 64,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -9357,11 +10155,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 150,
+            "_row_num": 174,
             "section_name": "inc"
           },
           {
-            "_row_num": 65,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -9375,7 +10173,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -9390,11 +10188,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 182,
             "section_name": "inc"
           },
           {
-            "_row_num": 67,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
@@ -9409,11 +10207,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 167,
+            "_row_num": 191,
             "section_name": "inc"
           },
           {
-            "_row_num": 68,
+            "_row_num": 75,
             "section_name": "model"
           }
         ],
@@ -9447,11 +10245,11 @@
         },
         "_defn": [
           {
-            "_row_num": 176,
+            "_row_num": 200,
             "section_name": "inc"
           },
           {
-            "_row_num": 69,
+            "_row_num": 76,
             "section_name": "model"
           }
         ],
@@ -9478,7 +10276,7 @@
         },
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 77,
             "section_name": "model"
           }
         ],
@@ -9504,11 +10302,11 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 160,
+            "_row_num": 184,
             "section_name": "inc"
           },
           {
-            "_row_num": 71,
+            "_row_num": 78,
             "section_name": "model"
           }
         ],
@@ -9534,11 +10332,11 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 169,
+            "_row_num": 193,
             "section_name": "inc"
           },
           {
-            "_row_num": 72,
+            "_row_num": 79,
             "section_name": "model"
           }
         ],
@@ -9555,7 +10353,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 80,
             "section_name": "model"
           }
         ],
@@ -9569,11 +10367,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 162,
+            "_row_num": 186,
             "section_name": "inc"
           },
           {
-            "_row_num": 74,
+            "_row_num": 81,
             "section_name": "model"
           }
         ],
@@ -9587,11 +10385,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 171,
+            "_row_num": 195,
             "section_name": "inc"
           },
           {
-            "_row_num": 75,
+            "_row_num": 82,
             "section_name": "model"
           }
         ],
@@ -9606,11 +10404,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 112,
+            "_row_num": 113,
             "section_name": "inc"
           },
           {
-            "_row_num": 76,
+            "_row_num": 83,
             "section_name": "model"
           }
         ],
@@ -9625,11 +10423,11 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 141,
+            "_row_num": 165,
             "section_name": "inc"
           },
           {
-            "_row_num": 77,
+            "_row_num": 84,
             "section_name": "model"
           }
         ],
@@ -9643,7 +10441,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 79,
+            "_row_num": 86,
             "section_name": "model"
           }
         ],
@@ -9657,7 +10455,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 80,
+            "_row_num": 87,
             "section_name": "model"
           }
         ],
@@ -9671,7 +10469,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 88,
             "section_name": "model"
           }
         ],
@@ -9685,7 +10483,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 82,
+            "_row_num": 89,
             "section_name": "model"
           }
         ],
@@ -9704,7 +10502,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 90,
             "section_name": "model"
           }
         ],
@@ -9719,11 +10517,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 116,
+            "_row_num": 117,
             "section_name": "inc"
           },
           {
-            "_row_num": 85,
+            "_row_num": 92,
             "section_name": "model"
           }
         ],
@@ -9738,11 +10536,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 120,
+            "_row_num": 121,
             "section_name": "inc"
           },
           {
-            "_row_num": 86,
+            "_row_num": 93,
             "section_name": "model"
           }
         ],
@@ -9751,6 +10549,24 @@
         "elementName": "VENAOVAS2",
         "elementSet": "data",
         "elementPath": "VENAOVAS2"
+      },
+      "REGNO_ASSIST": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 50,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 94,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGNO_ASSIST",
+        "elementName": "REGNO_ASSIST",
+        "elementSet": "data",
+        "elementPath": "REGNO_ASSIST"
       },
       "camons_items": {
         "type": "string",
@@ -9991,6 +10807,20 @@
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"sim/não\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":4},{\"choice_list_name\":\"sim/não\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":5}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CICA",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":11}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CICA_M",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"tipomae\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Scar\",\"default\":\"Cicatriz\"}}},\"_row_num\":55},{\"choice_list_name\":\"tipomae\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No scar\",\"default\":\"Nada\"}}},\"_row_num\":56},{\"choice_list_name\":\"tipomae\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Not possible to measure\",\"default\":\"Condição de midir não tem\"}}},\"_row_num\":57}]"
       },
       {
         "_partition": "Column",
