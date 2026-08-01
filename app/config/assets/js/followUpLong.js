@@ -95,7 +95,7 @@ function populateView() {
 
     children.forEach(function(child) {
         var visitedToday;
-        if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate | child.DATASEGUI4 == todayAdate) {
+        if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate ) { // Removed 31-07-2026:  | child.DATASEGUI4 == todayAdate
             visitedToday = true;
         }
 
@@ -139,7 +139,7 @@ function populateView() {
         // Set date/time contraint
         var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
-        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);
+        var incY = this.DATINC.slice(this.DATINC.search("Y")+2); 
         var FuDate; 
         if (this.FU == 1) {
             FuDate = new Date(incY, incM-1 + 3, incD);
@@ -171,7 +171,7 @@ function populateView() {
             console.log("FuDate", FuDate);
         }
         if (this.FU == 4 & FuDate <= today & (this.VITALCRI != "2" | visited == "visited")) {
-            ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
+            ul4.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText))); // 20260731 - there was a mistake here - we were appending the 12 months children to ul3 - instead of 4
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
